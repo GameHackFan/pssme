@@ -1,0 +1,108 @@
+.levelDisplay
+{
+  max-width: 96%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.levelDisplay > img
+{
+  min-height: 240px;
+}
+
+.enemyGroup span
+{
+  font-weight: bold;
+  font-size: 0.7em;
+
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.level .enemyGroupText
+{
+  margin-bottom: 24px;
+}
+
+.level .enemyGroupText > span
+{
+  font-weight: bold;
+  color: limegreen;
+  font-size: 1em;
+  margin: 0;
+}
+
+.hintText > label
+{
+  display: block;
+}
+
+.hintText > label:not(:last-child)
+{
+  margin-bottom: 4px;
+}
+
+.hintText > label:first-child > b
+{
+  color: #0097ab;
+}
+
+.hintText > label:nth-child(2) > b
+{
+  color: #32cd32;
+}
+
+.hintText > label:last-child > b
+{
+  color: #f6a427;
+}
+
+.level .windowContentLine > label
+{
+  min-width: 120px;
+}
+
+.level > div:last-child
+{
+  margin-top: 16px;
+}
+
+.level > div:nth-last-child(2)
+{
+  margin-top: 24px;
+}
+
+.level > div:last-child > *
+{
+  margin-top: 8px;
+}
+
+.level > div:last-child > :not(:last-child),
+.level button:not(:last-child)
+{
+  margin-right: 12px;
+}
+
+.level .buttonSolid
+{
+  cursor: pointer;
+}
+
+.level .buttonSolid > input
+{
+  display: none;
+}
+
+.level > .warning
+{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  display: block;
+}

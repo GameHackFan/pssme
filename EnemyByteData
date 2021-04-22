@@ -1,0 +1,86 @@
+The enemies are represented by a 16 byte data
+
+
+SP = Player Screen Position to Trigger Enemy Spawn.
+ID = ID of the enemy.
+PX = Spawn Position X (SP + PX).
+PY = Spawn Position Y.
+PC = Posture and Color.
+     P should be replaced by the value of the posture.
+     C should be replaced by the value of the color.
+?1 = 03 is the default value.
+     If different than 03, it crashes the game. Unknown.
+?2 = 00 is the default value. Unknown.
+?3 = 48 is the default value.
+     Some different values crash the game, others makes the enemy and the following enemies to not spawn.
+?4 = 02 is the default value.
+     If different than 02, it crashes the game. Unknown.
+?5 = 00 is the default value.
+     If different than 00, it crashes the game.
+     Unknown, Maybe it is related to the ID?.
+?6 = 00 is the default value.
+     If different than 00, the character will have a weird pallet and players can't hit the enemy, he also has no HP, you can only kill it with crystals. Unknown.
+?7 = 00 is the default value. 
+     If different than 00, it crashes the game.
+     Maybe it is related to 6?. Unknown.
+?8 = 00 is the default value.
+     Probably related to the animation the character will start.
+     Recommended 01 for Bakene.
+
+
+PS PS ?1 ?2 ?3 ?4 ID ?5 ?6 ?7 PX PX PY PY PC ?8
+01 00 03 00 48 02 11 00 00 00 0C FE B4 00 04 00
+
+
+
+00 = 
+01 = 
+02 = 
+03 = 
+04 = 
+05 = 
+06 = 
+07 = 
+08 = 
+09 = 
+0A = 
+0B = 
+0C = 
+0D = 
+0E = All Food, It changes based on the color used.
+0F = Crystal
+10 = Furau (The one that looks like a homeless)
+11 = Oniwabandana (Ninja)
+12 = Tesuni (The one that can come with a racket)
+13 = Castor & Pollux (1st boss or normal enemy)
+14 = Yasha (Witch version)
+15 = Yasha (Human version)
+16 = Thetis (The one that drops crystals and food)
+17 = Jumou (Mannequin)
+18 = Criminal
+19 = Morga (2nd boss)
+1A = Kyurene (3rd boss)
+1B = Garoben (4th boss)
+1C = None
+1D = Bakene
+1E = None
+1F = None
+20 = Zoisite
+21 = Kunzite
+22 = Queen Beryl
+
+
+
+00 = Chocolate brown wrapper.
+01 = Small ice cream blue.
+02 = Pudding blue dish.
+03 = Big ice cream blue cup.
+04 = Lollipop brown.
+05 = 
+06 = 
+07 = 
+08 = 
+09 = 
+0A = 
+0B = 
+0C = 

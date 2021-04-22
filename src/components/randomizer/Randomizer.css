@@ -1,0 +1,53 @@
+.randomizer .enemyGroupText
+{
+  margin-bottom: 24px;
+}
+
+.randomizer .enemyGroupText > span
+{
+  font-weight: bold;
+  color: limegreen;
+}
+
+.enemyGroup > .windowContentLine > label
+{
+  min-width: 50%;
+}
+
+.randomizer > div:last-child
+{
+  margin-top: 16px;
+}
+
+.randomizer > div:nth-last-child(2)
+{
+  margin-top: 24px;
+}
+
+.randomizer > div:last-child > *
+{
+  margin-top: 8px;
+}
+
+.randomizer > div:last-child > :not(:last-child)
+{
+  margin-right: 12px;
+}
+
+.randomizer .buttonSolid
+{
+  cursor: pointer;
+}
+
+.randomizer .buttonSolid > input
+{
+  display: none;
+}
+
+.randomizer > .warning
+{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  display: block;
+}

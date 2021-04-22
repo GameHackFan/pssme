@@ -1,0 +1,68 @@
+=======================================================
+Play Music
+=======================================================
+
+00 00 03 00 70 03 'ID' 00
+
+ID = id of the music
+
+=======================================================
+Player Character Freezing In a Boss Fight
+=======================================================
+
+00 00 03 00 B6 00 1E 24 00 00 00 00 03 00 D8 00
+
+Remove this to ensure the player character will
+not freeze for a short period of time at the
+beginning of a boss fight.
+
+=======================================================
+Boss Helper Enemies Scope
+=======================================================
+
+Bugs the boss section if players are not frozen
+
+SS = Scope Start, represented by a pointer.
+     It should contain the address of the
+     instruction that represents the end of the scope.
+     It is the address of the next instruction subtracted by 0x30000 (hex).
+
+SE = Scope Start, represented by a pointer.
+     It normally is the address after the last byte of the last enemy of the scope subtracted by
+     0x30000 (hex).
+
+?? ?? 03 00 94 00 80 01 FF FF 03 00 SS SS
+?? ?? 03 00 CE 00 A6 19 03 00 SE SE
+
+=======================================================
+Delay Enemy Spawn
+=======================================================
+
+00 00 03 00 6A 00 E0 01
+
+Add these bytes before the bytes of an enemy to delay
+the enemy spawn.
+
+=======================================================
+Print Line of Text in the Screen
+=======================================================
+
+It can come in one of those 2 patterns
+
+If the amount of characters is even, use the first pattern.
+If the amount of characters is odd, use the second pattern.
+
+TS = Text, they should be placed in a pair of 2.
+     It follows the little endian byte pattern.
+LC = Last character.
+CE = Text end. It is represented by 00.
+PX = Position X.
+PY = Position Y.
+
+00 00 03 00 0E 02 00 00 D2 15 TS CE LC PX PX PY PY 30 04 F0 00 FF FF
+
+00 00 03 00 0E 02 00 00 D2 15 TS 00 PX PX PY PY 30 04 F0 00 FF FF
+
+=======================================================
+
+=======================================================

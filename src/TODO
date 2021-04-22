@@ -1,0 +1,22 @@
+- Test level editor rom.
+- Test randomizer rom.
+
+
+- Test enemies after garoben.
+- For some reason enemies are forbidden to spawn on
+  the right, but they spawn on the right anyways.
+
+
+
+
+
+// Maybe
+
+- Change All Thetis Sprite.
+- Change All Criminal Running Sprite.
+- Change Zoisite Sprite.
+- Change All Yasha Witch Falling Sprite, add a shadow.
+- Change All Kyurene Sprite.
+- Change Kyurene 3rd Boss Sprite.
+- Improve the starting point of all group limits
+  (It's better to be the previous one -160).

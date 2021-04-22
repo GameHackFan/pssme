@@ -1,0 +1,25 @@
+.footer
+{
+  background-color: #002654;
+
+  margin: 0px;
+  padding: 0px;
+
+  min-height: 90px;
+  max-height: 90px;
+
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.footer > label
+{
+  color: #cd1226;
+  font-weight: bold;
+  font-size: 1.4em;
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 12px;
+}
