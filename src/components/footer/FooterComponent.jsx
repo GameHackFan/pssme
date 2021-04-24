@@ -5,7 +5,7 @@ import "./Footer.css";
 
 const FooterComponent = (props) =>
 {
-  let appVersion = "Version 0.1, \u00A9 2021";
+  let appVersion = "Version 0.2, \u00A9 2021";
 
   return (
     <footer

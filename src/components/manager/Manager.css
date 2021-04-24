@@ -1,9 +1,9 @@
-.manager > div:last-child
+.manager > div:nth-last-child(2)
 {
   margin-top: 24px;
 }
 
-.manager > div:last-child > button
+.manager > div:nth-last-child(2) > button
 {
   padding-left: 8px; 
   padding-right: 8px;
@@ -11,8 +11,19 @@
   padding-bottom: 3px;
 }
 
-.manager > div:last-child > :not(:last-child)
+.manager > div:nth-last-child(2) > :not(:last-child)
 {
   margin-right: 12px;
+}
+
+.manager .romMessage
+{
+  color: limegreen;
+  font-weight: bold;
+  text-align: center;
+  max-width: 100%;
+  
+  margin-left: auto;
+  margin-right: auto;
 }
 

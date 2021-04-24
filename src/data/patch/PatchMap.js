@@ -6,6 +6,9 @@ import textImprovementGenericBossPatch from
     "./TextImprovementGenericBossPatch";
 import dontFreezeOnBossPatch from
     "./DontFreezeOnBossPatch";
+import removeCPUDemoPatch from
+    "./RemoveCPUDemoPatch";
+    
 
 import randomizerTextPatch from
     "./RandomizerTextPatch";
@@ -23,7 +26,7 @@ const patchMap =
           "also will not have bugged lifebar. " +
           "It allows players to select the same " +
           "sailor and also increases the time for " +
-          "all levels.",
+          "all levels. Used by the Seed Randomizer.",
     patch: featuresAndFixesPatch,
     show: true
   },
@@ -34,7 +37,8 @@ const patchMap =
           "for all levels. It has some text " +
           "changes and it also places the texts " +
           "at the bottom of the screen, which " +
-          "feels more appropriate.",
+          "feels more appropriate. Used by the " +
+          "Seed Randomizer.",
     patch: textImprovementPatch,
     show: true
   },
@@ -57,15 +61,27 @@ const patchMap =
     label: "Don't Freeze On Boss Patch",
     text: "This patch removes the freezing that " +
           "players suffer when first encountering " +
-          "any boss or sub boss.",
+          "any boss or sub boss. Used by the " +
+          "Seed Randomizer.",
     patch: dontFreezeOnBossPatch,
+    show: true
+  },
+  removeCPUDemoPatch:
+  {
+    label: "Remove CPU Gameplay Demo Patch",
+    text: "This patch removes the CPU Gameplay " +
+          "Demo. It is necessary for ROMs that " +
+          "has more or less bytes than the original " +
+          "in any level. Used by the Level Editor " +
+          "and the Seed Randomizer.",
+    patch: removeCPUDemoPatch,
     show: true
   },
   randomizerTextPatch:
   {
     label: "Randomizer Title Screen Patch",
     text: "Title screen text patch for the Seed " +
-          "Randomizer.",
+          "Randomizer. Used by the Seed Randomizer.",
     patch: randomizerTextPatch,
     show: false
   },
@@ -73,7 +89,7 @@ const patchMap =
   {
     label: "Level Editor Title Screen Patch",
     text: "Title screen text patch for the Level " +
-          "Editor.",
+          "Editor. Used by the Level Editor",
     patch: levelEditorTextPatch,
     show: false
   }

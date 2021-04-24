@@ -74,6 +74,8 @@ class LevelEditorService
     romService.applyPatch(
         patchMap.levelEditorTextPatch.patch);
     romService.applyPatch(
+        patchMap.removeCPUDemoPatch.patch);
+    romService.applyPatch(
         this.createLevelEditorPatch());
     romService.applyPatch(
         levelExpansionService.createLevelFixPatch());
@@ -393,7 +395,6 @@ class LevelEditorService
     let preset = {};
     preset.type = "levelEditor";
     preset.data = objectUtil.deepCopy(this.mainData);
-    console.log(preset.data);
     delete preset.data.filename;
     return preset;
   }

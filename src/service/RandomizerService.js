@@ -267,6 +267,8 @@ class RandomizerService
       patchMap.dontFreezeOnBossPatch.patch);
     this.applyRandomizerTextPatch();
     romService.applyPatch(
+        patchMap.removeCPUDemoPatch.patch);
+    romService.applyPatch(
         this.createRandomizerPatch());
     romService.applyPatch(
         levelExpansionService.createLevelFixPatch());

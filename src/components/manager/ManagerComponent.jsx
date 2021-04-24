@@ -10,6 +10,8 @@ const ManagerComponent = (props) =>
 {
   let options = new Array();
   let im = componentService.getInfoMap();
+  let waitMessage = props.generatingROM ?
+      {} : {display: "none"};
 
   Object.keys(im).forEach((e) =>
   {
@@ -28,7 +30,7 @@ const ManagerComponent = (props) =>
   return (
     <div className="manager rowLinedFlex">
       <label className="windowText">
-        This is the main window of the editor. Here you can enable all the features this editor offers. Here you can also load, clone and generate a ROM. Before start editing the ROM, you need to load and clone it. After doing all the changes desired, you need to click on Generate ROM to create the .zip file of the rom. Keep in mind that the process to generate a ROM is a little bit slow, so be patient and wait a little bit. If you applied changes made by the Seed Randomizer and the Level Editor, the byte order might change and apply more changes from those 2 windows might crash the ROM, so make sure you do all changes needed first before applying them to the ROM. You can also clone the ROM in case you did unwanted changes, it will clone the ROM loaded and overwrite all changes made.
+        This is the main window of the editor. Here you can enable all the features this editor offers. Here you can also load, clone and generate a ROM. Before start editing the ROM, you need to load and clone it. After doing all the changes desired, you need to click on Generate ROM to create the .zip file of the rom. Keep in mind that the process to generate a ROM is a little bit slow, so be patient and wait a little bit. If you applied changes made by the Seed Randomizer and the Level Editor, the byte order might change and applying more changes from those 2 windows might crash the ROM, so make sure you do all changes needed first before applying them to the ROM. You can also clone the ROM in case you did unwanted changes, it will clone the ROM loaded and overwrite all changes made.
       </label>
       <div className="colLinedFlex windowContentLine">
         <label>Window Selector: </label>
@@ -66,6 +68,14 @@ const ManagerComponent = (props) =>
         >
           Generate ROM
         </button>
+      </div>
+      <div
+        className="windowContentLine colLinedFlex"
+        style={waitMessage}
+      >
+        <label className="romMessage">
+          Please wait, the ROM is being generated.
+        </label>
       </div>
     </div>
   );

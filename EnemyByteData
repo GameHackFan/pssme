@@ -1,9 +1,9 @@
-The enemies are represented by a 16 byte data
+The enemies are represented by a 16 bytes data
 
 
-SP = Player Screen Position to Trigger Enemy Spawn.
+CP = Camera Position to trigger  the enemy spawn.
 ID = ID of the enemy.
-PX = Spawn Position X (SP + PX).
+PX = Spawn Position X (CP + PX).
 PY = Spawn Position Y.
 PC = Posture and Color.
      P should be replaced by the value of the posture.
@@ -11,8 +11,8 @@ PC = Posture and Color.
 ?1 = 03 is the default value.
      If different than 03, it crashes the game. Unknown.
 ?2 = 00 is the default value. Unknown.
-?3 = 48 is the default value.
-     Some different values crash the game, others makes the enemy and the following enemies to not spawn.
+?3 = 48 is the default value. 48 makes the enemy spawn based on the camera positon. 68 is level position based.
+     Some different values crash the game, others bugs the enemy and the following enemies spawn, they end up not spawning.
 ?4 = 02 is the default value.
      If different than 02, it crashes the game. Unknown.
 ?5 = 00 is the default value.
@@ -25,10 +25,9 @@ PC = Posture and Color.
      Maybe it is related to 6?. Unknown.
 ?8 = 00 is the default value.
      Probably related to the animation the character will start.
-     Recommended 01 for Bakene.
 
 
-PS PS ?1 ?2 ?3 ?4 ID ?5 ?6 ?7 PX PX PY PY PC ?8
+CP CP ?1 ?2 ?3 ?4 ID ?5 ?6 ?7 PX PX PY PY PC ?8
 01 00 03 00 48 02 11 00 00 00 0C FE B4 00 04 00
 
 
@@ -70,17 +69,25 @@ PS PS ?1 ?2 ?3 ?4 ID ?5 ?6 ?7 PX PX PY PY PC ?8
 22 = Queen Beryl
 
 
+If the id is 0E, it will be a food. The values below
+should be placed where you place the PC value.
 
 00 = Chocolate brown wrapper.
 01 = Small ice cream blue.
 02 = Pudding blue dish.
 03 = Big ice cream blue cup.
 04 = Lollipop brown.
-05 = 
-06 = 
-07 = 
-08 = 
-09 = 
-0A = 
-0B = 
-0C = 
+05 = Piece of cake brown dish
+06 = Round cake brown dish
+07 = Pie blue dish
+08 = Popcorn brown holder
+09 = Meatball blue dish
+0A = Donut
+0B = Chocolate candy brown wrapper
+0C = Muffin brown wrapper
+0D = Soup blue bowl
+
+13 = Circular Star 6, Spark Sprite 				(Star Chicken Nugget, Heals 100+%)
+81 = Torus Smoke 2, Spark Sprite 				(Meatball, Heals 50+%)
+92 01 = E7 Red Leaf Effect 5, Spark Sprite  	(Tuna, Heals 150+%)
+

@@ -10,86 +10,86 @@ const levelExpansionData =
     // },
     level2:
     {
-      levelStartPointer: [
-        "03", "00", "7A", "08", "03", "00", "24", "10"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "02", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 10,
       levelStartDataIndex: 4
     },
     level3:
     {
-      levelStartPointer: [
-        "03", "00", "24", "10", "03", "00", "22", "19"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "04", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 14,
       levelStartDataIndex: 4
     },
     level4:
     {
-      levelStartPointer: [
-        "03", "00", "22", "19", "03", "00", "40", "27"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "07", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 18,
       levelStartDataIndex: 4
     },
     level5:
     {
-      levelStartPointer: [
-        "03", "00", "40", "27", "03", "00", "54", "31"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "0E", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 22,
       levelStartDataIndex: 4
     },
     level6:
     {
-      levelStartPointer: [
-        "03", "00", "54", "31", "03", "00", "84", "38"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "12", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 26,
       levelStartDataIndex: 4
     },
     level7:
     {
-      levelStartPointer: [
-        "03", "00", "84", "38", "03", "00", "9E", "41"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "01", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 30,
       levelStartDataIndex: 4
     },
     level8:
     {
-      levelStartPointer: [
-        "03", "00", "9E", "41", "03", "00", "72", "49"],
+      levelStartPointer: ["03", "00", "52", "04",
+        "03", "00", "52", "04", "03", "00"],
       levelStartData: [
         "FF", "FF", "FF", "FF", "00", "00", "03", "00",
         "80", "03", "18", "00"],
       byteFormat: "hex",
       moduleIndex: 196608,
-      levelStartPointerIndex: 2,
+      levelStartPointerIndex: 34,
       levelStartDataIndex: 4
     }
   },

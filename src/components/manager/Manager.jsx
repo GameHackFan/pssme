@@ -83,7 +83,10 @@ class Manager extends Component
     try
     {
       if(extras.fileObject)
+      {
+        this.setState({generatingROM: true});
         fileService.createZipFile(extras);
+      }
       else
         this.props.onActionResult(extras);
     }
@@ -97,6 +100,7 @@ class Manager extends Component
 
   downloadGeneratedROM(extras)
   {
+    this.setState({generatingROM: false});
     let rom = extras.actionData;
     let contentType = "application/octet-stream";
     let name = "sailormn.zip";
@@ -109,6 +113,7 @@ class Manager extends Component
       <ManagerComponent
         handleChange={this.handleChange}
         requestFile={editorService.requestFile}
+        generatingROM={this.state.generatingROM}
         onCloneROMClick={this.onCloneROMClick}
         onLoadROMFileChange={this.onLoadROMFileChange}
         onGenerateROMClick={this.onGenerateROMClick}
