@@ -1,5 +1,12 @@
 // TODO: Interesting changes
 
+- Need to change the forbiden enemies to enemy
+  groups instead of whole levels (Morga can
+  softlock the 3rd boss).
+- Forbid Garoben to spawn on 4th level, 2nd
+  boss and 3rd boss.
+- Forbid Morga to spawn on 2nd Level, 4th level,
+  and 3rd boss.
 - Add a profile for the randomizer (Easy, Normal,
   Hard, Savage, Galactic Battle, Multiverse Clash).
 - For some reason enemies are forbidden to spawn on
