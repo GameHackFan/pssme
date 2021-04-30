@@ -9,6 +9,8 @@ import randomizerData from
     "../data/randomizer/RandomizerData";
 import randomizerEnemyStrategy from
     "../data/randomizer/RandomizerEnemyStrategy";
+import levelDefaultData from
+    "../data/level/LevelDefaultData";
 
 
 class RandomizerService
@@ -23,6 +25,7 @@ class RandomizerService
   {
     this.minSpawnTriggerPosition = 0;
     this.fixSeed();
+    this.fixRandomProfile();
     this.fixMainData();
     let randomizedData = this.randomizeAllEnemies();
     let patch = {};
@@ -83,7 +86,7 @@ class RandomizerService
     enemies.preset = {};
     enemies.patch = {};
     let mdeg = this.mainData[levelKey][enemyGroupKey];
-    let id = 0;
+    let id = 10;    // 10 so bosses are not replaced.
 
     if(mdeg.randomMode !== "disabled")
     {
@@ -99,7 +102,7 @@ class RandomizerService
 
         for(let i = 0; i < amount; i++)
         {
-          let enemy = this.randomizeEnemy(levelKey,
+          let enemy = this.randomizeEnemy(
               enemyGroup, enemyStrategy, randomizer);
           enemies.preset[id] = enemy;
           enemies.patch[id++] =
@@ -111,12 +114,12 @@ class RandomizerService
     return enemies;
   }
 
-  randomizeEnemy = (levelKey, enemyGroup,
-      enemyStrategy, randomizer) =>
+  randomizeEnemy = (enemyGroup, enemyStrategy,
+      randomizer) =>
   {
     let e = {};
-    e.enemyKey = this.randomizeEnemyKey(levelKey,
-        enemyStrategy, randomizer);
+    e.enemyKey = this.randomizeEnemyKey(
+        enemyGroup, enemyStrategy, randomizer);
     e.triggerPosition = 
         this.randomizeSpawnTriggerPosition(
         enemyGroup, randomizer);
@@ -164,10 +167,10 @@ class RandomizerService
       pss.inside = rdpss.inside;
 
     let keys = Object.keys(pss);
-    let random = this.getIntRandomValue(randomizer,
+    let random = this.getRandomIntValue(randomizer,
           0, keys.length - 1);
     let range = pss[keys[random]];
-    let px = this.getIntRandomValue(randomizer,
+    let px = this.getRandomIntValue(randomizer,
         range[0], range[1]);
 
     return px;
@@ -175,7 +178,7 @@ class RandomizerService
 
   randomizePositionY = (enemyGroup, randomizer) =>
   {
-    return this.getIntRandomValue(randomizer,
+    return this.getRandomIntValue(randomizer,
         enemyGroup.walkablePositionYTop,
         enemyGroup.walkablePositionYBottom);
   }
@@ -183,7 +186,7 @@ class RandomizerService
   randomizeSpawnTriggerPosition = (
       enemyGroup, randomizer) =>
   {
-    let random = this.getIntRandomValue(randomizer,
+    let random = this.getRandomIntValue(randomizer,
         enemyGroup.screenPositionStart,
         enemyGroup.screenPositionEnd);
     
@@ -202,7 +205,7 @@ class RandomizerService
 
     while(fields.length > enemyGroup.maxAmount)
     {
-      let random = this.getIntRandomValue(
+      let random = this.getRandomIntValue(
           randomizer, 0, fields.length - 1);
       let key = fields[random];
       delete enemies.patch[key];
@@ -211,19 +214,18 @@ class RandomizerService
     }
   }
 
-  randomizeEnemyKey = (levelKey,
+  randomizeEnemyKey = (enemyGroup,
       enemyStrategy, randomizer) =>
   {
-    let forbidden =
-        randomizerData.forbiddenEnemies[levelKey];
+    let forbidden = enemyGroup.forbiddenEnemies;
     forbidden = forbidden ? forbidden : [];
-    let random = this.getIntRandomValue(randomizer,
+    let random = this.getRandomIntValue(randomizer,
         0, enemyStrategy.enemyKeys.length - 1);
     let enemyKey = enemyStrategy.enemyKeys[random];
 
     while(forbidden.includes(enemyKey))
     {
-      random = this.getIntRandomValue(randomizer,
+      random = this.getRandomIntValue(randomizer,
           0, enemyStrategy.enemyKeys.length - 1);
       enemyKey = enemyStrategy.enemyKeys[random];
     }
@@ -259,6 +261,7 @@ class RandomizerService
 
   applyRandomizer = () =>
   {
+    let randomizerPatch = this.createRandomizerPatch();
     romService.applyPatch(
           patchMap.featuresAndFixesPatch.patch);
     romService.applyPatch(
@@ -268,8 +271,7 @@ class RandomizerService
     this.applyRandomizerTextPatch();
     romService.applyPatch(
         patchMap.removeCPUDemoPatch.patch);
-    romService.applyPatch(
-        this.createRandomizerPatch());
+    romService.applyPatch(randomizerPatch);
     romService.applyPatch(
         levelExpansionService.createLevelFixPatch());
     romService.applyPatch(levelExpansionService.
@@ -342,22 +344,41 @@ class RandomizerService
     return content ? content : {};
   }
 
+  fixSeed = () =>
+  {
+    let s = parseInt(this.mainData.seed);
+    s = isNaN(s) ? 0 : s;
+    s = Math.max(s, Number.MIN_SAFE_INTEGER);
+    s = Math.min(s, Number.MAX_SAFE_INTEGER);
+    this.mainData.seed = s;
+  }
+
+  fixRandomProfile = () =>
+  {
+    let rp = this.mainData.randomProfile;
+    rp = rp in randomizerData.randomProfile ?
+        rp : "savage";
+    this.mainData.randomProfile = rp;
+  }
+
   getSeed = () =>
   {
     return this.mainData.seed;
   }
 
-  fixSeed = () =>
-  {
-    let s = parseInt(this.mainData.seed);
-    s = isNaN(s) ? 0 : s;
-    s = s > 9007199254740992 ? 9007199254740992 : s;
-    this.mainData.seed = s;
-  }
-
   setSeed = (seed) =>
   {
     this.mainData.seed = seed;
+  }
+
+  getRandomProfile = () =>
+  {
+    return this.mainData.randomProfile;
+  }
+
+  setRandomProfile = (random) =>
+  {
+    this.mainData.randomProfile = random;
   }
 
   setRandomMode = (levelKey, enemyGroupKey, mode) =>
@@ -392,7 +413,7 @@ class RandomizerService
     return {};
   }
 
-  getIntRandomValue = (randomizer, begin, end) =>
+  getRandomIntValue = (randomizer, begin, end) =>
   {
     let b = parseInt(begin);
     let e = parseInt(end);
@@ -401,7 +422,7 @@ class RandomizerService
     if(amount !== 0)
       return Math.round(randomizer() * amount) + b;
 
-    return 0;
+    return begin;
   }
 
   fixMainData = () =>
@@ -409,85 +430,88 @@ class RandomizerService
     let egs = randomizerData.enemyGroups;
     let seed = this.mainData.seed;
     let randomizer = this.mulberry32Randomizer(seed);
+    let randomProfile = randomizerData.randomProfile[
+        this.mainData.randomProfile];
     Object.keys(egs).forEach((e) =>
     {
-      this.fixLevel(e, randomizer);
+      this.fixLevel(e, randomProfile, randomizer);
     });
-    this.fixFinalBossEnemyGroup(randomizer);
+    this.fixFinalBossEnemyGroup(
+        randomProfile, randomizer);
   }
 
-  fixLevel = (levelKey, randomizer) =>
+  fixLevel = (levelKey, randomProfile, randomizer) =>
   {
     let l = this.forceGetField(
         this.mainData, levelKey);
+    let lgs = randomizerData.enemyGroups[levelKey];
 
-    Object.keys(randomizerData.enemyGroups[levelKey]).
-        forEach((e) =>
-        {
-          this.fixEnemyGroup(l, e, randomizer);
-        });
+    Object.keys(lgs).forEach((egk) =>
+    {
+      this.fixEnemyGroup(l, egk,
+          randomProfile, randomizer);
+    });
   }
 
-  fixEnemyGroup = (level, enemyGroupKey, randomizer) =>
+  fixEnemyGroup = (level, enemyGroupKey,
+      randomProfile, randomizer) =>
   {
     let eg = this.forceGetField(level, enemyGroupKey);
     
     if(eg.randomMode === "custom")
     {
       let enemyAmount = 0;
-
-      Object.keys(randomizerData.enemyStrategy).
-          forEach((e) =>
-          {
-            let amount = parseInt(eg[e]);
-            amount = isNaN(amount) ? 0 : amount;
-            enemyAmount += amount;
-          });
+      let rdes = randomizerData.enemyStrategy;
+      Object.keys(rdes).forEach((es) =>
+      {
+        let amount = parseInt(eg[e]);
+        amount = isNaN(amount) ? 0 : amount;
+        enemyAmount += amount;
+      });
       
       if(enemyAmount === 0)
       {
+        this.fixEnemyStrategy(eg,
+            randomProfile, randomizer);
         eg.randomMode = "random";
-        this.fixEnemyStrategy(randomizer);
       }
     }
     else if(eg.randomMode !== "disabled")
     {
+      this.fixEnemyStrategy(eg,
+            randomProfile, randomizer)
       eg.randomMode = "random";
-      this.fixEnemyStrategy(eg, randomizer);
     }
   }
 
-  fixFinalBossEnemyGroup = (randomizer) =>
+  fixFinalBossEnemyGroup = (
+      randomProfile, randomizer) =>
   {
     let fbg = this.mainData.level8.finalBossGroup;
 
     if(fbg.randomMode === "random")
     {
-      let es = randomizerData.enemyStrategy.
+      let es = randomProfile.specialEnemyStrategy.
           ungrabbableEnemies;
       this.mainData.level8.finalBossGroup = {};
       fbg = this.mainData.level8.finalBossGroup;
       fbg.randomMode = "random";
       fbg.ungrabbableEnemies =
-          this.getIntRandomValue(randomizer,
+          this.getRandomIntValue(randomizer,
           es.randomMinAmount, es.randomMaxAmount);
     }
   }
 
-  fixEnemyStrategy = (enemyGroup, randomizer) =>
+  fixEnemyStrategy = (enemyGroup,
+      randomProfile, randomizer) =>
   {
-    let enemyStrategies = randomizerData.enemyStrategy;
+    objectUtil.removeAllProperties(enemyGroup);
+    let enemyStrategies = randomProfile.enemyStrategy;
     Object.keys(enemyStrategies).forEach((e) =>
     {
       let es = enemyStrategies[e];
-
-      if(es.randomActive)
-      {
-        enemyGroup[e] = this.getIntRandomValue(
-            randomizer, es.randomMinAmount, es.randomMaxAmount);
-      }
-      else
-        enemyGroup[e] = 0;
+      enemyGroup[e] = this.getRandomIntValue(
+          randomizer, es.randomMinAmount, es.randomMaxAmount);
     });
   }
 
@@ -510,11 +534,29 @@ class RandomizerService
   createLevelEditorPreset = () =>
   {
     this.fixSeed();
+    this.fixRandomProfile();
     this.fixMainData();
     let randomizerData = this.randomizeAllEnemies();
     let preset = {};
     preset.type = "levelEditor";
     preset.data = randomizerData.preset;
+    let levels = ["level1", "level2", "level3",
+        "level4", "level5", "level6", "level7",
+        "level7", "level7", "level7", "level7",
+        "level8", "level8"];
+    let groups = ["bossGroup", "bossGroup",
+        "bossGroup", "bossGroup", "bossGroup",
+        "bossGroup", "bossGroup1", "bossGroup2",
+        "bossGroup3", "bossGroup4", "bossGroup5",
+        "bossGroup1", "finalBossGroup"];
+    
+    for(let i = 0; i < groups.length; i++)
+    {
+      let pg = preset.data[levels[i]][groups[i]];
+      pg = Object.assign(pg,
+          levelDefaultData[levels[i]][groups[i]]);
+    }
+ 
     return preset;
   }
 
@@ -522,6 +564,7 @@ class RandomizerService
   {
     let mainData = {};
     mainData.seed = this.getDateNowInMilliseconds();
+    mainData.randomProfile = "savage";
     return mainData;
   }
 

@@ -37,67 +37,67 @@ import level8A from "../images/level/level8A.png";
 import level8B from "../images/level/level8B.png";
 
 import furauOrangeGreen from
-	"../images/enemy/furau_orange_green.png";
+    "../images/enemy/furau_orange_green.png";
 import furauPurpleBlue from
-	"../images/enemy/furau_purple_blue.png";
+    "../images/enemy/furau_purple_blue.png";
 import furauBrownYellow from
-	"../images/enemy/furau_brown_yellow.png";
+    "../images/enemy/furau_brown_yellow.png";
 import furauGreenBlue from
-	"../images/enemy/furau_green_blue.png";
+    "../images/enemy/furau_green_blue.png";
 
 import oniwabandanaBrownBlueIdle from
-	"../images/enemy/oniwabandana_brown_blue_i.png";
+    "../images/enemy/oniwabandana_brown_blue_i.png";
 import oniwabandanaWhiteBlueIdle from
-	"../images/enemy/oniwabandana_white_blue_i.png";
+    "../images/enemy/oniwabandana_white_blue_i.png";
 import oniwabandanaPinkBlueIdle from
-	"../images/enemy/oniwabandana_pink_blue_i.png";
+    "../images/enemy/oniwabandana_pink_blue_i.png";
 import oniwabandanaWhiteBrownIdle from
-	"../images/enemy/oniwabandana_white_brown_i.png";
+    "../images/enemy/oniwabandana_white_brown_i.png";
 
 import oniwabandanaBrownBlue from
-	"../images/enemy/oniwabandana_brown_blue.png";
+    "../images/enemy/oniwabandana_brown_blue.png";
 import oniwabandanaWhiteBlue from
-	"../images/enemy/oniwabandana_white_blue.png";
+    "../images/enemy/oniwabandana_white_blue.png";
 import oniwabandanaPinkBlue from
-	"../images/enemy/oniwabandana_pink_blue.png";
+    "../images/enemy/oniwabandana_pink_blue.png";
 import oniwabandanaWhiteBrown from
-	"../images/enemy/oniwabandana_white_brown.png";
+    "../images/enemy/oniwabandana_white_brown.png";
 
 import oniwabandanaBrownBlueRunning from
-	"../images/enemy/oniwabandana_brown_blue_r.png";
+    "../images/enemy/oniwabandana_brown_blue_r.png";
 import oniwabandanaWhiteBlueRunning from
-	"../images/enemy/oniwabandana_white_blue_r.png";
+    "../images/enemy/oniwabandana_white_blue_r.png";
 import oniwabandanaPinkBlueRunning from
-	"../images/enemy/oniwabandana_pink_blue_r.png";
+    "../images/enemy/oniwabandana_pink_blue_r.png";
 import oniwabandanaWhiteBrownRunning from
-	"../images/enemy/oniwabandana_white_brown_r.png";
+    "../images/enemy/oniwabandana_white_brown_r.png";
 
 import tesuniBrownOrange from
-	"../images/enemy/tesuni_brown_orange.png";
+    "../images/enemy/tesuni_brown_orange.png";
 import tesuniGrayPurple from
-	"../images/enemy/tesuni_gray_purple.png";
+    "../images/enemy/tesuni_gray_purple.png";
 import tesuniBrownPink from
-	"../images/enemy/tesuni_brown_pink.png";
+    "../images/enemy/tesuni_brown_pink.png";
 import tesuniGreenPink from
-	"../images/enemy/tesuni_green_pink.png";
+    "../images/enemy/tesuni_green_pink.png";
 
 import tesuniBrownOrangeRacket from
-	"../images/enemy/tesuni_brown_orange_r.png";
+    "../images/enemy/tesuni_brown_orange_r.png";
 import tesuniGrayPurpleRacket from
-	"../images/enemy/tesuni_gray_purple_r.png";
+    "../images/enemy/tesuni_gray_purple_r.png";
 import tesuniBrownPinkRacket from
-	"../images/enemy/tesuni_brown_pink_r.png";
+    "../images/enemy/tesuni_brown_pink_r.png";
 import tesuniGreenPinkRacket from
-	"../images/enemy/tesuni_green_pink_r.png";
+    "../images/enemy/tesuni_green_pink_r.png";
 
 import tesuniBrownOrangeBomber from
-	"../images/enemy/tesuni_brown_orange_b.png";
+    "../images/enemy/tesuni_brown_orange_b.png";
 import tesuniGrayPurpleBomber from
-	"../images/enemy/tesuni_gray_purple_b.png";
+    "../images/enemy/tesuni_gray_purple_b.png";
 import tesuniBrownPinkBomber from
-	"../images/enemy/tesuni_brown_pink_b.png";
+    "../images/enemy/tesuni_brown_pink_b.png";
 import tesuniGreenPinkBomber from
-	"../images/enemy/tesuni_green_pink_b.png";
+    "../images/enemy/tesuni_green_pink_b.png";
 
 import castorAndPolluxBluePurple from
 	"../images/enemy/castor_pollux_blue_purple.png";
@@ -109,132 +109,132 @@ import castorAndPolluxBeigePink from
 	"../images/enemy/castor_pollux_beige_pink.png";
 
 import yashaWitchBrownBlue from
-	"../images/enemy/yasha_witch_brown_blue.png";
+    "../images/enemy/yasha_witch_brown_blue.png";
 import yashaWitchPurpleGreen from
-	"../images/enemy/yasha_witch_purple_green.png";
+    "../images/enemy/yasha_witch_purple_green.png";
 import yashaWitchPinkPurple from
-	"../images/enemy/yasha_witch_purple_green.png";
+    "../images/enemy/yasha_witch_purple_green.png";
 import yashaWitchBrownPink from
-	"../images/enemy/yasha_witch_purple_green.png";
+    "../images/enemy/yasha_witch_purple_green.png";
 import yashaWitchBrownGreenUnused from
-	"../images/enemy/yasha_witch_brown_green_u.png";
+    "../images/enemy/yasha_witch_brown_green_u.png";
 import yashaWitchGreenBlueUnused from
-	"../images/enemy/yasha_witch_green_blue_u.png";
+    "../images/enemy/yasha_witch_green_blue_u.png";
 import yashaWitchBrownPurpleUnused from
-	"../images/enemy/yasha_witch_brown_purple_u.png";
+    "../images/enemy/yasha_witch_brown_purple_u.png";
 import yashaWitchBrownYellowUnused from
-	"../images/enemy/yasha_witch_brown_yellow_u.png";
+    "../images/enemy/yasha_witch_brown_yellow_u.png";
 
 import yashaWitchBrownBlueStabbing from
-	"../images/enemy/yasha_witch_brown_blue_s.png";
+    "../images/enemy/yasha_witch_brown_blue_s.png";
 import yashaWitchPurpleGreenStabbing from
-	"../images/enemy/yasha_witch_purple_green_s.png";
+    "../images/enemy/yasha_witch_purple_green_s.png";
 import yashaWitchPinkPurpleStabbing from
-	"../images/enemy/yasha_witch_purple_green_s.png";
+    "../images/enemy/yasha_witch_purple_green_s.png";
 import yashaWitchBrownPinkStabbing from
-	"../images/enemy/yasha_witch_purple_green_s.png";
+    "../images/enemy/yasha_witch_purple_green_s.png";
 import yashaWitchBrownGreenUnusedStabbing from
-	"../images/enemy/yasha_witch_brown_green_u_s.png";
+    "../images/enemy/yasha_witch_brown_green_u_s.png";
 import yashaWitchGreenBlueUnusedStabbing from
-	"../images/enemy/yasha_witch_green_blue_u_s.png";
+    "../images/enemy/yasha_witch_green_blue_u_s.png";
 import yashaWitchBrownPurpleUnusedStabbing from
-	"../images/enemy/yasha_witch_brown_purple_u_s.png";
+    "../images/enemy/yasha_witch_brown_purple_u_s.png";
 import yashaWitchBrownYellowUnusedStabbing from
-	"../images/enemy/yasha_witch_brown_yellow_u_s.png";
+    "../images/enemy/yasha_witch_brown_yellow_u_s.png";
 
 import yashaWitchBrownBlueFalling from
-	"../images/enemy/yasha_witch_brown_blue_f.png";
+    "../images/enemy/yasha_witch_brown_blue_f.png";
 import yashaWitchPurpleGreenFalling from
-	"../images/enemy/yasha_witch_purple_green_f.png";
+    "../images/enemy/yasha_witch_purple_green_f.png";
 import yashaWitchPinkPurpleFalling from
-	"../images/enemy/yasha_witch_purple_green_f.png";
+    "../images/enemy/yasha_witch_purple_green_f.png";
 import yashaWitchBrownPinkFalling from
-	"../images/enemy/yasha_witch_purple_green_f.png";
+    "../images/enemy/yasha_witch_purple_green_f.png";
 import yashaWitchBrownGreenUnusedFalling from
-	"../images/enemy/yasha_witch_brown_green_u_f.png";
+    "../images/enemy/yasha_witch_brown_green_u_f.png";
 import yashaWitchGreenBlueUnusedFalling from
-	"../images/enemy/yasha_witch_green_blue_u_f.png";
+    "../images/enemy/yasha_witch_green_blue_u_f.png";
 import yashaWitchBrownPurpleUnusedFalling from
-	"../images/enemy/yasha_witch_brown_purple_u_f.png";
+    "../images/enemy/yasha_witch_brown_purple_u_f.png";
 import yashaWitchBrownYellowUnusedFalling from
-	"../images/enemy/yasha_witch_brown_yellow_u_f.png";
+    "../images/enemy/yasha_witch_brown_yellow_u_f.png";
 
 import yashaHumanBrownGreen from
-	"../images/enemy/yasha_human_brown_green.png";
+    "../images/enemy/yasha_human_brown_green.png";
 import yashaHumanGreenBlue from
-	"../images/enemy/yasha_human_green_blue.png";
+    "../images/enemy/yasha_human_green_blue.png";
 import yashaHumanBrownPurple from
-	"../images/enemy/yasha_human_brown_purple.png";
+    "../images/enemy/yasha_human_brown_purple.png";
 import yashaHumanBrownYellow from
-	"../images/enemy/yasha_human_brown_yellow.png";
+    "../images/enemy/yasha_human_brown_yellow.png";
 
 import thetisLightBlue from
-	"../images/enemy/thetis_light_blue.png";
+    "../images/enemy/thetis_light_blue.png";
 import thetisDarkBlue from
-	"../images/enemy/thetis_dark_blue.png";
+    "../images/enemy/thetis_dark_blue.png";
 import thetisLightPink from
-	"../images/enemy/thetis_light_pink.png";
+    "../images/enemy/thetis_light_pink.png";
 import thetisDarkPink from
-	"../images/enemy/thetis_dark_pink.png";
+    "../images/enemy/thetis_dark_pink.png";
 
 import jumouBeigeGreen from
-	"../images/enemy/jumou_beige_green.png";
+    "../images/enemy/jumou_beige_green.png";
 import jumouBeigeBlue from
-	"../images/enemy/jumou_beige_blue.png";
+    "../images/enemy/jumou_beige_blue.png";
 import jumouBeigeOrange from
-	"../images/enemy/jumou_beige_orange.png";
+    "../images/enemy/jumou_beige_orange.png";
 import jumouWhiteBrown from
-	"../images/enemy/jumou_white_brown.png";
+    "../images/enemy/jumou_white_brown.png";
 
 import criminalBlackBlueIdle from
-	"../images/enemy/criminal_black_blue_i.png";
+    "../images/enemy/criminal_black_blue_i.png";
 import criminalBlackPurpleIdle from
-	"../images/enemy/criminal_black_purple_i.png";
+    "../images/enemy/criminal_black_purple_i.png";
 import criminalPurpleRedIdle from
-	"../images/enemy/criminal_purple_red_i.png";
+    "../images/enemy/criminal_purple_red_i.png";
 import criminalGreenBrownIdle from
-	"../images/enemy/criminal_green_brown_i.png";
+    "../images/enemy/criminal_green_brown_i.png";
 
 import criminalBlackBlue from
-	"../images/enemy/criminal_black_blue.png";
+    "../images/enemy/criminal_black_blue.png";
 import criminalBlackPurple from
-	"../images/enemy/criminal_black_purple.png";
+    "../images/enemy/criminal_black_purple.png";
 import criminalPurpleRed from
-	"../images/enemy/criminal_purple_red.png";
+    "../images/enemy/criminal_purple_red.png";
 import criminalGreenBrown from
-	"../images/enemy/criminal_green_brown.png";
+    "../images/enemy/criminal_green_brown.png";
 
 import criminalBlackBlueRunning from
-	"../images/enemy/criminal_black_blue_r.png";
+    "../images/enemy/criminal_black_blue_r.png";
 import criminalBlackPurpleRunning from
-	"../images/enemy/criminal_black_purple_r.png";
+    "../images/enemy/criminal_black_purple_r.png";
 import criminalPurpleRedRunning from
-	"../images/enemy/criminal_purple_red_r.png";
+    "../images/enemy/criminal_purple_red_r.png";
 import criminalGreenBrownRunning from
-	"../images/enemy/criminal_green_brown_r.png";
+    "../images/enemy/criminal_green_brown_r.png";
 
 import castorAndPolluxBoss1 from
-	"../images/enemy/castor_pollux_boss_1.png";
+    "../images/enemy/castor_pollux_boss_1.png";
 import castorAndPolluxBoss2 from
-	"../images/enemy/castor_pollux_boss_2.png";
+    "../images/enemy/castor_pollux_boss_2.png";
 
 import kyureneRedGreen from
-	"../images/enemy/kyurene_red_green.png";
+    "../images/enemy/kyurene_red_green.png";
 import kyurenePinkPurple from
-	"../images/enemy/kyurene_pink_purple.png";
+    "../images/enemy/kyurene_pink_purple.png";
 import kyureneGreenGreen from
-	"../images/enemy/kyurene_green_green.png";
+    "../images/enemy/kyurene_green_green.png";
 import kyureneRedGreen3rdBoss from
-	"../images/enemy/kyurene_red_green_3rd_boss.png";
+    "../images/enemy/kyurene_red_green_3rd_boss.png";
   
 import garobenGreenOrange from
-	"../images/enemy/garoben_green_orange.png";
+    "../images/enemy/garoben_green_orange.png";
 import garobenGrayBrown from
-	"../images/enemy/garoben_gray_brown.png";
+    "../images/enemy/garoben_gray_brown.png";
 import garobenBrownGray from
-	"../images/enemy/garoben_brown_gray.png";
+    "../images/enemy/garoben_brown_gray.png";
 import garobenGreenBlue from
-	"../images/enemy/garoben_green_blue.png";
+    "../images/enemy/garoben_green_blue.png";
 
 import morga from "../images/enemy/morga.png";
 import zoisite from "../images/enemy/zoisite.png";

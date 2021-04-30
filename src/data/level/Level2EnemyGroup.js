@@ -93,7 +93,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 1,
     maxAmount: 2,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup1:
   {
@@ -109,7 +113,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 3,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup2:
   {
@@ -125,7 +133,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 4,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup3:
   {
@@ -141,7 +153,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 1,
     maxAmount: 4,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup4:
   {
@@ -157,7 +173,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 4,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup5:
   {
@@ -173,7 +193,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 4,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup6:
   {
@@ -189,7 +213,11 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 1,
     maxAmount: 4,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   }
 }
 

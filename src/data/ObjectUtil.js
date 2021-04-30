@@ -44,7 +44,15 @@ class ObjectUtil
 
     return retObj;
   }
-};
+
+  removeAllProperties = (obj) =>
+  {
+    Object.keys(obj).forEach((property) =>
+    {
+      delete obj[property];
+    });
+  }
+}
 
 const objectUtil = new ObjectUtil();
 export default objectUtil;

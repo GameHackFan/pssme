@@ -8,6 +8,7 @@ import "./Randomizer.css";
 
 const RandomizerComponent = (props) =>
 {
+  const profileOptions = new Array();
   const levelOptions = new Array();
   const groupOptions = new Array();
   const fields = new Array();
@@ -27,6 +28,16 @@ const RandomizerComponent = (props) =>
   const groupStyle = groupOn ? {} : hidden;
   const editStyle = editOn ? {} : hidden;
   const lockAllStyle = props.romReady ? {} : hidden;
+
+  let rps = randomizerData.randomProfile;
+  Object.keys(rps).forEach((rp) => 
+  {
+    profileOptions.push(
+      <option key={rp} value={rp}>
+        {rps[rp].label}
+      </option>
+    );
+  });
 
   for(let i = 0;
       i < randomizerData.levels.keys.length; i++)
@@ -112,12 +123,34 @@ const RandomizerComponent = (props) =>
           onChange={props.handleRandomizerDataChange}
           value={props.seed}
         />
+        <b>
+          {"(Minimum = " + Number.MIN_SAFE_INTEGER}
+          {", Maximum = " +
+              Number.MAX_SAFE_INTEGER + ")"}
+        </b>
       </div>
       <div
         className="windowContentLine colLinedFlex"
         style={lockAllStyle}
       >
-        <label>Select Level: </label>
+        <label>Random Profile: </label>
+        <select
+          name="randomProfile"
+          className="buttonSolid"
+          value={props.randomProfile}
+          onChange={props.handleRandomizerDataChange}
+        >
+          <option key="-1" value="">
+            Select a random profile
+          </option>
+          {profileOptions}
+        </select>
+      </div>
+      <div
+        className="windowContentLine colLinedFlex"
+        style={lockAllStyle}
+      >
+        <label>Level: </label>
         <select
           name="level"
           className="buttonSolid"
@@ -134,7 +167,7 @@ const RandomizerComponent = (props) =>
         className="windowContentLine colLinedFlex"
         style={groupStyle}
       >
-        <label>Select Enemy Group: </label>
+        <label>Enemy Group: </label>
         <select
           name="enemyGroup"
           className="buttonSolid"

@@ -14,7 +14,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 540,
     levelEditorShiftX: 460,
     defaultAmount: 5,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   group2:
   {
@@ -30,7 +34,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 924,
     levelEditorShiftX: 460,
     defaultAmount: 4,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   group3:
   {
@@ -46,7 +54,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 1341,
     levelEditorShiftX: 460,
     defaultAmount: 7,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
 
 
@@ -64,7 +76,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 672,
     levelEditorShiftX: 460,
     defaultAmount: 5,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   group5:
   {
@@ -80,7 +96,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 1182,
     levelEditorShiftX: 460,
     defaultAmount: 8,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   group6:
   {
@@ -96,7 +116,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 1696,
     levelEditorShiftX: 460,
     defaultAmount: 12,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   group7:
   {
@@ -112,7 +136,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 2144,
     levelEditorShiftX: 460,
     defaultAmount: 3,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
 
 
@@ -130,7 +158,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 736,
     levelEditorShiftX: 460,
     defaultAmount: 5,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
 
 
@@ -148,7 +180,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 432,
     levelEditorShiftX: 460,
     defaultAmount: 4,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   group10:
   {
@@ -164,7 +200,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 960,
     levelEditorShiftX: 460,
     defaultAmount: 4,
-    maxAmount: 14
+    maxAmount: 14,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossGroup:
   {
@@ -182,7 +222,11 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 1376,
     levelEditorShiftX: 460,
     defaultAmount: 1,
-    maxAmount: 0
+    maxAmount: 0,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   extraGroup1:
   {
@@ -199,7 +243,11 @@ const level4EnemyGroup =
     levelEditorShiftX: 460,
     defaultAmount: 1,
     maxAmount: 8,
-    forbiddenPositionStrategies: ["outsideRight"]
+    forbiddenPositionStrategies: ["outsideRight"],
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   }
 }
 

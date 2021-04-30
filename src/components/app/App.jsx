@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import AppComponent from './AppComponent';
 
-import editorService from '../../service/EditorService';
+import editorService from
+    '../../service/EditorService';
 
 
 class App extends Component

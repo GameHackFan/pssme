@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import FooterComponent from './FooterComponent';
 
-import editorService from '../../service/EditorService';
+import editorService from
+    '../../service/EditorService';
 import zoomService from '../../service/ZoomService';
 
 

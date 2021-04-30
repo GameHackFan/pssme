@@ -9,6 +9,16 @@
   color: limegreen;
 }
 
+.randomizer b
+{
+  font-weight: bold;
+  font-size: 0.7em;
+
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .enemyGroup > .windowContentLine > label
 {
   min-width: 50%;

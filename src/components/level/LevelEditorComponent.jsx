@@ -110,7 +110,7 @@ const LevelEditorComponent = (props) =>
         className="windowContentLine colLinedFlex"
         style={lockAllStyle}
       >
-        <label>Select Level: </label>
+        <label>Level: </label>
         <select
           name="level"
           className="buttonSolid"
@@ -127,7 +127,7 @@ const LevelEditorComponent = (props) =>
         className="windowContentLine colLinedFlex"
         style={groupStyle}
       >
-        <label>Select Enemy Group: </label>
+        <label>Enemy Group: </label>
         <select
           name="enemyGroup"
           className="buttonSolid"
@@ -151,6 +151,16 @@ const LevelEditorComponent = (props) =>
           <label>The original rom has</label>
           <span> {leeg.defaultAmount} </span>
           <label>enemy(ies) in this group.</label>
+          <br />
+          <label>The maximum amount accepted is</label>
+          <span> {14} </span>
+          <label>enemy(ies) per group. </label>
+          <br />
+          <label>If you insert more than </label>
+          <span> {14}</span>
+          <label>
+            , the editor will remove the extra enemy(ies) to avoid the game to crash.
+          </label>
         </div>
         <div className="hintText">
           <label>
@@ -192,7 +202,7 @@ const LevelEditorComponent = (props) =>
           className="windowContentLine colLinedFlex"
         >
           <label>
-            Select Id: 
+            ID: 
           </label>
           <select
             name="enemyId"
@@ -259,6 +269,9 @@ const LevelEditorComponent = (props) =>
                 {enemy.positionX ? enemy.positionX : ""}
               onChange={props.handleEnemyDataChange}
             />
+            <span>
+              {"(Recommended Values from -230 to 550)"}
+            </span>
           </div>
           <div
             className="windowContentLine colLinedFlex"

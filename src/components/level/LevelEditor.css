@@ -27,7 +27,7 @@
 
 .level .enemyGroupText
 {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .level .enemyGroupText > span
@@ -36,6 +36,11 @@
   color: limegreen;
   font-size: 1em;
   margin: 0;
+}
+
+.hintText
+{
+  margin-bottom: 16px;
 }
 
 .hintText > label

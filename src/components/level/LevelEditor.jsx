@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import LevelEditorComponent from
     './LevelEditorComponent';
 
-import editorService from '../../service/EditorService';
+import editorService from
+    '../../service/EditorService';
 import fileService from "../../service/FileService";
 import romService from "../../service/ROMService";
 import levelEditorService from

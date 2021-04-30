@@ -2,12 +2,6 @@ const levelExpansionData =
 {
   levelsPointers:
   {
-    // level1:
-    // {
-    //   levelStartPointer: ["03", "00", "7A", "08"],
-    //   levelStartData: [],
-    //   indexToSubtract: 196608
-    // },
     level2:
     {
       levelStartPointer: ["03", "00", "52", "04",

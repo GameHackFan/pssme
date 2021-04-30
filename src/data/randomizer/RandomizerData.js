@@ -16,46 +16,55 @@ import level8EnemyGroup from
     "../level/Level8EnemyGroup";
 
 
+import easyRandomProfile from
+    "./EasyRandomProfile";
+import normalRandomProfile from
+    "./NormalRandomProfile";
+import hardRandomProfile from
+    "./HardRandomProfile";
+import savageRandomProfile from
+    "./SavageRandomProfile";
+import restInPainRandomProfile from
+    "./RestInPainRandomProfile";
 
 import randomizerEnemyStrategy from
-    "./RandomizerEnemyStrategy"
+    "./RandomizerEnemyStrategy";
 
 
 const randomizerData = 
 {
+  randomProfile:
+  {
+    easy: easyRandomProfile,
+    normal: normalRandomProfile,
+    hard: hardRandomProfile,
+    savage: savageRandomProfile,
+    restInPain: restInPainRandomProfile,
+  },
   enemyStrategy:
   {
     enemies:
     {
       label: "Randomize Any Normal Enemies",
       enemyKeys: randomizerEnemyStrategy.enemies,
-      randomActive: true,
-      randomMinAmount: 1,
-      randomMaxAmount: 3
     },
     enemiesNoDrop:
     {
       label:
         "Randomize Any Normal Enemies (No Thetis)",
       enemyKeys: randomizerEnemyStrategy.enemiesNoDrop,
-      randomActive: true,
-      randomMinAmount: 3,
-      randomMaxAmount: 7
     },
     dropEnemies:
     {
       label: "Randomize Any Thetis Only",
       enemyKeys: randomizerEnemyStrategy.dropEnemies,
-      randomActive: true,
-      randomMinAmount: 1,
-      randomMaxAmount: 3
     },
     dropFoodEnemiesOrBoss:
     {
       label:
         "Randomize Food Thetis or Bakene 1st Form",
       enemyKeys:
-          randomizerEnemyStrategy.dropFoodEnemiesOrBoss,
+        randomizerEnemyStrategy.dropFoodEnemiesOrBoss
     },
     crystalEnemies:
     {
@@ -65,29 +74,20 @@ const randomizerData =
     enemiesAndBosses: 
     {
       label: "Randomize Any Enemy Or Boss",
-      enemyKeys: randomizerEnemyStrategy.
-          enemiesAndBosses,
-      randomActive: true,
-      randomMinAmount: 1,
-      randomMaxAmount: 2
+      enemyKeys:
+        randomizerEnemyStrategy.enemiesAndBosses,
     },
     bossesOnly:
     {
       label: "Randomize Any Boss Only",
       enemyKeys: randomizerEnemyStrategy.bossesOnly,
-      randomActive: true,
-      randomMinAmount: 0,
-      randomMaxAmount: 1
     },
     ungrabbableEnemies:
     {
       label:
         "Ungrabable Enemies Only",
-      enemyKeys: randomizerEnemyStrategy.
-          ungrabbableEnemies,
-      randomActive: false,
-      randomMinAmount: 2,
-      randomMaxAmount: 5
+      enemyKeys:
+          randomizerEnemyStrategy.ungrabbableEnemies,
     },
     foodItems:
     {
@@ -102,9 +102,9 @@ const randomizerData =
   },
   positionStrategy:
   {
-    outsideLeft: [-300, -100],
+    outsideLeft: [-230, -100],
     inside: [80, 240],
-    outsideRight: [420, 620]
+    outsideRight: [420, 550]
   },
   levels:
   {

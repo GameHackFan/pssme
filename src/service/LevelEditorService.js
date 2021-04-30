@@ -88,21 +88,25 @@ class LevelEditorService
   addEnemy = (levelKey, enemyGroupKey) =>
   {
     let id = 0;
+    let eg = this.mainData[levelKey][enemyGroupKey];
+    let leeg = levelEditorLevels[levelKey].
+        groups[enemyGroupKey];
 
-    while(this.mainData[levelKey][enemyGroupKey][id])
+    while(eg[id])
       id++;
 
-    this.mainData[levelKey][enemyGroupKey][id] = {};
-    let e = this.mainData[levelKey][enemyGroupKey][id];
+    eg[id] = {};
+    let e = eg[id];
     e.enemyKey = "thetisLightBlue";
-    e.triggerPosition = 0;
+    e.triggerPosition = leeg.screenPositionStart;
     e.positionX = 0;
-    e.positionY = 200;
+    e.positionY = 210;
   }
 
   getEnemiesBytesFromGroup = (enemyGroup,
       levelEditorEnemyGroup) =>
   {
+    this.removeExtraEnemies(enemyGroup);
     let enemies = [];
 
     Object.keys(enemyGroup).forEach((ek) =>
@@ -184,6 +188,18 @@ class LevelEditorService
 
     if(eg && enemyId && eg[enemyId])
       delete eg[enemyId];
+  }
+
+  removeExtraEnemies = (enemyGroup) =>
+  {
+    let enemyMap = Object.keys(enemyGroup);
+
+    while(enemyMap.length > 14)
+    {
+      let key = enemyMap.pop();
+      delete enemyGroup[key];
+      enemyMap = Object.keys(enemyGroup);
+    }
   }
 
   fixEnemyData = (enemy, enemyGroup,

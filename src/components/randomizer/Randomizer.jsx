@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import RandomizerComponent from './RandomizerComponent';
 
-import editorService from '../../service/EditorService';
+import editorService from
+    '../../service/EditorService';
 import fileService from "../../service/FileService";
 import romService from "../../service/ROMService";
 import randomizerService from
@@ -69,6 +70,8 @@ class Randomizer extends Component
     }
     else if(name === "seed")
       randomizerService.setSeed(value);
+    else if(name === "randomProfile")
+      randomizerService.setRandomProfile(value);
 
     editorService.forceComponentToUpdateByKey(
         "randomizer");
@@ -170,6 +173,8 @@ class Randomizer extends Component
       <RandomizerComponent
         romReady={romService.isROMReady()}
         seed={randomizerService.getSeed()}
+        randomProfile=
+          {randomizerService.getRandomProfile()}
         level={level}
         enemyGroup={enemyGroup}
         groupData={groupData}

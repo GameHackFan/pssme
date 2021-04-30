@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import HeaderComponent from './HeaderComponent';
 
-import editorService from '../../service/EditorService';
+import editorService from
+    '../../service/EditorService';
 import zoomService from '../../service/ZoomService';
 
 

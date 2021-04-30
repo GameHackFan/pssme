@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ManagerComponent from './ManagerComponent';
 
-import editorService from '../../service/EditorService';
+import editorService from
+    '../../service/EditorService';
 import fileService from "../../service/FileService";
 import romService from "../../service/ROMService";
 

@@ -9,16 +9,16 @@ const levelDefaultData =
       "0":
       {
         enemyKey: "castorAndPolluxBoss1",
-        triggerPosition: 2200,
-        positionX: 522,
+        triggerPosition: 2300,
+        positionX: 400,   // 522
         positionY: 176
       },
       "1":
       {
         enemyKey: "castorAndPolluxBoss2",
-        triggerPosition: 2150,
-        positionX: 565,
-        positionY: 200
+        triggerPosition: 2300,
+        positionX: 450,   // 565
+        positionY: 210
       }
     },
     bossHelperGroup1: {},
@@ -41,9 +41,9 @@ const levelDefaultData =
       "0":
       {
         enemyKey: "morga",
-        triggerPosition: 512,
-        positionX: 416,
-        positionY: 208
+        triggerPosition: 550,
+        positionX: 380,
+        positionY: 200
       }
     },
     bossHelperGroup1: {},
@@ -160,8 +160,8 @@ const levelDefaultData =
       {
         enemyKey: "bakeneForm1",
         triggerPosition: 0,
-        positionX: 416,
-        positionY: 180    // Fix this
+        positionX: 440,
+        positionY: 184    // Fix this
       }
     },
     bossGroup2:
@@ -171,7 +171,7 @@ const levelDefaultData =
         enemyKey: "bakeneRunningAway",
         triggerPosition: 480,
         positionX: 256,
-        positionY: 180
+        positionY: 200
       }
     },
     group1: {},
@@ -182,7 +182,7 @@ const levelDefaultData =
         enemyKey: "bakeneForm2",
         triggerPosition: 0,
         positionX: 384,
-        positionY: 200    // Fix this
+        positionY: 140    // Fix this
       }
     },
     bossGroup4:
@@ -192,7 +192,7 @@ const levelDefaultData =
         enemyKey: "bakeneRunningAway",
         triggerPosition: 1952,
         positionX: 256,
-        positionY: 216
+        positionY: 200
       }
     },
     group2: {},

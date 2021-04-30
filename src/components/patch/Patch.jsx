@@ -44,6 +44,7 @@ class Patch extends Component
   {
     const extras = {};
     let patch = patchMap[this.state.patchKey];
+    console.log("Applying patch: " + patch.label);
     patch = patch ? patch.patch : null;
 
     if(patch)

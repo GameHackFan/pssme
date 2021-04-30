@@ -153,7 +153,7 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 64,
     defaultAmount: 1,
-    maxAmount: 0 // Adding enemies can crash the game.
+    maxAmount: 0, // Adding enemies can crash the game.
   },
 
 
@@ -172,7 +172,11 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 0,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup2:
   {
@@ -189,7 +193,11 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 0,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup3:
   {
@@ -206,7 +214,11 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 0,
     defaultAmount: 2,
-    maxAmount: 4
+    maxAmount: 4,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup4:
   {
@@ -223,7 +235,11 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 0,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup5:
   {
@@ -240,7 +256,11 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 0,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   },
   bossHelperGroup6:
   {
@@ -257,7 +277,11 @@ const level3EnemyGroup =
     levelEditorShiftX: 460,
     levelEditorShiftY: 0,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    forbiddenEnemies: [
+      "garobenGreenOrange", "garobenBrownGray",
+      "garobenGrayBrown", "garobenGreenBlue", "morga"
+    ]
   }
 }
 
