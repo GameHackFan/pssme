@@ -15,4 +15,4 @@ Version 0.3 Changes:
 
 
 
-OBS: The randomizer might not be perfect, but it is pretty solid already. Maybe more changes will happen in the future.
+OBS: The randomizer might not be perfect, but it is pretty solid already. Maybe more changes will happen in the future. A 0.4 version with some improvements will soon be released.
