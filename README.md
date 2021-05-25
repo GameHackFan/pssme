@@ -10,7 +10,7 @@ Version 0.4 Changes:
   - Fixed a bug with the position X range out of the limits of the game causing enemies placed on the left to spawn on the right.
   - Improvements on the level editor.
   - Minor changes and fixes.
-<br/><br/><br/>
+<br/><br/>
 
 Version 0.3 Changes:
 
@@ -19,6 +19,11 @@ Version 0.3 Changes:
   - Fixed a bug that was causing the randomizer to get wrong values.
   - Minor bug fixes.
   - Minor changes.
-<br/><br/><br/>
+<br/><br/>
+
+Version 0.2 Changes:
+
+- Added a patch to remove the CPU gameplay demo and applied it when applying the randomizer or the level editor customizations.
+<br/><br/>
 
 OBS: With the v0.4 update, the randomizer looks very solid now. Having extra colors for the sailors would be very interesting. Changing the way crystals are spent could also be a good feature to have. I have no idea how to do those things now, so maybe this editor will have more updates in the future.
