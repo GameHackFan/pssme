@@ -1,9 +1,16 @@
 # PSSME - Pretty Soldier Sailor Moon Editor (Arcade)
 An editor for the game Pretty Solider Sailor Moon (Arcade).
-
+<br/><br/>
 
 You can access the editor [here](https://gamehackfan.github.io/pssme/).
+<br/><br/>
 
+Version 0.4 Changes:
+  - Custom random mode enemy group bug fix.
+  - Fixed a bug with the position X range out of the limits of the game causing enemies placed on the left to spawn on the right.
+  - Improvements on the level editor.
+  - Minor changes and fixes.
+<br/><br/><br/>
 
 Version 0.3 Changes:
 
@@ -12,7 +19,6 @@ Version 0.3 Changes:
   - Fixed a bug that was causing the randomizer to get wrong values.
   - Minor bug fixes.
   - Minor changes.
+<br/><br/><br/>
 
-
-
-OBS: The randomizer might not be perfect, but it is pretty solid already. Maybe more changes will happen in the future. A 0.4 version with some improvements will soon be released.
+OBS: With the v0.4 update, the randomizer looks very solid now. Having extra colors for the sailors would be very interesting. Changing the way crystals are spent could also be a good feature to have. I have no idea how to do those things now, so maybe this editor will have more updates in the future.
