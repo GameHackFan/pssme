@@ -1,0 +1,11 @@
+// TODO: Not necessary changes, should I do it?
+
+- Change All Thetis Sprites.
+- Change All Criminal Running Sprites.
+- Change Zoisite Sprites.
+- Change All Yasha Witch Falling Sprite, add a shadows.
+- Change All Kyurene Sprites.
+- Change Kyurene 3rd Boss Sprites.
+- Improve the starting point of all group limits.
+  (It's better to be the previous one -160,
+  afects only visually the level editor).

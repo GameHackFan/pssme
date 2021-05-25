@@ -87,20 +87,13 @@ class LevelEditorService
 
   addEnemy = (levelKey, enemyGroupKey) =>
   {
-    let id = 0;
     let eg = this.mainData[levelKey][enemyGroupKey];
     let leeg = levelEditorLevels[levelKey].
         groups[enemyGroupKey];
-
-    while(eg[id])
-      id++;
-
-    eg[id] = {};
-    let e = eg[id];
-    e.enemyKey = "thetisLightBlue";
-    e.triggerPosition = leeg.screenPositionStart;
-    e.positionX = 0;
-    e.positionY = 210;
+    let id = Object.keys(eg).length.toString();
+    eg[id] =
+        this.createThetis(leeg.screenPositionStart);
+    return id;
   }
 
   getEnemiesBytesFromGroup = (enemyGroup,
@@ -187,7 +180,17 @@ class LevelEditorService
     let eg = this.mainData[levelKey][enemyGroupKey];
 
     if(eg && enemyId && eg[enemyId])
+    {
       delete eg[enemyId];
+      let ids = Object.keys(eg);
+      let e = ids.map((key) => {return eg[key];});
+      this.mainData[levelKey][enemyGroupKey] = {}
+      eg = this.mainData[levelKey][enemyGroupKey];
+      e.forEach((enemy, id) =>
+      {
+        eg[id.toString()] = enemy;
+      });
+    }
   }
 
   removeExtraEnemies = (enemyGroup) =>
@@ -212,6 +215,8 @@ class LevelEditorService
         enemy.positionY,
         levelEditorEnemyGroup.walkablePositionYTop,
         levelEditorEnemyGroup.walkablePositionYBottom);
+    enemy.positionX = this.getValidValue(
+        enemy.positionX, -130, 450);
   }
 
   forceEnemy = (levelKey, enemyGroupKey,
@@ -429,7 +434,7 @@ class LevelEditorService
     let thetis = {};
     thetis.enemyKey = "thetisLightBlue";
     thetis.triggerPosition = triggerPosition;
-    thetis.positionX = 500;
+    thetis.positionX = 450;
     thetis.positionY = 210;
     return thetis;
   }

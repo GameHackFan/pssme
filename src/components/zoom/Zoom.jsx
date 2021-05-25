@@ -24,10 +24,12 @@ class Zoom extends Component
 
   shouldComponentUpdate(nextProps, nextState)
   {
-    if(this.props.actionData !== nextProps.actionData
-        && nextProps.actionData)
+    const extras = nextProps.actionExtras;
+    
+    if(extras && extras.actionSuccessful)
     {
       this.applyPresetFile(nextProps.actionData);
+      delete nextProps.actionExtras.actionSuccessful;
     }
 
     return true;
@@ -105,5 +107,6 @@ class Zoom extends Component
     );
   } 
 }
+
 
 export default Zoom;

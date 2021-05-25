@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import RandomizerComponent from './RandomizerComponent';
+import RandomizerComponent from
+    './RandomizerComponent';
 
 import editorService from
     '../../service/EditorService';
@@ -36,12 +37,14 @@ class Randomizer extends Component
 
   shouldComponentUpdate(nextProps, nextState)
   {
-    if(this.props.actionData !== nextProps.actionData
-        && nextProps.actionData)
+    const extras = nextProps.actionExtras;
+
+    if(extras && extras.actionSuccessful)
     {
       this.applyPresetFile(nextProps.actionData);
+      delete nextProps.actionExtras.actionSuccessful;
     }
-
+    
     return true;
   }
 
@@ -109,7 +112,7 @@ class Randomizer extends Component
     let json = JSON.stringify(randomizerService.
         createRandomizerPreset(), null, "\t");
     let contentType = "text/json;charset=utf-8";
-    let filename = "randomizer_preset.json";
+    let filename = "pssme_randomizer_preset.json";
     editorService.downloadFile(
         json, filename, contentType);
   }
@@ -119,7 +122,7 @@ class Randomizer extends Component
     let json = JSON.stringify(randomizerService.
         createLevelEditorPreset(), null, "\t");
     let contentType = "text/json;charset=utf-8";
-    let filename = "level_editor_preset.json";
+    let filename = "pssme_level_editor_preset.json";
     editorService.downloadFile(
         json, filename, contentType);
   }
@@ -195,5 +198,6 @@ class Randomizer extends Component
     );
   } 
 }
+
 
 export default Randomizer;

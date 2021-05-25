@@ -5,8 +5,7 @@ import patchMap from "../../data/patch/PatchMap";
 import romService from "../../service/ROMService";
 import editorService from
     "../../service/EditorService";
-import fileService from
-    "../../service/FileService";
+import fileService from "../../service/FileService";
 
 
 class Patch extends Component
@@ -24,11 +23,13 @@ class Patch extends Component
 
   shouldComponentUpdate(nextProps, nextState)
   {
-    if(this.props.actionData !== nextProps.actionData
-        && nextProps.actionData)
+    const extras = nextProps.actionExtras;
+
+    if(extras && extras.actionSuccessful)
     {
       let patch = JSON.parse(nextProps.actionData);
       romService.applyPatch(patch);
+      delete nextProps.actionExtras.actionSuccessful;
     }
 
     return true;
@@ -87,7 +88,7 @@ class Patch extends Component
           {this.onApplyPatchFileChange}
       />
     );
-  } 
+  }
 }
 
 

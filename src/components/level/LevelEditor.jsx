@@ -9,6 +9,9 @@ import romService from "../../service/ROMService";
 import levelEditorService from
     "../../service/LevelEditorService";
 
+import levelEditorEnemies from
+    '../../data/level/LevelEditorEnemies';
+
 
 class LevelEditor extends Component
 {
@@ -16,6 +19,8 @@ class LevelEditor extends Component
   {
     super(props);
     this.state = {};
+    this.getFilteredEnemySelectList =
+        this.getFilteredEnemySelectList.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleEnemyDataChange =
         this.handleEnemyDataChange.bind(this);
@@ -39,10 +44,12 @@ class LevelEditor extends Component
 
   shouldComponentUpdate(nextProps, nextState)
   {
-    if(this.props.actionData !== nextProps.actionData
-        && nextProps.actionData)
+    const extras = nextProps.actionExtras;
+
+    if(extras && extras.actionSuccessful)
     {
       this.applyPresetFile(nextProps.actionData);
+      delete nextProps.actionExtras.actionSuccessful;
     }
 
     return true;
@@ -88,7 +95,9 @@ class LevelEditor extends Component
   onAddEnemyClick(event)
   {
     const {level, enemyGroup} = this.state;
-    levelEditorService.addEnemy(level, enemyGroup);
+    let id =
+        levelEditorService.addEnemy(level, enemyGroup);
+    this.setState({enemyId: id});
     editorService.forceComponentToUpdateByKey(
         "levelEditor");
   }
@@ -136,7 +145,7 @@ class LevelEditor extends Component
     let preset = levelEditorService.createPresetFile();
     let json = JSON.stringify(preset, null, "\t");
     let contentType = "text/json;charset=utf-8";
-    let filename = "level_editor_preset.json";
+    let filename = "pssme_level_editor_preset.json";
     editorService.downloadFile(json,
         filename, contentType);
   }
@@ -180,6 +189,34 @@ class LevelEditor extends Component
     }
   }
 
+  getFilteredEnemySelectList()
+  {
+    const filterString = this.state.filterEnemyString;
+    let enemieKeys = Object.keys(levelEditorEnemies);
+
+    // Removes the cameraFOV, groupLimit.
+    for(let i = 0; i < 2; i++)
+      enemieKeys.pop();
+    
+    if(filterString)
+    {
+      let {level, enemyGroup, enemyId} = this.state;
+      let selected = levelEditorService.getEnemy(
+          level, enemyGroup, enemyId);
+
+      let filtered = enemieKeys.filter((ek) =>
+      {
+        return levelEditorEnemies[ek].label.
+            toLowerCase().includes(filterString) ||
+            ek === selected.enemyKey;
+      });
+
+      return filtered;
+    }
+
+    return enemieKeys;
+  }
+
   render()
   {
     const {level, enemyGroup, enemyId} = this.state;
@@ -187,6 +224,8 @@ class LevelEditor extends Component
     return (
       <LevelEditorComponent
         romReady={romService.isROMReady()}
+        filterEnemyString=
+          {this.state.filterEnemyString}
         level={this.state.level}
         enemyGroup={this.state.enemyGroup}
         enemyId={enemyId}
@@ -194,6 +233,8 @@ class LevelEditor extends Component
           getEnemy(level, enemyGroup, enemyId)}
         enemies={levelEditorService.
           getEnemies(level, enemyGroup)}
+        enemySelectList=
+          {this.getFilteredEnemySelectList()}
         levelImage={this.state.levelImage}
         requestFile={editorService.requestFile}
         handleChange={this.handleChange}

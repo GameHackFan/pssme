@@ -25,11 +25,13 @@ class Manager extends Component
 
   shouldComponentUpdate(nextProps, nextState)
   {
-    if(this.props.actionData !== nextProps.actionData
-        && nextProps.actionData)
+    const extras = nextProps.actionExtras;
+
+    if(extras && extras.actionSuccessful)
     {
       romService.setROM(nextProps.actionData);
       editorService.forceComponentToUpdateByKey("app");
+      delete nextProps.actionExtras.actionSuccessful;
     }
 
     return true;
@@ -122,5 +124,6 @@ class Manager extends Component
     );
   } 
 }
+
 
 export default Manager;

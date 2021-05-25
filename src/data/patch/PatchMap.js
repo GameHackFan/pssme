@@ -6,9 +6,9 @@ import textImprovementGenericBossPatch from
     "./TextImprovementGenericBossPatch";
 import dontFreezeOnBossPatch from
     "./DontFreezeOnBossPatch";
-import removeCPUDemoPatch from
-    "./RemoveCPUDemoPatch";
-    
+import removeCPUDemoPatch from "./RemoveCPUDemoPatch";
+import boss1PositionImprovementPatch from
+    "./Boss1PositionImprovementPatch";    
 
 import randomizerTextPatch from
     "./RandomizerTextPatch";
@@ -91,6 +91,15 @@ const patchMap =
     text: "Title screen text patch for the Level " +
           "Editor. Used by the Level Editor",
     patch: levelEditorTextPatch,
+    show: false
+  },
+  boss1PositionImprovementPatch:
+  {
+    label: "1st Boss Position Improvement Patch",
+    text: "This patch changes the position of " +
+          "both Castor and Pollux so they don't " + "spawn close to each other making them " +
+          "easy to combo from the start. Used by the Level Editor",
+    patch: boss1PositionImprovementPatch,
     show: false
   }
 }

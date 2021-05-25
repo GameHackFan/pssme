@@ -102,9 +102,9 @@ const randomizerData =
   },
   positionStrategy:
   {
-    outsideLeft: [-230, -100],
+    outsideLeft: [-130, -70],
     inside: [80, 240],
-    outsideRight: [420, 550]
+    outsideRight: [390, 450]
   },
   levels:
   {
@@ -114,17 +114,6 @@ const randomizerData =
     labels: [
         "Level 1", "Level 2", "Level 3", "Level 4",
         "Level 5", "Level 6", "Level 7", "Level 8"]
-  },
-  forbiddenEnemies:
-  {
-    level2: [
-      "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
-    ],
-    level4: [
-      "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
-    ]
   },
   enemyGroups:
   {

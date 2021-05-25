@@ -3,6 +3,8 @@ const randomizerTextPatch =
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",
+  levelByteIndex: 147020,
+  levelSize: 6,
   seedByteIndex: 147026,
   seedSize: 20,
 	data:
@@ -22,7 +24,7 @@ const randomizerTextPatch =
       "53", "20", "65", "65", "20", "64", "39", "39",
       "39", "39", "39", "39", "39", "39", "39", "39",
       "39", "39", "39", "39", "39", "39", "39", "39",
-      "39", "39", "76", "00", "30", "20", "33", "2E",
+      "39", "39", "76", "00", "30", "20", "34", "2E",
       "00", "20"
     ]
 	}    

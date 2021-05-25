@@ -54,5 +54,6 @@ class ObjectUtil
   }
 }
 
+
 const objectUtil = new ObjectUtil();
 export default objectUtil;

@@ -19,10 +19,21 @@ class RandomizerService
   {
     this.mainData = this.createDefaultMainData();
     this.minSpawnTriggerPosition = 0;
+    this.mainData.hasRandomModeCustom = false;
+    this.randomizerLevelTexts =
+    {
+      easy: " Easy ",
+      normal: " Nor. ",
+      hard: " Hard ",
+      savage: " Sav. ",
+      restInPain: " RIP  ",
+      custom: " Cus. "
+    }
   }
 
   createRandomizerPatch = () =>
   {
+    this.mainData.hasRandomModeCustom = false;
     this.minSpawnTriggerPosition = 0;
     this.fixSeed();
     this.fixRandomProfile();
@@ -44,7 +55,6 @@ class RandomizerService
     let seed = this.mainData.seed;
     let randomizer = this.mulberry32Randomizer(seed);
     let egs = randomizerData.enemyGroups;
-    let nextLevelAddress;
     let randomizedData = {};
     randomizedData.patch = {};
     randomizedData.preset = {};
@@ -54,7 +64,7 @@ class RandomizerService
       let level = egs[lk];
       let presetLevel = this.forceGetField(
           randomizedData.preset, lk);
-      let enemyId = 0;
+      // let enemyId = 0;
 
       Object.keys(level).forEach((egk) =>
       {
@@ -170,9 +180,10 @@ class RandomizerService
     let random = this.getRandomIntValue(randomizer,
           0, keys.length - 1);
     let range = pss[keys[random]];
+    let min = enemyGroup.minimumPositionX ?
+        enemyGroup.minimumPositionX : range[0];
     let px = this.getRandomIntValue(randomizer,
-        range[0], range[1]);
-
+        min, range[1]);
     return px;
   }
 
@@ -217,20 +228,19 @@ class RandomizerService
   randomizeEnemyKey = (enemyGroup,
       enemyStrategy, randomizer) =>
   {
-    let forbidden = enemyGroup.forbiddenEnemies;
-    forbidden = forbidden ? forbidden : [];
-    let random = this.getRandomIntValue(randomizer,
-        0, enemyStrategy.enemyKeys.length - 1);
-    let enemyKey = enemyStrategy.enemyKeys[random];
-
-    while(forbidden.includes(enemyKey))
+    let fes = enemyGroup.forbiddenEnemies;
+    fes = fes ? fes : [];
+    let forbiddenSet = new Set(fes);
+    let vks = [];
+    enemyStrategy.enemyKeys.forEach((key) =>
     {
-      random = this.getRandomIntValue(randomizer,
-          0, enemyStrategy.enemyKeys.length - 1);
-      enemyKey = enemyStrategy.enemyKeys[random];
-    }
-    
-    return enemyKey;
+      if(!forbiddenSet.has(key))
+        vks.push(key);
+    });
+
+    let random = this.getRandomIntValue(
+        randomizer, 0, vks.length - 1);
+    return vks[random];
   }
 
   convertEnemyDataToBytes = (enemy) =>
@@ -263,12 +273,15 @@ class RandomizerService
   {
     let randomizerPatch = this.createRandomizerPatch();
     romService.applyPatch(
-          patchMap.featuresAndFixesPatch.patch);
+        patchMap.featuresAndFixesPatch.patch);
     romService.applyPatch(
-      patchMap.textImprovementPatch.patch);
+        patchMap.textImprovementPatch.patch);
     romService.applyPatch(
-      patchMap.dontFreezeOnBossPatch.patch);
-    this.applyRandomizerTextPatch();
+        patchMap.boss1PositionImprovementPatch.patch);
+    romService.applyPatch(
+        patchMap.dontFreezeOnBossPatch.patch);
+    romService.applyPatch(
+        this.createRandomizerTextPatch());
     romService.applyPatch(
         patchMap.removeCPUDemoPatch.patch);
     romService.applyPatch(randomizerPatch);
@@ -280,31 +293,48 @@ class RandomizerService
         createBossFightsFixPatch());
   }
 
-  applyRandomizerTextPatch = () =>
+  createRandomizerTextPatch = () =>
   {
     let patch = Object.assign({},
         patchMap.randomizerTextPatch.patch);
     patch.data = Object.assign({},
         patchMap.randomizerTextPatch.patch.data);
-    let seedText = this.mainData.seed.toString();
-    let fixCharCount =
-        patch.seedSize - seedText.length;
-    seedText = "*".repeat(fixCharCount / 2) +
-        seedText + "*".repeat(fixCharCount / 2);
-    seedText += "*".repeat(
-        patch.seedSize - seedText.length);
+    let sbs = this.getSeedTextBytes(patch);
+    let lbs = this.getRandomProfileTextBytes();
+    patch.data[patch.seedByteIndex.toString()] = sbs;
+    patch.data[patch.levelByteIndex.toString()] = lbs;
+    return patch;
+  }
+
+  getRandomProfileTextBytes = () =>
+  {
+    let p = this.mainData.hasRandomModeCustom ?
+        "custom" : this.mainData.randomProfile;
+    let lt = this.randomizerLevelTexts[p];
+    return this.convertStringToROMBytes(lt);
+  }
+
+  getSeedTextBytes = (patch) =>
+  {
+    let st = this.mainData.seed.toString();
+    let fixCharCount = patch.seedSize - st.length;
+    st = "*".repeat(fixCharCount / 2) +
+        st + "*".repeat(fixCharCount / 2);
+    st += "*".repeat(patch.seedSize - st.length);
+    return this.convertStringToROMBytes(st);
+  }
+
+  convertStringToROMBytes = (text) =>
+  {
     let bytes = [];
 
-    for(let i = 0; i < seedText.length - 1; i += 2)
+    for(let i = 0; i < text.length - 1; i += 2)
     {
-      bytes.push(
-          seedText.charCodeAt(i + 1).toString(16));
-      bytes.push(seedText.charCodeAt(i).toString(16));
+      bytes.push(text.charCodeAt(i + 1).toString(16));
+      bytes.push(text.charCodeAt(i).toString(16));
     }
 
-    patch.data[patch.seedByteIndex.toString()] = bytes;
-
-    romService.applyPatch(patch);
+    return bytes;
   }
 
   updateMainData = (levelKey, enemyGroupKey,
@@ -464,7 +494,7 @@ class RandomizerService
       let rdes = randomizerData.enemyStrategy;
       Object.keys(rdes).forEach((es) =>
       {
-        let amount = parseInt(eg[e]);
+        let amount = parseInt(eg[es]);
         amount = isNaN(amount) ? 0 : amount;
         enemyAmount += amount;
       });
@@ -475,6 +505,8 @@ class RandomizerService
             randomProfile, randomizer);
         eg.randomMode = "random";
       }
+      else
+        this.mainData.hasRandomModeCustom = true;
     }
     else if(eg.randomMode !== "disabled")
     {
@@ -589,4 +621,3 @@ class RandomizerService
 
 const randomizerService = new RandomizerService();
 export default randomizerService;
-

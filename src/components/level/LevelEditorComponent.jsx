@@ -66,7 +66,7 @@ const LevelEditorComponent = (props) =>
     );
   });
 
-  Object.keys(levelEditorEnemies).forEach((ek) =>
+  props.enemySelectList.forEach((ek) =>
   {
     let label = levelEditorEnemies[ek].label;
 
@@ -216,9 +216,22 @@ const LevelEditorComponent = (props) =>
             {idOptions}
           </select>
         </div>
-        <div
-          style={editStyle}
-        >
+        <div style={editStyle}>
+          <div
+            className="windowContentLine colLinedFlex"
+          >
+            <label>
+              Enemy / Item Filter: 
+            </label>
+            <input
+              type="text"
+              name="filterEnemyString"
+              className="textfield"
+              value={props.filterEnemyString ? 
+                  props.filterEnemyString : ""}
+              onChange={props.handleChange}
+            />
+          </div>
           <div
             className="windowContentLine colLinedFlex"
           >
@@ -270,7 +283,7 @@ const LevelEditorComponent = (props) =>
               onChange={props.handleEnemyDataChange}
             />
             <span>
-              {"(Recommended Values from -230 to 550)"}
+              {"(Recommended Values from -130 to 450)"}
             </span>
           </div>
           <div
