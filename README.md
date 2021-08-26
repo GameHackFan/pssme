@@ -5,6 +5,9 @@ An editor for the game Pretty Solider Sailor Moon (Arcade).
 You can access the editor [here](https://gamehackfan.github.io/pssme/).
 <br/><br/>
 
+I didn't realize that a random rom for any level over easy might generate way too much bosses when you're facing the boss of the level. I will fix soon.
+<br/><br/>
+
 Version 0.4 Changes:
   - Custom random mode enemy group bug fix.
   - Fixed a bug with the position X range out of the limits of the game causing enemies placed on the left to spawn on the right.
