@@ -5,7 +5,7 @@ An editor for the game Pretty Solider Sailor Moon (Arcade).
 You can access the editor [here](https://gamehackfan.github.io/pssme/).
 <br/><br/>
 
-I didn't realize that a random rom for any level over easy might generate way too much bosses when you're facing the boss of the level. I will fix soon.
+I didn't realize that a random rom for any level over easy might generate way too much bosses when you're facing the boss of the level. I will fix this bug soon.
 <br/><br/>
 
 Version 0.4 Changes:
