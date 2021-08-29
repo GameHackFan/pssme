@@ -5,7 +5,12 @@ An editor for the game Pretty Solider Sailor Moon (Arcade).
 You can access the editor [here](https://gamehackfan.github.io/pssme/).
 <br/><br/>
 
-I didn't realize that a random rom for any level over easy might generate way too much bosses when you're facing the boss of the level. I will fix this bug soon.
+Version 0.5 Changes:
+  - Fixed a bug that was allowing a lot of bosses to spawn in a boss fight.
+  - Fixed a bug in the level editor preset created by the randomizer where the value for the 1st boss was crashing the level editor.
+  - Improvements in all random profiles.
+  - Minor bug fixes.
+  - Minor changes.
 <br/><br/>
 
 Version 0.4 Changes:
@@ -29,4 +34,4 @@ Version 0.2 Changes:
 - Added a patch to remove the CPU gameplay demo and applied it when applying the randomizer or the level editor customizations.
 <br/><br/>
 
-OBS: With the v0.4 update, the randomizer looks very solid now. Having extra colors for the sailors would be very interesting. Changing the way crystals are spent could also be a good feature to have. I have no idea how to do those things now, so maybe this editor will have more updates in the future.
+OBS: With the v0.5 update, the randomizer looks very solid now. Having extra colors for the sailors would be very interesting. Changing the way crystals are spent could also be a good feature to have. I have no idea how to do those things now, so maybe this editor will have more updates in the future.
