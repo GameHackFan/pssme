@@ -21,16 +21,47 @@ const normalRandomProfile =
     foodItems:
     {
       randomMinAmount: 0,
+      randomMaxAmount: 2
+    }
+  },
+  bossHelperType1Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 4,
+      randomMaxAmount: 4
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 0,
       randomMaxAmount: 1
     }
   },
-  specialEnemyStrategy:
+  bossHelperType2Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 4,
+      randomMaxAmount: 4
+    },
+    bossesOnly:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
+    }
+  },
+  finalBossStrategy:
   {
     ungrabbableEnemies:
     {
       randomMinAmount: 1,
       randomMaxAmount: 1
-    }
+    },
   }
 }
 

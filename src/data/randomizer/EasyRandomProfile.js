@@ -24,13 +24,39 @@ const easyRandomProfile =
       randomMaxAmount: 2
     }
   },
-  specialEnemyStrategy:
+  bossHelperType1Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 4,
+      randomMaxAmount: 4
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 1,
+      randomMaxAmount: 1
+    }
+  },
+  bossHelperType2Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 4,
+      randomMaxAmount: 4
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 1,
+      randomMaxAmount: 1
+    }
+  },
+  finalBossStrategy:
   {
     ungrabbableEnemies:
     {
       randomMinAmount: 0,
       randomMaxAmount: 0
-    }
+    },
   }
 }
 

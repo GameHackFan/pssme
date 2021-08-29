@@ -18,24 +18,55 @@ const savageRandomProfile =
       randomMinAmount: 2,
       randomMaxAmount: 3
     },
-    enemiesAndBosses: 
-    {
-      randomMinAmount: 0,
-      randomMaxAmount: 1
-    },
     bossesOnly:
     {
       randomMinAmount: 2,
-      randomMaxAmount: 2
+      randomMaxAmount: 3
+    },
+    foodItems:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
     }
   },
-  specialEnemyStrategy:
+  bossHelperType1Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 4,
+      randomMaxAmount: 4
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
+    }
+  },
+  bossHelperType2Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 3,
+      randomMaxAmount: 3
+    },
+    bossesOnly:
+    {
+      randomMinAmount: 1,
+      randomMaxAmount: 2
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
+    }
+  },
+  finalBossStrategy:
   {
     ungrabbableEnemies:
     {
       randomMinAmount: 2,
       randomMaxAmount: 4
-    }
+    },
   }
 }
 

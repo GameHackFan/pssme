@@ -64,7 +64,6 @@ class RandomizerService
       let level = egs[lk];
       let presetLevel = this.forceGetField(
           randomizedData.preset, lk);
-      // let enemyId = 0;
 
       Object.keys(level).forEach((egk) =>
       {
@@ -466,8 +465,6 @@ class RandomizerService
     {
       this.fixLevel(e, randomProfile, randomizer);
     });
-    this.fixFinalBossEnemyGroup(
-        randomProfile, randomizer);
   }
 
   fixLevel = (levelKey, randomProfile, randomizer) =>
@@ -478,13 +475,15 @@ class RandomizerService
 
     Object.keys(lgs).forEach((egk) =>
     {
-      this.fixEnemyGroup(l, egk,
-          randomProfile, randomizer);
+      let rdeg = lgs[egk];
+      let rsts = randomProfile[rdeg.specialProfile];
+      rsts = rsts ? rsts : randomProfile.enemyStrategy;
+      this.fixEnemyGroup(l, egk, rsts, randomizer);
     });
   }
 
   fixEnemyGroup = (level, enemyGroupKey,
-      randomProfile, randomizer) =>
+      randomStrategies, randomizer) =>
   {
     let eg = this.forceGetField(level, enemyGroupKey);
     
@@ -502,7 +501,7 @@ class RandomizerService
       if(enemyAmount === 0)
       {
         this.fixEnemyStrategy(eg,
-            randomProfile, randomizer);
+            randomStrategies, randomizer);
         eg.randomMode = "random";
       }
       else
@@ -511,37 +510,19 @@ class RandomizerService
     else if(eg.randomMode !== "disabled")
     {
       this.fixEnemyStrategy(eg,
-            randomProfile, randomizer)
+          randomStrategies, randomizer)
       eg.randomMode = "random";
     }
   }
 
-  fixFinalBossEnemyGroup = (
-      randomProfile, randomizer) =>
-  {
-    let fbg = this.mainData.level8.finalBossGroup;
-
-    if(fbg.randomMode === "random")
-    {
-      let es = randomProfile.specialEnemyStrategy.
-          ungrabbableEnemies;
-      this.mainData.level8.finalBossGroup = {};
-      fbg = this.mainData.level8.finalBossGroup;
-      fbg.randomMode = "random";
-      fbg.ungrabbableEnemies =
-          this.getRandomIntValue(randomizer,
-          es.randomMinAmount, es.randomMaxAmount);
-    }
-  }
-
   fixEnemyStrategy = (enemyGroup,
-      randomProfile, randomizer) =>
+      randomStrategies, randomizer) =>
   {
     objectUtil.removeAllProperties(enemyGroup);
-    let enemyStrategies = randomProfile.enemyStrategy;
-    Object.keys(enemyStrategies).forEach((e) =>
+    
+    Object.keys(randomStrategies).forEach((e) =>
     {
-      let es = enemyStrategies[e];
+      let es = randomStrategies[e];
       enemyGroup[e] = this.getRandomIntValue(
           randomizer, es.randomMinAmount, es.randomMaxAmount);
     });
@@ -571,24 +552,43 @@ class RandomizerService
     let randomizerData = this.randomizeAllEnemies();
     let preset = {};
     preset.type = "levelEditor";
-    preset.data = randomizerData.preset;
-    let levels = ["level1", "level2", "level3",
-        "level4", "level5", "level6", "level7",
-        "level7", "level7", "level7", "level7",
-        "level8", "level8"];
-    let groups = ["bossGroup", "bossGroup",
-        "bossGroup", "bossGroup", "bossGroup",
-        "bossGroup", "bossGroup1", "bossGroup2",
-        "bossGroup3", "bossGroup4", "bossGroup5",
-        "bossGroup1", "finalBossGroup"];
+    preset.data = randomizerData.preset;    
+    let bossGroups = new Set(["bossGroup", "bossGroup1",
+        "bossGroup2", "bossGroup3", "bossGroup4",
+        "bossGroup5", "finalBossGroup"]);
     
-    for(let i = 0; i < groups.length; i++)
+    Object.keys(preset.data).forEach((lk) =>
     {
-      let pg = preset.data[levels[i]][groups[i]];
-      pg = Object.assign(pg,
-          levelDefaultData[levels[i]][groups[i]]);
-    }
- 
+      let pl = preset.data[lk];
+      let lddl = levelDefaultData[lk];
+      
+      Object.keys(pl).forEach((egk) =>
+      {
+        let pg = pl[egk];
+        let fixedPG = {};
+        let index = 0;
+
+        if(bossGroups.has(egk)) // Force level default boss
+          pg = Object.assign(pg, lddl[egk])
+
+        Object.keys(pg).forEach((id) => // Fix all enemy ids
+        {
+          // Fix a bug on level editor caused by castor both
+          if(pg[id].enemyKey === "castorAndPolluxBossBoth")
+          {
+            fixedPG[index] = Object.assign({}, pg[id]);
+            fixedPG[index++].enemyKey = "castorAndPolluxBoss1";
+            fixedPG[index] = Object.assign({}, pg[id]);
+            fixedPG[index++].enemyKey = "castorAndPolluxBoss2";
+          }
+          else
+            fixedPG[index++] = pg[id];
+        });
+
+        preset.data[lk][egk] = fixedPG; 
+      });
+    });
+
     return preset;
   }
 

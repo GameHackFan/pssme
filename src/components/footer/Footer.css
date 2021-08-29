@@ -9,17 +9,30 @@
   max-height: 90px;
 
   margin-top: auto;
-  margin-left: auto;
 }
 
-.footer > label
+.footer > div
+{
+  margin-top: auto;
+  margin-bottom: auto;
+  min-width: 100%;
+}
+
+.footer label, .footer a
 {
   color: #cd1226;
   font-weight: bold;
   font-size: 1.4em;
+}
 
-  margin-top: auto;
-  margin-bottom: auto;
+.footer a
+{
+  margin-left: 12px;
+  margin-right: auto;
+}
+
+.footer label
+{
   margin-left: auto;
   margin-right: 12px;
 }

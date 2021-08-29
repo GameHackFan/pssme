@@ -985,7 +985,7 @@ const levelEditorEnemies =
   },
   donut:            // Donut.
   {
-    label: "donut",
+    label: "Donut",
     width: 14,
     height: 10,
     pivotX: 8, 

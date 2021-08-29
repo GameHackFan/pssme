@@ -18,15 +18,10 @@ const hardRandomProfile =
       randomMinAmount: 1,
       randomMaxAmount: 3
     },
-    enemiesAndBosses: 
-    {
-      randomMinAmount: 1,
-      randomMaxAmount: 1
-    },
     bossesOnly:
     {
       randomMinAmount: 1,
-      randomMaxAmount: 1
+      randomMaxAmount: 2
     },
     foodItems:
     {
@@ -34,13 +29,44 @@ const hardRandomProfile =
       randomMaxAmount: 1
     }
   },
-  specialEnemyStrategy:
+  bossHelperType1Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 4,
+      randomMaxAmount: 4
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
+    }
+  },
+  bossHelperType2Strategy:
+  {
+    enemiesNoDrop:
+    {
+      randomMinAmount: 3,
+      randomMaxAmount: 3
+    },
+    bossesOnly:
+    {
+      randomMinAmount: 1,
+      randomMaxAmount: 1
+    },
+    dropEnemies:
+    {
+      randomMinAmount: 0,
+      randomMaxAmount: 1
+    }
+  },
+  finalBossStrategy:
   {
     ungrabbableEnemies:
     {
       randomMinAmount: 1,
       randomMaxAmount: 2
-    }
+    },
   }
 }
 

@@ -93,6 +93,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 1,
     maxAmount: 2,
+    specialProfile: "bossHelperType2Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
@@ -113,6 +114,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 3,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
@@ -133,6 +135,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 4,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
@@ -153,6 +156,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 1,
     maxAmount: 4,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
@@ -173,6 +177,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 4,
+    specialProfile: "bossHelperType2Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
@@ -193,6 +198,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 2,
     maxAmount: 4,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
@@ -213,6 +219,7 @@ const level2EnemyGroup =
     levelEditorLimitEnd: 864,
     defaultAmount: 1,
     maxAmount: 4,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",

@@ -10,7 +10,7 @@ import "./App.css";
 const AppComponent = (props) =>
 {
   return (
-    <div className="app rowLinedFlex">
+    <div className="app">
       <Header />
       <Editor />
       <Footer />

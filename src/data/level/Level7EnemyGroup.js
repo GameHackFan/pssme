@@ -143,7 +143,8 @@ const level7EnemyGroup =
     levelEditorLimitEnd: 2672,
     levelEditorShiftX: 76,
     defaultAmount: 2,
-    maxAmount: 3
+    maxAmount: 3,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup2:
   {
@@ -159,7 +160,8 @@ const level7EnemyGroup =
     levelEditorLimitEnd: 2672,
     levelEditorShiftX: 76,
     defaultAmount: 2,
-    maxAmount: 3
+    maxAmount: 3,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup3:
   {
@@ -175,7 +177,8 @@ const level7EnemyGroup =
     levelEditorLimitEnd: 2672,
     levelEditorShiftX: 76,
     defaultAmount: 1,
-    maxAmount: 3
+    maxAmount: 3,
+    specialProfile: "bossHelperType1Strategy"
   },
 }
 

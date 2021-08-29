@@ -222,7 +222,7 @@ const level4EnemyGroup =
     levelEditorLimitEnd: 1376,
     levelEditorShiftX: 460,
     defaultAmount: 1,
-    maxAmount: 0,
+    maxAmount: 0, // Adding enemies can cause unwanted behavior (maybe crash?)
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"

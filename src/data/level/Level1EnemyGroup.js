@@ -45,7 +45,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2144,
     levelEditorLimitEnd: 2656,
     defaultAmount: 2,
-    maxAmount: 1
+    maxAmount: 1,
+    specialProfile: "bossHelperType2Strategy"
   },
   bossHelperGroup1:
   {
@@ -60,7 +61,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup2:
   {
@@ -75,7 +77,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup3:
   {
@@ -90,7 +93,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType2Strategy"
   },
   bossHelperGroup4:
   {
@@ -105,7 +109,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup5:
   {
@@ -120,7 +125,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup6:
   {
@@ -135,7 +141,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy"
   },
   bossHelperGroup7:
   {
@@ -150,7 +157,8 @@ const level1EnemyGroup =
     levelEditorLimitStart: 2336,
     levelEditorLimitEnd: 2656,
     defaultAmount: 1,
-    maxAmount: 2
+    maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy"
   }
 }
 

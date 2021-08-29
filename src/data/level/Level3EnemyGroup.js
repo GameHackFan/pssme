@@ -173,6 +173,7 @@ const level3EnemyGroup =
     levelEditorShiftY: 0,
     defaultAmount: 1,
     maxAmount: 2,
+    specialProfile: "bossHelperType2Strategy",
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"
@@ -194,6 +195,7 @@ const level3EnemyGroup =
     levelEditorShiftY: 0,
     defaultAmount: 1,
     maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"
@@ -215,6 +217,7 @@ const level3EnemyGroup =
     levelEditorShiftY: 0,
     defaultAmount: 2,
     maxAmount: 4,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"
@@ -236,6 +239,7 @@ const level3EnemyGroup =
     levelEditorShiftY: 0,
     defaultAmount: 1,
     maxAmount: 2,
+    specialProfile: "bossHelperType2Strategy",
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"
@@ -257,6 +261,7 @@ const level3EnemyGroup =
     levelEditorShiftY: 0,
     defaultAmount: 1,
     maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"
@@ -278,6 +283,7 @@ const level3EnemyGroup =
     levelEditorShiftY: 0,
     defaultAmount: 1,
     maxAmount: 2,
+    specialProfile: "bossHelperType1Strategy",
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
       "garobenGrayBrown", "garobenGreenBlue", "morga"

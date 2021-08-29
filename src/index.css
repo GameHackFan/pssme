@@ -127,7 +127,7 @@
   display: none !important;
 }
 
-.rowLinedFex
+.rowLinedFlex
 {
   display: flex;
   flex-direction: column;
