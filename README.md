@@ -35,3 +35,5 @@ Version 0.2 Changes:
 <br/><br/>
 
 OBS: With the v0.5 update, the randomizer looks very solid now. Having extra colors for the sailors would be very interesting. Changing the way crystals are spent could also be a good feature to have. I have no idea how to do those things now, so maybe this editor will have more updates in the future.
+
+New Data: Apparently Morga and Garoben can bug sometimes, if you reach the 2nd level and game over, when you start a new game and there is a Morga is before the end of the second level, she will be waiting for the rose trigger and end up bugging, same for Garoben, if you reach the 4th level and game over, if you start a new game and a Garoben appears before the 4th level, she will also bug when she gets knocked down. I also found how to add some extra pallets for the enemies, so expect some enemies with more HP and new colors for the enemies.
