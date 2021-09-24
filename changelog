@@ -40,7 +40,6 @@ Version 0.4 Changes:
 
 
 Version 0.3 Changes:
-
   - Added random profiles allowing the randomizer to generate easier and harder roms (Easy, Normal, Hard, Savage, RIP - Rest in Pain).
   - Improved the way some bosses are forbidden in some parts of the game.
   - Fixed a bug that was causing the randomizer to get wrong values.
@@ -49,7 +48,6 @@ Version 0.3 Changes:
 
 
 Version 0.2 Changes:
-
 - Added a patch to remove the CPU gameplay demo and applied it when applying the randomizer or the level editor customizations.
 
 
