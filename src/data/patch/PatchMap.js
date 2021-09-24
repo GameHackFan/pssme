@@ -10,6 +10,9 @@ import removeCPUDemoPatch from "./RemoveCPUDemoPatch";
 import boss1PositionImprovementPatch from
     "./Boss1PositionImprovementPatch";    
 
+import enemyColorExpansionPatch from
+    "./EnemyColorExpansionPatch";
+
 import randomizerTextPatch from
     "./RandomizerTextPatch";
 import levelEditorTextPatch from
@@ -64,6 +67,20 @@ const patchMap =
           "any boss or sub boss. Used by the " +
           "Seed Randomizer.",
     patch: dontFreezeOnBossPatch,
+    show: true
+  },
+  enemyColorExpansionPatch:
+  {
+    label: "Enemy Color Expansion Patch",
+    text: "This patch will add extra enemy color " +
+          "palletes over some pallets that look " +
+          "empty. To allow some enemies to have " +
+          "new palletes, some original pallets " +
+          "had to be moved to another location. " +
+          "The new palletes are: 1 Furau, " +
+          "2 Oniwabandana, 1 Tesuni, 1 Castor " + 
+          "and Pollux, 3 Kyurene and 2 Bakene.",
+    patch: enemyColorExpansionPatch,
     show: true
   },
   removeCPUDemoPatch:

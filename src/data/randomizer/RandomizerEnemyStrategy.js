@@ -2,112 +2,87 @@ let enemiesNoDrop =
 [
   "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
-  "furauOrangeGreen", "furauPurpleBlue",
+  "furauExtra1", "furauExtra1",
   "furauBrownYellow", "furauGreenBlue",
 
   "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
-  "furauOrangeGreen", "furauPurpleBlue",
+  "furauExtra1", "furauExtra1",
   "furauBrownYellow", "furauGreenBlue",
 
   "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
-  "furauOrangeGreen", "furauPurpleBlue",
+  "furauExtra1", "furauExtra1",
   "furauBrownYellow", "furauGreenBlue",
 
 
   "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
   "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
-  "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
+  "oniwabandanaExtra1", "oniwabandanaExtra2",
   "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
   "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
-  "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
+  "oniwabandanaExtra1", "oniwabandanaExtra2",
 
-  "oniwabandanaBrownBlueRunning",
-  "oniwabandanaWhiteBlueRunning",
-  "oniwabandanaPinkBlueRunning",
-  "oniwabandanaWhiteBrownRunning",
-  "oniwabandanaBrownBlueRunning",
-  "oniwabandanaWhiteBlueRunning",
-  "oniwabandanaPinkBlueRunning",
-  "oniwabandanaWhiteBrownRunning",
-  "oniwabandanaBrownBlueRunning",
-  "oniwabandanaWhiteBlueRunning",
-  "oniwabandanaPinkBlueRunning",
-  "oniwabandanaWhiteBrownRunning",
+  "oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
+  "oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
+  "oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
+  "oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
+  "oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
+  "oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
 
 
   "tesuniBrownOrange", "tesuniGrayPurple",
   "tesuniBrownPink", "tesuniGreenPink",
-  "tesuniBrownOrangeUnused",
+  "tesuniExtra1",
   "tesuniBrownOrange", "tesuniGrayPurple",
   "tesuniBrownPink", "tesuniGreenPink",
-  "tesuniBrownOrangeUnused",
+  "tesuniExtra1",
 
   "tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
   "tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
-  "tesuniBrownOrangeUnusedRacket",
+  "tesuniExtra1Racket",
   "tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
   "tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
-  "tesuniBrownOrangeUnusedRacket",
+  "tesuniExtra1Racket",
 
-  "tesuniGrayPurpleBomber",
-  "tesuniBrownPinkBomber", "tesuniGreenPinkBomber",
-  "tesuniBrownOrangeUnusedBomber",
+  "tesuniGrayPurpleBomber", "tesuniBrownPinkBomber",
+  "tesuniGreenPinkBomber", "tesuniExtra1Bomber",
 
 
-  "castorAndPolluxBluePurple",
-  "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink",
-  "castorAndPolluxBluePurple",
-  "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink",
+  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+  "castorAndPolluxExtra1",
 
-  "castorAndPolluxBluePurple",
-  "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink",
-  "castorAndPolluxBluePurple",
-  "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink",
+  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+  "castorAndPolluxExtra1",
 
-  "castorAndPolluxBluePurple",
-  "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink",
-  "castorAndPolluxBluePurple",
-  "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink",
+  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+  "castorAndPolluxExtra1",
+
+  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+  "castorAndPolluxExtra1",
+
+  "castorAndPolluxLightGreenBlue", "castorAndPolluxGreenBlue",
+  "castorAndPolluxBeigePink", "castorAndPolluxExtra1",
 
 
   "yashaWitchBrownBlue", "yashaWitchPurpleGreen",
   "yashaWitchPinkPurple", "yashaWitchBrownPink",
-  "yashaWitchBrownGreenUnused",
-  "yashaWitchGreenBlueUnused",
-  "yashaWitchBrownPurpleUnused",
-  "yashaWitchBrownYellowUnused",
+  "yashaWitchBrownGreenUnused", "yashaWitchGreenBlueUnused",
+  "yashaWitchBrownPurpleUnused", "yashaWitchBrownYellowUnused",
 
-  "yashaWitchBrownBlueStabbing",
-  "yashaWitchPurpleGreenStabbing",
-  "yashaWitchPinkPurpleStabbing",
-  "yashaWitchBrownPinkStabbing",
-  "yashaWitchBrownGreenUnusedStabbing",
-  "yashaWitchGreenBlueUnusedStabbing",
-  "yashaWitchBrownPurpleUnusedStabbing",
-  "yashaWitchBrownYellowUnusedStabbing",
+  "yashaWitchBrownBlueStabbing", "yashaWitchPurpleGreenStabbing",
+  "yashaWitchPinkPurpleStabbing", "yashaWitchBrownPinkStabbing",
+  "yashaWitchBrownGreenUnusedStabbing", "yashaWitchGreenBlueUnusedStabbing",
+  "yashaWitchBrownPurpleUnusedStabbing", "yashaWitchBrownYellowUnusedStabbing",
 
-  "yashaWitchBrownBlueFalling",
-  "yashaWitchPurpleGreenFalling",
-  "yashaWitchPinkPurpleFalling",
-  "yashaWitchBrownPinkFalling",
-  "yashaWitchBrownGreenUnusedFalling",
-  "yashaWitchGreenBlueUnusedFalling",
-  "yashaWitchBrownPurpleUnusedFalling",
-  "yashaWitchBrownYellowUnusedFalling",
+  "yashaWitchBrownBlueFalling", "yashaWitchPurpleGreenFalling",
+  "yashaWitchPinkPurpleFalling", "yashaWitchBrownPinkFalling",
+  "yashaWitchBrownGreenUnusedFalling", "yashaWitchGreenBlueUnusedFalling",
+  "yashaWitchBrownPurpleUnusedFalling", "yashaWitchBrownYellowUnusedFalling",
 
 
   "yashaHumanBrownGreen", "yashaHumanGreenBlue",
@@ -149,18 +124,12 @@ let enemiesNoDrop =
   "criminalBlackBlue", "criminalBlackPurple",
   "criminalPurpleRed", "criminalGreenBrown",
 
-  "criminalBlackBlueRunning",
-  "criminalBlackPurpleRunning",
-  "criminalPurpleRedRunning",
-  "criminalGreenBrownRunning",
-  "criminalBlackBlueRunning",
-  "criminalBlackPurpleRunning",
-  "criminalPurpleRedRunning",
-  "criminalGreenBrownRunning",
-  "criminalBlackBlueRunning",
-  "criminalBlackPurpleRunning",
-  "criminalPurpleRedRunning",
-  "criminalGreenBrownRunning"
+  "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
+  "criminalPurpleRedRunning", "criminalGreenBrownRunning",
+  "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
+  "criminalPurpleRedRunning", "criminalGreenBrownRunning",
+  "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
+  "criminalPurpleRedRunning", "criminalGreenBrownRunning"
 ];
 
 let foodItem =
@@ -245,33 +214,33 @@ const randomizerEnemyStrategy =
 
       
       "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
+      "kyureneGreenGreen", "kyureneExtra1",
+      "kyureneExtra2", "kyureneExtra3",
 
       "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
+      "kyureneGreenGreen", "kyureneExtra1",
+      "kyureneExtra2", "kyureneExtra3",
 
       "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
+      "kyureneGreenGreen", "kyureneExtra1",
+      "kyureneExtra2", "kyureneExtra3",
 
       "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen",
+      "kyureneGreenGreen", "kyureneExtra1",
+      "kyureneExtra2", "kyureneExtra3",
 
 
-      "garobenGreenOrange", "garobenGrayBrown", "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
       
-      "garobenGreenOrange", "garobenGrayBrown", "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
 
-      "garobenGreenOrange", "garobenGrayBrown", "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
 
-      "garobenGreenOrange", "garobenGrayBrown", "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
 
 
       "zoisite", "zoisite", "zoisite", "zoisite",
@@ -294,42 +263,60 @@ const randomizerEnemyStrategy =
       "kunzite", "kunzite", "kunzite", "kunzite",
 
 
-      "bakeneForm3", "bakeneForm3", "bakeneForm3",
-      "bakeneForm3", "bakeneForm3", "bakeneForm3",
-      "bakeneForm3", "bakeneForm3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
 
-      "bakeneForm3", "bakeneForm3", "bakeneForm3",
-      "bakeneForm3", "bakeneForm3", "bakeneForm3",
-      "bakeneForm3", "bakeneForm3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
 
-      "bakeneForm3", "bakeneForm3", "bakeneForm3",
-      "bakeneForm3", "bakeneForm3", "bakeneForm3",
-      "bakeneForm3", "bakeneForm3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
+
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3",
+      "bakeneForm3", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
   ]),
   bossesOnly:
   [
-    "castorAndPolluxBossBoth",
-    "castorAndPolluxBossBoth",
-    "castorAndPolluxBossBoth",
-    "castorAndPolluxBossBoth",
+    "castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
+    "castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
+    "castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
 
-    "morga", "morga", "morga", "morga",
+    "morga", "morga", "morga", "morga", "morga", "morga",
     
     "kyureneRedGreen", "kyurenePinkPurple",
-    "kyureneGreenGreen", "kyurenePinkPurple",
+    "kyureneGreenGreen", "kyureneExtra1",
+    "kyureneExtra2", "kyureneExtra3",
 
-    "garobenGreenOrange", "garobenGrayBrown", "garobenBrownGray", "garobenGreenBlue",
+    "garobenGreenOrange", "garobenGrayBrown",
+    "garobenBrownGray", "garobenGreenBlue",
+    "garobenGrayBrown", "garobenBrownGray", 
 
-    "zoisite", "zoisite", "zoisite", "zoisite",
+    "zoisite", "zoisite", "zoisite",
+    "zoisite", "zoisite", "zoisite",
 
-    "kunzite", "kunzite", "kunzite", "kunzite",
+    "kunzite", "kunzite", "kunzite",
+    "kunzite", "kunzite", "kunzite",
 
-    "bakeneForm3", "bakeneForm3",
-    "bakeneForm3", "bakeneForm3"
+    "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
+    "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3"
   ],
   ungrabbableEnemies:
   [
-    "morga", "bakeneForm3", "kunzite", "queenBeryl"
+    "morga", "morga", "morga",
+
+    "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
+
+    "kunzite", "kunzite", "kunzite",
+
+    "queenBeryl", "queenBeryl", "queenBeryl"
   ],
   foodItems: foodItem.slice(),
   anyItem: foodItem.slice().concat([

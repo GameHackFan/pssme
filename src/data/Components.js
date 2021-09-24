@@ -7,7 +7,8 @@ import PlayerHealth from
     '../components/playerhealth/PlayerHealth';
 import LevelEditor from
     '../components/level/LevelEditor';
-
+import PalleteEditor from
+    '../components/pallete/PalleteEditor';
 
 const components = 
 {
@@ -16,7 +17,8 @@ const components =
   patch: Patch,
   randomizer: Randomizer,
   playerHealth: PlayerHealth,
-  levelEditor: LevelEditor
+  levelEditor: LevelEditor,
+  palleteEditor: PalleteEditor
 }
 
 export default components;

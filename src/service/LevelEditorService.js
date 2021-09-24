@@ -1,6 +1,5 @@
 import romService from "./ROMService";
-import levelExpansionService from
-    "./LevelExpansionService";
+import levelExpansionService from "./LevelExpansionService";
 
 import objectUtil from '../data/ObjectUtil';
 
@@ -8,20 +7,16 @@ import imageMap from "../data/ImageMap";
 import mergeImages from '../api/merge-images.js';
 import patchMap from "../data/patch/PatchMap";
 import enemyBytesMap from "../data/EnemyBytesMap";
-import levelDefaultData from
-    "../data/level/LevelDefaultData";
-import levelEditorLevels from
-    "../data/level/LevelEditorLevels";
-import levelEditorEnemies from
-    "../data/level/LevelEditorEnemies";
+import levelDefaultData from "../data/level/LevelDefaultData";
+import levelEditorLevels from "../data/level/LevelEditorLevels";
+import levelEditorEnemies from "../data/level/LevelEditorEnemies";
 
 
 class LevelEditorService
 {
   constructor()
   {
-    this.mainData = objectUtil.deepCopy(
-        levelDefaultData);
+    this.mainData = objectUtil.deepCopy(levelDefaultData);
   }
 
   createLevelEditorPatch = () =>
@@ -52,17 +47,13 @@ class LevelEditorService
         let leeg = lel.groups[egk];
 
         let byteStart = leeg.levelEditorStartPosition;
-        byteStart = isNaN(byteStart) ?
-            leeg.startPosition : byteStart;
+        byteStart = isNaN(byteStart) ? leeg.startPosition : byteStart;
         let byteEnd = leeg.levelEditorEndPosition;
-        byteEnd = isNaN(byteEnd) ?
-            leeg.endPosition : byteEnd;
+        byteEnd = isNaN(byteEnd) ? leeg.endPosition : byteEnd;
         let byteKey = byteStart + "_" + byteEnd;
 
-        this.forceEnemy(lk, egk,
-            Object.keys(enemyGroup).length);
-        let enemies = this.getEnemiesBytesFromGroup(
-            enemyGroup, leeg);
+        this.forceEnemy(lk, egk, Object.keys(enemyGroup).length);
+        let enemies = this.getEnemiesBytesFromGroup(enemyGroup, leeg);
         
         patch.data[byteKey] = enemies;
       });
@@ -71,12 +62,10 @@ class LevelEditorService
 
   applyData = () =>
   {
-    romService.applyPatch(
-        patchMap.levelEditorTextPatch.patch);
-    romService.applyPatch(
-        patchMap.removeCPUDemoPatch.patch);
-    romService.applyPatch(
-        this.createLevelEditorPatch());
+    romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
+    romService.applyPatch(patchMap.levelEditorTextPatch.patch);
+    romService.applyPatch(patchMap.removeCPUDemoPatch.patch);
+    romService.applyPatch(this.createLevelEditorPatch());
     romService.applyPatch(
         levelExpansionService.createLevelFixPatch());
     romService.applyPatch(levelExpansionService.
@@ -88,16 +77,13 @@ class LevelEditorService
   addEnemy = (levelKey, enemyGroupKey) =>
   {
     let eg = this.mainData[levelKey][enemyGroupKey];
-    let leeg = levelEditorLevels[levelKey].
-        groups[enemyGroupKey];
+    let leeg = levelEditorLevels[levelKey].groups[enemyGroupKey];
     let id = Object.keys(eg).length.toString();
-    eg[id] =
-        this.createThetis(leeg.screenPositionStart);
+    eg[id] = this.createThetis(leeg.screenPositionStart);
     return id;
   }
 
-  getEnemiesBytesFromGroup = (enemyGroup,
-      levelEditorEnemyGroup) =>
+  getEnemiesBytesFromGroup = (enemyGroup, levelEditorEnemyGroup) =>
   {
     this.removeExtraEnemies(enemyGroup);
     let enemies = [];
@@ -105,23 +91,19 @@ class LevelEditorService
     Object.keys(enemyGroup).forEach((ek) =>
     {
       let enemy = enemyGroup[ek];
-      this.fixEnemyData(enemy,
-          enemyGroup, levelEditorEnemyGroup);
-      let enemyBytes =
-          enemyBytesMap[enemy.enemyKey].slice();
+      this.fixEnemyData(enemy, enemyGroup, levelEditorEnemyGroup);
+      let enemyBytes = enemyBytesMap[enemy.enemyKey].slice();
 
       let hex = romService.convertNumberToROMBytes(
           enemy.triggerPosition, 2);
       enemyBytes[0] = hex[0];
       enemyBytes[1] = hex[1];
       
-      hex = romService.convertNumberToROMBytes(
-          enemy.positionX, 2);
+      hex = romService.convertNumberToROMBytes(enemy.positionX, 2);
       enemyBytes[10] = hex[0];
       enemyBytes[11] = hex[1];
 
-      hex = romService.convertNumberToROMBytes(
-          enemy.positionY, 2);
+      hex = romService.convertNumberToROMBytes(enemy.positionY, 2);
       enemyBytes[12] = hex[0];
       enemyBytes[13] = hex[1];
       enemies.push(enemyBytes);
@@ -130,35 +112,28 @@ class LevelEditorService
     return enemies;
   }
 
-  setEnemyKey = (levelKey,
-      enemyGroupKey, enemyId, enemyKey) =>
+  setEnemyKey = (levelKey, enemyGroupKey, enemyId, enemyKey) =>
   {
-    let enemy = this.getEnemy(
-        levelKey, enemyGroupKey, enemyId);
+    let enemy = this.getEnemy(levelKey, enemyGroupKey, enemyId);
     enemy.enemyKey = enemyKey;
   }
 
   setEnemyTriggerPosition = (levelKey,
       enemyGroupKey, enemyId, triggerPosition) =>
   {
-    let enemy = this.getEnemy(
-        levelKey, enemyGroupKey, enemyId);
+    let enemy = this.getEnemy(levelKey, enemyGroupKey, enemyId);
     enemy.triggerPosition = triggerPosition;
   }
 
-  setEnemyPositionX = (levelKey,
-      enemyGroupKey, enemyId, positionX) =>
+  setEnemyPositionX = (levelKey, enemyGroupKey, enemyId, positionX) =>
   {
-    let enemy = this.getEnemy(
-        levelKey, enemyGroupKey, enemyId);
+    let enemy = this.getEnemy(levelKey, enemyGroupKey, enemyId);
     enemy.positionX = positionX;
   }
 
-  setEnemyPositionY = (levelKey,
-      enemyGroupKey, enemyId, positionY) =>
+  setEnemyPositionY = (levelKey, enemyGroupKey, enemyId, positionY) =>
   {
-    let enemy = this.getEnemy(
-        levelKey, enemyGroupKey, enemyId);
+    let enemy = this.getEnemy(levelKey, enemyGroupKey, enemyId);
     enemy.positionY = positionY;
   }
 
@@ -186,10 +161,7 @@ class LevelEditorService
       let e = ids.map((key) => {return eg[key];});
       this.mainData[levelKey][enemyGroupKey] = {}
       eg = this.mainData[levelKey][enemyGroupKey];
-      e.forEach((enemy, id) =>
-      {
-        eg[id.toString()] = enemy;
-      });
+      e.forEach((enemy, id) => {eg[id.toString()] = enemy;});
     }
   }
 
@@ -205,22 +177,20 @@ class LevelEditorService
     }
   }
 
-  fixEnemyData = (enemy, enemyGroup,
-      levelEditorEnemyGroup) =>
+  fixEnemyData = (enemy, enemyGroup, levelEditorEnemyGroup) =>
   {
     enemy.triggerPosition = this.getValidValue(
-        enemy.triggerPosition,        levelEditorEnemyGroup.screenPositionStart,
+        enemy.triggerPosition,
+        levelEditorEnemyGroup.screenPositionStart,
         levelEditorEnemyGroup.screenPositionEnd);    
     enemy.positionY = this.getValidValue(
         enemy.positionY,
         levelEditorEnemyGroup.walkablePositionYTop,
         levelEditorEnemyGroup.walkablePositionYBottom);
-    enemy.positionX = this.getValidValue(
-        enemy.positionX, -130, 450);
+    enemy.positionX = this.getValidValue(enemy.positionX, -130, 450);
   }
 
-  forceEnemy = (levelKey, enemyGroupKey,
-      enemyAmount) =>
+  forceEnemy = (levelKey, enemyGroupKey, enemyAmount) =>
   {
     if(enemyAmount < 1)
     {
@@ -231,25 +201,21 @@ class LevelEditorService
     }
   }
 
-  createLevelImage = (levelKey, enemyGroupKey,
-      enemyId, callback) =>
+  createLevelImage = (levelKey, enemyGroupKey, enemyId, callback) =>
   {
     let level = this.getField(this.mainData, levelKey);
     let eg = this.getField(level, enemyGroupKey);
-    let lel = this.getField(
-        levelEditorLevels, levelKey);
-    let leeg = this.getField(
-        lel.groups, enemyGroupKey);
+    let lel = this.getField(levelEditorLevels, levelKey);
+    let leeg = this.getField(lel.groups, enemyGroupKey);
 
     if(!this.isAnythingEmpty([level, lel, leeg]))
     {
       let enemy = this.getField(eg, enemyId);
       let mergeData = [];
-      mergeData = mergeData.concat(
-          this.getLevelMergeData(leeg));
+      mergeData = mergeData.concat(this.getLevelMergeData(leeg));
       mergeData = mergeData.concat(
           this.getNonSelectedEnemiesMergeData(
-              enemyId, enemy, eg, leeg));
+          enemyId, enemy, eg, leeg));
       mergeData = mergeData.concat(
           this.getSelectedEnemyMergeData(enemy, leeg));
       mergeData = mergeData.concat(
@@ -289,8 +255,7 @@ class LevelEditorService
       if(id !== enemyId)
       {
         let nsEnemy = enemyGroup[id];
-        let enemyData = this.getEnemyMergeObject(
-            nsEnemy, leeg);
+        let enemyData = this.getEnemyMergeObject(nsEnemy, leeg);
         enemyData.opacity = 0.7;
         mergeData.push(enemyData);
       }
@@ -298,27 +263,23 @@ class LevelEditorService
     return mergeData;
   }
 
-  getGroupLimitsMergeData = (levelEditorLevel,
-      levelEditorEnemyGroup) =>
+  getGroupLimitsMergeData = (levelEditorLevel, levelEditorEnemyGroup) =>
   {
     let mergeData = [];
     let leeg = levelEditorEnemyGroup;
     let lee = levelEditorEnemies;
     let glImg = imageMap["groupLimit"];
     let glHW = lee["groupLimit"].width / 2;
-    let shiftX = this.tryGetField(leeg,
-        "levelEditorShiftX", 0) - glHW;
-    let py = this.tryGetField(leeg,
-        "levelEditorShiftY", 0);
+    let shiftX = this.tryGetField(leeg, "levelEditorShiftX", 0) - glHW;
+    let py = this.tryGetField(leeg, "levelEditorShiftY", 0);
     mergeData.push({src: glImg, opacity: 0.7, y: py,
-      x: leeg.levelEditorLimitStart + shiftX});
+        x: leeg.levelEditorLimitStart + shiftX});
     mergeData.push({src: glImg, opacity: 0.7, y: py,
-      x: leeg.levelEditorLimitEnd + shiftX});
+        x: leeg.levelEditorLimitEnd + shiftX});
     return mergeData;
   }
 
-  getEnemyMergeObject = (
-      enemy, levelEditorEnemyGroup) =>
+  getEnemyMergeObject = (enemy, levelEditorEnemyGroup) =>
   {
     let lee = levelEditorEnemies;
     let leEnemy = lee[enemy.enemyKey];
@@ -329,15 +290,13 @@ class LevelEditorService
       let enemyImg = imageMap[enemy.enemyKey];
       let px = parseInt(enemy.triggerPosition);
       px = px ? px : 0;
-      let shift = this.tryGetField(leeg,
-          "levelEditorShiftX", 0);
+      let shift = this.tryGetField(leeg, "levelEditorShiftX", 0);
       shift -= lee["cameraFOV"].width / 2;
       px = px + shift;
       shift = parseInt(enemy.positionX);
       shift = shift ? shift : 0;
       px = (px + shift) - leEnemy.pivotX;
-      shift = this.tryGetField(leeg,
-          "levelEditorShiftY", 0);
+      shift = this.tryGetField(leeg, "levelEditorShiftY", 0);
       let py = this.getValidValue(enemy.positionY,
           leeg.walkablePositionYTop,
           leeg.walkablePositionYBottom);
@@ -348,8 +307,7 @@ class LevelEditorService
     return {};
   }
 
-  getCameraFOVMergeData = (
-      enemy, levelEditorEnemyGroup) =>
+  getCameraFOVMergeData = (enemy, levelEditorEnemyGroup) =>
   {
     let lee = levelEditorEnemies;
     let leEnemy = lee[enemy.enemyKey];
@@ -357,41 +315,27 @@ class LevelEditorService
     if(enemy && leEnemy)
     {
       let leeg = levelEditorEnemyGroup;
-      let shift = this.tryGetField(leeg,
-          "levelEditorShiftX", 0);
+      let shift = this.tryGetField(leeg, "levelEditorShiftX", 0);
       shift -= lee["cameraFOV"].width / 2;
       let px = parseInt(enemy.triggerPosition);
       px = px ? px + shift : shift;
-      let py = this.tryGetField(leeg,
-          "levelEditorShiftY", 0);
-      return [{src: imageMap["cameraFOV"],
-          opacity: 0.7, x: px, y: py}];
+      let py = this.tryGetField(leeg, "levelEditorShiftY", 0);
+      return [{src: imageMap["cameraFOV"], opacity: 0.7, x: px, y: py}];
     }
 
     return [];
   }
 
-  getSelectedEnemyMergeData = (
-    enemy, levelEditorEnemyGroup) =>
+  getSelectedEnemyMergeData = (enemy, levelEditorEnemyGroup) =>
   {
-    let emo = this.getEnemyMergeObject(enemy,
-        levelEditorEnemyGroup);
-    
-    if(!this.isAnythingEmpty([emo]))
-      return [emo];
-
-    return [];
+    let emo = this.getEnemyMergeObject(enemy, levelEditorEnemyGroup);
+    return !this.isAnythingEmpty([emo]) ? [emo] : [];
   }
 
   getLevelMergeData = (levelEditorEnemyGroup) =>
   {
-    let image =
-        imageMap[levelEditorEnemyGroup.background];
-
-    if(image)
-      return [{src: image, x: 0, y: 0}];
-    
-    return [];
+    let image = imageMap[levelEditorEnemyGroup.background];
+    return image ? [{src: image, x: 0, y: 0}] : [];
   }
 
   tryGetField = (object, field, def) =>
@@ -404,11 +348,8 @@ class LevelEditorService
   {
     let json = JSON.parse(presetFile);
 
-    if(json && json.data &&
-        json.type === "levelEditor")
-    {
+    if(json && json.data && json.type === "levelEditor")
       this.mainData = json.data;
-    }
   }
 
   createPresetFile = () =>
@@ -464,8 +405,7 @@ class LevelEditorService
 
   setMainDataToDefault = () =>
   {
-    this.mainData = objectUtil.deepCopy(
-        levelDefaultData);
+    this.mainData = objectUtil.deepCopy(levelDefaultData);
   }
 }
 

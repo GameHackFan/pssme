@@ -183,12 +183,12 @@ class LevelEditor extends Component
       console.log(e.message);
       console.log(e);
       const extras = {};
-      extras.errorMessage =
-          "Invalid JSON preset file!";
+      extras.errorMessage = "Invalid JSON preset file!";
       this.props.onActionResult(extras);
     }
   }
 
+  // Put this method inside levelEditorService
   getFilteredEnemySelectList()
   {
     const filterString = this.state.filterEnemyString;

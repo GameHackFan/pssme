@@ -45,6 +45,9 @@ class ComponentService
     im.levelEditor = this.createComponentInfo(
         "windowContent", "Level Editor",
         false, true);
+    im.palleteEditor = this.createComponentInfo(
+        "windowContent", "Color Pallete Editor",
+        false, true);
     return im;
   }
 

@@ -44,6 +44,8 @@ import furauBrownYellow from
     "../images/enemy/furau_brown_yellow.png";
 import furauGreenBlue from
     "../images/enemy/furau_green_blue.png";
+import furauExtra1 from
+    "../images/enemy/furau_extra_1.png";
 
 import oniwabandanaBrownBlueIdle from
     "../images/enemy/oniwabandana_brown_blue_i.png";
@@ -53,6 +55,10 @@ import oniwabandanaPinkBlueIdle from
     "../images/enemy/oniwabandana_pink_blue_i.png";
 import oniwabandanaWhiteBrownIdle from
     "../images/enemy/oniwabandana_white_brown_i.png";
+import oniwabandanaExtra1Idle from
+    "../images/enemy/oniwabandana_extra_1_i.png";
+import oniwabandanaExtra2Idle from
+    "../images/enemy/oniwabandana_extra_2_i.png";
 
 import oniwabandanaBrownBlue from
     "../images/enemy/oniwabandana_brown_blue.png";
@@ -62,6 +68,10 @@ import oniwabandanaPinkBlue from
     "../images/enemy/oniwabandana_pink_blue.png";
 import oniwabandanaWhiteBrown from
     "../images/enemy/oniwabandana_white_brown.png";
+import oniwabandanaExtra1 from
+    "../images/enemy/oniwabandana_extra_1.png";
+import oniwabandanaExtra2 from
+    "../images/enemy/oniwabandana_extra_2.png";
 
 import oniwabandanaBrownBlueRunning from
     "../images/enemy/oniwabandana_brown_blue_r.png";
@@ -71,6 +81,10 @@ import oniwabandanaPinkBlueRunning from
     "../images/enemy/oniwabandana_pink_blue_r.png";
 import oniwabandanaWhiteBrownRunning from
     "../images/enemy/oniwabandana_white_brown_r.png";
+import oniwabandanaExtra1Running from
+    "../images/enemy/oniwabandana_extra_1_r.png";
+import oniwabandanaExtra2Running from
+    "../images/enemy/oniwabandana_extra_2_r.png";
 
 import tesuniBrownOrange from
     "../images/enemy/tesuni_brown_orange.png";
@@ -80,6 +94,8 @@ import tesuniBrownPink from
     "../images/enemy/tesuni_brown_pink.png";
 import tesuniGreenPink from
     "../images/enemy/tesuni_green_pink.png";
+import tesuniExtra1 from
+    "../images/enemy/tesuni_extra_1.png";
 
 import tesuniBrownOrangeRacket from
     "../images/enemy/tesuni_brown_orange_r.png";
@@ -89,6 +105,8 @@ import tesuniBrownPinkRacket from
     "../images/enemy/tesuni_brown_pink_r.png";
 import tesuniGreenPinkRacket from
     "../images/enemy/tesuni_green_pink_r.png";
+import tesuniExtra1Racket from
+    "../images/enemy/tesuni_extra_1_r.png";
 
 import tesuniBrownOrangeBomber from
     "../images/enemy/tesuni_brown_orange_b.png";
@@ -98,6 +116,8 @@ import tesuniBrownPinkBomber from
     "../images/enemy/tesuni_brown_pink_b.png";
 import tesuniGreenPinkBomber from
     "../images/enemy/tesuni_green_pink_b.png";
+import tesuniExtra1Bomber from
+    "../images/enemy/tesuni_extra_1_b.png";
 
 import castorAndPolluxBluePurple from
 	"../images/enemy/castor_pollux_blue_purple.png";
@@ -107,6 +127,8 @@ import castorAndPolluxGreenBlue from
 	"../images/enemy/castor_pollux_green_blue.png";
 import castorAndPolluxBeigePink from
 	"../images/enemy/castor_pollux_beige_pink.png";
+import castorAndPolluxExtra1 from
+	"../images/enemy/castor_pollux_extra_1.png";
 
 import yashaWitchBrownBlue from
     "../images/enemy/yasha_witch_brown_blue.png";
@@ -226,7 +248,13 @@ import kyureneGreenGreen from
     "../images/enemy/kyurene_green_green.png";
 import kyureneRedGreen3rdBoss from
     "../images/enemy/kyurene_red_green_3rd_boss.png";
-  
+import kyureneExtra1 from
+    "../images/enemy/kyurene_extra_1.png";
+import kyureneExtra2 from
+    "../images/enemy/kyurene_extra_2.png";
+import kyureneExtra3 from
+    "../images/enemy/kyurene_extra_3.png";
+
 import garobenGreenOrange from
     "../images/enemy/garoben_green_orange.png";
 import garobenGrayBrown from
@@ -240,6 +268,8 @@ import morga from "../images/enemy/morga.png";
 import zoisite from "../images/enemy/zoisite.png";
 import kunzite from "../images/enemy/kunzite.png";
 import bakene from "../images/enemy/bakene.png";
+import bakeneExtra1 from "../images/enemy/bakene_extra_1.png";
+import bakeneExtra2 from "../images/enemy/bakene_extra_2.png";
 
 import bakeneForm1 from
     "../images/enemy/bakene_form_1.png";
@@ -320,105 +350,79 @@ const imageMap =
   furauPurpleBlue: furauPurpleBlue,
   furauBrownYellow: furauBrownYellow,
   furauGreenBlue: furauGreenBlue,
+  furauExtra1: furauExtra1,
 
-  oniwabandanaBrownBlueIdle:
-    oniwabandanaBrownBlueIdle,
-  oniwabandanaWhiteBlueIdle:
-    oniwabandanaWhiteBlueIdle,
-  oniwabandanaPinkBlueIdle:
-    oniwabandanaPinkBlueIdle,
-  oniwabandanaWhiteBrownIdle:
-    oniwabandanaWhiteBrownIdle,
+  oniwabandanaBrownBlueIdle: oniwabandanaBrownBlueIdle,
+  oniwabandanaWhiteBlueIdle: oniwabandanaWhiteBlueIdle,
+  oniwabandanaPinkBlueIdle: oniwabandanaPinkBlueIdle,
+  oniwabandanaWhiteBrownIdle: oniwabandanaWhiteBrownIdle,
+  oniwabandanaExtra1Idle: oniwabandanaExtra1Idle,
+  oniwabandanaExtra2Idle: oniwabandanaExtra2Idle,
 
   oniwabandanaBrownBlue: oniwabandanaBrownBlue,
   oniwabandanaWhiteBlue: oniwabandanaWhiteBlue,
   oniwabandanaPinkBlue: oniwabandanaPinkBlue,
   oniwabandanaWhiteBrown: oniwabandanaWhiteBrown,
+  oniwabandanaExtra1: oniwabandanaExtra1,
+  oniwabandanaExtra2: oniwabandanaExtra2,
 
-  oniwabandanaBrownBlueRunning:
-    oniwabandanaBrownBlueRunning,
-  oniwabandanaWhiteBlueRunning:
-    oniwabandanaWhiteBlueRunning,
-  oniwabandanaPinkBlueRunning:
-    oniwabandanaPinkBlueRunning,
-  oniwabandanaWhiteBrownRunning:
-    oniwabandanaWhiteBrownRunning,
+  oniwabandanaBrownBlueRunning: oniwabandanaBrownBlueRunning,
+  oniwabandanaWhiteBlueRunning: oniwabandanaWhiteBlueRunning,
+  oniwabandanaPinkBlueRunning: oniwabandanaPinkBlueRunning,
+  oniwabandanaWhiteBrownRunning: oniwabandanaWhiteBrownRunning,
+  oniwabandanaExtra1Running: oniwabandanaExtra1Running,
+  oniwabandanaExtra2Running: oniwabandanaExtra2Running,
 
   tesuniBrownOrange: tesuniBrownOrange,
   tesuniGrayPurple: tesuniGrayPurple,
   tesuniBrownPink: tesuniBrownPink,
   tesuniGreenPink: tesuniGreenPink,
-  tesuniBrownOrangeUnused: tesuniBrownOrange,
+  tesuniExtra1: tesuniExtra1,
 
   tesuniBrownOrangeRacket: tesuniBrownOrangeRacket,
   tesuniGrayPurpleRacket: tesuniGrayPurpleRacket,
   tesuniBrownPinkRacket: tesuniBrownPinkRacket,
   tesuniGreenPinkRacket: tesuniGreenPinkRacket,
-  tesuniBrownOrangeUnusedRacket:
-    tesuniBrownOrangeRacket,
+  tesuniExtra1Racket: tesuniExtra1Racket,
 
   tesuniBrownOrangeBomber: tesuniBrownOrangeBomber,
   tesuniGrayPurpleBomber: tesuniGrayPurpleBomber,
   tesuniBrownPinkBomber: tesuniBrownPinkBomber,
   tesuniGreenPinkBomber: tesuniGreenPinkBomber,
-  tesuniBrownOrangeUnusedBomber:
-    tesuniBrownOrangeBomber,
+  tesuniExtra1Bomber: tesuniExtra1Bomber,
 
-  castorAndPolluxBluePurple:
-    castorAndPolluxBluePurple,
-  castorAndPolluxLightGreenBlue:
-    castorAndPolluxLightGreenBlue,
-  castorAndPolluxGreenBlue:
-    castorAndPolluxGreenBlue,
-  castorAndPolluxBeigePink:
-    castorAndPolluxBeigePink,
+  castorAndPolluxBluePurple: castorAndPolluxBluePurple,
+  castorAndPolluxLightGreenBlue: castorAndPolluxLightGreenBlue,
+  castorAndPolluxGreenBlue: castorAndPolluxGreenBlue,
+  castorAndPolluxBeigePink: castorAndPolluxBeigePink,
+  castorAndPolluxExtra1: castorAndPolluxExtra1,
 
   yashaWitchBrownBlue: yashaWitchBrownBlue,
   yashaWitchPurpleGreen: yashaWitchPurpleGreen,
   yashaWitchPinkPurple: yashaWitchPinkPurple,
   yashaWitchBrownPink: yashaWitchBrownPink,
-  yashaWitchBrownGreenUnused:
-    yashaWitchBrownGreenUnused,
-  yashaWitchGreenBlueUnused:
-    yashaWitchGreenBlueUnused,
-  yashaWitchBrownPurpleUnused:
-    yashaWitchBrownPurpleUnused,
-  yashaWitchBrownYellowUnused:
-    yashaWitchBrownYellowUnused,
+  yashaWitchBrownGreenUnused: yashaWitchBrownGreenUnused,
+  yashaWitchGreenBlueUnused: yashaWitchGreenBlueUnused,
+  yashaWitchBrownPurpleUnused: yashaWitchBrownPurpleUnused,
+  yashaWitchBrownYellowUnused: yashaWitchBrownYellowUnused,
 
-  yashaWitchBrownBlueStabbing:
-    yashaWitchBrownBlueStabbing,
-  yashaWitchPurpleGreenStabbing:
-    yashaWitchPurpleGreenStabbing,
-  yashaWitchPinkPurpleStabbing:
-    yashaWitchPinkPurpleStabbing,
-  yashaWitchBrownPinkStabbing:
-    yashaWitchBrownPinkStabbing,
-  yashaWitchBrownGreenUnusedStabbing:
-    yashaWitchBrownGreenUnusedStabbing,
-  yashaWitchGreenBlueUnusedStabbing:
-    yashaWitchGreenBlueUnusedStabbing,
-  yashaWitchBrownPurpleUnusedStabbing:
-    yashaWitchBrownPurpleUnusedStabbing,
-  yashaWitchBrownYellowUnusedStabbing:
-    yashaWitchBrownYellowUnusedStabbing,
+  yashaWitchBrownBlueStabbing: yashaWitchBrownBlueStabbing,
+  yashaWitchPurpleGreenStabbing: yashaWitchPurpleGreenStabbing,
+  yashaWitchPinkPurpleStabbing: yashaWitchPinkPurpleStabbing,
+  yashaWitchBrownPinkStabbing: yashaWitchBrownPinkStabbing,
+  yashaWitchBrownGreenUnusedStabbing: yashaWitchBrownGreenUnusedStabbing,
+  yashaWitchGreenBlueUnusedStabbing: yashaWitchGreenBlueUnusedStabbing,
+  yashaWitchBrownPurpleUnusedStabbing: yashaWitchBrownPurpleUnusedStabbing,
+  yashaWitchBrownYellowUnusedStabbing: yashaWitchBrownYellowUnusedStabbing,
 
-  yashaWitchBrownBlueFalling:
-    yashaWitchBrownBlueFalling,
-  yashaWitchPurpleGreenFalling:
-    yashaWitchPurpleGreenFalling,
-  yashaWitchPinkPurpleFalling:
-    yashaWitchPinkPurpleFalling,
-  yashaWitchBrownPinkFalling:
-    yashaWitchBrownPinkFalling,
-  yashaWitchBrownGreenUnusedFalling:
-    yashaWitchBrownGreenUnusedFalling,
-  yashaWitchGreenBlueUnusedFalling:
-    yashaWitchGreenBlueUnusedFalling,
-  yashaWitchBrownPurpleUnusedFalling:
-    yashaWitchBrownPurpleUnusedFalling,
-  yashaWitchBrownYellowUnusedFalling:
-    yashaWitchBrownYellowUnusedFalling,
+  yashaWitchBrownBlueFalling: yashaWitchBrownBlueFalling,
+  yashaWitchPurpleGreenFalling: yashaWitchPurpleGreenFalling,
+  yashaWitchPinkPurpleFalling: yashaWitchPinkPurpleFalling,
+  yashaWitchBrownPinkFalling: yashaWitchBrownPinkFalling,
+  yashaWitchBrownGreenUnusedFalling: yashaWitchBrownGreenUnusedFalling,
+  yashaWitchGreenBlueUnusedFalling: yashaWitchGreenBlueUnusedFalling,
+  yashaWitchBrownPurpleUnusedFalling: yashaWitchBrownPurpleUnusedFalling,
+  yashaWitchBrownYellowUnusedFalling: yashaWitchBrownYellowUnusedFalling,
 
   yashaHumanBrownGreen: yashaHumanBrownGreen,
   yashaHumanGreenBlue: yashaHumanGreenBlue,
@@ -445,14 +449,10 @@ const imageMap =
   criminalPurpleRed: criminalPurpleRed,
   criminalGreenBrown: criminalGreenBrown,
 
-  criminalBlackBlueRunning:
-    criminalBlackBlueRunning,
-  criminalBlackPurpleRunning:
-    criminalBlackPurpleRunning,
-  criminalPurpleRedRunning:
-    criminalPurpleRedRunning,
-  criminalGreenBrownRunning:
-    criminalGreenBrownRunning,
+  criminalBlackBlueRunning: criminalBlackBlueRunning,
+  criminalBlackPurpleRunning: criminalBlackPurpleRunning,
+  criminalPurpleRedRunning: criminalPurpleRedRunning,
+  criminalGreenBrownRunning: criminalGreenBrownRunning,
 
   castorAndPolluxBoss1: castorAndPolluxBoss1,
   castorAndPolluxBoss2: castorAndPolluxBoss2,
@@ -461,6 +461,9 @@ const imageMap =
   kyurenePinkPurple: kyurenePinkPurple,
   kyureneGreenGreen: kyureneGreenGreen,
   kyureneRedGreen3rdBoss: kyureneRedGreen3rdBoss,
+  kyureneExtra1: kyureneExtra1,
+  kyureneExtra2: kyureneExtra2,
+  kyureneExtra3: kyureneExtra3,
 
   garobenGreenOrange: garobenGreenOrange,
   garobenGrayBrown: garobenGrayBrown,
@@ -476,6 +479,8 @@ const imageMap =
   bakeneForm2: bakene,
   bakeneForm3: bakene,
   bakeneRunningAway: bakeneRunningAway,
+  bakeneExtra1Form3: bakeneExtra1,
+  bakeneExtra2Form3: bakeneExtra2,
   
   morga: morga,
   kunzite: kunzite,

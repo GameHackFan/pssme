@@ -170,9 +170,21 @@ class ROMService
     this.setByte(byteIndex, fix);
   }
 
+  setBytes = (filename, byteIndex, bytes) =>
+  {
+    let fileBytes = this.generatedROM[filename];
+    bytes.forEach((byte, index) => fileBytes[byteIndex + index] = byte);
+  }
+
   getByte = (filename, byteIndex) =>
   {
     return this.generatedROM[filename][byteIndex];
+  }
+
+  getBytes = (filename, byteIndex, amount) =>
+  {
+    return this.generatedROM[filename].slice(
+        byteIndex, byteIndex + amount);
   }
 
   indexOfBytes = (filename, bytes,

@@ -32,6 +32,14 @@ const levelEditorEnemies =
     pivotX: 30, 
     pivotY: 104
   },
+  furauExtra1:
+  {
+    label: "Furau Extra 1 (Blue and White)",
+    width: 53,
+    height: 108,
+    pivotX: 30, 
+    pivotY: 104
+  },
 
 
   oniwabandanaBrownBlueIdle:
@@ -66,7 +74,22 @@ const levelEditorEnemies =
     pivotX: 26, 
     pivotY: 103
   },
-
+  oniwabandanaExtra1Idle:
+  {
+    label: "Oniwabandana Extra 1 Idle (Red and Black)",
+    width: 43,
+    height: 116,
+    pivotX: 26, 
+    pivotY: 103
+  },
+  oniwabandanaExtra2Idle:
+  {
+    label: "Oniwabandana Extra 2 Idle (Yellow and Green)",
+    width: 43,
+    height: 116,
+    pivotX: 26, 
+    pivotY: 103
+  },
 
   oniwabandanaBrownBlue:
   {
@@ -95,6 +118,22 @@ const levelEditorEnemies =
   oniwabandanaWhiteBrown:
   {
     label: "Oniwabandana 4 (White and Brown)",
+    width: 77,
+    height: 94,
+    pivotX: 41, 
+    pivotY: 91
+  },
+  oniwabandanaExtra1:
+  {
+    label: "Oniwabandana Extra 1 (Red and Black)",
+    width: 77,
+    height: 94,
+    pivotX: 41, 
+    pivotY: 91
+  },
+  oniwabandanaExtra2:
+  {
+    label: "Oniwabandana Extra 2 (Yellow and Green)",
     width: 77,
     height: 94,
     pivotX: 41, 
@@ -134,6 +173,22 @@ const levelEditorEnemies =
     pivotX: 52, 
     pivotY: 87
   },
+  oniwabandanaExtra1Running:
+  {
+    label: "Oniwabandana Extra 1 Running (Red and Black)",
+    width: 82,
+    height: 92,
+    pivotX: 52, 
+    pivotY: 87
+  },
+  oniwabandanaExtra2Running:
+  {
+    label: "Oniwabandana Extra 2 Running (Yellow and Green)",
+    width: 82,
+    height: 92,
+    pivotX: 52, 
+    pivotY: 87
+  },
 
 
   tesuniBrownOrange:
@@ -168,9 +223,9 @@ const levelEditorEnemies =
     pivotX: 39, 
     pivotY: 102
   },
-  tesuniBrownOrangeUnused:
+  tesuniExtra1:
   {
-    label: "Tesuni 5 Unused (Brown and Orange)",
+    label: "Tesuni Extra 1 (Black and Yellow)",
     width: 69,
     height: 112,
     pivotX: 39, 
@@ -210,10 +265,9 @@ const levelEditorEnemies =
     pivotX: 39, 
     pivotY: 102
   },
-  tesuniBrownOrangeUnusedRacket:
+  tesuniExtra1Racket:
   {
-    label:
-      "Tesuni 5 Racket Unused (Brown and Orange)",
+    label: "Tesuni Extra 1 Racket (Black and Yellow)",
     width: 69,
     height: 112,
     pivotX: 39, 
@@ -253,10 +307,9 @@ const levelEditorEnemies =
     pivotX: 41, 
     pivotY: 128
   },
-  tesuniBrownOrangeUnusedBomber:
+  tesuniExtra1Bomber:
   {
-    label:
-      "Tesuni 5 Bomber Unused (Brown and Orange)",
+    label: "Tesuni Extra 1 Bomber (Black and Yellow)",
     width: 75,
     height: 137,
     pivotX: 41, 
@@ -266,8 +319,7 @@ const levelEditorEnemies =
 
   castorAndPolluxBluePurple:
   {
-    label:
-      "Castor And Pollux 1 (Blue and Purple)",
+    label: "Castor And Pollux 1 (Blue and Purple)",
     width: 55,
     height: 110,
     pivotX: 20, 
@@ -275,8 +327,7 @@ const levelEditorEnemies =
   },
   castorAndPolluxLightGreenBlue:
   {
-    label:
-      "Castor And Pollux 2 (Light Green and Blue)",
+    label: "Castor And Pollux 2 (Light Green and Blue)",
     width: 55,
     height: 110,
     pivotX: 20, 
@@ -284,8 +335,7 @@ const levelEditorEnemies =
   },
   castorAndPolluxGreenBlue:
   {
-    label:
-      "Castor And Pollux 3 (Green and Blue)",
+    label: "Castor And Pollux 3 (Green and Blue)",
     width: 55,
     height: 110,
     pivotX: 20, 
@@ -293,8 +343,15 @@ const levelEditorEnemies =
   },
   castorAndPolluxBeigePink:
   {
-    label:
-      "Castor And Pollux 4 (Beige and Pink)",
+    label: "Castor And Pollux 4 (Beige and Pink)",
+    width: 55,
+    height: 110,
+    pivotX: 20, 
+    pivotY: 105
+  },
+  castorAndPolluxExtra1:
+  {
+    label: "Castor And Pollux Extra 1 (Beige, Yellow and Green)",
     width: 55,
     height: 110,
     pivotX: 20, 
@@ -403,8 +460,7 @@ const levelEditorEnemies =
   },
   yashaWitchBrownGreenUnusedStabbing:
   {
-    label:
-      "Yasha Witch 5 Stabbing Unused (Brown and Green)",
+    label: "Yasha Witch 5 Stabbing Unused (Brown and Green)",
     width: 78,
     height: 85,
     pivotX: 54, 
@@ -412,8 +468,7 @@ const levelEditorEnemies =
   },
   yashaWitchGreenBlueUnusedStabbing:
   {
-    label:
-      "Yasha Witch 6 Stabbing Unused (Green and Blue)",
+    label: "Yasha Witch 6 Stabbing Unused (Green and Blue)",
     width: 78,
     height: 85,
     pivotX: 54, 
@@ -421,8 +476,7 @@ const levelEditorEnemies =
   },
   yashaWitchBrownPurpleUnusedStabbing:
   {
-    label:
-      "Yasha Witch 7 Stabbing Unused (Brown and Purple)",
+    label: "Yasha Witch 7 Stabbing Unused (Brown and Purple)",
     width: 78,
     height: 85,
     pivotX: 54, 
@@ -430,8 +484,7 @@ const levelEditorEnemies =
   },
   yashaWitchBrownYellowUnusedStabbing:
   {
-    label:
-        "Yasha Witch 8 Stabbing Unused (Brown and Yellow)",
+    label: "Yasha Witch 8 Stabbing Unused (Brown and Yellow)",
     width: 78,
     height: 85,
     pivotX: 54, 
@@ -474,8 +527,7 @@ const levelEditorEnemies =
   },
   yashaWitchBrownGreenUnusedFalling:
   {
-    label:
-      "Yasha Witch 5 Falling Unused (Brown and Green)",
+    label: "Yasha Witch 5 Falling Unused (Brown and Green)",
     width: 45,
     height: 67,
     pivotX: 27, 
@@ -483,8 +535,7 @@ const levelEditorEnemies =
   },
   yashaWitchGreenBlueUnusedFalling:
   {
-    label:
-      "Yasha Witch 6 Falling Unused (Green and Blue)",
+    label: "Yasha Witch 6 Falling Unused (Green and Blue)",
     width: 45,
     height: 67,
     pivotX: 27, 
@@ -492,8 +543,7 @@ const levelEditorEnemies =
   },
   yashaWitchBrownPurpleUnusedFalling:
   {
-    label:
-      "Yasha Witch 7 Falling Unused (Brown and Purple)",
+    label: "Yasha Witch 7 Falling Unused (Brown and Purple)",
     width: 45,
     height: 67,
     pivotX: 27, 
@@ -501,8 +551,7 @@ const levelEditorEnemies =
   },
   yashaWitchBrownYellowUnusedFalling:
   {
-    label:
-        "Yasha Witch 8 Falling Unused (Brown and Yellow)",
+    label: "Yasha Witch 8 Falling Unused (Brown and Yellow)",
     width: 45,
     height: 67,
     pivotX: 27, 
@@ -744,7 +793,7 @@ const levelEditorEnemies =
 
   kyureneRedGreen3rdBoss:
   {
-    label: "Kyurene 3rd Boss (Green and Green)",
+    label: "Kyurene 3rd Boss (Red and Green)",
     width: 105,
     height: 136,
     pivotX: 54, 
@@ -769,6 +818,30 @@ const levelEditorEnemies =
   kyureneGreenGreen:      // 6th Boss 2
   {
     label: "Kyurene 6th Boss (Green and Green)",
+    width: 75,
+    height: 117,
+    pivotX: 30, 
+    pivotY: 109
+  },
+  kyureneExtra1:
+  {
+    label: "Kyurene Extra 1 (Red and Purple)",
+    width: 75,
+    height: 117,
+    pivotX: 30, 
+    pivotY: 109
+  },
+  kyureneExtra2:
+  {
+    label: "Kyurene Extra 2 (Brown and Blue)",
+    width: 75,
+    height: 117,
+    pivotX: 30, 
+    pivotY: 109
+  },
+  kyureneExtra3:
+  {
+    label: "Kyurene Extra 3 (Blue and Yellow)",
     width: 75,
     height: 117,
     pivotX: 30, 
@@ -882,6 +955,23 @@ const levelEditorEnemies =
     pivotX: 76, 
     pivotY: 103
   },
+  bakeneExtra1Form3:
+  {
+    label: "Bakene Extra 1 3rd Form (Brown and Silver)",
+    width: 140,
+    height: 127,
+    pivotX: 66, 
+    pivotY: 107
+  },
+  bakeneExtra2Form3:
+  {
+    label: "Bakene Extra 2 3rd Form (Grey and Copper)",
+    width: 140,
+    height: 127,
+    pivotX: 66, 
+    pivotY: 107
+  },
+
 
   queenBeryl:       // Final Boss
   {
