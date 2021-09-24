@@ -30,7 +30,7 @@ Version 0.6 Changes:
 - Minor changes to the randomizer.
 - Minor fixes.
 
-See all changes made [here](https://github.com/GameHackFan/pssme/blob/main/changelog.txt).
+See all changes made [here](https://github.com/GameHackFan/pssme/blob/main/changelog).
 <br/><br/>
 
 OBS: With the v0.6 update, the best feature to have now is extra colors for the sailors. Changing the way crystals are spent could also be a good feature to have.
