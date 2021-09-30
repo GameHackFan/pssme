@@ -1,3 +1,22 @@
+Version 0.7 Changes:
+- New colors added for the sailors. Player 2 now is forced to play with the 2nd color.
+- The new colors automatically fix a color pallete bug that happened when 2 of the same sailor was picked and then after dying, one of the players switches to another sailor, making one of the players use a wrong pallete.
+- Renamed NormalRandomProfile to MidRandomProfile so it can be less than 5 letters to fit the title screen (Mid).
+- Renamed SavageRandomProfile to WildRandomProfile so it can be less than 5 letters to fit the title screen (Wild).
+- Added one more RandomProfile called WeakRandomProfile (Weak).
+- Copied all the data from EasyRandomProfile to WeakRandomProfile (Easy was too easy).
+- Changed the value for EasyRandomProfile, it is now a new level with different values (a little bit harder).
+- Cleaned data that shouldn't be in the New Features Patch.
+- Forced the Level Editor to apply the New Features Patch.
+- Added code to fix the HP for the randomizer because of the changes made to the New Features Patch.
+- Fixed pallete start address in the Color Pallete Editor.
+- Added hints for the sailor extra colors in the Color Pallete Editor.
+- Expanded the pallete amount in the color pallete editor to include the sailor extra palletes.
+- Created the Sailor Color Expansion Patch with the new palletes and the assembly code to handle it.
+- Added the Sailor Color Expansion Patch to the PatchMap.
+- Forced the randomizer and the Level Editor to apply the Sailor Color Expansion Patch.
+
+
 Version 0.6 Changes:
 - Added a new color for Furau called extra 1 and replaced Oniwabandana 3, which makes it id 6 and auto increases the HP.
 - Replaced Tesuni 2 with Oniwabandana 3, which makes it id 5 and auto increases the HP.
