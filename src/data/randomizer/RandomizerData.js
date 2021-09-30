@@ -16,29 +16,25 @@ import level8EnemyGroup from
     "../level/Level8EnemyGroup";
 
 
-import easyRandomProfile from
-    "./EasyRandomProfile";
-import normalRandomProfile from
-    "./NormalRandomProfile";
-import hardRandomProfile from
-    "./HardRandomProfile";
-import savageRandomProfile from
-    "./SavageRandomProfile";
-import restInPainRandomProfile from
-    "./RestInPainRandomProfile";
+import weakRandomProfile from "./WeakRandomProfile";
+import easyRandomProfile from "./EasyRandomProfile";
+import midRandomProfile from "./MidRandomProfile";
+import hardRandomProfile from "./HardRandomProfile";
+import wildRandomProfile from "./WildRandomProfile";
+import restInPainRandomProfile from "./RestInPainRandomProfile";
 
-import randomizerEnemyStrategy from
-    "./RandomizerEnemyStrategy";
+import randomizerEnemyStrategy from "./RandomizerEnemyStrategy";
 
 
 const randomizerData = 
 {
   randomProfile:
   {
+    weak: weakRandomProfile,
     easy: easyRandomProfile,
-    normal: normalRandomProfile,
+    mid: midRandomProfile,
     hard: hardRandomProfile,
-    savage: savageRandomProfile,
+    wild: wildRandomProfile,
     restInPain: restInPainRandomProfile,
   },
   enemyStrategy:

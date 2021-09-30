@@ -21,10 +21,11 @@ class RandomizerService
     this.mainData.hasRandomModeCustom = false;
     this.randomizerLevelTexts =
     {
+      weak: " Weak ",
       easy: " Easy ",
-      normal: " Nor. ",
+      mid: " Mid  ",
       hard: " Hard ",
-      savage: " Sav. ",
+      wild: " Wild ",
       restInPain: " RIP  ",
       custom: " Cus. "
     }
@@ -244,26 +245,24 @@ class RandomizerService
 
   applyRandomizer = () =>
   {
+    this.increasePlayersHealth();
     let randomizerPatch = this.createRandomizerPatch();
-    romService.applyPatch(
-        patchMap.enemyColorExpansionPatch.patch);
-    romService.applyPatch(
-        patchMap.featuresAndFixesPatch.patch);
-    romService.applyPatch(
-        patchMap.textImprovementPatch.patch);
+    romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
+    romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
+    romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
+    romService.applyPatch(patchMap.textImprovementPatch.patch);
     romService.applyPatch(
         patchMap.boss1PositionImprovementPatch.patch);
-    romService.applyPatch(
-        patchMap.dontFreezeOnBossPatch.patch);
+    romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);
     romService.applyPatch(this.createRandomizerTextPatch());
     romService.applyPatch(patchMap.removeCPUDemoPatch.patch);
     romService.applyPatch(randomizerPatch);
     romService.applyPatch(
         levelExpansionService.createLevelFixPatch());
-    romService.applyPatch(levelExpansionService.
-        createBossHelpersFixPatch());
-    romService.applyPatch(levelExpansionService.
-        createBossFightsFixPatch());
+    romService.applyPatch(
+        levelExpansionService.createBossHelpersFixPatch());
+    romService.applyPatch(
+        levelExpansionService.createBossFightsFixPatch());
   }
 
   createRandomizerTextPatch = () =>
@@ -357,7 +356,7 @@ class RandomizerService
   fixRandomProfile = () =>
   {
     let rp = this.mainData.randomProfile;
-    rp = rp in randomizerData.randomProfile ? rp : "savage";
+    rp = rp in randomizerData.randomProfile ? rp : "wild";
     this.mainData.randomProfile = rp;
   }
 
@@ -493,6 +492,13 @@ class RandomizerService
     });
   }
 
+  increasePlayersHealth = () =>
+  {
+    const filename = "bpsm945a.u45";
+    romService.setByte(filename, 43824, 96);
+    romService.setByte(filename, 38668, 96);
+  }
+
   applyPresetFile = (presetFile) =>
   {
     let json = JSON.parse(presetFile);
@@ -561,7 +567,7 @@ class RandomizerService
   {
     let mainData = {};
     mainData.seed = this.getDateNowInMilliseconds();
-    mainData.randomProfile = "savage";
+    mainData.randomProfile = "wild";
     return mainData;
   }
 

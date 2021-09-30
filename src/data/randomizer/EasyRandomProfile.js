@@ -5,23 +5,18 @@ const easyRandomProfile =
   {
     enemiesNoDrop:
     {
-      randomMinAmount: 7,
-      randomMaxAmount: 9
+      randomMinAmount: 8,
+      randomMaxAmount: 10
     },
     dropEnemies:
     {
       randomMinAmount: 2,
-      randomMaxAmount: 2
-    },
-    crystalEnemies:
-    {
-      randomMinAmount: 0,
-      randomMaxAmount: 1
+      randomMaxAmount: 3
     },
     foodItems:
     {
-      randomMinAmount: 1,
-      randomMaxAmount: 2
+      randomMinAmount: 0,
+      randomMaxAmount: 1
     }
   },
   bossHelperType1Strategy:
@@ -55,7 +50,7 @@ const easyRandomProfile =
     ungrabbableEnemies:
     {
       randomMinAmount: 0,
-      randomMaxAmount: 0
+      randomMaxAmount: 1
     },
   }
 }

@@ -158,7 +158,7 @@ class ROMService
     let fileBytes = this.generatedROM[filename];
 
     if(fileBytes && !isNaN(value)
-        && value > 0 && value < 256)
+        && value > -1 && value < 256)
     {
       fileBytes[byteIndex] = value;
     }

@@ -1,17 +1,14 @@
-import featuresAndFixesPatch from
-    "./FeaturesAndFixesPatch";
-import textImprovementPatch from
-    "./TextImprovementPatch";
+import featuresAndFixesPatch from "./FeaturesAndFixesPatch";
+import textImprovementPatch from "./TextImprovementPatch";
 import textImprovementGenericBossPatch from
     "./TextImprovementGenericBossPatch";
-import dontFreezeOnBossPatch from
-    "./DontFreezeOnBossPatch";
+import dontFreezeOnBossPatch from "./DontFreezeOnBossPatch";
 import removeCPUDemoPatch from "./RemoveCPUDemoPatch";
 import boss1PositionImprovementPatch from
     "./Boss1PositionImprovementPatch";    
 
-import enemyColorExpansionPatch from
-    "./EnemyColorExpansionPatch";
+import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
+import sailorColorExpansionPatch from "./SailorColorExpansionPatch";
 
 import randomizerTextPatch from
     "./RandomizerTextPatch";
@@ -68,6 +65,25 @@ const patchMap =
           "Seed Randomizer.",
     patch: dontFreezeOnBossPatch,
     show: true
+  },
+  sailorColorExpansionPatch:
+  {
+    label: "Sailor Color Expansion Patch",
+    text: "This patch will add extra sailor color " +
+          "palletes over some pallets that look " +
+          "empty. To allow all sailors to have " +
+          "new palletes, new assembly code had " +
+          "to be written and some changes to " +
+          "point to the new code had to also be " +
+          "made. The 1st player will always play " +
+          "with the original colors and the 2nd " +
+          "player will always play with the extra " +
+          "colors. Because in the original game " +
+          "the 2nd player cursor starts over Sailor " +
+          "Mercury, the select screen will use the " +
+          "extra color.",
+    patch: sailorColorExpansionPatch,
+    show: true,
   },
   enemyColorExpansionPatch:
   {

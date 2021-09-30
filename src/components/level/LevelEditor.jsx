@@ -188,7 +188,7 @@ class LevelEditor extends Component
     }
   }
 
-  // Put this method inside levelEditorService
+  // TODO: Put this method inside levelEditorService at some point
   getFilteredEnemySelectList()
   {
     const filterString = this.state.filterEnemyString;

@@ -35,6 +35,11 @@ const sailorMercury = {originalUsage: "Sailor Mercury", pssmeUsage: "Sailor Merc
 const sailorMoon = {originalUsage: "Sailor Moon", pssmeUsage: "Sailor Moon"};
 const sailorMars = {originalUsage: "Sailor Mars", pssmeUsage: "Sailor Mars"};
 const sailorVenus = {originalUsage: "Sailor Venus", pssmeUsage: "Sailor Venus"};
+const unknownSailorJupiter = {originalUsage: "Unknown", pssmeUsage: "Sailor Jupiter"};
+const unknownSailorMercury = {originalUsage: "Unknown", pssmeUsage: "Sailor Mercury"};
+const unknownSailorMoon = {originalUsage: "Unknown", pssmeUsage: "Sailor Moon"};
+const unknownSailorMars = {originalUsage: "Unknown", pssmeUsage: "Sailor Mars"};
+const unknownSailorVenus = {originalUsage: "Unknown", pssmeUsage: "Sailor Venus"};
 
 const sailorMoonProfile = {originalUsage: "Sailor Moon Profile Picture",
     pssmeUsage: "Sailor Moon Profile Picture"};
@@ -50,8 +55,8 @@ const sailorVenusProfile = {originalUsage: "Sailor Venus Profile Picture",
 
 const palleteData =
 {
-  startAddress: 363712,
-  amount: 337,
+  startAddress: 360448,
+  amount: 524,
   data:
   {
     "364352": sailorMoonProfile,
@@ -146,6 +151,12 @@ const palleteData =
     "370048": zoisite,
     "370080": kunzite,
     "371044": queenBeryl,
+
+    "374592": unknownSailorMoon,
+    "374720": unknownSailorMercury,
+    "374848": unknownSailorMars,
+    "374976": unknownSailorJupiter,
+    "375104": unknownSailorVenus,
 
     "unknown": unknown
   }
