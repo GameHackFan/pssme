@@ -41,7 +41,7 @@ Known Bugs:
 <br/><br/>
 
 OBS: With the v0.8 update, I think I found the bytes to change how much each food heals, since they have no balance,
-they heal like 8 for the bad food, 18 for the average food and 26 for the ice cream cup,
+they heal like 8 for the bad food, 18 for the average food and 28 for the ice cream cup,
 changing how much each one heal is a good thing to do. Also most enemies does the same damage, I agree for most of the cases,
 but Jumou is a special case, she is way too slow, it feels like a useless enemy, if I find where her data is located,
 I will increase her damage by a huge margin, turning her into a more dangerous character.
