@@ -5,9 +5,38 @@ const enemyColorExpansionPatch =
 	byteFormat: "hex",
   data:
   {
-    // Furau Extra 1 (Blue and White)
-    // Replacing Oniwabandana 3 (Pink and Blue)
-    "367200":
+    // Instruction that redirects the execution to where it
+    // handles enemy color IDs 4+.
+    "36686": ["F9", "4E", "07", "00", "00", "E9"],
+
+    // A Label to make it obvious where the new colors start
+    "375328":
+    [
+      "20", "45", "4E", "45", "4D", "49", "45", "53",
+      "20", "43", "4F", "4C", "4F", "52", "53", "20"
+    ],
+ 
+
+    // Furau 3 (Brown and Yellow):
+    "375392":
+    [
+      "0D", "2A", "FF", "7F", "F9", "77", "94", "63",
+      "2E", "47", "A9", "32", "C4", "21", "50", "3F",
+      "89", "26", "A5", "11", "E9", "5B", "C4", "47",
+      "06", "3F", "65", "22", "A2", "11", "80", "04"
+    ],
+
+    // Furau Extra 1 (Black and Purple)
+    "375456":
+    [
+      "4D", "29", "FF", "7F", "F8", "77", "F5", "6B",
+      "8F", "5B", "29", "47", "02", "26", "D0", "3D",
+      "2B", "29", "86", "14", "7C", "4B", "B7", "32",
+      "11", "26", "6C", "19", "C8", "0C", "02", "04"
+    ],
+
+    // Furau Extra 2 (Blue and White)
+    "375520":
     [
       "4D", "29", "FF", "7F", "F8", "77", "F5", "6B",
       "8F", "5B", "29", "47", "02", "26", "5A", "4D",
@@ -15,9 +44,17 @@ const enemyColorExpansionPatch =
       "94", "4E", "EF", "39", "29", "21", "03", "00"
     ],
 
+    // Oniwabandana 2 (White and Blue)
+    "375712":
+    [
+      "DC", "5A", "0D", "1D", "11", "2D", "D5", "3D",
+      "B0", "2D", "93", "3A", "2C", "29", "D2", "41",
+      "76", "5E", "1B", "6F", "E6", "25", "0F", "4B",
+      "93", "5F", "D6", "73", "FB", "77", "86", "0C"
+    ],
+
     // Oniwabandana 3 (Pink and Blue)
-    // Replacing Tesuni 2 (Gray and Purple)
-    "367296":
+    "375776":
     [
       "7C", "5A", "EB", "24", "6E", "3D", "F4", "49",
       "45", "26", "09", "37", "69", "15", "4E", "2E",
@@ -26,8 +63,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Oniwabandana Extra 1 (Red and Black)
-    // Replacing Tesuni 4 (Green and Pink)
-    "367360":
+    "375808":
     [
       "3C", "5B", "E5", "18", "CB", "31", "4F", "42",
       "A0", "1A", "60", "37", "C1", "09", "A3", "12",
@@ -36,8 +72,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Oniwabandana Extra 2 (Yellow and Green)
-    // Replacing what looks like an empty pallete
-    "367424":
+    "375840":
     [
       "3C", "5B", "46", "20", "CC", "38", "10", "49",
       "2C", "37", "F2", "4F", "80", "22", "22", "3F",
@@ -46,8 +81,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Tesuni 2 (Gray and Purple)
-    // Replacing what looks like an empty pallete
-    "367456":
+    "375424":
     [
       "90", "4D", "FF", "5F", "9C", "4B", "D7", "36",
       "F1", "25", "2B", "19", "31", "7F", "DF", "7B",
@@ -56,8 +90,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Tesuni 4 (Green and Pink)
-    // Replacing what looks like an empty pallete
-    "367488":
+    "375488":
     [
       "8A", "4D", "F4", "5F", "F1", "4B", "8C", "37",
       "0E", "27", "EB", "09", "39", "7F", "DF", "7B",
@@ -66,8 +99,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Tesuni Extra 1 (Black and Yellow)
-    // Replacing Castor and Pollux Normal 1 (Blue and Purple)
-    "367552":
+    "375552":
     [
       "93", "4D", "ED", "7B", "E9", "67", "84", "5B",
       "42", "43", "C0", "2A", "DE", "7E", "BF", "7B",
@@ -75,20 +107,17 @@ const enemyColorExpansionPatch =
       "2B", "29", "A7", "18", "44", "0C", "02", "04"
     ],
 
-
-    // Castor and Pollux Extra 1 (Beige and Yellow and Green)
-    // Replacing Castor and Pollux Normal 2 (Light Green and Blue)
-    "367584":
+    // Castor and Pollux Boss 2 (Beige and Pink)
+    "376256":
     [
-      "EF", "31", "D2", "61", "FB", "77", "4E", "62",
-      "89", "45", "E5", "30", "83", "1C", "F6", "6F",
-      "91", "5F", "2B", "4F", "65", "32", "E9", "67",
-      "A5", "57", "E3", "3E", "00", "22", "00", "08"
+      "EF", "31", "EC", "77", "DF", "7B", "36", "5B",
+      "6F", "3E", "0D", "36", "89", "25", "F6", "6F",
+      "91", "5F", "2B", "4F", "65", "32", "EE", "4B",
+      "AB", "37", "C8", "26", "A7", "15", "60", "08"
     ],
-    
+
     // Castor and Pollux Normal 1 (Blue and Purple)
-    // Replacing what looks like an empty pallete
-    "367712":
+    "376320":
     [
       "F2", "42", "EC", "77", "DF", "7B", "B7", "62",
       "D0", "45", "8E", "35", "0A", "29", "DA", "72",
@@ -97,8 +126,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Castor and Pollux Normal 2 (Light Green and Blue)
-    // Replacing what looks like an empty pallete
-    "367840":
+    "376448":
     [
       "72", "43", "18", "70", "DF", "7B", "97", "63",
       "B0", "3A", "F1", "29", "0A", "11", "37", "73",
@@ -106,9 +134,109 @@ const enemyColorExpansionPatch =
       "18", "51", "F4", "3C", "8C", "24", "63", "00"
     ],
 
+    // Castor and Pollux Normal 4 (Beige and Pink)
+    "376288":
+    [
+      "2F", "31", "EC", "77", "DF", "7B", "59", "5A",
+      "F3", "3C", "10", "24", "0A", "18", "96", "63",
+      "30", "5B", "69", "3E", "88", "2D", "F8", "67",
+      "B4", "4F", "31", "3B", "CE", "21", "63", "00"
+    ],
+
+    // Castor and Pollux Extra 1 (Beige, Brown and White)
+    "367552":
+    [
+      "EF", "31", "FA", "63", "FD", "77", "9B", "6B",
+      "D4", "56", "10", "3A", "4A", "21", "F7", "6B",
+      "92", "5B", "2D", "47", "88", "2E", "89", "47",
+      "A4", "2A", "02", "1A", "20", "01", "63", "04"
+    ],
+
+    // Castor and Pollux Extra 2 (Beige, Yellow and Green)
+    "367584":
+    [
+      "EF", "31", "D2", "61", "FB", "77", "4E", "62",
+      "89", "45", "E5", "30", "83", "1C", "F6", "6F",
+      "91", "5F", "2B", "4F", "65", "32", "E9", "67",
+      "A5", "57", "E3", "3E", "00", "22", "00", "08"
+    ],
+
+    // Thetis Extra 1 (Green and Beige)
+    "375680":
+    [
+      "C9", "34", "9B", "77", "D3", "67", "70", "53",
+      "EB", "3A", "A7", "25", "89", "63", "9E", "49",
+      "DC", "7F", "54", "7B", "8F", "6E", "4D", "62",
+      "CC", "4D", "27", "39", "82", "24", "60", "04"
+    ],
+
+    // Thetis Extra 2 (Gray and Beige)
+    "375744":
+    [
+      "C9", "34", "9B", "77", "D3", "67", "70", "53",
+      "EB", "3A", "A7", "25", "EC", "63", "91", "61",
+      "FE", "7B", "79", "6B", "F5", "5A", "71", "4A",
+      "ED", "39", "69", "29", "E5", "18", "60", "04"
+    ],
+
+    // Jumou 2 (Beige and Blue)
+    "376000":
+    [
+      "96", "4F", "FE", "7F", "F6", "6F", "4F", "5B",
+      "AB", "46", "29", "36", "C8", "2D", "47", "21",
+      "07", "19", "C6", "18", "BD", "7E", "5C", "56",
+      "54", "35", "31", "21", "EA", "14", "02", "04"
+    ],
+
+    // Jumou 4 (White and Brown)
+    "376064":
+    [
+      "90", "4F", "FE", "7F", "DA", "73", "37", "67",
+      "94", "5A", "F4", "49", "90", "39", "2C", "29",
+      "09", "21", "E9", "1C", "B1", "67", "CC", "4A",
+      "48", "3A", "E6", "25", "24", "19", "02", "04"
+    ],
+
+    // Jumou Extra 1 (Green and Purple)
+    "376096":
+    [
+      "90", "4F", "BB", "7F", "36", "73", "D3", "62",
+      "30", "52", "CD", "41", "6A", "31", "07", "25",
+      "A4", "18", "41", "0C", "BB", "53", "15", "3B",
+      "91", "26", "0D", "12", "46", "01", "61", "00"
+    ],
+
+    // Jumou Extra 2 (Blue and Red)
+    "376128":
+    [
+      "90", "4F", "9F", "7B", "DF", "6E", "FA", "59",
+      "75", "45", "31", "35", "0E", "2D", "EA", "20",
+      "C8", "1C", "65", "10", "F3", "3F", "AB", "27",
+      "26", "17", "83", "0A", "C1", "01", "41", "00"
+    ],
+
+    // Criminal Extra 1 (Red and White)
+    "375968":
+    [
+      "EC", "25", "F2", "67", "2A", "4B", "69", "36",
+      "84", "1D", "FD", "7B", "16", "5F", "92", "4E",
+      "0D", "3A", "88", "25", "FB", "73", "EE", "37",
+      "49", "23", "65", "12", "82", "05", "61", "00"
+    ],
+
+    // Criminal Extra 2 (Blue and Gray)
+    "376032":
+    [
+      "EC", "25", "F2", "67", "2A", "4B", "69", "36",
+      "84", "1D", "96", "56", "F1", "41", "6D", "31",
+      "E9", "20", "65", "10", "DF", "7B", "5D", "5A",
+      "55", "35", "CE", "24", "69", "14", "03", "04"
+    ],
+
+    // Morga ?
+
     // Kyurene Extra 1 (Purple and Red)
-    // Replacing what looks like an empty pallete
-    "369408":
+    "376544":
     [
       "D9", "5E", "7F", "6F", "DB", "5A", "D8", "49",
       "54", "39", "D0", "28", "4B", "18", "FD", "39",
@@ -117,8 +245,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Kyurene Extra 2 (Blue and Brown)
-    // Replacing what looks like an empty pallete
-    "369472":
+    "376576":
     [
       "D9", "5E", "BF", "7B", "1A", "67", "75", "52",
       "F1", "41", "6D", "31", "C8", "1C", "FD", "49",
@@ -127,8 +254,7 @@ const enemyColorExpansionPatch =
     ],
 
     // Kyurene Extra 3 (Yellow and Blue)
-    // Replacing what looks like an empty pallete
-    "369504":
+    "376608":
     [
       "D9", "5E", "FC", "7F", "B4", "73", "AF", "52",
       "0B", "3E", "68", "29", "C3", "14", "C9", "6B",
@@ -136,9 +262,10 @@ const enemyColorExpansionPatch =
       "57", "3D", "B3", "28", "6B", "14", "03", "04"
     ],
 
+    // Garoben ?
+
     // Bakene Extra 1 (Brown and Silver)
-    // Replacing what looks like an empty pallete
-    "369792":
+    "376704":
     [
       "30", "26", "FF", "7B", "5A", "67", "B5", "52",
       "EF", "39", "4A", "25", "84", "0C", "6A", "3C",
@@ -147,16 +274,99 @@ const enemyColorExpansionPatch =
     ],
 
     // Bakene Extra 2 (Grey and Copper)
-    // Replacing what looks like an empty pallete
-    "369824":
+    "376736":
     [
       "30", "26", "FE", "7F", "F4", "5F", "F0", "4F",
       "E9", "32", "64", "1E", "82", "0D", "98", "25",
       "9B", "73", "F6", "5E", "30", "46", "AC", "35",
       "28", "25", "C5", "18", "62", "0C", "00", "00"
+    ],
+
+    // Zoisite Extra 1 (Purple)
+    "376864":
+    [
+      "96", "40", "D7", "73", "F4", "67", "4E", "4F",
+      "AA", "3A", "C5", "21", "C7", "5B", "12", "3B",
+      "4E", "22", "9F", "7B", "BA", "4E", "35", "3E",
+      "90", "29", "0C", "19", "C8", "08", "23", "00"
+    ],
+
+    // Zoisite Extra 2 (Red)
+    "376896":
+    [
+      "96", "40", "D7", "73", "F4", "67", "4E", "4F",
+      "AA", "3A", "C5", "21", "C7", "5B", "99", "49",
+      "F2", "30", "FC", "6F", "CB", "37", "47", "23",
+      "A4", "16", "01", "0A", "40", "05", "60", "00"
+    ],
+
+    // Kunzite Extra 1 (Purple)
+    "377024":
+    [
+      "87", "31", "D3", "5F", "4D", "43", "89", "2E",
+      "85", "19", "59", "5B", "90", "3A", "6B", "19",
+      "E7", "10", "FD", "73", "BA", "4E", "35", "3E",
+      "90", "29", "0C", "19", "C8", "08", "01", "00"
+    ],
+
+    // Kunzite Extra 2 (Red)
+    "377056":
+    [
+      "87", "31", "D3", "5F", "4D", "43", "89", "2E",
+      "85", "19", "4D", "5F", "84", "46", "C2", "15",
+      "00", "09", "D7", "73", "CB", "37", "47", "23",
+      "A4", "16", "01", "0A", "40", "05", "01", "00"
+    ],
+
+    // Queen Beryl Extra 1 (Orange and Black)
+    "377184":
+    [
+      "0E", "38", "F6", "73", "51", "53", "8B", "32",
+      "E9", "25", "69", "29", "06", "1D", "82", "0C",
+      "19", "30", "FC", "7F", "E2", "43", "80", "33",
+      "00", "27", "60", "1A", "80", "09", "60", "04"
+    ],
+
+    // Queen Beryl Extra 2 (Red and Blue)
+    "377216":
+    [
+      "0E", "38", "F6", "73", "51", "53", "8B", "32",
+      "E9", "25", "59", "3D", "B5", "2C", "AC", "0C",
+      "E0", "5F", "FC", "7F", "EB", "33", "67", "23",
+      "E4", "16", "62", "0E", "80", "01", "83", "00"
+    ],
+
+
+    // A Label to make it obvious where the new colors end
+    "377568":
+    [
+      "20", "45", "4E", "45", "4D", "49", "45", "53",
+      "20", "43", "4F", "4C", "4F", "52", "53", "20"
+    ],
+
+    // Code that handles the correct address for the
+    // extra colors in case the pallete id is bigger
+    // than 3. If it isn't, it will execute the same
+    // lines of code that it would in the original game.
+    "518400":
+    [
+      "07", "30", "06", "3E", "46", "02", "FF", "0F",
+      "47", "02", "00", "F0", "4F", "EE", "46", "DC",
+      "31", "3C", "00", "60", "47", "DC", "E7", "48",
+      "F0", "00", "47", "0C", "80", "00", "00", "65",
+      "24", "00", "40", "0C", "10", "00", "00", "65",
+      "1C", "00", "40", "0C", "22", "00", "00", "62",
+      "14", "00", "00", "04", "10", "00", "FC", "C0",
+      "02", "00", "F9", "41", "07", "00", "4C", "E9",
+      "C0", "D0", "50", "DC", "F9", "4E", "00", "00",
+      "66", "8F", "00", "00", "40", "20", "E0", "20",
+      "40", "1F", "A0", "21", "00", "00", "00", "FF",
+      "60", "1C", "00", "1D", "80", "1C", "00", "00",
+      "C0", "1B", "00", "00", "00", "00", "A0", "1A",
+      "00", "00", "00", "00", "20", "1A", "A0", "1A",
+      "00", "1B", "00", "00", "00", "00", "00", "00"
     ]
   }
 }
-
 
 export default enemyColorExpansionPatch;

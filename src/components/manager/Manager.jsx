@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import ManagerComponent from './ManagerComponent';
 
-import editorService from
-    '../../service/EditorService';
+import editorService from '../../service/EditorService';
 import fileService from "../../service/FileService";
 import romService from "../../service/ROMService";
 
@@ -13,14 +12,10 @@ class Manager extends Component
     super(props);
     this.state = {};
     this.handleChange = this.handleChange.bind(this);
-    this.onLoadROMFileChange = 
-        this.onLoadROMFileChange.bind(this);
-    this.onCloneROMClick = 
-        this.onCloneROMClick.bind(this);
-    this.onGenerateROMClick = 
-        this.onGenerateROMClick.bind(this);
-    this.downloadGeneratedROM = 
-        this.downloadGeneratedROM.bind(this);
+    this.onLoadROMFileChange = this.onLoadROMFileChange.bind(this);
+    this.onCloneROMClick = this.onCloneROMClick.bind(this);
+    this.onGenerateROMClick = this.onGenerateROMClick.bind(this);
+    this.downloadGeneratedROM = this.downloadGeneratedROM.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState)
@@ -47,7 +42,7 @@ class Manager extends Component
     const extras = {};
     extras.successCallback = this.props.onActionResult;
     extras.errorCallback = this.props.onActionResult;
-    extras.successMessage = "Original ROM loaded!";
+    extras.successMessage = "ROM loaded!";
     extras.errorMessage = "Problems loading the ROM!";
     extras.file = event.target.files[0];
     fileService.readZipFile(extras);
@@ -67,8 +62,7 @@ class Manager extends Component
     {
       console.log(e.message);
       console.log(e);
-      extras.errorMessage =
-          "Problems cloning the ROM!";
+      extras.errorMessage = e.message;
     }
 
     this.props.onActionResult(extras);
@@ -80,8 +74,7 @@ class Manager extends Component
     extras.successCallback = this.downloadGeneratedROM;
     extras.errorCallback = this.props.onActionResult;
     extras.fileObject = romService.getGeneratedROM();
-    extras.errorMessage =
-        "Problems ziping the generated ROM!";
+    extras.errorMessage = "Problems ziping the generated ROM!";
 
     try
     {

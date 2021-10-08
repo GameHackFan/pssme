@@ -14,7 +14,7 @@ class PalleteEditor extends Component
     super(props);
     this.state = {};
     this.forceUpdate = this.forceUpdate.bind(this);
-    this.getPalletInfoList = this.getPalletInfoList.bind(this);
+    this.getPalleteInfoList = this.getPalleteInfoList.bind(this);
     this.getPallete = this.getPallete.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onRestorePallete = this.onRestorePallete.bind(this);
@@ -146,10 +146,10 @@ class PalleteEditor extends Component
     editorService.forceComponentToUpdateByKey("palleteEditor");
   }
 
-  getPalletInfoList()
+  getPalleteInfoList()
   {
     const f = this.state.filterPalleteString;
-    return palleteEditorService.getFilteredPalletInfoList(f);
+    return palleteEditorService.getPalleteInfoList(f);
   }
 
   render()
@@ -158,7 +158,7 @@ class PalleteEditor extends Component
       <PalleteEditorComponent
         romReady={romService.isROMReady()}
         filterPalleteString={this.state.filterPalleteString}
-        palleteInfoList={this.getPalletInfoList()}
+        palleteInfoList={this.getPalleteInfoList()}
         palleteId={this.state.palleteId}
         pallete={this.state.pallete}
         requestFile={editorService.requestFile}

@@ -68,10 +68,11 @@ class PalleteEditorService
     }
   }
 
-  getFilteredPalletInfoList = (filter) =>
+  getPalleteInfoList = (filter) =>
   {
     if(filter)
     {
+      const filterLower = filter.toLowerCase();
       const pil = this.palleteInfoList;
       const filtered = {};
       const indexOrDecimal = parseInt(filter, 10);
@@ -82,8 +83,8 @@ class PalleteEditorService
       {
         address = palleteData.startAddress + (i * 32);
 
-        if(pil[i].originalUsage.toLowerCase().includes(filter) ||
-            pil[i].pssmeUsage.toLowerCase().includes(filter) ||
+        if(pil[i].originalUsage.toLowerCase().includes(filterLower) ||
+            pil[i].pssmeUsage.toLowerCase().includes(filterLower) ||
             i == indexOrDecimal || address == fromHex ||
             address == indexOrDecimal)
         {

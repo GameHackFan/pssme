@@ -1,1137 +1,273 @@
+import furauEditorData from "./editor/FurauEditorData";
+import tesuniEditorData from "./editor/TesuniEditorData";
+import yashaEditorData from "./editor/YashaEditorData";
+import thetisEditorData from "./editor/ThetisEditorData";
+import jumouEditorData from "./editor/JumouEditorData";
+import criminalEditorData from  "./editor/CriminalEditorData";
+import morgaEditorData from "./editor/MorgaEditorData";
+import kyureneEditorData from "./editor/KyureneEditorData";
+import garobenEditorData from "./editor/GarobenEditorData";
+import bakeneEditorData from "./editor/BakeneEditorData";
+import zoisiteEditorData from "./editor/ZoisiteEditorData";
+import kunziteEditorData from "./editor/KunziteEditorData";
+import queenBerylEditorData from "./editor/QueenBerylEditorData";
+import itemEditorData from "./editor/ItemEditorData";
+
+import oniwabandanaEditorData from
+    "./editor/OniwabandanaEditorData";
+import castorAndPolluxEditorData from
+    "./editor/CastorAndPolluxEditorData";
+
+
 const levelEditorEnemies =
 {
-  furauOrangeGreen:
-  {
-    label: "Furau 1 (Orange and Green)",
-    width: 53,
-    height: 108,
-    pivotX: 30, 
-    pivotY: 104
-  },
-  furauPurpleBlue:
-  {
-    label: "Furau 2 (Purple and Blue)",
-    width: 53,
-    height: 108,
-    pivotX: 30, 
-    pivotY: 104
-  },
-  furauBrownYellow:
-  {
-    label: "Furau 3 (Brown and Yellow)",
-    width: 53,
-    height: 108,
-    pivotX: 30, 
-    pivotY: 104
-  },
-  furauGreenBlue:
-  {
-    label: "Furau 4 (Green and Blue)",
-    width: 53,
-    height: 108,
-    pivotX: 30, 
-    pivotY: 104
-  },
-  furauExtra1:
-  {
-    label: "Furau Extra 1 (Blue and White)",
-    width: 53,
-    height: 108,
-    pivotX: 30, 
-    pivotY: 104
-  },
+  furauOrangeGreen: furauEditorData.furauOrangeGreen,
+  furauPurpleBlue: furauEditorData.furauPurpleBlue,
+  furauBrownYellow: furauEditorData.furauBrownYellow,
+  furauGreenBlue: furauEditorData.furauGreenBlue,
+  furauExtra1: furauEditorData.furauExtra1,
+  furauExtra2: furauEditorData.furauExtra2,
 
 
   oniwabandanaBrownBlueIdle:
-  {
-    label: "Oniwabandana 1 Idle (Brown and Blue)",
-    width: 43,
-    height: 116,
-    pivotX: 26, 
-    pivotY: 103
-  },
+      oniwabandanaEditorData.oniwabandanaBrownBlueIdle,
   oniwabandanaWhiteBlueIdle:
-  {
-    label: "Oniwabandana 2 Idle (White and Blue)",
-    width: 43,
-    height: 116,
-    pivotX: 26, 
-    pivotY: 103
-  },
-  oniwabandanaPinkBlueIdle:
-  {
-    label: "Oniwabandana 3 Idle (Pink and Blue)",
-    width: 43,
-    height: 116,
-    pivotX: 26, 
-    pivotY: 103
-  },
+      oniwabandanaEditorData.oniwabandanaWhiteBlueIdle,
+  oniwabandanaPinkBlueIdle: 
+      oniwabandanaEditorData.oniwabandanaPinkBlueIdle,
   oniwabandanaWhiteBrownIdle:
-  {
-    label: "Oniwabandana 4 Idle (White and Brown)",
-    width: 43,
-    height: 116,
-    pivotX: 26, 
-    pivotY: 103
-  },
+      oniwabandanaEditorData.oniwabandanaWhiteBrownIdle,
   oniwabandanaExtra1Idle:
-  {
-    label: "Oniwabandana Extra 1 Idle (Red and Black)",
-    width: 43,
-    height: 116,
-    pivotX: 26, 
-    pivotY: 103
-  },
+      oniwabandanaEditorData.oniwabandanaExtra1Idle,
   oniwabandanaExtra2Idle:
-  {
-    label: "Oniwabandana Extra 2 Idle (Yellow and Green)",
-    width: 43,
-    height: 116,
-    pivotX: 26, 
-    pivotY: 103
-  },
+      oniwabandanaEditorData.oniwabandanaExtra2Idle,
 
   oniwabandanaBrownBlue:
-  {
-    label: "Oniwabandana 1 (Brown and Blue)",
-    width: 77,
-    height: 94,
-    pivotX: 41, 
-    pivotY: 91
-  },
+      oniwabandanaEditorData.oniwabandanaBrownBlue,
   oniwabandanaWhiteBlue:
-  {
-    label: "Oniwabandana 2 (White and Blue)",
-    width: 77,
-    height: 94,
-    pivotX: 41, 
-    pivotY: 91
-  },
+      oniwabandanaEditorData.oniwabandanaWhiteBlue,
   oniwabandanaPinkBlue:
-  {
-    label: "Oniwabandana 3 (Pink and Blue)",
-    width: 77,
-    height: 94,
-    pivotX: 41, 
-    pivotY: 91
-  },
+      oniwabandanaEditorData.oniwabandanaPinkBlue,
   oniwabandanaWhiteBrown:
-  {
-    label: "Oniwabandana 4 (White and Brown)",
-    width: 77,
-    height: 94,
-    pivotX: 41, 
-    pivotY: 91
-  },
+      oniwabandanaEditorData.oniwabandanaWhiteBrown,
   oniwabandanaExtra1:
-  {
-    label: "Oniwabandana Extra 1 (Red and Black)",
-    width: 77,
-    height: 94,
-    pivotX: 41, 
-    pivotY: 91
-  },
+      oniwabandanaEditorData.oniwabandanaExtra1,
   oniwabandanaExtra2:
-  {
-    label: "Oniwabandana Extra 2 (Yellow and Green)",
-    width: 77,
-    height: 94,
-    pivotX: 41, 
-    pivotY: 91
-  },
-
+      oniwabandanaEditorData.oniwabandanaExtra2,
 
   oniwabandanaBrownBlueRunning:
-  {
-    label: "Oniwabandana 1 Running (Brown and Blue)",
-    width: 82,
-    height: 92,
-    pivotX: 52, 
-    pivotY: 87
-  },
+      oniwabandanaEditorData.oniwabandanaBrownBlueRunning,
   oniwabandanaWhiteBlueRunning:
-  {
-    label: "Oniwabandana 2 Running (White and Blue)",
-    width: 82,
-    height: 92,
-    pivotX: 52, 
-    pivotY: 87
-  },
+      oniwabandanaEditorData.oniwabandanaWhiteBlueRunning,
   oniwabandanaPinkBlueRunning:
-  {
-    label: "Oniwabandana 3 Running (Pink and Blue)",
-    width: 82,
-    height: 92,
-    pivotX: 52, 
-    pivotY: 87
-  },
+      oniwabandanaEditorData.oniwabandanaPinkBlueRunning,
   oniwabandanaWhiteBrownRunning:
-  {
-    label: "Oniwabandana 4 Running (White and Brown)",
-    width: 82,
-    height: 92,
-    pivotX: 52, 
-    pivotY: 87
-  },
+      oniwabandanaEditorData.oniwabandanaWhiteBrownRunning,
   oniwabandanaExtra1Running:
-  {
-    label: "Oniwabandana Extra 1 Running (Red and Black)",
-    width: 82,
-    height: 92,
-    pivotX: 52, 
-    pivotY: 87
-  },
+      oniwabandanaEditorData.oniwabandanaExtra1Running,
   oniwabandanaExtra2Running:
-  {
-    label: "Oniwabandana Extra 2 Running (Yellow and Green)",
-    width: 82,
-    height: 92,
-    pivotX: 52, 
-    pivotY: 87
-  },
+      oniwabandanaEditorData.oniwabandanaExtra2Running,
 
 
-  tesuniBrownOrange:
-  {
-    label: "Tesuni 1 (Brown and Orange)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniGrayPurple:
-  {
-    label: "Tesuni 2 (Gray and Purple)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniBrownPink:
-  {
-    label: "Tesuni 3 (Brown and Pink)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniGreenPink:
-  {
-    label: "Tesuni 4 (Green and Pink)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniExtra1:
-  {
-    label: "Tesuni Extra 1 (Black and Yellow)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
+  tesuniBrownOrange: tesuniEditorData.tesuniBrownOrange,
+  tesuniGrayPurple: tesuniEditorData.tesuniGrayPurple,
+  tesuniBrownPink: tesuniEditorData.tesuniBrownPink,
+  tesuniGreenPink: tesuniEditorData.tesuniGreenPink,
+  tesuniExtra1: tesuniEditorData.tesuniExtra1,
 
+  tesuniBrownOrangeRacket: tesuniEditorData.tesuniBrownOrangeRacket,
+  tesuniGrayPurpleRacket: tesuniEditorData.tesuniGrayPurpleRacket,
+  tesuniBrownPinkRacket: tesuniEditorData.tesuniBrownPinkRacket,
+  tesuniGreenPinkRacket: tesuniEditorData.tesuniGreenPinkRacket,
+  tesuniExtra1Racket: tesuniEditorData.tesuniExtra1Racket,
 
-  tesuniBrownOrangeRacket:
-  {
-    label: "Tesuni 1 Racket (Brown and Orange)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniGrayPurpleRacket:
-  {
-    label: "Tesuni 2 Racket (Gray and Purple)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniBrownPinkRacket:
-  {
-    label: "Tesuni 3 Racket (Brown and Pink)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniGreenPinkRacket:
-  {
-    label: "Tesuni 4 Racket (Green and Pink)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-  tesuniExtra1Racket:
-  {
-    label: "Tesuni Extra 1 Racket (Black and Yellow)",
-    width: 69,
-    height: 112,
-    pivotX: 39, 
-    pivotY: 102
-  },
-
-
-  tesuniBrownOrangeBomber:
-  {
-    label: "Tesuni 1 Bomber (Brown and Orange)",
-    width: 75,
-    height: 137,
-    pivotX: 41, 
-    pivotY: 128
-  },
-  tesuniGrayPurpleBomber:
-  {
-    label: "Tesuni 2 Bomber (Gray and Purple)",
-    width: 75,
-    height: 137,
-    pivotX: 41, 
-    pivotY: 128
-  },
-  tesuniBrownPinkBomber:
-  {
-    label: "Tesuni 3 Bomber (Brown and Pink)",
-    width: 75,
-    height: 137,
-    pivotX: 41, 
-    pivotY: 128
-  },
-  tesuniGreenPinkBomber:
-  {
-    label: "Tesuni 4 Bomber (Green and Pink)",
-    width: 75,
-    height: 137,
-    pivotX: 41, 
-    pivotY: 128
-  },
-  tesuniExtra1Bomber:
-  {
-    label: "Tesuni Extra 1 Bomber (Black and Yellow)",
-    width: 75,
-    height: 137,
-    pivotX: 41, 
-    pivotY: 128
-  },
+  tesuniBrownOrangeBomber: tesuniEditorData.tesuniBrownOrangeBomber,
+  tesuniGrayPurpleBomber: tesuniEditorData.tesuniGrayPurpleBomber,
+  tesuniBrownPinkBomber: tesuniEditorData.tesuniBrownPinkBomber,
+  tesuniGreenPinkBomber: tesuniEditorData.tesuniGreenPinkBomber,
+  tesuniExtra1Bomber: tesuniEditorData.tesuniExtra1Bomber,
 
 
   castorAndPolluxBluePurple:
-  {
-    label: "Castor And Pollux 1 (Blue and Purple)",
-    width: 55,
-    height: 110,
-    pivotX: 20, 
-    pivotY: 105
-  },
+      castorAndPolluxEditorData.castorAndPolluxBluePurple,
   castorAndPolluxLightGreenBlue:
-  {
-    label: "Castor And Pollux 2 (Light Green and Blue)",
-    width: 55,
-    height: 110,
-    pivotX: 20, 
-    pivotY: 105
-  },
+      castorAndPolluxEditorData.castorAndPolluxLightGreenBlue,
   castorAndPolluxGreenBlue:
-  {
-    label: "Castor And Pollux 3 (Green and Blue)",
-    width: 55,
-    height: 110,
-    pivotX: 20, 
-    pivotY: 105
-  },
+      castorAndPolluxEditorData.castorAndPolluxGreenBlue,
   castorAndPolluxBeigePink:
-  {
-    label: "Castor And Pollux 4 (Beige and Pink)",
-    width: 55,
-    height: 110,
-    pivotX: 20, 
-    pivotY: 105
-  },
+      castorAndPolluxEditorData.castorAndPolluxBeigePink,
   castorAndPolluxExtra1:
-  {
-    label: "Castor And Pollux Extra 1 (Beige, Yellow and Green)",
-    width: 55,
-    height: 110,
-    pivotX: 20, 
-    pivotY: 105
-  },
+      castorAndPolluxEditorData.castorAndPolluxExtra1,
+  castorAndPolluxExtra2:
+      castorAndPolluxEditorData.castorAndPolluxExtra2,
 
 
-  yashaWitchBrownBlue:
-  {
-    label: "Yasha Witch 1 (Brown and Blue)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
-  yashaWitchPurpleGreen:
-  {
-    label: "Yasha Witch 2 (Purple and Green)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
-  yashaWitchPinkPurple:
-  {
-    label: "Yasha Witch 3 (Pink and Purple)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
-  yashaWitchBrownPink:
-  {
-    label: "Yasha Witch 4 (Brown and Pink)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
+  yashaWitchBrownBlue: yashaEditorData.yashaWitchBrownBlue,
+  yashaWitchPurpleGreen: yashaEditorData.yashaWitchPurpleGreen,
+  yashaWitchPinkPurple: yashaEditorData.yashaWitchPinkPurple,
+  yashaWitchBrownPink: yashaEditorData.yashaWitchBrownPink,
   yashaWitchBrownGreenUnused:
-  {
-    label: "Yasha Witch 5 Unused (Brown and Green)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
+      yashaEditorData.yashaWitchBrownGreenUnused,
   yashaWitchGreenBlueUnused:
-  {
-    label: "Yasha Witch 6 Unused (Green and Blue)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
+      yashaEditorData.yashaWitchGreenBlueUnused,
   yashaWitchBrownPurpleUnused:
-  {
-    label: "Yasha Witch 7 Unused (Brown and Purple)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
+      yashaEditorData.yashaWitchBrownPurpleUnused,
   yashaWitchBrownYellowUnused:
-  {
-    label: "Yasha Witch 8 Unused (Brown and Yellow)",
-    width: 63,
-    height: 83,
-    pivotX: 41, 
-    pivotY: 75
-  },
-
+      yashaEditorData.yashaWitchBrownYellowUnused,
 
   yashaWitchBrownBlueStabbing:
-  {
-    label: "Yasha Witch 1 Stabbing (Brown and Blue)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchBrownBlueStabbing,
   yashaWitchPurpleGreenStabbing:
-  {
-    label:
-      "Yasha Witch 2 Stabbing (Purple and Green)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchPurpleGreenStabbing,
   yashaWitchPinkPurpleStabbing:
-  {
-    label: "Yasha Witch 3 Stabbing (Pink and Purple)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchPinkPurpleStabbing,
   yashaWitchBrownPinkStabbing:
-  {
-    label: "Yasha Witch 4 Stabbing (Brown and Pink)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchBrownPinkStabbing,
   yashaWitchBrownGreenUnusedStabbing:
-  {
-    label: "Yasha Witch 5 Stabbing Unused (Brown and Green)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchBrownGreenUnusedStabbing,
   yashaWitchGreenBlueUnusedStabbing:
-  {
-    label: "Yasha Witch 6 Stabbing Unused (Green and Blue)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchGreenBlueUnusedStabbing,
   yashaWitchBrownPurpleUnusedStabbing:
-  {
-    label: "Yasha Witch 7 Stabbing Unused (Brown and Purple)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
+      yashaEditorData.yashaWitchBrownPurpleUnusedStabbing,
   yashaWitchBrownYellowUnusedStabbing:
-  {
-    label: "Yasha Witch 8 Stabbing Unused (Brown and Yellow)",
-    width: 78,
-    height: 85,
-    pivotX: 54, 
-    pivotY: 82
-  },
-
+      yashaEditorData.yashaWitchBrownYellowUnusedStabbing,
 
   yashaWitchBrownBlueFalling:
-  {
-    label: "Yasha Witch 1 Falling (Brown and Blue)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchBrownBlueFalling,
   yashaWitchPurpleGreenFalling:
-  {
-    label:
-      "Yasha Witch 2 Falling (Purple and Green)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchPurpleGreenFalling,
   yashaWitchPinkPurpleFalling:
-  {
-    label: "Yasha Witch 3 Falling (Pink and Purple)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchPinkPurpleFalling,
   yashaWitchBrownPinkFalling:
-  {
-    label: "Yasha Witch 4 Falling (Brown and Pink)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchBrownPinkFalling,
   yashaWitchBrownGreenUnusedFalling:
-  {
-    label: "Yasha Witch 5 Falling Unused (Brown and Green)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchBrownGreenUnusedFalling,
   yashaWitchGreenBlueUnusedFalling:
-  {
-    label: "Yasha Witch 6 Falling Unused (Green and Blue)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchGreenBlueUnusedFalling,
   yashaWitchBrownPurpleUnusedFalling:
-  {
-    label: "Yasha Witch 7 Falling Unused (Brown and Purple)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchBrownPurpleUnusedFalling,
   yashaWitchBrownYellowUnusedFalling:
-  {
-    label: "Yasha Witch 8 Falling Unused (Brown and Yellow)",
-    width: 45,
-    height: 67,
-    pivotX: 27, 
-    pivotY: 77
-  },
+      yashaEditorData.yashaWitchBrownYellowUnusedFalling,
 
 
-  yashaHumanBrownGreen:
-  {
-    label: "Yasha Human 1 (Brown and Green)",
-    width: 54,
-    height: 74,
-    pivotX: 33, 
-    pivotY: 69
-  },
-  yashaHumanGreenBlue:
-  {
-    label: "Yasha Human 2 (Green and Blue)",
-    width: 54,
-    height: 74,
-    pivotX: 33, 
-    pivotY: 69
-  },
-  yashaHumanBrownPurple:
-  {
-    label: "Yasha Human 3 (Brown and Purple)",
-    width: 54,
-    height: 74,
-    pivotX: 33, 
-    pivotY: 69
-  },
-  yashaHumanBrownYellow:
-  {
-    label: "Yasha Human (Brown and Yellow)",
-    width: 54,
-    height: 74,
-    pivotX: 33, 
-    pivotY: 69
-  },
+  yashaHumanBrownGreen: yashaEditorData.yashaHumanBrownGreen,
+  yashaHumanGreenBlue: yashaEditorData.yashaHumanGreenBlue,
+  yashaHumanBrownPurple: yashaEditorData.yashaHumanBrownPurple,
+  yashaHumanBrownYellow: yashaEditorData.yashaHumanBrownYellow,
+//   yashaHumanExtra1: yashaEditorData.yashaHumanExtra1,
+//   yashaHumanExtra2: yashaEditorData.yashaHumanExtra2,
+//   yashaHumanExtra3: yashaEditorData.yashaHumanExtra3,
+//   yashaHumanExtra4: yashaEditorData.yashaHumanExtra4,
 
 
-  thetisLightBlue:      // Drops crystal.
-  {
-    label: "Thetis 1 (Light Blue, Crystal)",
-    width: 56,
-    height: 112,
-    pivotX: 34, 
-    pivotY: 107
-  },
-  thetisDarkBlue:       // Drops crystal or food.
-  {
-    label: "Thetis 2 (Dark Blue, Any Item)",
-    width: 56,
-    height: 112,
-    pivotX: 34, 
-    pivotY: 107
-  },
-  thetisLightPink:      // Drops crystal or food.
-  {
-    label: "Thetis 3 (Light Pink, Any Item)",
-    width: 56,
-    height: 112,
-    pivotX: 34, 
-    pivotY: 107
-  },
-  thetisDarkPink:       // Drops crystal or food.
-  {
-    label: "Thetis 4 (Light Pink, Any Item)",
-    width: 56,
-    height: 112,
-    pivotX: 34, 
-    pivotY: 107
-  },
+  thetisLightBlue: thetisEditorData.thetisLightBlue,
+  thetisDarkBlue: thetisEditorData.thetisDarkBlue,
+  thetisLightPink: thetisEditorData.thetisLightPink,
+  thetisDarkPink: thetisEditorData.thetisDarkPink,
+  thetisExtra1: thetisEditorData.thetisExtra1,
+  thetisExtra2: thetisEditorData.thetisExtra2,
 
 
-  jumouBeigeGreen:
-  {
-    label: "Jumou 1 (Beige and Green)",
-    width: 47,
-    height: 105,
-    pivotX: 24, 
-    pivotY: 98
-  },
-  jumouBeigeBlue:
-  {
-    label: "Jumou 2 (Beige and Blue)",
-    width: 47,
-    height: 105,
-    pivotX: 24, 
-    pivotY: 98
-  },
-  jumouBeigeOrange:
-  {
-    label: "Jumou 3 (Beige and Orange)",
-    width: 47,
-    height: 105,
-    pivotX: 24, 
-    pivotY: 98
-  },
-  jumouWhiteBrown:
-  {
-    label: "Jumou 4 (White and Brown)",
-    width: 47,
-    height: 105,
-    pivotX: 24, 
-    pivotY: 98
-  },
+  jumouBeigeGreen: jumouEditorData.jumouBeigeGreen,
+  jumouBeigeBlue: jumouEditorData.jumouBeigeBlue,
+  jumouBeigeOrange: jumouEditorData.jumouBeigeOrange,
+  jumouWhiteBrown: jumouEditorData.jumouWhiteBrown,
+  jumouExtra1: jumouEditorData.jumouExtra1,
+  jumouExtra2: jumouEditorData.jumouExtra2,
 
 
-  criminalBlackBlueIdle:
-  {
-    label: "Criminal 1 Idle (Black and Blue)",
-    width: 64,
-    height: 105,
-    pivotX: 35, 
-    pivotY: 96
-  },
-  criminalBlackPurpleIdle:
-  {
-    label: "Criminal 2 Idle (Black and Purple)",
-    width: 64,
-    height: 105,
-    pivotX: 35, 
-    pivotY: 96
-  },
-  criminalPurpleRedIdle:
-  {
-    label: "Criminal 3 Idle (Purple and Red)",
-    width: 64,
-    height: 105,
-    pivotX: 35, 
-    pivotY: 96
-  },
-  criminalGreenBrownIdle:
-  {
-    label: "Criminal 4 Idle (Green and Brown)",
-    width: 64,
-    height: 105,
-    pivotX: 35, 
-    pivotY: 96
-  },
+  criminalBlackBlueIdle: criminalEditorData.criminalBlackBlueIdle,
+  criminalBlackPurpleIdle: criminalEditorData.criminalBlackPurpleIdle,
+  criminalPurpleRedIdle: criminalEditorData.criminalPurpleRedIdle,
+  criminalGreenBrownIdle: criminalEditorData.criminalGreenBrownIdle,
+  criminalExtra1Idle: criminalEditorData.criminalExtra1Idle,
+  criminalExtra2Idle: criminalEditorData.criminalExtra2Idle,
+
+  criminalBlackBlue: criminalEditorData.criminalBlackBlue,
+  criminalBlackPurple: criminalEditorData.criminalBlackPurple,
+  criminalPurpleRed: criminalEditorData.criminalPurpleRed,
+  criminalGreenBrown: criminalEditorData.criminalGreenBrown,
+  criminalExtra1: criminalEditorData.criminalExtra1,
+  criminalExtra2: criminalEditorData.criminalExtra2,
+
+  criminalBlackBlueRunning: criminalEditorData.criminalBlackBlueRunning,
+  criminalBlackPurpleRunning: criminalEditorData.criminalBlackPurpleRunning,
+  criminalPurpleRedRunning: criminalEditorData.criminalPurpleRedRunning,
+  criminalGreenBrownRunning: criminalEditorData.criminalGreenBrownRunning,
+  criminalExtra1Running: criminalEditorData.criminalExtra1Running,
+  criminalExtra2Running: criminalEditorData.criminalExtra2Running,
 
 
-  criminalBlackBlue:
-  {
-    label: "Criminal 1 (Black and Blue)",
-    width: 62,
-    height: 99,
-    pivotX: 29, 
-    pivotY: 95
-  },
-  criminalBlackPurple:
-  {
-    label: "Criminal 2 (Black and Purple)",
-    width: 62,
-    height: 99,
-    pivotX: 29, 
-    pivotY: 95
-  },
-  criminalPurpleRed:
-  {
-    label: "Criminal 3 (Purple and Red)",
-    width: 62,
-    height: 99,
-    pivotX: 29, 
-    pivotY: 95
-  },
-  criminalGreenBrown:
-  {
-    label: "Criminal 4 (Green and Brown)",
-    width: 62,
-    height: 99,
-    pivotX: 29, 
-    pivotY: 95
-  },
+  castorAndPolluxBoss1: castorAndPolluxEditorData.castorAndPolluxBoss1,
+  castorAndPolluxBoss2: castorAndPolluxEditorData.castorAndPolluxBoss2,
 
 
-  criminalBlackBlueRunning:
-  {
-    label: "Criminal 1 Running (Black and Blue)",
-    width: 66,
-    height: 97,
-    pivotX: 31, 
-    pivotY: 92
-  },
-  criminalBlackPurpleRunning:
-  {
-    label: "Criminal 2 Running (Black and Purple)",
-    width: 66,
-    height: 97,
-    pivotX: 31, 
-    pivotY: 92
-  },
-  criminalPurpleRedRunning:
-  {
-    label: "Criminal 3 Running (Purple and Red)",
-    width: 66,
-    height: 97,
-    pivotX: 31, 
-    pivotY: 92
-  },
-  criminalGreenBrownRunning:
-  {
-    label: "Criminal 4 Running (Green and Brown)",
-    width: 66,
-    height: 97,
-    pivotX: 31, 
-    pivotY: 92
-  },
-
-
-  castorAndPolluxBoss1:     // 1st Boss 1
-  {
-    label: "Castor and Pollux 1st Boss 1",
-    width: 92,
-    height: 117,
-    pivotX: 46,     // width - 60 (Maybe +?) 
-    pivotY: 109
-  },
-  castorAndPolluxBoss2:     // 1st Boss 2
-  {
-    label: "Castor and Pollux 1st Boss 2",
-    width: 124,
-    height: 85,
-    pivotX: 52,     // width - 60 (Maybe +?)  
-    pivotY: 79
-  },
-
-
-  morga:      // 2nd Boss
-  {
-    label: "Morga 2nd Boss",
-    width: 86,
-    height: 125,
-    pivotX: 39, 
-    pivotY: 109
-  },
+  morga: morgaEditorData.morga,
   
 
-  kyureneRedGreen3rdBoss:
-  {
-    label: "Kyurene 3rd Boss (Red and Green)",
-    width: 105,
-    height: 136,
-    pivotX: 54, 
-    pivotY: 131
-  },
-  kyureneRedGreen:        // 3rd Boss as 6th
-  {
-    label: "Kyurene 6th Boss (Red and Green)",
-    width: 75,
-    height: 117,
-    pivotX: 30, 
-    pivotY: 109
-  },
-  kyurenePinkPurple:      // 6th Boss 1
-  {
-    label: "Kyurene 6th Boss (Pink and Purple)",
-    width: 75,
-    height: 117,
-    pivotX: 30, 
-    pivotY: 109
-  },
-  kyureneGreenGreen:      // 6th Boss 2
-  {
-    label: "Kyurene 6th Boss (Green and Green)",
-    width: 75,
-    height: 117,
-    pivotX: 30, 
-    pivotY: 109
-  },
-  kyureneExtra1:
-  {
-    label: "Kyurene Extra 1 (Red and Purple)",
-    width: 75,
-    height: 117,
-    pivotX: 30, 
-    pivotY: 109
-  },
-  kyureneExtra2:
-  {
-    label: "Kyurene Extra 2 (Brown and Blue)",
-    width: 75,
-    height: 117,
-    pivotX: 30, 
-    pivotY: 109
-  },
-  kyureneExtra3:
-  {
-    label: "Kyurene Extra 3 (Blue and Yellow)",
-    width: 75,
-    height: 117,
-    pivotX: 30, 
-    pivotY: 109
-  },
+  kyureneRedGreen3rdBoss: kyureneEditorData.kyureneRedGreen3rdBoss,
+  kyureneRedGreen: kyureneEditorData.kyureneRedGreen,
+  kyurenePinkPurple: kyureneEditorData.kyurenePinkPurple,
+  kyureneGreenGreen: kyureneEditorData.kyureneGreenGreen,
+  kyureneExtra1: kyureneEditorData.kyureneExtra1,
+  kyureneExtra2: kyureneEditorData.kyureneExtra2,
+  kyureneExtra3: kyureneEditorData.kyureneExtra3,
 
 
-  garobenGreenOrange:
-  {
-    label: "Garoben Green Orange Unused Sub Boss",
-    width: 92,
-    height: 120,
-    pivotX: 52, 
-    pivotY: 110
-  },
-  garobenGrayBrown:
-  {
-    label: "Garoben Gray Brown Unused Sub Boss",
-    width: 92,
-    height: 120,
-    pivotX: 52, 
-    pivotY: 110
-  },
-  garobenBrownGray:
-  {
-    label: "Garoben Brown Gray Unused Sub Boss",
-    width: 92,
-    height: 120,
-    pivotX: 52, 
-    pivotY: 110
-  },
-  garobenGreenBlue:
-  {
-    label: "Garoben Green Blue Unused Sub Boss",
-    width: 92,
-    height: 120,
-    pivotX: 52, 
-    pivotY: 110
-  },
-  garobenGreenOrange4thBoss:      // 4th Boss
-  {
-    label: "Garoben Green Orange 4th Boss",
-    width: 92,
-    height: 120,
-    pivotX: 52, 
-    pivotY: 110
-  },
-
-  zoisite:      // 8th Stage Sub-Boss
-  {
-    label: "Zoisite Sub Boss",
-    width: 40,
-    height: 102,
-    pivotX: 19, 
-    pivotY: 102
-  },
-  zoisite5thBoss:      // 5th Boss
-  {
-    label: "Zoisite 5th Boss",
-    width: 40,
-    height: 102,
-    pivotX: 19, 
-    pivotY: 102
-  },
-  kunzite:      // 8th Stage Sub-Boss
-  {
-    label: "Kunzite Sub Boss",
-    width: 45,
-    height: 124,
-    pivotX: 20, 
-    pivotY: 119
-  },
-
-  bakeneForm1:      // 7th Boss
-  {
-    label: "Bakene 7th Boss 1st Form",
-    width: 120,
-    height: 145,
-    pivotX: 59, 
-    pivotY: 127
-  },
-  bakeneForm2:      // 7th Boss
-  {
-    label: "Bakene 7th Boss 2nd Form",
-    width: 140,
-    height: 127,
-    pivotX: 66, 
-    pivotY: 107
-  },
-  bakeneForm3:      // 7th Boss
-  {
-    label: "Bakene 7th Boss 3rd Form",
-    width: 140,
-    height: 127,
-    pivotX: 66, 
-    pivotY: 107
-  },
-  bakene:
-  {
-    label: "Bakene Sub Boss (Unstable)",
-    width: 140,
-    height: 127,
-    pivotX: 66, 
-    pivotY: 107
-  },
-  bakeneRunningAway:
-  {
-    label: "Bakene Running Away",
-    width: 140,
-    height: 127,
-    pivotX: 76, 
-    pivotY: 103
-  },
-  bakeneExtra1Form3:
-  {
-    label: "Bakene Extra 1 3rd Form (Brown and Silver)",
-    width: 140,
-    height: 127,
-    pivotX: 66, 
-    pivotY: 107
-  },
-  bakeneExtra2Form3:
-  {
-    label: "Bakene Extra 2 3rd Form (Grey and Copper)",
-    width: 140,
-    height: 127,
-    pivotX: 66, 
-    pivotY: 107
-  },
+  garobenGreenOrange: garobenEditorData.garobenGreenOrange,
+  garobenGrayBrown: garobenEditorData.garobenGrayBrown,
+  garobenBrownGray: garobenEditorData.garobenBrownGray,
+  garobenGreenBlue: garobenEditorData.garobenGreenBlue,
+  garobenGreenOrange4thBoss: garobenEditorData.garobenGreenOrange4thBoss,
 
 
-  queenBeryl:       // Final Boss
-  {
-    label: "Queen Beryl 8th / Final Boss",
-    width: 68,
-    height: 134,
-    pivotX: 27, 
-    pivotY: 136
-  },
+  bakeneForm1: bakeneEditorData.bakeneForm1,
+  bakeneForm2: bakeneEditorData.bakeneForm2,
+  bakeneForm3: bakeneEditorData.bakeneForm3,
+  bakene: bakeneEditorData.bakene,
+  bakeneRunningAway: bakeneEditorData.bakeneRunningAway,
+  bakeneExtra1Form3: bakeneEditorData.bakeneExtra1Form3,
+  bakeneExtra2Form3: bakeneEditorData.bakeneExtra2Form3,
+
+
+  zoisite5thBoss: zoisiteEditorData.zoisite5thBoss,
+  zoisite: zoisiteEditorData.zoisite,
+  zoisiteExtra1: zoisiteEditorData.zoisiteExtra1,
+  zoisiteExtra2: zoisiteEditorData.zoisiteExtra2,
+
+
+  kunzite: kunziteEditorData.kunzite,
+  kunziteExtra1: kunziteEditorData.kunziteExtra1,
+  kunziteExtra2: kunziteEditorData.kunziteExtra2,
+
+
+  queenBeryl: queenBerylEditorData.queenBeryl,
+  queenBerylExtra1: queenBerylEditorData.queenBerylExtra1,
+  queenBerylExtra2: queenBerylEditorData.queenBerylExtra2,
 
 
   // Items
-  crystal:
-  {
-    label: "Crystal",
-    width: 18,
-    height: 13,
-    pivotX: 10, 
-    pivotY: 6
-  },
+  crystal: itemEditorData.crystal,
 
-  chocolate:        // Chocolate Brown Wrapper.
-  {
-    label: "Chocolate",
-    width: 20,
-    height: 14,
-    pivotX: 12, 
-    pivotY: 9
-  },
-  iceCreamCornet:   // Ice Cream Cornet Blue.
-  {
-    label: "Ice Cream Cornet",
-    width: 10,
-    height: 24,
-    pivotX: 6, 
-    pivotY: 21
-  },
-  pudding:          // Pudding Blue Dish.
-  {
-    label: "Pudding",
-    width: 18,
-    height: 12,
-    pivotX: 10, 
-    pivotY: 9
-  },
-  iceCreamCup:      // Ice Cream Cup Blue.
-  {
-    label: "Ice Cream Cup",
-    width: 14,
-    height: 25,
-    pivotX: 8, 
-    pivotY: 22
-  },
-  lollipop:         // Lollipop Brown.
-  {
-    label: "Lollipop",
-    width: 10,
-    height: 20,
-    pivotX: 6, 
-    pivotY: 18
-  },
-  pieceOfCake:      // Piece of Cake Brown Dish.
-  {
-    label: "Piece of Cake",
-    width: 22,
-    height: 15,
-    pivotX: 12, 
-    pivotY: 12
-  },
-  roundCake:        // Round Cake Brown Dish.
-  {
-    label: "Round Cake",
-    width: 22,
-    height: 13,
-    pivotX: 12, 
-    pivotY: 10
-  },
-  pie:              // Pie Blue Dish.
-  {
-    label: "Pie",
-    width: 22,
-    height: 14,
-    pivotX: 12, 
-    pivotY: 11
-  },
-  popcorn:          // Popcorn Brown Cone.
-  {
-    label: "Popcorn",
-    width: 12,
-    height: 18,
-    pivotX: 7, 
-    pivotY: 15
-  },
-  fishMeatball:  // Fish Meat Ball Blue Dish.
-  {
-    label: "Fish Meatball",
-    width: 20,
-    height: 17,
-    pivotX: 12, 
-    pivotY: 14
-  },
-  donut:            // Donut.
-  {
-    label: "Donut",
-    width: 14,
-    height: 10,
-    pivotX: 8, 
-    pivotY: 7
-  },
-  chocolateCandy:   // Chocolate Candy Brown Wrapper.
-  {
-    label: "Chocolate Candy",
-    width: 18,
-    height: 9,
-    pivotX: 10, 
-    pivotY: 6
-  },
-  muffin:           // Muffin Brown Wrapper.
-  {
-    label: "Muffin",
-    width: 12,
-    height: 14,
-    pivotX: 7, 
-    pivotY: 11
-  },
-  soup:             // Soup Blue Dish.
-  {
-    label: "Soup",
-    width: 14,
-    height: 12,
-    pivotX: 8, 
-    pivotY: 10
-  },
-
+  chocolate: itemEditorData.chocolate,
+  iceCreamCornet: itemEditorData.iceCreamCornet,
+  pudding: itemEditorData.pudding,
+  iceCreamCup: itemEditorData.iceCreamCup,
+  lollipop: itemEditorData.lollipop,
+  pieceOfCake: itemEditorData.pieceOfCake,
+  roundCake: itemEditorData.roundCake,
+  pie: itemEditorData.pie,
+  popcorn: itemEditorData.popcorn,
+  fishMeatball: itemEditorData.fishMeatball,
+  donut: itemEditorData.donut,
+  chocolateCandy: itemEditorData.chocolateCandy,
+  muffin: itemEditorData.muffin,
+  soup: itemEditorData.soup,
 
   // Extra Food
-  meatball:             // Meatball (Heals 1/2+)
-  {
-    label: "Meatball",
-    width: 15,
-    height: 15,
-    pivotX: 9, 
-    pivotY: 11
-  },
-  starChickenNugget:    // Star C. Nugget (Heals 9/10+)
-  {
-    label: "Star Chicken Nugget",
-    width: 21,
-    height: 19,
-    pivotX: 12, 
-    pivotY: 10
-  },
-  tuna:                 // Tuna (Heals 3/2+)
-  {
-    label: "Tuna",
-    width: 16,
-    height: 9,
-    pivotX: 9, 
-    pivotY: 8
-  },
+  meatball: itemEditorData.meatball,
+  starChickenNugget: itemEditorData.starChickenNugget,
+  tuna: itemEditorData.tuna,
 
 
   groupLimit: {width: 4, height: 240},

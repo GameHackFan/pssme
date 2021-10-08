@@ -12,11 +12,159 @@ below.
 0 10101 10101 10101
 
 ================================================================
+New Sailor Color Address
+================================================================
+
+5B700 Label Start
+
+Sailor    Old     New     Difference
+Moon      594A0   5B740   22A0
+Mercury   59640   5B7C0   2180
+Mars      596C0   5B840   2180
+Jupiter   59740   5B8C0   2180
+Venus     597B0   5B940   2180
+
+5BA60 Label End
+
+================================================================
+New Enemy Color Address
+================================================================
+
+Furau                 F
+Oniwabandana          O
+Tesuni                T
+Castor and Pollux     CP
+Yasha Witch           YW          
+Yasha Human           YH
+Thetis                Th
+Jumou                 J
+Criminal              C
+Morga                 Mo
+Kyurene               Ky
+Garoben               Ga
+Bakene                Ba
+Zoisite               Zo
+Kunzite               Ku
+Queen Beryl           QB
+Empty                 Emp
+Label                 Lab
+
+
+Lab		375328, 5BA20
+Emp		375360, 5BA40
+
+FE1		375392, 5BA60, (5BA60 - 59A20), 2040
+TE1		375424, 5BA80, (5BA60 - 59B20), 1F40
+FE2		375456, 5BAA0
+TE2		375488, 5BAC0
+FE3		375520, 5BAE0
+TE3		375552, 5BB00
+FE4		375584, 5BB20
+TE4		375616, 5BB40
+Emp		375648, 5BB60
+
+ThE1	375680, 5BB80, (5BB80 - 59F20), 1C60
+O1		375712, 5BBA0, (5BB80 - 59AA0), 20E0
+ThE2	375744, 5BBC0
+O2		375776, 5BBE0
+O3		375808, 5BC00
+O4		375840, 5BC20
+ThE3	375872, 5BC40
+ThE4	375904, 5BC60
+Emp		375936, 5BC80
+
+CE1		375968, 5BCA0, (5BCA0 - 5A020), 1C80 
+JE1		376000, 5BCC0, (5BCA0 - 59FA0), 1D00
+CE2		376032, 5BCE0
+JE2		376064, 5BD00
+JE3		376096, 5BD20
+JE4		376128, 5BD40
+CE3		376160, 5BD60
+CE4		376192, 5BD80
+Emp		376224, 5BDA0
+
+CPE1	376256, 5BDC0, (5BDC0 - 59C20), 21A0
+CPE2	376288, 5BDE0
+CPE3	376320, 5BE00
+CPE4	376352, 5BE20
+CPE5	376384, 5BE40
+CPE6	376416, 5BE60
+CPE7	376448, 5BE80
+CPE8	376480, 5BEA0
+Emp		376512, 5BEC0
+
+KyE1	376544, 5BEE0, (5BEE0 - 5A340), 1BA0
+KyE2	376576, 5BF00
+KyE3	376608, 5BF20
+KyE4	376640, 5BF40
+Emp		376672, 5BF60
+
+BaE1	376704, 5BF80, (5BF80 - 5A4E0), 1AA0
+BaE2	376736, 5BFA0
+BaE3	376768, 5BFC0
+BaE4	376800, 5BFE0
+Emp		376832, 5C000
+
+ZoE1	376864, 5C020, (5C020 - 5A600), 1A20
+ZoE2	376896, 5C040
+ZoE3	376928, 5C060
+ZoE4	376960, 5C080
+Emp		376992, 5C0A0
+
+KuE1	377024, 5C0C0, (5C0C0 - 5A620), 1AA0
+KuE2	377056, 5C0E0
+KuE3	377088, 5C100
+KuE4	377120, 5C120
+Emp		377152, 5C140
+
+QBE1	377184, 5C160, (5C160 - 5A660), 1B00
+QBE2	377216, 5C180
+QBE3	377248, 5C1A0
+QBE4	377280, 5C1C0
+Emp		377312, 5C1E0
+
+YWE1	377344, 5C200, (5C200 - 59DA0), 2460
+YHE1	377376, 5C220, (5C200 - 59E20), 23E0
+YWE2	377408, 5C240
+YHE2	377440, 5C260
+YWE3	377472, 5C280
+YHE3	377504, 5C2A0
+
+Emp		377536, 5C2C0
+Lab		377568, 5C2E0
+
+Furau, 10	              5BA60, (5BA60 - 59A20), 2040
+Oniwabandana, 11	      5BBA0, (5BB80 - 59AA0), 20E0
+Tesuni, 12      	      5BA80, (5BA60 - 59B20), 1F40
+Castor and Pollux, 13   5BDC0, (5BDC0 - 59C20), 21A0
+Yasha Witch, 14         5C200, (5C200 - 59DA0), 2460, but it will use 0
+Yasha Human, 15         5C220, (5C200 - 59E20), 23E0, but it will use FFB0
+Thetis, 16              5BB80, (5BB80 - 59F20), 1C60
+Jumou, 17               5BCC0, (5BCA0 - 59FA0), 1D00
+Criminal, 18		        5BCA0, (5BCA0 - 5A020), 1C80
+Morga, 19               ?, ?, 0000
+Kyurene, 1A	            5BEE0, (5BEE0 - 5A340), 1BA0
+Garoben, 1B	            ?, ?, 0000
+Unknown, 1C             ?, ?, 0000
+Bakene, 1D	            5BF80, (5BF80 - 5A4E0), 1AA0
+Unknown, 1E             ?, ?, 0000
+Unknown, 1F             ?, ?, 0000
+Zoisite, 20	            5C020, (5C020 - 5A600), 1A20
+Kunzite, 21             5C0C0, (5C0C0 - 5A620), 1AA0
+Queen Beryl, 22         5C160, (5C160 - 5A660), 1B00
+
+
+For Thetis, Criminal and Bosses all IDs work.
+For Castor and Pollux IDs 6+, only 6 and A works properly, the rest has no HP.
+For the other enemies IDs 4+, only 4 to 9 do not bug the health bar.
+
+================================================================
 Palletes
 ================================================================
 
-Furau (Grey, White)
-4D 29 FF 7F F8 77 F5 6B 8F 5B 29 47 02 26 12 46 4C 2D A7 18 DE 77 39 63 94 4E EF 39 29 21 02 04
+
+Furau (Gray, Purple)
+4D 29 FF 7F F8 77 F5 6B 8F 5B 29 47 02 26 D0 3D 2B 29 86 14 7C 4B B7 32 11 26 6C 19 C8 0C 02 04
 
 Furau (Blue, White)
 4D 29 FF 7F F8 77 F5 6B 8F 5B 29 47 02 26 5A 4D B2 30 49 14 DE 77 39 63 94 4E EF 39 29 21 03 00
@@ -31,16 +179,34 @@ Tesuni (Black, Yellow)
 93 4D ED 7B E9 67 84 5B 42 43 C0 2A DE 7E BF 7B 3B 6B B7 5A 33 4A AF 39 2B 29 A7 18 44 0C 02 04
 
 Castor and Pollux (Brown, White)
-EF 31 FA 63 FD 77 9B 6B D5 52 10 3A 4A 21 F6 6F 91 5F 2B 4F 65 32 80 47 A4 2A 02 1A 20 01 63 04
-
-Castor and Pollux (Purple, Red)
-EF 31 EA 1B FC 77 E8 27 C1 0A 00 06 40 01 F7 6B 92 5B 2D 47 88 2E 5C 53 96 36 11 22 09 2A 60 00
+EF 31 FA 63 FD 77 9B 6B D4 56 10 3A 4A 21 F7 6B 92 5B 2D 47 88 2E 89 47 A4 2A 02 1A 20 01 63 04
 
 Castor and Pollux (Yellow, Green)
 EF 31 D2 61 FB 77 4E 62 89 45 E5 30 83 1C F6 6F 91 5F 2B 4F 65 32 E9 67 A5 57 E3 3E 00 22 00 08
 
 Castor and Pollux (Red, Yellow)
 EF 31 EA 77 FB 77 F1 73 A3 5F E2 3E 41 2A F6 6F 91 5F 2B 4F 65 32 C8 23 24 0F 42 06 20 01 60 00
+
+Castor and Pollux (Purple, Red)
+EF 31 EA 1B FC 77 E8 27 C1 0A 00 06 40 01 F7 6B 92 5B 2D 47 88 2E 5C 53 96 36 11 22 09 2A 60 00
+
+Thetis (Green)
+C9 34 9B 77 D3 67 70 53 EB 3A A7 25 EC 63 91 61 FE 7B 79 6B F5 5A 71 4A ED 39 69 29 E5 18 60 04
+
+Thetis (Gray)
+C9 34 9B 77 D3 67 70 53 EB 3A A7 25 89 63 9E 49 DC 7F 54 7B 8F 6E 4D 62 CC 4D 27 39 82 24 60 04
+
+Jumou (Green, Purple)
+90 4F BB 7F 36 73 D3 62 30 52 CD 41 6A 31 07 25 A4 18 41 0C BB 53 15 3B 91 26 0D 12 46 01 61 00
+
+Jumou (Blue, Red)
+90 4F 9F 7B DF 6E FA 59 75 45 31 35 0E 2D EA 20 C8 1C 65 10 F3 3F AB 27 26 17 83 0A C1 01 41 00
+
+Criminal (Red, White)
+EC 25 F2 67 2A 4B 69 36 84 1D FD 7B 16 5F 92 4E 0D 3A 88 25 FB 73 EE 37 49 23 65 12 82 05 61 00
+
+Criminal (Blue, Gray)
+EC 25 F2 67 2A 4B 69 36 84 1D 96 56 F1 41 6D 31 E9 20 65 10 DF 7B 5D 5A 55 35 CE 24 69 14 03 04
 
 Kyurene (Red, Purple)
 D9 5E 7F 6F DB 5A D8 49 54 39 D0 28 4B 18 FD 39 56 21 6F 08 F6 57 EE 37 67 17 A4 0A 82 01 60 00
@@ -56,6 +222,26 @@ Bakene (Brown)
 
 Bakene (Black)
 30 26 FE 7F F4 5F F0 4F E9 32 64 1E 82 0D 98 25 9B 73 F6 5E 30 46 AC 35 28 25 C5 18 62 0C 00 00
+
+Zoisite (Purple)
+96 40 D7 73 F4 67 4E 4F AA 3A C5 21 C7 5B 12 3B 4E 22 9F 7B BA 4E 35 3E 90 29 0C 19 C8 08 23 00
+
+Zoisite (Red)
+96 40 D7 73 F4 67 4E 4F AA 3A C5 21 C7 5B 99 49 F2 30 FC 6F CB 37 47 23 A4 16 01 0A 40 05 60 00
+
+Kunzite (Purple)
+87 31 D3 5F 4D 43 89 2E 85 19 59 5B 90 3A 6B 19 E7 10 FD 73 BA 4E 35 3E 90 29 0C 19 C8 08 01 00
+
+Kunzite (Red)
+87 31 D3 5F 4D 43 89 2E 85 19 4D 5F 84 46 C2 15 00 09 D7 73 CB 37 47 23 A4 16 01 0A 40 05 01 00
+
+Queen Beryl (Orange, Black)
+0E 38 F6 73 51 53 8B 32 E9 25 69 29 06 1D 82 0C 19 30 FC 7F E2 43 80 33 00 27 60 1A 80 09 60 04
+
+Queen Beryl (Red, Blue)
+0E 38 F6 73 51 53 8B 32 E9 25 59 3D B5 2C AC 0C E0 5F FC 7F EB 33 67 23 E4 16 62 0E 80 01 83 00
+
+
 
 Sailor Moon (Black and Brown)
 0B 48 FE 7F F7 73 F1 5F AC 4F E7 3A E2 19 CC 7B C0 5F E8 43 02 27 96 56 AF 39 2B 29 A7 18 23 08

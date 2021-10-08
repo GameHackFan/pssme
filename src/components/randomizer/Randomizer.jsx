@@ -57,8 +57,7 @@ class Randomizer extends Component
   onClearChangesClick(event)
   {
     randomizerService.setMainDataToDefault();
-    editorService.forceComponentToUpdateByKey(
-        "randomizer");
+    editorService.forceComponentToUpdateByKey("randomizer");
   }
 
   handleRandomizerDataChange(event)
@@ -76,8 +75,7 @@ class Randomizer extends Component
     else if(name === "randomProfile")
       randomizerService.setRandomProfile(value);
 
-    editorService.forceComponentToUpdateByKey(
-        "randomizer");
+    editorService.forceComponentToUpdateByKey("randomizer");
   }
 
   handleGroupDataChange(event)
@@ -87,10 +85,8 @@ class Randomizer extends Component
     if(level && enemyGroup)
     {
       const {name, value} = event.target;
-      randomizerService.updateMainData(
-          level, enemyGroup, name, value);
-      editorService.forceComponentToUpdateByKey(
-          "randomizer");
+      randomizerService.updateMainData(level, enemyGroup, name, value);
+      editorService.forceComponentToUpdateByKey("randomizer");
     }
   }
 
@@ -99,10 +95,8 @@ class Randomizer extends Component
     const extras = {};
     extras.successCallback = this.props.onActionResult;
     extras.errorCallback = this.props.onActionResult;
-    extras.successMessage =
-        "Randomizer preset loaded!";
-    extras.errorMessage =
-        "Problems loading the preset!";
+    extras.successMessage = "Randomizer preset loaded!";
+    extras.errorMessage = "Problems loading the preset!";
     extras.file = event.target.files[0];
     fileService.readTextFile(extras);
   }
@@ -113,8 +107,7 @@ class Randomizer extends Component
         createRandomizerPreset(), null, "\t");
     let contentType = "text/json;charset=utf-8";
     let filename = "pssme_randomizer_preset.json";
-    editorService.downloadFile(
-        json, filename, contentType);
+    editorService.downloadFile(json, filename, contentType);
   }
 
   onSaveLevelEditorPresetClick(event)
@@ -123,8 +116,7 @@ class Randomizer extends Component
         createLevelEditorPreset(), null, "\t");
     let contentType = "text/json;charset=utf-8";
     let filename = "pssme_level_editor_preset.json";
-    editorService.downloadFile(
-        json, filename, contentType);
+    editorService.downloadFile(json, filename, contentType);
   }
 
   onApplyRandomizerClick(event)
@@ -135,13 +127,13 @@ class Randomizer extends Component
     {
       randomizerService.applyRandomizer();
       extras.successMessage = "Randomizer applied!";
+      console.log("Randomizer applied!");
     }
     catch(e)
     {
       console.log(e.message);
       console.log(e);
-      extras.errorMessage =
-          "Problems applying the randomizer!";
+      extras.errorMessage = "Problems applying the randomizer!";
     } 
     
     this.props.onActionResult(extras);
@@ -160,8 +152,7 @@ class Randomizer extends Component
       console.log(e.message);
       console.log(e);
       const extras = {};
-      extras.errorMessage =
-          "Invalid JSON preset file!";
+      extras.errorMessage = "Invalid JSON preset file!";
       this.props.onActionResult(extras);
     }
   }
@@ -176,24 +167,19 @@ class Randomizer extends Component
       <RandomizerComponent
         romReady={romService.isROMReady()}
         seed={randomizerService.getSeed()}
-        randomProfile=
-          {randomizerService.getRandomProfile()}
+        randomProfile={randomizerService.getRandomProfile()}
         level={level}
         enemyGroup={enemyGroup}
         groupData={groupData}
         handleChange={this.handleChange}
-        handleRandomizerDataChange=
-          {this.handleRandomizerDataChange}
-        handleGroupDataChange=
-          {this.handleGroupDataChange}
+        handleRandomizerDataChange={this.handleRandomizerDataChange}
+        handleGroupDataChange={this.handleGroupDataChange}
         requestFile={editorService.requestFile}
         onClearChangesClick={this.onClearChangesClick}
         onLoadPresetFileChange={this.onLoadPresetFileChange}
         onSavePresetClick={this.onSavePresetClick}
-        onSaveLevelEditorPresetClick=
-          {this.onSaveLevelEditorPresetClick}
-        onApplyRandomizerClick=
-          {this.onApplyRandomizerClick}
+        onSaveLevelEditorPresetClick={this.onSaveLevelEditorPresetClick}
+        onApplyRandomizerClick={this.onApplyRandomizerClick}
       />
     );
   } 

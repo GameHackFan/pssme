@@ -2,23 +2,25 @@ let enemiesNoDrop =
 [
   "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra1",
-  "furauBrownYellow", "furauGreenBlue",
+  "furauExtra1", "furauExtra2",
 
   "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra1",
-  "furauBrownYellow", "furauGreenBlue",
+  "furauExtra1", "furauExtra2",
 
   "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra1",
+  "furauExtra1", "furauExtra2",
+
+  "furauOrangeGreen", "furauPurpleBlue",
   "furauBrownYellow", "furauGreenBlue",
+  "furauExtra1", "furauExtra2",
 
 
   "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
   "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
   "oniwabandanaExtra1", "oniwabandanaExtra2",
+
   "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
   "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
   "oniwabandanaExtra1", "oniwabandanaExtra2",
@@ -26,6 +28,7 @@ let enemiesNoDrop =
   "oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
   "oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
   "oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
+
   "oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
   "oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
   "oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
@@ -34,6 +37,7 @@ let enemiesNoDrop =
   "tesuniBrownOrange", "tesuniGrayPurple",
   "tesuniBrownPink", "tesuniGreenPink",
   "tesuniExtra1",
+
   "tesuniBrownOrange", "tesuniGrayPurple",
   "tesuniBrownPink", "tesuniGreenPink",
   "tesuniExtra1",
@@ -41,6 +45,7 @@ let enemiesNoDrop =
   "tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
   "tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
   "tesuniExtra1Racket",
+
   "tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
   "tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
   "tesuniExtra1Racket",
@@ -51,22 +56,19 @@ let enemiesNoDrop =
 
   "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
   "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1",
+  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
 
   "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
   "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1",
+  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
 
   "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
   "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1",
-
+  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
+  
   "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
   "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1",
-
-  "castorAndPolluxLightGreenBlue", "castorAndPolluxGreenBlue",
-  "castorAndPolluxBeigePink", "castorAndPolluxExtra1",
+  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
 
 
   "yashaWitchBrownBlue", "yashaWitchPurpleGreen",
@@ -89,47 +91,56 @@ let enemiesNoDrop =
   "yashaHumanBrownPurple", "yashaHumanBrownYellow",
   "yashaHumanBrownGreen", "yashaHumanGreenBlue",
   "yashaHumanBrownPurple", "yashaHumanBrownYellow",
+  // "yashaHumanExtra1", "yashaHumanExtra2",
+  // "yashaHumanExtra3", "yashaHumanExtra4",
 
   "yashaHumanBrownGreen", "yashaHumanGreenBlue",
   "yashaHumanBrownPurple", "yashaHumanBrownYellow",
   "yashaHumanBrownGreen", "yashaHumanGreenBlue",
   "yashaHumanBrownPurple", "yashaHumanBrownYellow",
+  // "yashaHumanExtra1", "yashaHumanExtra2",
+  // "yashaHumanExtra3", "yashaHumanExtra4",
 
   "yashaHumanBrownGreen", "yashaHumanGreenBlue",
   "yashaHumanBrownPurple", "yashaHumanBrownYellow",
   "yashaHumanBrownGreen", "yashaHumanGreenBlue",
   "yashaHumanBrownPurple", "yashaHumanBrownYellow",
+  // "yashaHumanExtra1", "yashaHumanExtra2",
+  // "yashaHumanExtra3", "yashaHumanExtra4",
 
 
   "jumouBeigeGreen", "jumouBeigeBlue",
   "jumouBeigeOrange", "jumouWhiteBrown",
-  "jumouBeigeGreen", "jumouBeigeBlue",
-  "jumouBeigeOrange", "jumouWhiteBrown",
+  "jumouExtra1", "jumouExtra2",
 
   "jumouBeigeGreen", "jumouBeigeBlue",
   "jumouBeigeOrange", "jumouWhiteBrown",
-  "jumouBeigeGreen", "jumouBeigeBlue",
-  "jumouBeigeOrange", "jumouWhiteBrown",
+  "jumouExtra1", "jumouExtra2",
 
   "jumouBeigeGreen", "jumouBeigeBlue",
   "jumouBeigeOrange", "jumouWhiteBrown",
+  "jumouExtra1", "jumouExtra2",
+
   "jumouBeigeGreen", "jumouBeigeBlue",
   "jumouBeigeOrange", "jumouWhiteBrown",
+  "jumouExtra1", "jumouExtra2",
 
 
   "criminalBlackBlue", "criminalBlackPurple",
   "criminalPurpleRed", "criminalGreenBrown",
+  "criminalExtra1", "criminalExtra2",
+
   "criminalBlackBlue", "criminalBlackPurple",
   "criminalPurpleRed", "criminalGreenBrown",
-  "criminalBlackBlue", "criminalBlackPurple",
-  "criminalPurpleRed", "criminalGreenBrown",
+  "criminalExtra1", "criminalExtra2",
 
   "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
   "criminalPurpleRedRunning", "criminalGreenBrownRunning",
+  "criminalExtra1Running", "criminalExtra2Running",
+
   "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
   "criminalPurpleRedRunning", "criminalGreenBrownRunning",
-  "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
-  "criminalPurpleRedRunning", "criminalGreenBrownRunning"
+  "criminalExtra1Running", "criminalExtra2Running",
 ];
 
 let foodItem =
@@ -148,29 +159,32 @@ const randomizerEnemyStrategy =
   enemies: enemiesNoDrop.slice().concat([
       "thetisLightBlue", "thetisDarkBlue",
       "thetisLightPink", "thetisDarkPink",
-      "thetisLightBlue", "thetisDarkBlue",
-      "thetisLightPink", "thetisDarkPink",
+      "thetisExtra1", "thetisExtra2",
 
       "thetisLightBlue", "thetisDarkBlue",
       "thetisLightPink", "thetisDarkPink",
-      "thetisLightBlue", "thetisDarkBlue",
-      "thetisLightPink", "thetisDarkPink",
+      "thetisExtra1", "thetisExtra2",
 
       "thetisLightBlue", "thetisDarkBlue",
       "thetisLightPink", "thetisDarkPink",
+      "thetisExtra1", "thetisExtra2",
+
       "thetisLightBlue", "thetisDarkBlue",
       "thetisLightPink", "thetisDarkPink",
+      "thetisExtra1", "thetisExtra2",
   ]),
   enemiesNoDrop: enemiesNoDrop.slice(),
   dropEnemies:
   [
     "thetisLightBlue", "thetisDarkBlue",
-    "thetisLightPink", "thetisDarkPink"
+    "thetisLightPink", "thetisDarkPink",
+    "thetisExtra1", "thetisExtra2"
   ],
   dropFoodEnemiesOrBoss:
   [
     "thetisDarkBlue", "thetisLightPink",
     "thetisDarkPink",
+    "thetisExtra1", "thetisExtra2",
 
     "bakeneForm1"
   ],
@@ -232,35 +246,44 @@ const randomizerEnemyStrategy =
 
       "garobenGreenOrange", "garobenGrayBrown",
       "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
+
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
+
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
+      "garobenGreenOrange", "garobenGrayBrown",
+      "garobenBrownGray", "garobenGreenBlue",
+
+
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+
+
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
       
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
 
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
 
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
-
-
-      "zoisite", "zoisite", "zoisite", "zoisite",
-      "zoisite", "zoisite", "zoisite", "zoisite",
-
-      "zoisite", "zoisite", "zoisite", "zoisite",
-      "zoisite", "zoisite", "zoisite", "zoisite",
-
-      "zoisite", "zoisite", "zoisite", "zoisite",
-      "zoisite", "zoisite", "zoisite", "zoisite",
-
-
-      "kunzite", "kunzite", "kunzite", "kunzite",
-      "kunzite", "kunzite", "kunzite", "kunzite",
-      
-      "kunzite", "kunzite", "kunzite", "kunzite",
-      "kunzite", "kunzite", "kunzite", "kunzite",
-
-      "kunzite", "kunzite", "kunzite", "kunzite",
-      "kunzite", "kunzite", "kunzite", "kunzite",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
+      "kunzite", "kunziteExtra1", "kunziteExtra2",
 
 
       "bakeneForm3", "bakeneExtra1Form3",
@@ -299,11 +322,11 @@ const randomizerEnemyStrategy =
     "garobenBrownGray", "garobenGreenBlue",
     "garobenGrayBrown", "garobenBrownGray", 
 
-    "zoisite", "zoisite", "zoisite",
-    "zoisite", "zoisite", "zoisite",
+    "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+    "zoisite", "zoisiteExtra1", "zoisiteExtra2",
 
-    "kunzite", "kunzite", "kunzite",
-    "kunzite", "kunzite", "kunzite",
+    "kunzite", "kunziteExtra1", "kunziteExtra2",
+    "kunzite", "kunziteExtra1", "kunziteExtra2",
 
     "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
     "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3"
@@ -314,9 +337,9 @@ const randomizerEnemyStrategy =
 
     "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
 
-    "kunzite", "kunzite", "kunzite",
+    "kunzite", "kunziteExtra1", "kunziteExtra2",
 
-    "queenBeryl", "queenBeryl", "queenBeryl"
+    "queenBeryl", "queenBerylExtra1", "queenBerylExtra2"
   ],
   foodItems: foodItem.slice(),
   anyItem: foodItem.slice().concat([

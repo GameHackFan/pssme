@@ -19,27 +19,17 @@ class LevelEditor extends Component
   {
     super(props);
     this.state = {};
-    this.getFilteredEnemySelectList =
-        this.getFilteredEnemySelectList.bind(this);
+    this.getEnemySelectList = this.getEnemySelectList.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleEnemyDataChange =
-        this.handleEnemyDataChange.bind(this);
-    this.onAddEnemyClick = 
-        this.onAddEnemyClick.bind(this);
-    this.onRemoveEnemyClick = 
-        this.onRemoveEnemyClick.bind(this);
-    this.onRefreshImageClick = 
-        this.onRefreshImageClick.bind(this);
-    this.onClearAllChangesClick = 
-        this.onClearAllChangesClick.bind(this);
-    this.onLoadPresetFileChange = 
-        this.onLoadPresetFileChange.bind(this);
-    this.onSavePresetClick = 
-        this.onSavePresetClick.bind(this);
-    this.onApplyToROMClick = 
-        this.onApplyToROMClick.bind(this);
-    this.applyPresetFile = 
-        this.applyPresetFile.bind(this);
+    this.handleEnemyDataChange = this.handleEnemyDataChange.bind(this);
+    this.onAddEnemyClick = this.onAddEnemyClick.bind(this);
+    this.onRemoveEnemyClick = this.onRemoveEnemyClick.bind(this);
+    this.onRefreshImageClick = this.onRefreshImageClick.bind(this);
+    this.onClearAllChangesClick = this.onClearAllChangesClick.bind(this);
+    this.onLoadPresetFileChange = this.onLoadPresetFileChange.bind(this);
+    this.onSavePresetClick = this.onSavePresetClick.bind(this);
+    this.onApplyToROMClick = this.onApplyToROMClick.bind(this);
+    this.applyPresetFile = this.applyPresetFile.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState)
@@ -73,33 +63,30 @@ class LevelEditor extends Component
   {
     const {name, value} = event.target;
     const {level, enemyGroup, enemyId} = this.state;
-    let a = null;
+    let func = null;
 
     if(name === "enemyKey")
-      a = levelEditorService.setEnemyKey;
+      func = levelEditorService.setEnemyKey;
     else if(name === "triggerPosition")
-      a = levelEditorService.setEnemyTriggerPosition;
+      func = levelEditorService.setEnemyTriggerPosition;
     else if(name === "positionX")
-      a = levelEditorService.setEnemyPositionX;
+      func = levelEditorService.setEnemyPositionX;
     else if(name === "positionY")
-      a = levelEditorService.setEnemyPositionY;
+      func = levelEditorService.setEnemyPositionY;
 
-    if(a)
+    if(func)
     {
-      a(level, enemyGroup, enemyId, value);
-      editorService.forceComponentToUpdateByKey(
-          "levelEditor");
+      func(level, enemyGroup, enemyId, value);
+      editorService.forceComponentToUpdateByKey("levelEditor");
     }
   }
 
   onAddEnemyClick(event)
   {
     const {level, enemyGroup} = this.state;
-    let id =
-        levelEditorService.addEnemy(level, enemyGroup);
+    let id = levelEditorService.addEnemy(level, enemyGroup);
     this.setState({enemyId: id});
-    editorService.forceComponentToUpdateByKey(
-        "levelEditor");
+    editorService.forceComponentToUpdateByKey("levelEditor");
   }
 
   onRemoveEnemyClick(event)
@@ -132,10 +119,8 @@ class LevelEditor extends Component
     const extras = {};
     extras.successCallback = this.props.onActionResult;
     extras.errorCallback = this.props.onActionResult;
-    extras.successMessage =
-        "Level Editor preset loaded!";
-    extras.errorMessage =
-        "Problems loading the preset!";
+    extras.successMessage = "Level Editor preset loaded!";
+    extras.errorMessage = "Problems loading the preset!";
     extras.file = event.target.files[0];
     fileService.readTextFile(extras);
   }
@@ -146,8 +131,7 @@ class LevelEditor extends Component
     let json = JSON.stringify(preset, null, "\t");
     let contentType = "text/json;charset=utf-8";
     let filename = "pssme_level_editor_preset.json";
-    editorService.downloadFile(json,
-        filename, contentType);
+    editorService.downloadFile(json, filename, contentType);
   }
 
   onApplyToROMClick(event)
@@ -158,13 +142,13 @@ class LevelEditor extends Component
     {
       levelEditorService.applyData();
       extras.successMessage = "Customizations applied!";
+      console.log("Customizations applied!");
     }
     catch(e)
     {
       console.log(e.message);
       console.log(e);
-      extras.errorMessage =
-          "Problems applying the customizations!";
+      extras.errorMessage = "Problems applying the customizations!";
     } 
     
     this.props.onActionResult(extras);
@@ -175,8 +159,7 @@ class LevelEditor extends Component
     try
     {
       levelEditorService.applyPresetFile(preset);
-      editorService.forceComponentToUpdateByKey(
-          "levelEditor");
+      editorService.forceComponentToUpdateByKey("levelEditor");
     }
     catch(e)
     {
@@ -188,33 +171,11 @@ class LevelEditor extends Component
     }
   }
 
-  // TODO: Put this method inside levelEditorService at some point
-  getFilteredEnemySelectList()
+  getEnemySelectList()
   {
-    const filterString = this.state.filterEnemyString;
-    let enemieKeys = Object.keys(levelEditorEnemies);
-
-    // Removes the cameraFOV, groupLimit.
-    for(let i = 0; i < 2; i++)
-      enemieKeys.pop();
-    
-    if(filterString)
-    {
-      let {level, enemyGroup, enemyId} = this.state;
-      let selected = levelEditorService.getEnemy(
-          level, enemyGroup, enemyId);
-
-      let filtered = enemieKeys.filter((ek) =>
-      {
-        return levelEditorEnemies[ek].label.
-            toLowerCase().includes(filterString) ||
-            ek === selected.enemyKey;
-      });
-
-      return filtered;
-    }
-
-    return enemieKeys;
+    const {level, enemyGroup, enemyId, filterEnemyString} = this.state;
+    return levelEditorService.getEnemySelectList(
+        level, enemyGroup, enemyId, filterEnemyString);
   }
 
   render()
@@ -224,29 +185,22 @@ class LevelEditor extends Component
     return (
       <LevelEditorComponent
         romReady={romService.isROMReady()}
-        filterEnemyString=
-          {this.state.filterEnemyString}
+        filterEnemyString={this.state.filterEnemyString}
         level={this.state.level}
         enemyGroup={this.state.enemyGroup}
         enemyId={enemyId}
-        enemy={levelEditorService.
-          getEnemy(level, enemyGroup, enemyId)}
-        enemies={levelEditorService.
-          getEnemies(level, enemyGroup)}
-        enemySelectList=
-          {this.getFilteredEnemySelectList()}
+        enemy={levelEditorService.getEnemy(level, enemyGroup, enemyId)}
+        enemies={levelEditorService.getEnemies(level, enemyGroup)}
+        enemySelectList={this.getEnemySelectList()}
         levelImage={this.state.levelImage}
         requestFile={editorService.requestFile}
         handleChange={this.handleChange}
-        handleEnemyDataChange=
-            {this.handleEnemyDataChange}
+        handleEnemyDataChange={this.handleEnemyDataChange}
         onAddEnemyClick={this.onAddEnemyClick}
         onRemoveEnemyClick={this.onRemoveEnemyClick}
         onRefreshImageClick={this.onRefreshImageClick}
-        onClearAllChangesClick=
-          {this.onClearAllChangesClick}
-        onLoadPresetFileChange=
-          {this.onLoadPresetFileChange}
+        onClearAllChangesClick={this.onClearAllChangesClick}
+        onLoadPresetFileChange={this.onLoadPresetFileChange}
         onSavePresetClick={this.onSavePresetClick}
         onApplyToROMClick={this.onApplyToROMClick}
       />

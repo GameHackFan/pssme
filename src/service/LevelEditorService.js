@@ -363,6 +363,31 @@ class LevelEditorService
     return preset;
   }
 
+  getEnemySelectList = (level, enemyGroup, enemyId, filter) =>
+  {
+    let enemieKeys = Object.keys(levelEditorEnemies);
+    
+    // Removes the cameraFOV, groupLimit.
+    for(let i = 0; i < 2; i++)
+      enemieKeys.pop();
+    
+    if(filter)
+    {
+      const filterLower = filter.toLowerCase();
+      let selected = levelEditorService.getEnemy(level, enemyGroup, enemyId);
+
+      let filtered = enemieKeys.filter((ek) =>
+      {
+        return levelEditorEnemies[ek].label.toLowerCase().
+            includes(filterLower) || ek === selected.enemyKey;
+      });
+
+      return filtered;
+    }
+
+    return enemieKeys;
+  }
+
   getValidValue = (value, min, max) =>
   {
     let nv = parseInt(value);

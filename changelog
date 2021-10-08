@@ -1,3 +1,30 @@
+Version 0.8 Changes:
+- Added a simple check to see if it is a valid ROM when cloning the ROM.
+- Fixed the hint of one of Criminal's color pallete in the Color Pallete Editor.
+- Fixed the hint of Queen Beryl's color pallete in the Color Pallete Editor.
+- Fixed Yasha Witch 2, 3 and 4 all drawing the sprites of Yasha Witch 2 in the Level Editor.
+- Fixed a bug where Garoben had less probability of being spawned in the Seed Randomizer.
+- Fixed a bug in the Seed Randomizer, 1st and 7th boss could spawn in the 2nd boss area and they were allowing Morga to be killed before the rose, soft locking the game (they are now forbidden to spawn there).
+- Updated the EnemyColorExpansionPatch. Added new colors and assembly code to handle it in a place that is really empty.
+- Added new enemy colors for most of the enemies. Check enemy changes to see the extra enemies.
+- Changed Furau: ID 2 to ID 4, Extra 1 to ID 6, Extra 2 to ID 8.
+- Changed Oniwabandana: ID 1 to ID 5, ID 2 to ID 7, Extra 1 to ID 8, Extra 2 to ID 9.
+- Changed Tesuni: ID 1 to ID 5, ID 4 to ID 7, Extra 1 to ID 9.
+- Changed Castor & Pollux: ID 1 to ID 6, ID 2 to ID A, Extra 1 to ID 1, Extra 2 ID 2.
+- Changed Thetis: Extra 1 to ID 4, Extra 2 to ID 6.
+- Changed Jumou: ID 1 to ID 5, ID 3 to ID 7, Extra 1 to ID 8, Extra 2 to ID 9.
+- Changed Criminal: Extra 1 to ID 4, E2 Extra 2 to ID 6.
+- Changed Kyurene: Extra 1 to 4, Extra 2 to 5, Extra 3 to 6.
+- Changed Bakene: Extra 1 to 4, Extra 2 to 5.
+- Changed Zoisite: Extra 1 to 4, Extra 2 to 5.
+- Changed Kunzite: Extra 1 to 4, Extra 2 to 5.
+- Changed Queen Beryl: Extra 1 to 4, Extra 2 to 5.
+- Most enemies with color IDs 4+ will have HP and AI affected. Bosses are not affected.
+- Added all new enemies inside the Level Editor and the Seed Randomizer.
+- Minor changes.
+- Minor fixes.
+
+
 Version 0.7 Changes:
 - New colors added for the sailors. Player 2 now is forced to play with the 2nd color.
 - The new colors automatically fix a color pallete bug that happened when 2 of the same sailor was picked and then after dying, one of the players switches to another sailor, making one of the players use a wrong pallete.

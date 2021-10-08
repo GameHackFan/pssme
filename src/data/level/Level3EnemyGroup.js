@@ -84,8 +84,8 @@ const level3EnemyGroup =
     defaultAmount: 6,
     maxAmount: 14
   },
-  group6A:    // I decided to split group6 because of
-  {           // the layout of the level.
+  group6A:    // Group6 was split because of the layout of the level.
+  {
     label: "Enemy Group 6A",
     background: "level3B",
     startPosition: 201888,

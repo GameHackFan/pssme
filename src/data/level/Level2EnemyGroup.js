@@ -97,7 +97,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   },
   bossHelperGroup1:
@@ -118,7 +122,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   },
   bossHelperGroup2:
@@ -139,7 +147,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   },
   bossHelperGroup3:
@@ -160,7 +172,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   },
   bossHelperGroup4:
@@ -181,7 +197,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   },
   bossHelperGroup5:
@@ -202,7 +222,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   },
   bossHelperGroup6:
@@ -223,7 +247,11 @@ const level2EnemyGroup =
     forbiddenPositionStrategies: ["outsideRight"],
     forbiddenEnemies: [
       "garobenGreenOrange", "garobenBrownGray",
-      "garobenGrayBrown", "garobenGreenBlue", "morga"
+      "garobenGrayBrown", "garobenGreenBlue", "morga",
+      "castorAndPolluxBossBoth", "bakeneForm1",
+      "bakeneForm1", "bakeneForm2", "bakeneForm3",
+      "bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+      "bakeneExtra2Form3"
     ]
   }
 }

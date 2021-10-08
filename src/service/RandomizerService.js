@@ -1,16 +1,14 @@
 import romService from "./ROMService";
-import levelExpansionService from
-    "./LevelExpansionService";
+import levelExpansionService from "./LevelExpansionService";
 
 import objectUtil from '../data/ObjectUtil';
 import patchMap from "../data/patch/PatchMap";
 import enemyBytesMap from "../data/EnemyBytesMap";
-import randomizerData from
-    "../data/randomizer/RandomizerData";
+import randomizerData from "../data/randomizer/RandomizerData";
+import levelDefaultData from "../data/level/LevelDefaultData";
+
 import randomizerEnemyStrategy from
     "../data/randomizer/RandomizerEnemyStrategy";
-import levelDefaultData from
-    "../data/level/LevelDefaultData";
 
 
 class RandomizerService
@@ -267,10 +265,8 @@ class RandomizerService
 
   createRandomizerTextPatch = () =>
   {
-    let patch = Object.assign({},
-        patchMap.randomizerTextPatch.patch);
-    patch.data = Object.assign({},
-        patchMap.randomizerTextPatch.patch.data);
+    let patch = Object.assign({}, patchMap.randomizerTextPatch.patch);
+    patch.data = Object.assign({}, patchMap.randomizerTextPatch.patch.data);
     let sbs = this.getSeedTextBytes(patch);
     let lbs = this.getRandomProfileTextBytes();
     patch.data[patch.seedByteIndex.toString()] = sbs;
@@ -281,32 +277,18 @@ class RandomizerService
   getRandomProfileTextBytes = () =>
   {
     let p = this.mainData.hasRandomModeCustom ?
-        "custom" : this.mainData.randomProfile;
+				"custom" : this.mainData.randomProfile;
     let lt = this.randomizerLevelTexts[p];
-    return this.convertStringToROMBytes(lt);
+    return romService.convertStringToROMBytes(lt);
   }
 
   getSeedTextBytes = (patch) =>
   {
     let st = this.mainData.seed.toString();
     let fixCharCount = patch.seedSize - st.length;
-    st = "*".repeat(fixCharCount / 2) +
-        st + "*".repeat(fixCharCount / 2);
+    st = "*".repeat(fixCharCount / 2) + st + "*".repeat(fixCharCount / 2);
     st += "*".repeat(patch.seedSize - st.length);
-    return this.convertStringToROMBytes(st);
-  }
-
-  convertStringToROMBytes = (text) =>
-  {
-    let bytes = [];
-
-    for(let i = 0; i < text.length - 1; i += 2)
-    {
-      bytes.push(text.charCodeAt(i + 1).toString(16));
-      bytes.push(text.charCodeAt(i).toString(16));
-    }
-
-    return bytes;
+    return romService.convertStringToROMBytes(st);
   }
 
   updateMainData = (levelKey, enemyGroupKey,

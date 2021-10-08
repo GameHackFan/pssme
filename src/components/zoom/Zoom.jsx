@@ -82,8 +82,7 @@ class Zoom extends Component
       console.log(e.message);
       console.log(e);
       const extras = {};
-      extras.errorMessage =
-          "Invalid JSON preset file!";
+      extras.errorMessage = "Invalid JSON preset file!";
       this.props.onActionResult(extras);
     }
   }

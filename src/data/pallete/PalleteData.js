@@ -1,17 +1,23 @@
 const unknown = {originalUsage: "Unknown", pssmeUsage: "Unknown"};
-const unknownOniwabandana = {originalUsage: "Unknown", pssmeUsage: "Oniwabandana"};
-const unknownTesuni = {originalUsage: "Unknown", pssmeUsage: "Tesuni"};
-const unknownCastorAndPollux = {originalUsage: "Unknown", pssmeUsage: "Castor and Pollux"};
-const unknownKyurene = {originalUsage: "Unknown", pssmeUsage: "Kyurene"};
+
+const empty = {originalUsage: "Empty", pssmeUsage: "Empty"};
+const emptyFurau = {originalUsage: "Empty", pssmeUsage: "Furau"};
+const emptyOniwabandana = {originalUsage: "Empty", pssmeUsage: "Oniwabandana"};
+const emptyTesuni = {originalUsage: "Empty", pssmeUsage: "Tesuni"};
+const emptyCastorAndPollux = {originalUsage: "Empty", pssmeUsage: "Castor and Pollux"};
+const emptyThetis = {originalUsage: "Empty", pssmeUsage: "Thetis"};
+const emptyJumou = {originalUsage: "Empty", pssmeUsage: "Jumou"};
+const emptyCriminal = {originalUsage: "Empty", pssmeUsage: "Criminal"};
+const emptyKyurene = {originalUsage: "Empty", pssmeUsage: "Kyurene"};
 const unknownGaroben = {originalUsage: "Unknown", pssmeUsage: "Garoben"};
-const unknownBakene = {originalUsage: "Unknown", pssmeUsage: "Bakene"};
+const emptyBakene = {originalUsage: "Empty", pssmeUsage: "Bakene"};
+const emptyZoisite = {originalUsage: "Empty", pssmeUsage: "Zoisite"};
+const emptyKunzite = {originalUsage: "Empty", pssmeUsage: "Kunzite"};
+const emptyQueenBeryl = {originalUsage: "Empty", pssmeUsage: "Queen Beryl"};
 
 const furau = {originalUsage: "Furau", pssmeUsage: "Furau"};
-const oniwabandanaFurau = {originalUsage: "Oniwabandana", pssmeUsage: "Furau"};
 const oniwabandana = {originalUsage: "Oniwabandana", pssmeUsage: "Oniwabandana"};
-const tesuniOniwabandana = {originalUsage: "Tesuni", pssmeUsage: "Oniwabandana"};
 const tesuni = {originalUsage: "Tesuni", pssmeUsage: "Tesuni"};
-const castorAndPolluxTesuni = {originalUsage: "Castor and Pollux", pssmeUsage: "Tesuni"};
 const castorAndPollux = {originalUsage: "Castor and Pollux", pssmeUsage: "Castor and Pollux"};
 const yashaWitch = {originalUsage: "Yasha (Witch)", pssmeUsage: "Yasha (Witch)"};
 const yashaHuman = {originalUsage: "Yasha (Human)", pssmeUsage: "Yasha (Human and Witch)"};
@@ -35,11 +41,11 @@ const sailorMercury = {originalUsage: "Sailor Mercury", pssmeUsage: "Sailor Merc
 const sailorMoon = {originalUsage: "Sailor Moon", pssmeUsage: "Sailor Moon"};
 const sailorMars = {originalUsage: "Sailor Mars", pssmeUsage: "Sailor Mars"};
 const sailorVenus = {originalUsage: "Sailor Venus", pssmeUsage: "Sailor Venus"};
-const unknownSailorJupiter = {originalUsage: "Unknown", pssmeUsage: "Sailor Jupiter"};
-const unknownSailorMercury = {originalUsage: "Unknown", pssmeUsage: "Sailor Mercury"};
-const unknownSailorMoon = {originalUsage: "Unknown", pssmeUsage: "Sailor Moon"};
-const unknownSailorMars = {originalUsage: "Unknown", pssmeUsage: "Sailor Mars"};
-const unknownSailorVenus = {originalUsage: "Unknown", pssmeUsage: "Sailor Venus"};
+const emptySailorJupiter = {originalUsage: "Empty", pssmeUsage: "Sailor Jupiter"};
+const emptySailorMercury = {originalUsage: "Empty", pssmeUsage: "Sailor Mercury"};
+const emptySailorMoon = {originalUsage: "Empty", pssmeUsage: "Sailor Moon"};
+const emptySailorMars = {originalUsage: "Empty", pssmeUsage: "Sailor Mars"};
+const emptySailorVenus = {originalUsage: "Empty", pssmeUsage: "Sailor Venus"};
 
 const sailorMoonProfile = {originalUsage: "Sailor Moon Profile Picture",
     pssmeUsage: "Sailor Moon Profile Picture"};
@@ -56,7 +62,7 @@ const sailorVenusProfile = {originalUsage: "Sailor Venus Profile Picture",
 const palleteData =
 {
   startAddress: 360448,
-  amount: 524,
+  amount: 550,              // Original is 439.
   data:
   {
     "364352": sailorMoonProfile,
@@ -79,27 +85,20 @@ const palleteData =
 
     "367136": oniwabandana,
     "367168": oniwabandana,
-    "367200": oniwabandanaFurau,
+    "367200": oniwabandana,
     "367232": oniwabandana,
 
     "367264": tesuni,
-    "367296": tesuniOniwabandana,
+    "367296": tesuni,
     "367328": tesuni,
-    "367360": tesuniOniwabandana,
-
-    "367424": unknownOniwabandana,
-    "367456": unknownTesuni,
-    "367488": unknownTesuni,
+    "367360": tesuni,
 
     "367520": castorAndPollux,
-    "367552": castorAndPolluxTesuni,
+    "367552": castorAndPollux,
     "367584": castorAndPollux,
     "367616": castorAndPollux,
     "367648": castorAndPollux,
     "367680": castorAndPollux,
-
-    "367712": unknownCastorAndPollux,
-    "367840": unknownCastorAndPollux,
 
     "367904": yashaWitch,
     "367936": yashaWitch,
@@ -122,7 +121,7 @@ const palleteData =
     "368512": jumou,
 
     "368544": criminal,
-    "368544": criminal,
+    "368576": criminal,
     "368608": criminal,
     "368640": criminal,
 
@@ -132,10 +131,6 @@ const palleteData =
     "369312": kyurene,
     "369344": kyurene,
     "369376": kyurene,
-
-    "369408": unknownKyurene,
-    "369472": unknownKyurene,
-    "369504": unknownKyurene,
     
     "369568": garoben,
 
@@ -145,18 +140,85 @@ const palleteData =
 
     "369760": bakene,
 
-    "369792": unknownBakene,
-    "369824": unknownBakene,
-
     "370048": zoisite,
     "370080": kunzite,
-    "371044": queenBeryl,
+    "370144": queenBeryl,
 
-    "374592": unknownSailorMoon,
-    "374720": unknownSailorMercury,
-    "374848": unknownSailorMars,
-    "374976": unknownSailorJupiter,
-    "375104": unknownSailorVenus,
+    "374592": emptySailorMoon,
+    "374720": emptySailorMercury,
+    "374848": emptySailorMars,
+    "374976": emptySailorJupiter,
+    "375104": emptySailorVenus,
+
+    "375392": emptyFurau,
+    "375424": emptyTesuni,
+    "375456": emptyFurau,
+    "375488": emptyTesuni,
+    "375520": emptyFurau,
+    "375552": emptyTesuni,
+    "375584": emptyFurau,
+    "375616": emptyTesuni,
+    "375648": empty,
+
+    "375680": emptyThetis,
+    "375712": emptyOniwabandana,
+    "375744": emptyThetis,
+    "375776": emptyOniwabandana,
+    "375808": emptyOniwabandana,
+    "375840": emptyOniwabandana,
+    "375872": emptyThetis,
+    "375904": emptyThetis,
+    "375936": empty,
+
+    "375968": emptyCriminal,
+    "376000": emptyJumou,
+    "376032": emptyCriminal,
+    "376064": emptyJumou,
+    "376096": emptyJumou,
+    "376128": emptyJumou,
+    "376160": emptyCriminal,
+    "376192": emptyCriminal,
+    "376224": empty,
+
+    "376256": emptyCastorAndPollux,
+    "376288": emptyCastorAndPollux,
+    "376320": emptyCastorAndPollux,
+    "376352": emptyCastorAndPollux,
+    "376384": emptyCastorAndPollux,
+    "376416": emptyCastorAndPollux,
+    "376448": emptyCastorAndPollux,
+    "376480": emptyCastorAndPollux,
+    "376512": empty,
+
+    "376544": emptyKyurene,
+    "376576": emptyKyurene,
+    "376608": emptyKyurene,
+    "376640": emptyKyurene,
+    "376672": empty,
+
+    "376704": emptyBakene,
+    "376736": emptyBakene,
+    "376768": emptyBakene,
+    "376800": emptyBakene,
+    "376832": empty,
+
+    "376864": emptyZoisite,
+    "376896": emptyZoisite,
+    "376928": emptyZoisite,
+    "376960": emptyZoisite,
+    "376992": empty,
+
+    "377024": emptyKunzite,
+    "377056": emptyKunzite,
+    "377088": emptyKunzite,
+    "377120": emptyKunzite,
+    "377152": empty,
+
+    "377184": emptyQueenBeryl,
+    "377216": emptyQueenBeryl,
+    "377248": emptyQueenBeryl,
+    "377280": emptyQueenBeryl,
+    "377312": empty,
 
     "unknown": unknown
   }
