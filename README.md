@@ -31,4 +31,4 @@ Known Bugs:
 - Because mercury uses the same memory space as the player 2, she ends up loading the alternative color in the select screen.
 <br/><br/>
 
-OBS: With the v0.9 update, adding the data needed to edit the damage of the all the other characters is a nice thing, but I am too lazy to search for it. Changing the way crystals are spent could also be a good feature to have. Besides all that, I don't think there is much to be done.
+OBS: With the v0.9 update, adding the data needed to edit the damage of all the other characters is a nice thing, but I am too lazy to search for it. Changing the way crystals are spent could also be a good feature to have. Besides all that, I don't think there is much to be done.
