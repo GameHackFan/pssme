@@ -1,63 +1,63 @@
 .randomizer .enemyGroupText
 {
-  margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 
 .randomizer .enemyGroupText > span
 {
-  font-weight: bold;
-  color: limegreen;
+	font-weight: bold;
+	color: limegreen;
 }
 
 .randomizer b
 {
-  font-weight: bold;
-  font-size: 0.7em;
+	font-weight: bold;
+	font-size: 0.7em;
 
-  margin-left: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
+	margin-left: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .enemyGroup > .windowContentLine > label
 {
-  min-width: 50%;
+	min-width: 50%;
 }
 
 .randomizer > div:last-child
 {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .randomizer > div:nth-last-child(2)
 {
-  margin-top: 24px;
+	margin-top: 24px;
 }
 
 .randomizer > div:last-child > *
 {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 
 .randomizer > div:last-child > :not(:last-child)
 {
-  margin-right: 12px;
+	margin-right: 12px;
 }
 
 .randomizer .buttonSolid
 {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .randomizer .buttonSolid > input
 {
-  display: none;
+	display: none;
 }
 
 .randomizer > .warning
 {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  text-align: center;
-  display: block;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-align: center;
+	display: block;
 }

@@ -1,62 +1,62 @@
 .palleteHint
 {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .palleteHint span
 {
-  color: #32cd32;
-  font-weight: bold;
-  font-size: 1em;
-  margin-top: auto;
-  margin-bottom: auto;
+	color: #32cd32;
+	font-weight: bold;
+	font-size: 1em;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .palleteColors
 {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .palleteColor:not(:last-child)
 {
-  margin-right: 6px;
+	margin-right: 6px;
 }
 
 .pallete .windowContentLine > label
 {
-  min-width: 142px;
+	min-width: 142px;
 }
 
 .pallete > div:last-child
 {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .pallete > div:last-child > *
 {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 
 .pallete > div:last-child > :not(:last-child),
 .pallete button:not(:last-child)
 {
-  margin-right: 12px;
+	margin-right: 12px;
 }
 
 .pallete .buttonSolid
 {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .pallete .buttonSolid > input
 {
-  display: none;
+	display: none;
 }
 
 .pallete > .warning
 {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  text-align: center;
-  display: block;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-align: center;
+	display: block;
 }

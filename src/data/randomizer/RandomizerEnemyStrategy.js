@@ -1,356 +1,356 @@
 let enemiesNoDrop = 
 [
-  "furauOrangeGreen", "furauPurpleBlue",
-  "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra2",
+	"furauOrangeGreen", "furauPurpleBlue",
+	"furauBrownYellow", "furauGreenBlue",
+	"furauExtra1", "furauExtra2",
 
-  "furauOrangeGreen", "furauPurpleBlue",
-  "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra2",
+	"furauOrangeGreen", "furauPurpleBlue",
+	"furauBrownYellow", "furauGreenBlue",
+	"furauExtra1", "furauExtra2",
 
-  "furauOrangeGreen", "furauPurpleBlue",
-  "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra2",
+	"furauOrangeGreen", "furauPurpleBlue",
+	"furauBrownYellow", "furauGreenBlue",
+	"furauExtra1", "furauExtra2",
 
-  "furauOrangeGreen", "furauPurpleBlue",
-  "furauBrownYellow", "furauGreenBlue",
-  "furauExtra1", "furauExtra2",
-
-
-  "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
-  "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
-  "oniwabandanaExtra1", "oniwabandanaExtra2",
-
-  "oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
-  "oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
-  "oniwabandanaExtra1", "oniwabandanaExtra2",
-
-  "oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
-  "oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
-  "oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
-
-  "oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
-  "oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
-  "oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
+	"furauOrangeGreen", "furauPurpleBlue",
+	"furauBrownYellow", "furauGreenBlue",
+	"furauExtra1", "furauExtra2",
 
 
-  "tesuniBrownOrange", "tesuniGrayPurple",
-  "tesuniBrownPink", "tesuniGreenPink",
-  "tesuniExtra1",
+	"oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
+	"oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
+	"oniwabandanaExtra1", "oniwabandanaExtra2",
 
-  "tesuniBrownOrange", "tesuniGrayPurple",
-  "tesuniBrownPink", "tesuniGreenPink",
-  "tesuniExtra1",
+	"oniwabandanaPinkBlue", "oniwabandanaWhiteBrown",
+	"oniwabandanaBrownBlue", "oniwabandanaWhiteBlue",
+	"oniwabandanaExtra1", "oniwabandanaExtra2",
 
-  "tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
-  "tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
-  "tesuniExtra1Racket",
+	"oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
+	"oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
+	"oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
 
-  "tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
-  "tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
-  "tesuniExtra1Racket",
-
-  "tesuniGrayPurpleBomber", "tesuniBrownPinkBomber",
-  "tesuniGreenPinkBomber", "tesuniExtra1Bomber",
+	"oniwabandanaPinkBlueRunning", "oniwabandanaWhiteBrownRunning",
+	"oniwabandanaBrownBlueRunning", "oniwabandanaWhiteBlueRunning",
+	"oniwabandanaExtra1Running", "oniwabandanaExtra2Running",
 
 
-  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
+	"tesuniBrownOrange", "tesuniGrayPurple",
+	"tesuniBrownPink", "tesuniGreenPink",
+	"tesuniExtra1",
 
-  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
+	"tesuniBrownOrange", "tesuniGrayPurple",
+	"tesuniBrownPink", "tesuniGreenPink",
+	"tesuniExtra1",
 
-  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
-  
-  "castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
-  "castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
-  "castorAndPolluxExtra1", "castorAndPolluxExtra2",
+	"tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
+	"tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
+	"tesuniExtra1Racket",
 
+	"tesuniBrownOrangeRacket", "tesuniGrayPurpleRacket",
+	"tesuniBrownPinkRacket", "tesuniGreenPinkRacket",
+	"tesuniExtra1Racket",
 
-  "yashaWitchBrownBlue", "yashaWitchPurpleGreen",
-  "yashaWitchPinkPurple", "yashaWitchBrownPink",
-  "yashaWitchBrownGreenUnused", "yashaWitchGreenBlueUnused",
-  "yashaWitchBrownPurpleUnused", "yashaWitchBrownYellowUnused",
-
-  "yashaWitchBrownBlueStabbing", "yashaWitchPurpleGreenStabbing",
-  "yashaWitchPinkPurpleStabbing", "yashaWitchBrownPinkStabbing",
-  "yashaWitchBrownGreenUnusedStabbing", "yashaWitchGreenBlueUnusedStabbing",
-  "yashaWitchBrownPurpleUnusedStabbing", "yashaWitchBrownYellowUnusedStabbing",
-
-  "yashaWitchBrownBlueFalling", "yashaWitchPurpleGreenFalling",
-  "yashaWitchPinkPurpleFalling", "yashaWitchBrownPinkFalling",
-  "yashaWitchBrownGreenUnusedFalling", "yashaWitchGreenBlueUnusedFalling",
-  "yashaWitchBrownPurpleUnusedFalling", "yashaWitchBrownYellowUnusedFalling",
+	"tesuniGrayPurpleBomber", "tesuniBrownPinkBomber",
+	"tesuniGreenPinkBomber", "tesuniExtra1Bomber",
 
 
-  "yashaHumanBrownGreen", "yashaHumanGreenBlue",
-  "yashaHumanBrownPurple", "yashaHumanBrownYellow",
-  "yashaHumanBrownGreen", "yashaHumanGreenBlue",
-  "yashaHumanBrownPurple", "yashaHumanBrownYellow",
-  // "yashaHumanExtra1", "yashaHumanExtra2",
-  // "yashaHumanExtra3", "yashaHumanExtra4",
+	"castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+	"castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+	"castorAndPolluxExtra1", "castorAndPolluxExtra2",
 
-  "yashaHumanBrownGreen", "yashaHumanGreenBlue",
-  "yashaHumanBrownPurple", "yashaHumanBrownYellow",
-  "yashaHumanBrownGreen", "yashaHumanGreenBlue",
-  "yashaHumanBrownPurple", "yashaHumanBrownYellow",
-  // "yashaHumanExtra1", "yashaHumanExtra2",
-  // "yashaHumanExtra3", "yashaHumanExtra4",
+	"castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+	"castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+	"castorAndPolluxExtra1", "castorAndPolluxExtra2",
 
-  "yashaHumanBrownGreen", "yashaHumanGreenBlue",
-  "yashaHumanBrownPurple", "yashaHumanBrownYellow",
-  "yashaHumanBrownGreen", "yashaHumanGreenBlue",
-  "yashaHumanBrownPurple", "yashaHumanBrownYellow",
-  // "yashaHumanExtra1", "yashaHumanExtra2",
-  // "yashaHumanExtra3", "yashaHumanExtra4",
+	"castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+	"castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+	"castorAndPolluxExtra1", "castorAndPolluxExtra2",
+	
+	"castorAndPolluxBluePurple", "castorAndPolluxLightGreenBlue",
+	"castorAndPolluxGreenBlue", "castorAndPolluxBeigePink",
+	"castorAndPolluxExtra1", "castorAndPolluxExtra2",
 
 
-  "jumouBeigeGreen", "jumouBeigeBlue",
-  "jumouBeigeOrange", "jumouWhiteBrown",
-  "jumouExtra1", "jumouExtra2",
+	"yashaWitchBrownBlue", "yashaWitchPurpleGreen",
+	"yashaWitchPinkPurple", "yashaWitchBrownPink",
+	"yashaWitchBrownGreenUnused", "yashaWitchGreenBlueUnused",
+	"yashaWitchBrownPurpleUnused", "yashaWitchBrownYellowUnused",
 
-  "jumouBeigeGreen", "jumouBeigeBlue",
-  "jumouBeigeOrange", "jumouWhiteBrown",
-  "jumouExtra1", "jumouExtra2",
+	"yashaWitchBrownBlueStabbing", "yashaWitchPurpleGreenStabbing",
+	"yashaWitchPinkPurpleStabbing", "yashaWitchBrownPinkStabbing",
+	"yashaWitchBrownGreenUnusedStabbing", "yashaWitchGreenBlueUnusedStabbing",
+	"yashaWitchBrownPurpleUnusedStabbing", "yashaWitchBrownYellowUnusedStabbing",
 
-  "jumouBeigeGreen", "jumouBeigeBlue",
-  "jumouBeigeOrange", "jumouWhiteBrown",
-  "jumouExtra1", "jumouExtra2",
-
-  "jumouBeigeGreen", "jumouBeigeBlue",
-  "jumouBeigeOrange", "jumouWhiteBrown",
-  "jumouExtra1", "jumouExtra2",
+	"yashaWitchBrownBlueFalling", "yashaWitchPurpleGreenFalling",
+	"yashaWitchPinkPurpleFalling", "yashaWitchBrownPinkFalling",
+	"yashaWitchBrownGreenUnusedFalling", "yashaWitchGreenBlueUnusedFalling",
+	"yashaWitchBrownPurpleUnusedFalling", "yashaWitchBrownYellowUnusedFalling",
 
 
-  "criminalBlackBlue", "criminalBlackPurple",
-  "criminalPurpleRed", "criminalGreenBrown",
-  "criminalExtra1", "criminalExtra2",
+	"yashaHumanBrownGreen", "yashaHumanGreenBlue",
+	"yashaHumanBrownPurple", "yashaHumanBrownYellow",
+	"yashaHumanBrownGreen", "yashaHumanGreenBlue",
+	"yashaHumanBrownPurple", "yashaHumanBrownYellow",
+	// "yashaHumanExtra1", "yashaHumanExtra2",
+	// "yashaHumanExtra3", "yashaHumanExtra4",
 
-  "criminalBlackBlue", "criminalBlackPurple",
-  "criminalPurpleRed", "criminalGreenBrown",
-  "criminalExtra1", "criminalExtra2",
+	"yashaHumanBrownGreen", "yashaHumanGreenBlue",
+	"yashaHumanBrownPurple", "yashaHumanBrownYellow",
+	"yashaHumanBrownGreen", "yashaHumanGreenBlue",
+	"yashaHumanBrownPurple", "yashaHumanBrownYellow",
+	// "yashaHumanExtra1", "yashaHumanExtra2",
+	// "yashaHumanExtra3", "yashaHumanExtra4",
 
-  "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
-  "criminalPurpleRedRunning", "criminalGreenBrownRunning",
-  "criminalExtra1Running", "criminalExtra2Running",
+	"yashaHumanBrownGreen", "yashaHumanGreenBlue",
+	"yashaHumanBrownPurple", "yashaHumanBrownYellow",
+	"yashaHumanBrownGreen", "yashaHumanGreenBlue",
+	"yashaHumanBrownPurple", "yashaHumanBrownYellow",
+	// "yashaHumanExtra1", "yashaHumanExtra2",
+	// "yashaHumanExtra3", "yashaHumanExtra4",
 
-  "criminalBlackBlueRunning", "criminalBlackPurpleRunning",
-  "criminalPurpleRedRunning", "criminalGreenBrownRunning",
-  "criminalExtra1Running", "criminalExtra2Running",
+
+	"jumouBeigeGreen", "jumouBeigeBlue",
+	"jumouBeigeOrange", "jumouWhiteBrown",
+	"jumouExtra1", "jumouExtra2",
+
+	"jumouBeigeGreen", "jumouBeigeBlue",
+	"jumouBeigeOrange", "jumouWhiteBrown",
+	"jumouExtra1", "jumouExtra2",
+
+	"jumouBeigeGreen", "jumouBeigeBlue",
+	"jumouBeigeOrange", "jumouWhiteBrown",
+	"jumouExtra1", "jumouExtra2",
+
+	"jumouBeigeGreen", "jumouBeigeBlue",
+	"jumouBeigeOrange", "jumouWhiteBrown",
+	"jumouExtra1", "jumouExtra2",
+
+
+	"criminalBlackBlue", "criminalBlackPurple",
+	"criminalPurpleRed", "criminalGreenBrown",
+	"criminalExtra1", "criminalExtra2",
+
+	"criminalBlackBlue", "criminalBlackPurple",
+	"criminalPurpleRed", "criminalGreenBrown",
+	"criminalExtra1", "criminalExtra2",
+
+	"criminalBlackBlueRunning", "criminalBlackPurpleRunning",
+	"criminalPurpleRedRunning", "criminalGreenBrownRunning",
+	"criminalExtra1Running", "criminalExtra2Running",
+
+	"criminalBlackBlueRunning", "criminalBlackPurpleRunning",
+	"criminalPurpleRedRunning", "criminalGreenBrownRunning",
+	"criminalExtra1Running", "criminalExtra2Running",
 ];
 
 let foodItem =
 [
-  "chocolate", "iceCreamCornet", "pudding",
-  "iceCreamCup", "lollipop", "pieceOfCake",
-  "roundCake", "pie", "popcorn", "fishMeatball",
-  "donut", "chocolateCandy", "muffin", "soup",
+	"chocolate", "iceCreamCornet", "pudding",
+	"iceCreamCup", "lollipop", "pieceOfCake",
+	"roundCake", "pie", "popcorn", "fishMeatball",
+	"donut", "chocolateCandy", "muffin", "soup",
 
-  // Extra Food
-  "meatball", "starChickenNugget", "tuna"
+	// Extra Food
+	// "meatball", "starChickenNugget", "tuna"
 ];
 
 const randomizerEnemyStrategy = 
 {
-  enemies: enemiesNoDrop.slice().concat([
-      "thetisLightBlue", "thetisDarkBlue",
-      "thetisLightPink", "thetisDarkPink",
-      "thetisExtra1", "thetisExtra2",
+	enemies: enemiesNoDrop.slice().concat([
+			"thetisLightBlue", "thetisDarkBlue",
+			"thetisLightPink", "thetisDarkPink",
+			"thetisExtra1", "thetisExtra2",
 
-      "thetisLightBlue", "thetisDarkBlue",
-      "thetisLightPink", "thetisDarkPink",
-      "thetisExtra1", "thetisExtra2",
+			"thetisLightBlue", "thetisDarkBlue",
+			"thetisLightPink", "thetisDarkPink",
+			"thetisExtra1", "thetisExtra2",
 
-      "thetisLightBlue", "thetisDarkBlue",
-      "thetisLightPink", "thetisDarkPink",
-      "thetisExtra1", "thetisExtra2",
+			"thetisLightBlue", "thetisDarkBlue",
+			"thetisLightPink", "thetisDarkPink",
+			"thetisExtra1", "thetisExtra2",
 
-      "thetisLightBlue", "thetisDarkBlue",
-      "thetisLightPink", "thetisDarkPink",
-      "thetisExtra1", "thetisExtra2",
-  ]),
-  enemiesNoDrop: enemiesNoDrop.slice(),
-  dropEnemies:
-  [
-    "thetisLightBlue", "thetisDarkBlue",
-    "thetisLightPink", "thetisDarkPink",
-    "thetisExtra1", "thetisExtra2"
-  ],
-  dropFoodEnemiesOrBoss:
-  [
-    "thetisDarkBlue", "thetisLightPink",
-    "thetisDarkPink",
-    "thetisExtra1", "thetisExtra2",
+			"thetisLightBlue", "thetisDarkBlue",
+			"thetisLightPink", "thetisDarkPink",
+			"thetisExtra1", "thetisExtra2",
+	]),
+	enemiesNoDrop: enemiesNoDrop.slice(),
+	dropEnemies:
+	[
+		"thetisLightBlue", "thetisDarkBlue",
+		"thetisLightPink", "thetisDarkPink",
+		"thetisExtra1", "thetisExtra2"
+	],
+	dropFoodEnemiesOrBoss:
+	[
+		"thetisDarkBlue", "thetisLightPink",
+		"thetisDarkPink",
+		"thetisExtra1", "thetisExtra2",
 
-    "bakeneForm1"
-  ],
-  crystalEnemies: ["thetisLightBlue"],
-  enemiesAndBosses: enemiesNoDrop.slice().concat([
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
+		"bakeneForm1"
+	],
+	crystalEnemies: ["thetisLightBlue"],
+	enemiesAndBosses: enemiesNoDrop.slice().concat([
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
 
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
 
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
-      "castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
+			"castorAndPolluxBossBoth",
 
-      "morga", "morga", "morga", "morga",
-      "morga", "morga", "morga", "morga",
+			"morga", "morga", "morga", "morga",
+			"morga", "morga", "morga", "morga",
 
-      "morga", "morga", "morga", "morga",
-      "morga", "morga", "morga", "morga",
+			"morga", "morga", "morga", "morga",
+			"morga", "morga", "morga", "morga",
 
-      "morga", "morga", "morga", "morga",
-      "morga", "morga", "morga", "morga",
+			"morga", "morga", "morga", "morga",
+			"morga", "morga", "morga", "morga",
 
-      
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen", "kyureneExtra1",
-      "kyureneExtra2", "kyureneExtra3",
+			
+			"kyureneRedGreen", "kyurenePinkPurple",
+			"kyureneGreenGreen", "kyureneExtra1",
+			"kyureneExtra2", "kyureneExtra3",
 
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen", "kyureneExtra1",
-      "kyureneExtra2", "kyureneExtra3",
+			"kyureneRedGreen", "kyurenePinkPurple",
+			"kyureneGreenGreen", "kyureneExtra1",
+			"kyureneExtra2", "kyureneExtra3",
 
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen", "kyureneExtra1",
-      "kyureneExtra2", "kyureneExtra3",
+			"kyureneRedGreen", "kyurenePinkPurple",
+			"kyureneGreenGreen", "kyureneExtra1",
+			"kyureneExtra2", "kyureneExtra3",
 
-      "kyureneRedGreen", "kyurenePinkPurple",
-      "kyureneGreenGreen", "kyureneExtra1",
-      "kyureneExtra2", "kyureneExtra3",
-
-
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
-
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
-
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
-      "garobenGreenOrange", "garobenGrayBrown",
-      "garobenBrownGray", "garobenGreenBlue",
+			"kyureneRedGreen", "kyurenePinkPurple",
+			"kyureneGreenGreen", "kyureneExtra1",
+			"kyureneExtra2", "kyureneExtra3",
 
 
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"garobenGreenOrange", "garobenGrayBrown",
+			"garobenBrownGray", "garobenGreenBlue",
+			"garobenGreenOrange", "garobenGrayBrown",
+			"garobenBrownGray", "garobenGreenBlue",
 
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"garobenGreenOrange", "garobenGrayBrown",
+			"garobenBrownGray", "garobenGreenBlue",
+			"garobenGreenOrange", "garobenGrayBrown",
+			"garobenBrownGray", "garobenGreenBlue",
 
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-      "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-
-
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-      
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
-      "kunzite", "kunziteExtra1", "kunziteExtra2",
+			"garobenGreenOrange", "garobenGrayBrown",
+			"garobenBrownGray", "garobenGreenBlue",
+			"garobenGreenOrange", "garobenGrayBrown",
+			"garobenBrownGray", "garobenGreenBlue",
 
 
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
 
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
 
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
 
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3",
-      "bakeneForm3", "bakeneExtra1Form3",
-      "bakeneExtra2Form3"
-  ]),
-  bossesOnly:
-  [
-    "castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
-    "castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
-    "castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
 
-    "morga", "morga", "morga", "morga", "morga", "morga",
-    
-    "kyureneRedGreen", "kyurenePinkPurple",
-    "kyureneGreenGreen", "kyureneExtra1",
-    "kyureneExtra2", "kyureneExtra3",
 
-    "garobenGreenOrange", "garobenGrayBrown",
-    "garobenBrownGray", "garobenGreenBlue",
-    "garobenGrayBrown", "garobenBrownGray", 
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
 
-    "zoisite", "zoisiteExtra1", "zoisiteExtra2",
-    "zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
 
-    "kunzite", "kunziteExtra1", "kunziteExtra2",
-    "kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunzite", "kunziteExtra1", "kunziteExtra2",
 
-    "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
-    "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3"
-  ],
-  ungrabbableEnemies:
-  [
-    "morga", "morga", "morga",
 
-    "bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
 
-    "kunzite", "kunziteExtra1", "kunziteExtra2",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
 
-    "queenBeryl", "queenBerylExtra1", "queenBerylExtra2"
-  ],
-  foodItems: foodItem.slice(),
-  anyItem: foodItem.slice().concat([
-      "crystal", "crystal", "crystal", "crystal",
-      "crystal", "crystal", "crystal", "crystal",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
 
-      "crystal", "crystal", "crystal", "crystal",
-      "crystal", "crystal", "crystal", "crystal",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3",
+			"bakeneForm3", "bakeneExtra1Form3",
+			"bakeneExtra2Form3"
+	]),
+	bossesOnly:
+	[
+		"castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
+		"castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
+		"castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
 
-      "crystal"
-  ]),
+		"morga", "morga", "morga", "morga", "morga", "morga",
+		
+		"kyureneRedGreen", "kyurenePinkPurple",
+		"kyureneGreenGreen", "kyureneExtra1",
+		"kyureneExtra2", "kyureneExtra3",
+
+		"garobenGreenOrange", "garobenGrayBrown",
+		"garobenBrownGray", "garobenGreenBlue",
+		"garobenGrayBrown", "garobenBrownGray", 
+
+		"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+		"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+
+		"kunzite", "kunziteExtra1", "kunziteExtra2",
+		"kunzite", "kunziteExtra1", "kunziteExtra2",
+
+		"bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
+		"bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3"
+	],
+	ungrabbableEnemies:
+	[
+		"morga", "morga", "morga",
+
+		"bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
+
+		"kunzite", "kunziteExtra1", "kunziteExtra2",
+
+		"queenBeryl", "queenBerylExtra1", "queenBerylExtra2"
+	],
+	foodItems: foodItem.slice(),
+	anyItem: foodItem.slice().concat([
+			"crystal", "crystal", "crystal", "crystal",
+			"crystal", "crystal", "crystal", "crystal",
+
+			"crystal", "crystal", "crystal", "crystal",
+			"crystal", "crystal", "crystal", "crystal",
+
+			"crystal"
+	]),
 }
 
 

@@ -29,14 +29,10 @@ import level7C from "../images/level/level7C.png";
 import level8A from "../images/level/level8A.png";
 import level8B from "../images/level/level8B.png";
 
-import furauOrangeGreen from
-		"../images/enemy/furau_orange_green.png";
-import furauPurpleBlue from
-		"../images/enemy/furau_purple_blue.png";
-import furauBrownYellow from
-		"../images/enemy/furau_brown_yellow.png";
-import furauGreenBlue from
-		"../images/enemy/furau_green_blue.png";
+import furauOrangeGreen from "../images/enemy/furau_orange_green.png";
+import furauPurpleBlue from "../images/enemy/furau_purple_blue.png";
+import furauBrownYellow from "../images/enemy/furau_brown_yellow.png";
+import furauGreenBlue from "../images/enemy/furau_green_blue.png";
 import furauExtra1 from "../images/enemy/furau_extra_1.png";
 import furauExtra2 from "../images/enemy/furau_extra_2.png";
 
@@ -79,14 +75,10 @@ import oniwabandanaExtra1Running from
 import oniwabandanaExtra2Running from
 		"../images/enemy/oniwabandana_extra_2_r.png";
 
-import tesuniBrownOrange from
-		"../images/enemy/tesuni_brown_orange.png";
-import tesuniGrayPurple from
-		"../images/enemy/tesuni_gray_purple.png";
-import tesuniBrownPink from
-		"../images/enemy/tesuni_brown_pink.png";
-import tesuniGreenPink from
-		"../images/enemy/tesuni_green_pink.png";
+import tesuniBrownOrange from "../images/enemy/tesuni_brown_orange.png";
+import tesuniGrayPurple from "../images/enemy/tesuni_gray_purple.png";
+import tesuniBrownPink from "../images/enemy/tesuni_brown_pink.png";
+import tesuniGreenPink from "../images/enemy/tesuni_green_pink.png";
 import tesuniExtra1 from "../images/enemy/tesuni_extra_1.png";
 
 import tesuniBrownOrangeRacket from
@@ -321,7 +313,7 @@ const imageMap =
 	portraitMars: hSMaImg,
 	portraitVenus: hSVeImg,
 	background: backgroundImg,
-  
+	
 	level1: level1,
 	level2A: level2A,
 	level2B: level2B,

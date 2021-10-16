@@ -5,77 +5,86 @@ import "./PlayerHealth.css";
 
 const PlayerHealthComponent = (props) =>
 {
-  let options = new Array();
-  let phMapKeys = Object.keys(props.playerHealthMap);
+	let options = new Array();
+	const hidden = {display: "none"};
+	let lockAllStyle = props.romReady ? {} : hidden;
 
-  const hidden = {display: "none"};
-  const fieldOn = phMapKeys.includes(
-      props.playerKey) && props.romReady;
-  let lockAllStyle = props.romReady ? {} : hidden;
-  let fieldStyle = fieldOn ? {} : hidden;
 
-  phMapKeys.forEach((e) => {
-    options.push(
-      <option key={e} value={e}>
-        {props.playerHealthMap[e].label}
-      </option>
-    );
-  });
-
-  return (
-    <div className="playerHealth rowLinedFlex">
-      <label className="windowText">
-        Use this window to edit the health of the players. Select a player and type a value between 1 and 255 to change the health.
-      </label>
-      <label
-        className="windowErrorMessage warning"
-        style={props.romReady ? {display: "none"} : {}}
-      >
-        No ROM ready to edit.
-      </label>
-      <div
-        className="windowContentLine colLinedFlex"
-        style={lockAllStyle}
-      >
-        <label>Player: </label>
-        <select
-          name="playerKey"
-          className="buttonSolid"
-          value={props.playerKey}
-          onChange={props.handleChange}
-        >
-          <option key="-1" value="none">
-            Select a player
-          </option>
-          {options}
-        </select>
-      </div>
-      <div
-        className="windowContentLine"
-        style={fieldStyle}
-      >
-        <label>Health: </label>
-        <input
-          type="text"
-          name="health"
-          className="textfield"
-          value={props.health ? props.health : ""}
-          onChange={props.handleChange}
-        />
-      </div>
-      <div
-        className="windowContentLine"
-        style={lockAllStyle}
-      >
-        <button
-          className="buttonSolid"
-          onClick={props.onDefaultValueClick}
-        >
-          Default Value
-        </button>
-      </div>
-    </div>
-  );
+	return (
+		<div className="playerHealth rowLinedFlex">
+			<label className="windowText">
+				Use this window to edit the health of the players.
+			</label>
+			<label className="windowText">
+				Type a value between 0 and 255 to be the new health value, 
+				values outside that range will be ignored.
+			</label>
+			<label className="windowText">
+				After doing your changes, click Apply Data to set your 
+				value in the ROM. If you want to edit a ROM and then 
+				change it later, save a preset file and load it later.
+			</label>
+			<label
+				className="windowErrorMessage warning"
+				style={props.romReady ? {display: "none"} : {}}
+			>
+				No ROM ready to edit.
+			</label>
+			<div
+				className="windowContentLine"
+				style={lockAllStyle}
+			>
+				<label>Health (HP): </label>
+				<input
+					type="text"
+					name="health"
+					className="textfield"
+					value={props.health ? props.health : ""}
+					onChange={props.handleChange}
+				/>
+				<button
+					className="buttonSolid"
+					onClick={props.onDefaultValueClick}
+				>
+					Default Value
+				</button>
+			</div>
+			<div
+				className="windowContentLine"
+				style={lockAllStyle}
+			>
+				<button
+					className="buttonSolid"
+					onClick={props.onReloadDataClick}
+				>
+					Reload Data
+				</button>
+				<button
+					className="buttonSolid"
+					onClick={props.requestFile}
+				>
+					Load Preset
+					<input
+						type="file"
+						value=""
+						onChange={props.onLoadPresetFileChange}
+					/>
+				</button>
+				<button
+					className="buttonSolid"
+					onClick={props.onSavePresetClick}
+				>
+					Save Preset
+				</button>
+				<button
+					className="buttonSolid"
+					onClick={props.onApplyDataClick}
+				>
+					Apply Data
+				</button>
+			</div>
+		</div>
+	);
 }
 
 

@@ -8,8 +8,8 @@ inside the ROM. To store the color Red 21 - Green 21 - Blue 21,
 you might concatenate the 3 values together in the order shown
 below.
 
-  Green  Red  Blue
-0 10101 10101 10101
+		Green		Red			Blue
+0		10101		10101		10101
 
 ================================================================
 New Sailor Color Address
@@ -17,12 +17,12 @@ New Sailor Color Address
 
 5B700 Label Start
 
-Sailor    Old     New     Difference
-Moon      594A0   5B740   22A0
-Mercury   59640   5B7C0   2180
-Mars      596C0   5B840   2180
-Jupiter   59740   5B8C0   2180
-Venus     597B0   5B940   2180
+Sailor		Old			New			Difference
+Moon			594A0		5B740		22A0
+Mercury		59640		5B7C0		2180
+Mars			596C0		5B840		2180
+Jupiter		59740		5B8C0		2180
+Venus			597B0		5B940		2180
 
 5BA60 Label End
 
@@ -30,24 +30,24 @@ Venus     597B0   5B940   2180
 New Enemy Color Address
 ================================================================
 
-Furau                 F
-Oniwabandana          O
-Tesuni                T
-Castor and Pollux     CP
-Yasha Witch           YW          
-Yasha Human           YH
-Thetis                Th
-Jumou                 J
-Criminal              C
-Morga                 Mo
-Kyurene               Ky
-Garoben               Ga
-Bakene                Ba
-Zoisite               Zo
-Kunzite               Ku
-Queen Beryl           QB
-Empty                 Emp
-Label                 Lab
+Furau									F
+Oniwabandana					O
+Tesuni								T
+Castor and Pollux			CP
+Yasha Witch						YW          
+Yasha Human						YH
+Thetis								Th
+Jumou									J
+Criminal							C
+Morga									Mo
+Kyurene								Ky
+Garoben								Ga
+Bakene								Ba
+Zoisite								Zo
+Kunzite								Ku
+Queen Beryl						QB
+Empty									Emp
+Label									Lab
 
 
 Lab		375328, 5BA20
@@ -133,25 +133,25 @@ YHE3	377504, 5C2A0
 Emp		377536, 5C2C0
 Lab		377568, 5C2E0
 
-Furau, 10	              5BA60, (5BA60 - 59A20), 2040
-Oniwabandana, 11	      5BBA0, (5BB80 - 59AA0), 20E0
-Tesuni, 12      	      5BA80, (5BA60 - 59B20), 1F40
-Castor and Pollux, 13   5BDC0, (5BDC0 - 59C20), 21A0
-Yasha Witch, 14         5C200, (5C200 - 59DA0), 2460, but it will use 0
-Yasha Human, 15         5C220, (5C200 - 59E20), 23E0, but it will use FFB0
-Thetis, 16              5BB80, (5BB80 - 59F20), 1C60
-Jumou, 17               5BCC0, (5BCA0 - 59FA0), 1D00
-Criminal, 18		        5BCA0, (5BCA0 - 5A020), 1C80
-Morga, 19               ?, ?, 0000
-Kyurene, 1A	            5BEE0, (5BEE0 - 5A340), 1BA0
-Garoben, 1B	            ?, ?, 0000
-Unknown, 1C             ?, ?, 0000
-Bakene, 1D	            5BF80, (5BF80 - 5A4E0), 1AA0
-Unknown, 1E             ?, ?, 0000
-Unknown, 1F             ?, ?, 0000
-Zoisite, 20	            5C020, (5C020 - 5A600), 1A20
-Kunzite, 21             5C0C0, (5C0C0 - 5A620), 1AA0
-Queen Beryl, 22         5C160, (5C160 - 5A660), 1B00
+Furau, 10								5BA60, (5BA60 - 59A20), 2040
+Oniwabandana, 11				5BBA0, (5BB80 - 59AA0), 20E0
+Tesuni, 12							5BA80, (5BA60 - 59B20), 1F40
+Castor and Pollux, 13		5BDC0, (5BDC0 - 59C20), 21A0
+Yasha Witch, 14					5C200, (5C200 - 59DA0), 2460, but it will use 0
+Yasha Human, 15					5C220, (5C200 - 59E20), 23E0, but it will use FFB0
+Thetis, 16							5BB80, (5BB80 - 59F20), 1C60
+Jumou, 17								5BCC0, (5BCA0 - 59FA0), 1D00
+Criminal, 18						5BCA0, (5BCA0 - 5A020), 1C80
+Morga, 19								?, ?, 0000
+Kyurene, 1A							5BEE0, (5BEE0 - 5A340), 1BA0
+Garoben, 1B							?, ?, 0000
+Unknown, 1C							?, ?, 0000
+Bakene, 1D							5BF80, (5BF80 - 5A4E0), 1AA0
+Unknown, 1E							?, ?, 0000
+Unknown, 1F							?, ?, 0000
+Zoisite, 20							5C020, (5C020 - 5A600), 1A20
+Kunzite, 21							5C0C0, (5C0C0 - 5A620), 1AA0
+Queen Beryl, 22					5C160, (5C160 - 5A660), 1B00
 
 
 For Thetis, Criminal and Bosses all IDs work.

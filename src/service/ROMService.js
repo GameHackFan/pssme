@@ -36,7 +36,7 @@ class ROMService
 			buildBytes = buildBytes.concat(fileBytes.slice(copyStart, patch.buildEnd));
 			let newFile = fileBytes.slice(0, patch.buildStart);
 			newFile = newFile.concat(buildBytes);
-      
+			
 			while(newFile.length <= patch.buildEnd)
 				newFile.push(0);
 
@@ -60,17 +60,17 @@ class ROMService
 
 				for(let i = 0; i < nbs.length; i++)
 					fileBytes[index + i] = isHex ? parseInt(nbs[i], 16) : nbs[i];
-      });
-    }
-  }
+			});
+		}
+	}
 
-  applyPatch = (patch) =>
-  {
+	applyPatch = (patch) =>
+	{
 		if(patch.type === "build")
 			this.applyBuildPatch(patch);
 		else if(patch.type === "overwrite")
 			this.applyOverwritePatch(patch);
-  }
+	}
 
 	applyPatches = (patches) =>
 	{
@@ -88,7 +88,7 @@ class ROMService
 			byteArray.push(parseInt(hexArray[i], 16));
 
 		return byteArray;
-  }
+	}
 
 	convertNumberToROMBytes = (number, byteAmount) =>
 	{
@@ -98,10 +98,10 @@ class ROMService
 		if(number > -1)
 		{
 			hex = "0".repeat((2 * byteAmount) - hex.length) + hex;
-      
+			
 			for(let i = 0; i < byteAmount; i++)
 				bytes[i] = hex.slice(i * 2, (i + 1) * 2);
-      
+			
 			bytes.reverse();
 		}
 		else
@@ -147,8 +147,8 @@ class ROMService
 			let m = "The ROM loaded is invalid! Load the Original ROM of the Game!";
 			throw new Error(m);
 		}
-  }
-  
+	}
+	
 	setROM = (rom) =>
 	{
 		this.rom = rom;
@@ -187,13 +187,12 @@ class ROMService
 
 	getByte = (filename, byteIndex) =>
 	{
-		return this.generatedROM[filename][byteIndex];
+		return this.getFileBytes(filename)[byteIndex];
 	}
 
 	getBytes = (filename, byteIndex, amount) =>
 	{
-		return this.generatedROM[filename].slice(
-				byteIndex, byteIndex + amount);
+		return this.getFileBytes(filename).slice(byteIndex, byteIndex + amount);
 	}
 
 	indexOfBytes = (filename, bytes, byteFormat, startIndex) =>
@@ -210,7 +209,7 @@ class ROMService
 					if(fbs[i] !== romBytes[index + i])
 						return false;
 				}
-        
+				
 				return true;
 			};
 			return fileBytes.findIndex(checkBytes, startIndex);
@@ -244,6 +243,13 @@ class ROMService
 		}
 
 		this.romReady = false;
+	}
+
+	getFileBytes = (filename) =>
+	{
+		let gr = this.generatedROM ? this.generatedROM : {};
+		let fileBytes = gr[filename];
+		return fileBytes ? fileBytes : [];
 	}
 
 	isROMReady = () =>

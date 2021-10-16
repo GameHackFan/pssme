@@ -1,0 +1,32 @@
+.characterDamage input[type=text]
+{
+	margin-right: 12px;
+}
+
+.characterDamage button
+{
+	cursor: pointer;
+}
+
+.characterDamage .buttonSolid > input
+{
+	display: none;
+}
+
+.characterDamage > div:last-child
+{
+	margin-top: 24px;
+}
+
+.characterDamage > div:last-child > :not(:last-child)
+{
+	margin-right: 12px;
+}
+
+.characterDamage > .warning
+{
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-align: center;
+	display: block;
+}

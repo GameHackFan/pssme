@@ -1,0 +1,78 @@
+102033			Player 1 HP
+
+
+
+
+
+Bad  Food Heals 0A (10)
+Mid  Food Heals 14 (20)
+Good Food Heals 1E (30)
+
+
+
+
+
+
+
+
+
+
+
+A52C			Handles items pickup.
+A55A			Checks if the item grabbed is a food.
+
+
+A5AA			Reads the food id
+A5AE			Grabs some value related to the food
+
+
+
+
+
+A5CE to A5DB	handles the amout of health the food heals
+
+
+Food Importance
+
+Popcorn brown holder
+Lollipop brown
+Donut
+Chocolate candy brown wrapper
+Muffin brown wrapper
+Small ice cream blue
+Pudding blue dish
+Soup blue bowl
+Piece of cake brown dish
+Pie blue dish
+Chocolate brown wrapper
+Meatball blue dish
+Round cake brown dish
+Big ice cream blue cup
+
+
+00 = Chocolate brown wrapper.					42446
+01 = Small ice cream blue.						
+02 = Pudding blue dish.
+03 = Big ice cream blue cup.
+04 = Lollipop brown.
+05 = Piece of cake brown dish.
+06 = Round cake brown dish.
+07 = Pie blue dish.
+08 = Popcorn brown holder.
+09 = Meatball blue dish.
+0A = Donut.
+0B = Chocolate candy brown wrapper.
+0C = Muffin brown wrapper.
+0D = Soup blue bowl.
+
+
+
+22 10 12 42 08 18 32 1A
+06 2A 0A 0C 0E 16
+
+
+10 22 42 12 18 08 1A 32
+2A 06 0C 0A 16 0E
+
+
+10 20 40 14 18 08 1A 30 28 06 0C 0A 16 0E

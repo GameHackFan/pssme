@@ -1,113 +1,113 @@
 .levelDisplay
 {
-  max-width: 96%;
-  overflow-x: scroll;
-  overflow-y: hidden;
+	max-width: 96%;
+	overflow-x: scroll;
+	overflow-y: hidden;
 
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-left: auto;
-  margin-right: auto;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .levelDisplay > img
 {
-  min-height: 240px;
+	min-height: 240px;
 }
 
 .enemyGroup span
 {
-  font-weight: bold;
-  font-size: 0.7em;
+	font-weight: bold;
+	font-size: 0.7em;
 
-  margin-left: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
+	margin-left: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .level .enemyGroupText
 {
-  margin-bottom: 14px;
+	margin-bottom: 14px;
 }
 
 .level .enemyGroupText > span
 {
-  font-weight: bold;
-  color: limegreen;
-  font-size: 1em;
-  margin: 0;
+	font-weight: bold;
+	color: limegreen;
+	font-size: 1em;
+	margin: 0;
 }
 
 .hintText
 {
-  margin-bottom: 16px;
+	margin-bottom: 16px;
 }
 
 .hintText > label
 {
-  display: block;
+	display: block;
 }
 
 .hintText > label:not(:last-child)
 {
-  margin-bottom: 4px;
+	margin-bottom: 4px;
 }
 
 .hintText > label:first-child > b
 {
-  color: #0097ab;
+	color: #0097ab;
 }
 
 .hintText > label:nth-child(2) > b
 {
-  color: #32cd32;
+	color: #32cd32;
 }
 
 .hintText > label:last-child > b
 {
-  color: #f6a427;
+	color: #f6a427;
 }
 
 .level .windowContentLine > label
 {
-  min-width: 142px;
+	min-width: 142px;
 }
 
 .level > div:last-child
 {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .level > div:nth-last-child(2)
 {
-  margin-top: 24px;
+	margin-top: 24px;
 }
 
 .level > div:last-child > *
 {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 
 .level > div:last-child > :not(:last-child),
 .level button:not(:last-child)
 {
-  margin-right: 12px;
+	margin-right: 12px;
 }
 
 .level .buttonSolid
 {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .level .buttonSolid > input
 {
-  display: none;
+	display: none;
 }
 
 .level > .warning
 {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  text-align: center;
-  display: block;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-align: center;
+	display: block;
 }
