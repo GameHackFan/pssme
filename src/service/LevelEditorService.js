@@ -62,6 +62,7 @@ class LevelEditorService
 
 	applyData = () =>
 	{
+		romService.applyPatch(patchMap.castorAndPolluxImprovementPatch.patch);
 		romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.featuresAndFixesPatch.patch);

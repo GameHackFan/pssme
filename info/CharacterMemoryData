@@ -1,8 +1,9 @@
 102000:		Player 1 first byte
 102100:		Player 2 first byte
 102700:		First enemy first byte
+xxxx02.W:	Player active flag?
 
-xxxx01.B:	Character ID
+xxxx00.W:	Character ID
 xxxx33.B:	Character health
 xxxx35.B:	Amount of HP the character took as damage
 xxxx75.B:	Damage given
@@ -11,28 +12,21 @@ xxxx77.B:	Damage taken
 
 
 
+Character Attack		Old Value			New Value
+Jumou Straight:			04 (04)				12 (18)
+Jumou Stomach:			04 (04)				14 (20)
+Jumou Kick:					06 (06)				18 (24)
+Jumou Head:					08 (08)				10 (16)
 
-709A:		Start to compute damage?
-9208:		Computing damage?
+
+
+
+
+
+709A:			Start to compute damage?
+9208:			Computing damage?
 17E44:		Writes down the amount of damage given (Use this for each enemy to find how much they do as damage).
 18094:		Writes down the amount of damage given (For hardcoded attacks like Jumou's Head).
 
-
-
-Old Values
-Jumou Straight:		4
-Jumou Stomach:		4
-Jumou Kick:			6
-Jumou Head:			8
-
-
-
-New Values
-Jumou Straight:		12
-Jumou Stomach:		14
-Jumou Kick:			18
-Jumou Head:			10
-
-
-
+17123:		Thetis Health (17120).
 17F1E:		Jumou's Straight punch damage

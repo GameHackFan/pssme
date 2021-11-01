@@ -1,56 +1,18 @@
 .textfield
 {
-	border-radius: 0;
+	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
 
-	padding: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
 
 	color: white;
 	border-color: white;
 	background-color: #002654B0;
 }
-
-/*
-
-.fakeButton
-{
-	font: 400 13.3333px Arial;
-	text-decoration: none;
-	text-align: center;
-
-	overflow: hidden;
-
-	position: relative;
-	display: inline;
-
-	padding-top: 3px;
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
-}
-
-.fakeButton:hover,
-.fakeButton > :first-child:hover,
-.fakeButton > input:hover,
-{
-	cursor: pointer;
-}
-
-.fakeButton > input[type=file]
-{
-	top: 0;
-	left: 0;
-	position: absolute;
-	min-height: 100%;
-	max-height: 100%;
-	min-width: 100%;
-	max-width: 100%;
-	opacity: 0;
-	cursor: pointer;
-}
-
-*/
 
 .buttonSolid > input, buttonLight > input
 {
@@ -60,22 +22,18 @@
 .buttonSolid, .buttonLight:hover,
 .buttonLight:disabled
 {
-	border-radius: 0;
+	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
 	color: white;
 	border-color: #002654;
 	background-color: #002654;
-	/*
-	border-color: #f6a427;
-	background-color: #f6a427;
-	*/
 }
 
 .buttonLight, .buttonSolid:hover,
 .buttonSolid:disabled 
 {
-	border-radius: 0;
+	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
 	background-color: rgba(0, 0, 0, 0);
@@ -89,7 +47,7 @@
 
 .buttonSolid:active
 {
-	border-radius: 0;
+	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
 	color: white;
@@ -103,7 +61,7 @@
 
 .buttonLight:active
 {
-	border-radius: 0;
+	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
 	background-color: rgba(0, 0, 0, 0);

@@ -1,3 +1,24 @@
+Version 1.0 Changes:
+- Renamed JumouDamageImprovementPatch to JumouImprovementPatch.
+- Created ThetisImprovementPatch. It increases her HP from 16 to 48.
+- Created CastorAndPolluxImprovementPatch. It has assembly code that will load their HP from a different table that can handle color IDs from 0 to 9.
+- Changed Castor & Pollux: ID 6 back to ID 1, ID A back to ID 2, Extra 1 to ID 7, Extra 2 ID 9.
+- Forced the Randomizer to apply CastorAndPolluxImprovementPatch and ThetisImprovementPatch.
+- Forced the Level Editor to apply CastorAndPolluxImprovementPatch.
+- Renamed Player Health Editor to Character Health Editor.
+- Added a way to edit Thetis HP to the Character Health Editor.
+- Added more colors in the SailorColorExpansionPatch, each sailor now has the original + 3 colors.
+- Added assembly code to the SailorColorExpansionPatch, you can select the color pressing up and down.
+- Added assembly code to the SailorColorExpansionPatch, prints the color indicator.
+- Added assembly code to the SailorColorExpansionPatch, forbids duplicated colors to avoid pallete bugs.
+- Fixed the pallete bug in the select screen, new palletes are ignored in the select screen.
+- Created a DefaultTextPatch.
+- Forced DefaultTextPatch to be applied when generating a ROM if no other text patch was applied before.
+- Added the new patches to the PatchMap.
+- Minor changes.
+- Minor fixes.
+
+
 Version 0.9 Changes:
 - Created the FoodImprovementPatch.
 - Created the JumouDamageImprovementPatch. Jumou with this patch turns into a heavy striker.

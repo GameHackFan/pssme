@@ -97,14 +97,15 @@ const LevelEditorComponent = (props) =>
 				previously.
 			</label>
 			<label className="windowText">
-				The Trigger Position and the Position Y always have a minimum 
-				and maximum value. The editor will allow you to insert any 
-				value you want but it will fix those values to be the maximum 
-				or the minimum possible to avoid the game to have weird 
-				behavior. It is recommended that you always insert valid values 
-				between the maximum and the minimum value to avoid having 
-				surprises about the enemies being automatically moved by the 
-				editor when you apply the customizations.
+				The Trigger Position, the Position X and Y always have a 
+				minimum and maximum value. The editor will allow you to 
+				insert any value you want but it will fix those values to 
+				be the maximum or the minimum possible to avoid the game 
+				to have weird behavior. It is recommended that you always 
+				insert valid values between the maximum and the minimum 
+				value to avoid having surprises about the enemies being 
+				automatically moved by the editor when you apply the 
+				customizations.
 			</label>
 			<label className="windowText">
 				Be aware that changes made by the Level Editor will increase 

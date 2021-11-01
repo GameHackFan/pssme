@@ -5,10 +5,6 @@ const enemyColorExpansionPatch =
 	byteFormat: "hex",
 	data:
 	{
-		// Instruction that redirects the execution to where it
-		// handles enemy color IDs 4+.
-		"36686": ["F9", "4E", "07", "00", "00", "E9"],
-
 		// A Label to make it obvious where the new colors start
 		"375328":
 		[
@@ -116,24 +112,6 @@ const enemyColorExpansionPatch =
 			"AB", "37", "C8", "26", "A7", "15", "60", "08"
 		],
 
-		// Castor and Pollux Normal 1 (Blue and Purple)
-		"376320":
-		[
-			"F2", "42", "EC", "77", "DF", "7B", "B7", "62",
-			"D0", "45", "8E", "35", "0A", "29", "DA", "72",
-			"3C", "5E", "55", "3D", "ED", "24", "BF", "5A",
-			"3F", "3E", "D3", "31", "EC", "18", "63", "00"
-		],
-
-		// Castor and Pollux Normal 2 (Light Green and Blue)
-		"376448":
-		[
-			"72", "43", "18", "70", "DF", "7B", "97", "63",
-			"B0", "3A", "F1", "29", "0A", "11", "37", "73",
-			"73", "62", "CD", "49", "8A", "30", "FB", "65",
-			"18", "51", "F4", "3C", "8C", "24", "63", "00"
-		],
-
 		// Castor and Pollux Normal 4 (Beige and Pink)
 		"376288":
 		[
@@ -144,7 +122,7 @@ const enemyColorExpansionPatch =
 		],
 
 		// Castor and Pollux Extra 1 (Beige, Brown and White)
-		"367552":
+		"376352":
 		[
 			"EF", "31", "FA", "63", "FD", "77", "9B", "6B",
 			"D4", "56", "10", "3A", "4A", "21", "F7", "6B",
@@ -153,7 +131,7 @@ const enemyColorExpansionPatch =
 		],
 
 		// Castor and Pollux Extra 2 (Beige, Yellow and Green)
-		"367584":
+		"376416":
 		[
 			"EF", "31", "D2", "61", "FB", "77", "4E", "62",
 			"89", "45", "E5", "30", "83", "1C", "F6", "6F",
@@ -344,27 +322,32 @@ const enemyColorExpansionPatch =
 			"20", "43", "4F", "4C", "4F", "52", "53", "20"
 		],
 
+
+
+		// Instruction that redirects the execution to where it
+		// handles enemy color IDs 4+.
+		"36686": ["F9", "4E", "07", "00", "00", "EA"],
+
+
 		// Code that handles the correct address for the
 		// extra colors in case the pallete id is bigger
 		// than 3. If it isn't, it will execute the same
 		// lines of code that it would in the original game.
-		"518400":
+		"518656":
 		[
 			"07", "30", "06", "3E", "46", "02", "FF", "0F",
 			"47", "02", "00", "F0", "4F", "EE", "46", "DC",
 			"31", "3C", "00", "60", "47", "DC", "E7", "48",
-			"F0", "00", "47", "0C", "80", "00", "00", "65",
-			"24", "00", "40", "0C", "10", "00", "00", "65",
-			"1C", "00", "40", "0C", "22", "00", "00", "62",
-			"14", "00", "00", "04", "10", "00", "FC", "C0",
-			"02", "00", "F9", "41", "07", "00", "4C", "E9",
-			"C0", "D0", "50", "DC", "F9", "4E", "00", "00",
-			"66", "8F", "00", "00", "40", "20", "E0", "20",
-			"40", "1F", "A0", "21", "00", "00", "00", "FF",
-			"60", "1C", "00", "1D", "80", "1C", "00", "00",
-			"C0", "1B", "00", "00", "00", "00", "A0", "1A",
-			"00", "00", "00", "00", "20", "1A", "A0", "1A",
-			"00", "1B", "00", "00", "00", "00", "00", "00"
+			"F0", "00", "47", "0C", "80", "00", "18", "65",
+			"00", "04", "10", "00", "40", "0C", "12", "00",
+			"0E", "6E", "FC", "C0", "02", "00", "F9", "41",
+			"07", "00", "40", "EA", "C0", "D0", "50", "DC",
+			"F9", "4E", "00", "00",	"66", "8F", "00", "00",
+			"40", "20", "E0", "20", "40", "1F", "A0", "21",
+			"00", "00", "00", "FF", "60", "1C", "00", "1D",
+			"80", "1C", "00", "00", "C0", "1B", "00", "00",
+			"00", "00", "A0", "1A", "00", "00", "00", "00",
+			"20", "1A", "A0", "1A", "00", "1B", "00", "00"
 		]
 	}
 }

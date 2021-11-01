@@ -35,8 +35,8 @@ class ComponentService
 				"windowContent", "Seed Randomizer", false, true);
 		im.patch = this.createComponentInfo(
 				"windowContent", "Patch Manager", false, true);
-		im.playerHealth = this.createComponentInfo(
-				"windowContent", "Player Health Editor", false, true);
+		im.health = this.createComponentInfo(
+				"windowContent", "Character Health Editor", false, true);
 		im.foodHeal = this.createComponentInfo(
 				"windowContent", "Food Heal Editor", false, true);
 		im.levelEditor = this.createComponentInfo(

@@ -5,20 +5,23 @@ An editor for the game Pretty Solider Sailor Moon (Arcade).
 You can access the editor [here](https://gamehackfan.github.io/pssme/).
 <br/><br/>
 
-Version 0.9 Changes:
-- Created the FoodImprovementPatch.
-- Created the JumouDamageImprovementPatch. Jumou with this patch turns into a heavy striker.
-- Jumou patch changes: Jumou's Straight Punch damage changed from 4 to 18.
-- Jumou patch changes: Jumou's Stomach Punch damage changed from 4 to 20.
-- Jumou patch changes: Jumou's Kick damage changed from 6 to 24.
-- Jumou patch changes: Jumou's Head Throw damage changed from 8 to 16.
+Version 1.0 Changes:
+- Renamed JumouDamageImprovementPatch to JumouImprovementPatch.
+- Created ThetisImprovementPatch. It increases her HP from 16 to 48.
+- Created CastorAndPolluxImprovementPatch. It has assembly code that will load their HP from a different table that can handle color IDs from 0 to 9.
+- Changed Castor & Pollux: ID 6 back to ID 1, ID A back to ID 2, Extra 1 to ID 7, Extra 2 ID 9.
+- Forced the Randomizer to apply CastorAndPolluxImprovementPatch and ThetisImprovementPatch.
+- Forced the Level Editor to apply CastorAndPolluxImprovementPatch.
+- Renamed Player Health Editor to Character Health Editor.
+- Added a way to edit Thetis HP to the Character Health Editor.
+- Added more colors in the SailorColorExpansionPatch, each sailor now has the original + 3 colors.
+- Added assembly code to the SailorColorExpansionPatch, you can select the color pressing up and down.
+- Added assembly code to the SailorColorExpansionPatch, prints the color indicator.
+- Added assembly code to the SailorColorExpansionPatch, forbids duplicated colors to avoid pallete bugs.
+- Fixed the pallete bug in the select screen, new palletes are ignored in the select screen.
+- Created a DefaultTextPatch.
+- Forced DefaultTextPatch to be applied when generating a ROM if no other text patch was applied before.
 - Added the new patches to the PatchMap.
-- Forced the Seed Randomizer to apply the FoodImprovementPatch and JumouDamageImprovementPatch.
-- Removed the extra food. They were a work around, with the improvement, they are not needed anymore.
-- Created a Food Heal Editor. It allows users to edit how much each food will heal.
-- Created the Character Damage Editor. It allows users to edit how much damage each character's attack will do (for now, only jumou data is included).
-- Improved the Player Health Editor.
-- Improved the tool logo.
 - Minor changes.
 - Minor fixes.
 
@@ -26,9 +29,10 @@ See all changes made [here](https://github.com/GameHackFan/pssme/blob/main/chang
 <br/><br/>
 
 Known Bugs:
-- Game Over on stage 2 and 4 can bug Morga / Garoben on the next gameplay (reset the game to fix this).
+- Game Over on stage 2 and 4 can bug Morga / Garoben on the next gameplay (reset the game to fix it).
 - Final Boss area is bugged and some times it spawns more bosses than it should.
-- Because mercury uses the same memory space as the player 2, she ends up loading the alternative color in the select screen.
+- After a player selects a color, he will hold it forever until he picks another one (can be fixed).
+- If the game is overloaded with sprites, the color indicator might not be drawn.
 <br/><br/>
 
-OBS: With the v0.9 update, adding the data needed to edit the damage of all the other characters is a nice thing, but I am too lazy to search for it. Changing the way crystals are spent could also be a good feature to have. Besides all that, I don't think there is much to be done.
+OBS: after the v1.0 update, the annoying pallete bug in the select screen is fixed, but new ones are there, the player holding a color forever after he selects it is just an example. Adding the data needed to edit the damage of all the other characters is a nice thing, adding the data to allow to edit the HP of the other characters is also very nice, but I am too lazy to search for those. Adding an editor that allows to edit how much crystals are spent could also be a good feature to have. Bakene is a nice boss, but fighting him and taking 33% of his HP makes him pretty weak, so a nice idea would be to spawn his 3rd form with full HP even on 7th stage. Besides that, this tool offers a lot of stuff already.

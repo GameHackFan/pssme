@@ -6,21 +6,21 @@ import "./FoodHeal.css";
 const FoodHealComponent = (props) =>
 {
 	let options = new Array();
-	let foodMapKeys = Object.keys(props.foodHealMap);
 
 	const hidden = {display: "none"};
-	const fieldOn = foodMapKeys.includes(props.foodKey) && props.romReady;
+	const fieldOn = (props.foodKey in props.foodHealMap) && props.romReady;
 	let lockAllStyle = props.romReady ? {} : hidden;
 	let fieldStyle = fieldOn ? {} : hidden;
 	let heal = props.foodHealData[props.foodKey];
 
-	foodMapKeys.forEach((k) => {
+	Object.keys(props.foodHealMap).forEach((k) => {
 		options.push(
 			<option key={k} value={k}>
 				{props.foodHealMap[k].label}
 			</option>
 		);
 	});
+
 
 	return (
 		<div className="foodHeal rowLinedFlex">

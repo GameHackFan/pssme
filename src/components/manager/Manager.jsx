@@ -4,6 +4,7 @@ import ManagerComponent from './ManagerComponent';
 import editorService from '../../service/EditorService';
 import fileService from "../../service/FileService";
 import romService from "../../service/ROMService";
+import textService from '../../service/TextService';
 
 
 class Manager extends Component
@@ -71,6 +72,7 @@ class Manager extends Component
 
 	onGenerateROMClick(event)
 	{
+		textService.addDefaultTextIfNoText();
 		const extras = {};
 		extras.successCallback = this.downloadGeneratedROM;
 		extras.errorCallback = this.props.onActionResult;

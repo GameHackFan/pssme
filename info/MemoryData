@@ -1,0 +1,67 @@
+108196:		The amount of frames passed? (4 bytes)
+10835E:		Credit Coins Inserted.
+
+
+1081A8:		Player 1 input (Button Pressed)?
+1081AA:		Player 1 input (Button Down - Holding)?
+10834A:		Player 1 input (Button Pressed)?
+
+
+1081F8:		Player 1 input (Button Pressed)?
+1081FA:		Player 1 input (Button Down - Holding)?
+
+
+1094B0:		Player 1 start data (score, crystals, etc).
+1095B0:		Player 2 start data (score, crystals, etc).
+
+
+xxxxB0:		Player character ID.
+xxxxB2:		Player active flag.
+xxxxC0:		Player score.
+xxxxC4:		Player crystals.
+xxxx8E:		Player character color ID (custom, not in original game)
+
+
+
+
+Player Input
+
+0001 (Up)
+0002 (Down)
+0004 (Left)
+0008 (Right)
+
+
+0010 (B1, Punch)
+0020 (B2, Jump)
+0040 (B3, Crystal)
+0080 (B4, Start)
+
+
+
+10A416:		Stage time.
+
+
+500000:		Region used to print things in the screen.
+xxxx00:		Position X of the sprite.
+xxxx02:		Position Y of the sprite.
+xxxx04:		Pallete.
+xxxx05:		Srpite rotation.
+xxxx06:		Sprite offset. (30 for uppercase letter, 50 for uppercase).
+xxxx08:		Have no clue how to explain (sprite related).
+xxxx0A:		Have no clue how to explain (sprite related).
+xxxx0C:		Tile amount to be printed horizontally?.
+xxxx0C:		Tile amount to be printed vertically?.
+xxxx0E:		?
+
+
+
+58C6:		Handling inputs Select Screen?
+5CCE:		Credit Label Related?
+539A:		Credit Label Related?
+6028:		Credit Label Related?
+6044:		Credit Label Related?	
+64D0:		Credit label related?
+
+
+1264:		Draws things in the screen? (D1 width?, D2 height?, A0 print memory region?, A3 text address?)

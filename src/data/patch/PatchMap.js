@@ -10,11 +10,14 @@ import boss1PositionImprovementPatch from
 import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
 import sailorColorExpansionPatch from "./SailorColorExpansionPatch";
 import foodImprovementPatch from "./FoodImprovementPatch";
+import thetisImprovementPatch from "./ThetisImprovementPatch";
+import castorAndPolluxImprovementPatch from
+		"./CastorAndPolluxImprovementPatch";
 
 import randomizerTextPatch from "./RandomizerTextPatch";
 import levelEditorTextPatch from"./LevelEditorTextPatch";
-import jumouDamageImprovementPatch from
-		"./JumouDamageImprovementPatch";
+import defaultTextPatch from "./DefaultTextPatch";
+import jumouImprovementPatch from "./JumouImprovementPatch";
 
 
 const patchMap = 
@@ -51,21 +54,40 @@ const patchMap =
 		patch: foodImprovementPatch,
 		show: true
 	},
-	jumouDamageImprovementPatch:
+	castorAndPolluxImprovementPatch:
 	{
-		label:	"Jumou Damage Improvement Patch",
-		text:		"This patch increases Jumou's damage output. " +
-						"In the original game, she is too slow, that " +
-						"makes her rarely able to hit any player. " +
-						"Her importance as an enemy is questionable, " +
+		label:	"Castor And Pollux Improvement Patch",
+		text:		"This patch brings improvements to Castor " + 
+						"and Pollux's health. The original health " + 
+						"table handles properly only health values " +
+						"for color IDs between 0 and 5, this patch " + 
+						"makes the game load their health from a " + 
+						"different table that can handle color IDs " + 
+						"from 0 to 9, easily allowing extra colors " + 
+						"to be added to them. This patch is used by " + 
+						"the Level Editor and the Seed Randomizer." +
+						"Randomizer.",
+		patch: castorAndPolluxImprovementPatch,
+		show: true
+	},
+	jumouImprovementPatch:
+	{
+		label:	"Enemy Improvement Patch",
+		text:		"This patch brings improvements to some " + 
+						"enemies. Jumou is too slow, that makes " + 
+						"her rarely able to hit any player. Her " + 
+						"importance as an enemy is questionable, " + 
 						"so this patch turns her into a heavy hitter, " +
-						"a type of enemy that lacks in this game. With " +
-						"this patch, her damage output is changed as " +
-						"described: Straight Punch from 04 to 18, " +
-						"Stomach Punch from 04 to 20, Kick from 06 " +
-						"to 24, Head Throw from 08 to 16. This " +
-						"patch is used by the Seed Randomizer.",
-		patch: jumouDamageImprovementPatch,
+						"a type of enemy that lacks in this game. " + 
+						"With this patch, Jumou's damage output " + 
+						"is changed as described: Straight Punch " + 
+						"from 04 to 18, Stomach Punch from 04 to " + 
+						"20, Kick from 06 to 24, Head Throw from " + 
+						"08 to 16. Thetis also has way too little " +
+						"HP, this patch increases her HP from 10 " + 
+						"to 30. This patch is used by the Seed " +
+						"Randomizer.",
+		patch: jumouImprovementPatch,
 		show: true
 	},
 	textImprovementPatch:
@@ -153,6 +175,15 @@ const patchMap =
 		patch: removeCPUDemoPatch,
 		show: true
 	},
+	thetisImprovementPatch:
+	{
+		label:	"Thetis Improvement Patch",
+		text:		"This patch improves thetis health from " +
+						"16 to 48. This patch is used by the Seed " +
+						"Randomizer.",
+		patch: thetisImprovementPatch,
+		show: false
+	},
 	randomizerTextPatch:
 	{
 		label:	"Randomizer Title Screen Patch",
@@ -167,6 +198,16 @@ const patchMap =
 		text:		"Title screen text patch for the Level " +
 						"Editor. Used by the Level Editor",
 		patch: levelEditorTextPatch,
+		show: false
+	},
+	defaultTextPatch:
+	{
+		label:	"Default Title Screen Patch",
+		text:		"Title screen text patch for anything " +
+						"else besides the Seed Randomizer and " +
+						"the Level Editor. Used if no text " +
+						"was applied.",
+		patch: defaultTextPatch,
 		show: false
 	},
 	boss1PositionImprovementPatch:

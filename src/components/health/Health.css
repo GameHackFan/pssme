@@ -1,0 +1,32 @@
+.health input[type=text]
+{
+	margin-right: 12px;
+}
+
+.health button
+{
+	cursor: pointer;
+}
+
+.health .buttonSolid > input
+{
+	display: none;
+}
+
+.health > div:last-child
+{
+	margin-top: 24px;
+}
+
+.health > div:last-child > :not(:last-child)
+{
+	margin-right: 12px;
+}
+
+.health > .warning
+{
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-align: center;
+	display: block;
+}
