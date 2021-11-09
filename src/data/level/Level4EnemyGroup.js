@@ -17,7 +17,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	group2:
@@ -37,7 +38,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	group3:
@@ -57,7 +59,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 
@@ -79,7 +82,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	group5:
@@ -99,7 +103,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	group6:
@@ -119,7 +124,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	group7:
@@ -139,7 +145,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 
@@ -161,7 +168,10 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm2", "bakeneRunningAway",
+			"bakeneExtra2Form2"
 		]
 	},
 
@@ -183,7 +193,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	group10:
@@ -203,7 +214,8 @@ const level4EnemyGroup =
 		maxAmount: 14,
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	bossGroup:
@@ -225,7 +237,8 @@ const level4EnemyGroup =
 		maxAmount: 0,					// Adding enemies here can softlock the game.
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	extraGroup1:
@@ -246,10 +259,12 @@ const level4EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	}
 }
+
 
 // level4A begins at 00 00 (0000)
 // level4B begins at 00 00 (0000)

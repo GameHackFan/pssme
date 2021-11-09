@@ -1,5 +1,6 @@
-108196:		The amount of frames passed? (4 bytes)
+108196:		The amount of frames passed? (4 bytes).
 10835E:		Credit Coins Inserted.
+109384:		Area ID.
 
 
 1081A8:		Player 1 input (Button Pressed)?
@@ -43,16 +44,17 @@ Player Input
 
 
 500000:		Region used to print things in the screen.
-xxxx00:		Position X of the sprite.
-xxxx02:		Position Y of the sprite.
-xxxx04:		Pallete.
-xxxx05:		Srpite rotation.
-xxxx06:		Sprite offset. (30 for uppercase letter, 50 for uppercase).
-xxxx08:		Have no clue how to explain (sprite related).
-xxxx0A:		Have no clue how to explain (sprite related).
-xxxx0C:		Tile amount to be printed horizontally?.
-xxxx0C:		Tile amount to be printed vertically?.
-xxxx0E:		?
+XXXX00:		Position X of the sprite.
+XXXX02:		Position Y of the sprite.
+XXXX04:		Pallete.
+XXXX05:		Srpite rotation.
+XXXX06:		Sprite offset. (30 for uppercase letter, 50 for uppercase).
+XXXX08:		Have no clue how to explain.
+XXXX0A:		Have no clue how to explain.
+XXXX0C:		Tile amount to be printed horizontally?.
+XXXX0C:		Tile amount to be printed vertically?.
+XXXX0E:		?
+
 
 
 

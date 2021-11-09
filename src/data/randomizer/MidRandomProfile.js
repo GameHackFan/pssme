@@ -54,14 +54,6 @@ const midRandomProfile =
 			randomMinAmount: 0,
 			randomMaxAmount: 1
 		}
-	},
-	finalBossStrategy:
-	{
-		ungrabbableEnemies:
-		{
-			randomMinAmount: 1,
-			randomMaxAmount: 1
-		}
 	}
 }
 

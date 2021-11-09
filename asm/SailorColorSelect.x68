@@ -4,7 +4,6 @@
 * Date:					
 * Description:	Allows the player to select the colors available to his sailor.
 *-------------------------------------------------------------------------------------------------
-
 ; ORG				$7E900
 
 																		; Block of code that handles if it was triggered by a player.
@@ -36,6 +35,8 @@
 ;
 ; A3 + 0 has the player KeyPress
 ; A3 + 2 has the player KeyDown/KeyUp
+
+
 
 
 *~Font name~Courier New~

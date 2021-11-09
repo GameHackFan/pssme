@@ -1,8 +1,16 @@
 const kunziteEditorData = 
 {
-	kunzite:					// 8th Stage Sub-Boss
+	kunziteSubBoss:					// 8th Stage Sub-Boss
 	{
 		label: "Kunzite Sub Boss",
+		width: 45,
+		height: 124,
+		pivotX: 20, 
+		pivotY: 119
+	},
+	kunziteExtra0:
+	{
+		label: "Kunzite Extra 0 (Gray)",
 		width: 45,
 		height: 124,
 		pivotX: 20, 

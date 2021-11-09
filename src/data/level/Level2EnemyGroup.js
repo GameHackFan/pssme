@@ -97,10 +97,9 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	},
@@ -122,10 +121,9 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	},
@@ -147,10 +145,9 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	},
@@ -172,10 +169,9 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	},
@@ -197,10 +193,9 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	},
@@ -222,10 +217,9 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	},
@@ -247,14 +241,14 @@ const level2EnemyGroup =
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga",
-			"castorAndPolluxBossBoth", "bakeneForm1",
-			"bakeneForm1", "bakeneForm2", "bakeneForm3",
-			"bakeneRunningAway", "bakene", "bakeneExtra1Form3",
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"bakeneForm3", "bakeneForm3", "bakeneExtra1Form3",
 			"bakeneExtra2Form3"
 		]
 	}
 }
+
 
 // level2A begins at 80 01 (0180)
 // level2B begins at 80 01 (0180)

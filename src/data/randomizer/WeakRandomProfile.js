@@ -49,14 +49,6 @@ const weakRandomProfile =
 			randomMinAmount: 1,
 			randomMaxAmount: 1
 		}
-	},
-	finalBossStrategy:
-	{
-		ungrabbableEnemies:
-		{
-			randomMinAmount: 0,
-			randomMaxAmount: 0
-		}
 	}
 }
 

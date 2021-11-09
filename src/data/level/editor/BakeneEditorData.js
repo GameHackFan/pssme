@@ -24,14 +24,6 @@ const bakeneEditorData =
 		pivotX: 66, 
 		pivotY: 107
 	},
-	bakene:
-	{
-		label: "Bakene Sub Boss (Unstable)",
-		width: 140,
-		height: 127,
-		pivotX: 66, 
-		pivotY: 107
-	},
 	bakeneRunningAway:
 	{
 		label: "Bakene Running Away",
@@ -39,6 +31,22 @@ const bakeneEditorData =
 		height: 127,
 		pivotX: 76, 
 		pivotY: 103
+	},
+	bakeneExtra1Form2:
+	{
+		label: "Bakene Extra 1 2nd Form (Brown and Silver)",
+		width: 140,
+		height: 127,
+		pivotX: 66, 
+		pivotY: 107
+	},
+	bakeneExtra2Form2:
+	{
+		label: "Bakene Extra 2 2nd Form (Grey and Copper)",
+		width: 140,
+		height: 127,
+		pivotX: 66, 
+		pivotY: 107
 	},
 	bakeneExtra1Form3:
 	{

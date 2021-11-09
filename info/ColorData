@@ -129,9 +129,15 @@ YWE2	377408, 5C240
 YHE2	377440, 5C260
 YWE3	377472, 5C280
 YHE3	377504, 5C2A0
-
 Emp		377536, 5C2C0
-Lab		377568, 5C2E0
+
+MoE1	377568, 5C2E0, (5C2E0 - 5A2E0), 2000
+MoE2	377600, 5C300
+MoE3	377632, 5C320
+MoE4	377664, 5C340
+
+Emp		377696, 5C360
+Lab		377728, 5C380
 
 Furau, 10								5BA60, (5BA60 - 59A20), 2040
 Oniwabandana, 11				5BBA0, (5BB80 - 59AA0), 20E0
@@ -142,7 +148,7 @@ Yasha Human, 15					5C220, (5C200 - 59E20), 23E0, but it will use FFB0
 Thetis, 16							5BB80, (5BB80 - 59F20), 1C60
 Jumou, 17								5BCC0, (5BCA0 - 59FA0), 1D00
 Criminal, 18						5BCA0, (5BCA0 - 5A020), 1C80
-Morga, 19								?, ?, 0000
+Morga, 19								5C2E0, (5C2E0 - 5A2E0), 2000
 Kyurene, 1A							5BEE0, (5BEE0 - 5A340), 1BA0
 Garoben, 1B							?, ?, 0000
 Unknown, 1C							?, ?, 0000
@@ -208,6 +214,12 @@ EC 25 F2 67 2A 4B 69 36 84 1D FD 7B 16 5F 92 4E 0D 3A 88 25 FB 73 EE 37 49 23 65
 Criminal (Blue, Gray)
 EC 25 F2 67 2A 4B 69 36 84 1D 96 56 F1 41 6D 31 E9 20 65 10 DF 7B 5D 5A 55 35 CE 24 69 14 03 04
 
+Morga (Green and Brown)
+0B 1A F5 6F 91 5F 2C 4F A7 3E 27 32 86 25 FD 71 FB 77 71 5E EE 4D 6B 3D E9 30 86 24 23 18 01 0C
+
+Morga (Blue and Brown)
+0B 1A F5 6F 91 5F 2C 4F A7 3E 27 32 86 25 5D 2E BB 7F 1B 4E B6 41 52 35 CF 28 6D 20 0B 18 08 0C
+
 Kyurene (Red, Purple)
 D9 5E 7F 6F DB 5A D8 49 54 39 D0 28 4B 18 FD 39 56 21 6F 08 F6 57 EE 37 67 17 A4 0A 82 01 60 00
 
@@ -249,7 +261,10 @@ Sailor Moon (Black and Brown)
 Sailor Moon (Green and Wine)
 0B 48 FE 7F F7 73 F1 5F AC 4F E7 3A E2 19 CC 7B C0 5F 0F 3B 49 22 14 73 2C 5A 44 41 80 28 60 0C
 
-Sailor Moon (Wine and Pink)
+Sailor Moon (Dark Cian and Pink)
+0B 48 FE 7F F7 73 F1 5F AC 4F E7 3A E2 19 CC 7B C0 5F ED 37 A7 1E 79 5E B4 49 CF 34 4A 20 04 08
+
+Sailor Moon (Wine and Pink - Removed)
 0B 48 FE 7F F7 73 F1 5F AC 4F E7 3A E2 19 CC 7B C0 5F ED 37 A7 1E 98 5B D0 32 2C 1A 67 09 C4 08
 
 Sailor Mercury (Black and Purple)

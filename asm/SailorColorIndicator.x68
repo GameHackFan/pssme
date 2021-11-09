@@ -85,6 +85,8 @@
 ;	507210 is the last line that can print.
 
 
+
+
 *~Font name~Courier New~
 *~Font size~10~
 *~Tab type~1~

@@ -156,7 +156,10 @@ const levelEditorEnemies =
 	castorAndPolluxBoss2: castorAndPolluxEditorData.castorAndPolluxBoss2,
 
 
-	morga: morgaEditorData.morga,
+	morga2ndBoss: morgaEditorData.morga2ndBoss,
+	morgaExtra0: morgaEditorData.morgaExtra0,
+	morgaExtra1: morgaEditorData.morgaExtra1,
+	morgaExtra2: morgaEditorData.morgaExtra2,
 	
 
 	kyureneRedGreen3rdBoss: kyureneEditorData.kyureneRedGreen3rdBoss,
@@ -178,24 +181,27 @@ const levelEditorEnemies =
 	bakeneForm1: bakeneEditorData.bakeneForm1,
 	bakeneForm2: bakeneEditorData.bakeneForm2,
 	bakeneForm3: bakeneEditorData.bakeneForm3,
-	bakene: bakeneEditorData.bakene,
 	bakeneRunningAway: bakeneEditorData.bakeneRunningAway,
+	bakeneExtra1Form2: bakeneEditorData.bakeneExtra1Form2,
+	bakeneExtra2Form2: bakeneEditorData.bakeneExtra2Form2,
 	bakeneExtra1Form3: bakeneEditorData.bakeneExtra1Form3,
 	bakeneExtra2Form3: bakeneEditorData.bakeneExtra2Form3,
 
-
 	zoisite5thBoss: zoisiteEditorData.zoisite5thBoss,
-	zoisite: zoisiteEditorData.zoisite,
+	zoisiteSubBoss: zoisiteEditorData.zoisiteSubBoss,
+	zoisiteExtra0: zoisiteEditorData.zoisiteExtra0,
 	zoisiteExtra1: zoisiteEditorData.zoisiteExtra1,
 	zoisiteExtra2: zoisiteEditorData.zoisiteExtra2,
 
 
-	kunzite: kunziteEditorData.kunzite,
+	kunziteSubBoss: kunziteEditorData.kunziteSubBoss,
+	kunziteExtra0: kunziteEditorData.kunziteExtra0,
 	kunziteExtra1: kunziteEditorData.kunziteExtra1,
 	kunziteExtra2: kunziteEditorData.kunziteExtra2,
 
 
-	queenBeryl: queenBerylEditorData.queenBeryl,
+	queenBerylFinalBoss: queenBerylEditorData.queenBerylFinalBoss,
+	queenBerylExtra0: queenBerylEditorData.queenBerylExtra0,
 	queenBerylExtra1: queenBerylEditorData.queenBerylExtra1,
 	queenBerylExtra2: queenBerylEditorData.queenBerylExtra2,
 

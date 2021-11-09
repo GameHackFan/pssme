@@ -99,7 +99,10 @@ const level3EnemyGroup =
 		levelEditorShiftX: 460,
 		levelEditorShiftY: 192,
 		defaultAmount: 3,
-		maxAmount: 8
+		maxAmount: 8,
+		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
+			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 	group6B:
 	{
@@ -117,7 +120,10 @@ const level3EnemyGroup =
 		levelEditorShiftY: 112,
 		defaultAmount: 3,
 		maxAmount: 8,
-		forbiddenPositionStrategies: ["outsideLeft"]
+		forbiddenPositionStrategies: ["outsideLeft"],
+		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
+			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 	group7:
 	{
@@ -176,7 +182,8 @@ const level3EnemyGroup =
 		specialProfile: "bossHelperType2Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	bossHelperGroup2:
@@ -198,7 +205,8 @@ const level3EnemyGroup =
 		specialProfile: "bossHelperType1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	bossHelperGroup3:
@@ -220,7 +228,8 @@ const level3EnemyGroup =
 		specialProfile: "bossHelperType1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	bossHelperGroup4:
@@ -242,7 +251,8 @@ const level3EnemyGroup =
 		specialProfile: "bossHelperType2Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	bossHelperGroup5:
@@ -264,7 +274,8 @@ const level3EnemyGroup =
 		specialProfile: "bossHelperType1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	},
 	bossHelperGroup6:
@@ -286,10 +297,12 @@ const level3EnemyGroup =
 		specialProfile: "bossHelperType1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
-			"garobenGrayBrown", "garobenGreenBlue", "morga"
+			"garobenGrayBrown", "garobenGreenBlue",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2"
 		]
 	}
 }
+
 
 // level3A begins at 00 00 (0000)
 // level3B begins at 00 00 (0000)

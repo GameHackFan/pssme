@@ -30,7 +30,10 @@ const level8EnemyGroup =
 		levelEditorLimitEnd: 1312,
 		levelEditorShiftX: 460,
 		defaultAmount: 8,
-		maxAmount: 14
+		maxAmount: 14,
+		forbiddenEnemies: ["bakeneForm2", "bakeneRunningAway",
+			"bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 	bossGroup1:
 	{
@@ -100,10 +103,11 @@ const level8EnemyGroup =
 		levelEditorLimitEnd: 1056,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 4,
+		maxAmount: 12,
 		specialProfile: "finalBossStrategy"
 	}
 }
+
 
 // level8A begins at 00 00 (0000)
 // level8B begins at 00 00 (0000)

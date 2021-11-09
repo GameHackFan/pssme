@@ -239,9 +239,9 @@ class RandomizerService
 	{
 		this.increasePlayersHealth();
 		let randomizerPatch = this.createRandomizerPatch();
-		romService.applyPatch(patchMap.castorAndPolluxImprovementPatch.patch);
 		romService.applyPatch(patchMap.thetisImprovementPatch.patch);
 		romService.applyPatch(patchMap.jumouImprovementPatch.patch);
+		romService.applyPatch(patchMap.bakeneImprovementPatch.patch);
 		romService.applyPatch(patchMap.foodImprovementPatch.patch);
 		romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);

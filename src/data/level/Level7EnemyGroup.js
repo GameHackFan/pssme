@@ -16,7 +16,10 @@ const level7EnemyGroup =
 		levelEditorLimitEnd: 352,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 12
+		maxAmount: 12,
+		forbiddenEnemies: ["bakeneForm2", "bakeneRunningAway",
+			"bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 
 
@@ -73,7 +76,8 @@ const level7EnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 3,
 		maxAmount: 12,
-		forbiddenPositionStrategies: ["outsideLeft"]
+		forbiddenPositionStrategies: ["outsideLeft"],
+		forbiddenEnemies: ["bakeneForm1", "bakeneRunningAway"]
 	},
 
 
@@ -181,6 +185,7 @@ const level7EnemyGroup =
 		specialProfile: "bossHelperType1Strategy"
 	},
 }
+
 
 // level7A begins at 00 00 (0000)
 // level7B begins at 80 01 (0180)

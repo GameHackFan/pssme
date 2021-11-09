@@ -8,6 +8,7 @@ const emptyCastorAndPollux = {originalUsage: "Empty", pssmeUsage: "Castor and Po
 const emptyThetis = {originalUsage: "Empty", pssmeUsage: "Thetis"};
 const emptyJumou = {originalUsage: "Empty", pssmeUsage: "Jumou"};
 const emptyCriminal = {originalUsage: "Empty", pssmeUsage: "Criminal"};
+const emptyMorga = {originalUsage: "Empty", pssmeUsage: "Morga"};
 const emptyKyurene = {originalUsage: "Empty", pssmeUsage: "Kyurene"};
 const unknownGaroben = {originalUsage: "Unknown", pssmeUsage: "Garoben"};
 const emptyBakene = {originalUsage: "Empty", pssmeUsage: "Bakene"};
@@ -35,7 +36,7 @@ const zoisite = {originalUsage: "Zoisite", pssmeUsage: "Zoisite"};
 const kunzite = {originalUsage: "Kunzite", pssmeUsage: "Kunzite"};
 const queenBeryl = {originalUsage: "Queen Beryl", pssmeUsage: "Queen Beryl"};
 
-const sailorV = {originalUsage: "Sailor V (Unused)", pssmeUsage: "Sailor V (Unused)"};
+// const sailorV = {originalUsage: "Sailor V (Unused)", pssmeUsage: "Sailor V (Unused)"};
 const sailorJupiter = {originalUsage: "Sailor Jupiter", pssmeUsage: "Sailor Jupiter"};
 const sailorMercury = {originalUsage: "Sailor Mercury", pssmeUsage: "Sailor Mercury"};
 const sailorMoon = {originalUsage: "Sailor Moon", pssmeUsage: "Sailor Moon"};
@@ -145,10 +146,24 @@ const palleteData =
 		"370144": queenBeryl,
 
 		"374592": emptySailorMoon,
+		"374624": emptySailorMoon,
+		"374656": emptySailorMoon,
+
 		"374720": emptySailorMercury,
+		"374752": emptySailorMercury,
+		"374784": emptySailorMercury,
+
 		"374848": emptySailorMars,
+		"374880": emptySailorMars,
+		"374912": emptySailorMars,
+
 		"374976": emptySailorJupiter,
+		"375008": emptySailorJupiter,
+		"375040": emptySailorJupiter,
+
 		"375104": emptySailorVenus,
+		"375136": emptySailorVenus,
+		"375168": emptySailorVenus,
 
 		"375392": emptyFurau,
 		"375424": emptyTesuni,
@@ -219,6 +234,10 @@ const palleteData =
 		"377248": emptyQueenBeryl,
 		"377280": emptyQueenBeryl,
 		"377312": empty,
+
+		"377568": emptyMorga,
+		"377600": emptyMorga,
+		"377632": emptyMorga,
 
 		"unknown": unknown
 	}

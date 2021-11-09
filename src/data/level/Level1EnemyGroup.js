@@ -13,7 +13,10 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 512,
 		levelEditorLimitEnd: 1600,
 		defaultAmount: 6,
-		maxAmount: 14
+		maxAmount: 14,
+		forbiddenEnemies: ["castorAndPolluxBossBoth", 
+			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
+		]
 	},
 	group2:
 	{
@@ -28,7 +31,10 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 1600,
 		levelEditorLimitEnd: 2144,
 		defaultAmount: 5,
-		maxAmount: 14
+		maxAmount: 14,
+		forbiddenEnemies: ["castorAndPolluxBossBoth", 
+			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
+		]
 	},
 	bossGroup:
 	{
@@ -46,7 +52,10 @@ const level1EnemyGroup =
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 2,
 		maxAmount: 1,
-		specialProfile: "bossHelperType2Strategy"
+		specialProfile: "bossHelperType2Strategy",
+		forbiddenEnemies: ["castorAndPolluxBossBoth", 
+			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
+		]
 	},
 	bossHelperGroup1:
 	{
@@ -161,6 +170,7 @@ const level1EnemyGroup =
 		specialProfile: "bossHelperType1Strategy"
 	}
 }
+
 
 // level1 begins at A0 02 (02A0)
 

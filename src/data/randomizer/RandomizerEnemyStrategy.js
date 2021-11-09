@@ -217,14 +217,18 @@ const randomizerEnemyStrategy =
 			"castorAndPolluxBossBoth",
 			"castorAndPolluxBossBoth",
 
-			"morga", "morga", "morga", "morga",
-			"morga", "morga", "morga", "morga",
 
-			"morga", "morga", "morga", "morga",
-			"morga", "morga", "morga", "morga",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
 
-			"morga", "morga", "morga", "morga",
-			"morga", "morga", "morga", "morga",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
+			"morgaExtra0", "morgaExtra1", "morgaExtra2",
 
 			
 			"kyureneRedGreen", "kyurenePinkPurple",
@@ -260,51 +264,64 @@ const randomizerEnemyStrategy =
 			"garobenBrownGray", "garobenGreenBlue",
 
 
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
 
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
 
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
 
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
-			"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
+			"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
 
 
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
 			
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
 
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
 
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
-			"kunzite", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
+			"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
 
 
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
 
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
 
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
 
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3",
-			"bakeneForm3", "bakeneExtra1Form3",
-			"bakeneExtra2Form3"
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
+			"bakeneForm2", "bakeneExtra1Form2",
+			"bakeneExtra2Form2",
+
+
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+			"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2"
 	]),
 	bossesOnly:
 	[
@@ -312,7 +329,8 @@ const randomizerEnemyStrategy =
 		"castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
 		"castorAndPolluxBossBoth", "castorAndPolluxBossBoth",
 
-		"morga", "morga", "morga", "morga", "morga", "morga",
+		"morgaExtra0", "morgaExtra1", "morgaExtra2",
+		"morgaExtra0", "morgaExtra1", "morgaExtra2",
 		
 		"kyureneRedGreen", "kyurenePinkPurple",
 		"kyureneGreenGreen", "kyureneExtra1",
@@ -322,24 +340,27 @@ const randomizerEnemyStrategy =
 		"garobenBrownGray", "garobenGreenBlue",
 		"garobenGrayBrown", "garobenBrownGray", 
 
-		"zoisite", "zoisiteExtra1", "zoisiteExtra2",
-		"zoisite", "zoisiteExtra1", "zoisiteExtra2",
+		"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
+		"zoisiteExtra0", "zoisiteExtra1", "zoisiteExtra2",
 
-		"kunzite", "kunziteExtra1", "kunziteExtra2",
-		"kunzite", "kunziteExtra1", "kunziteExtra2",
+		"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
+		"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
 
-		"bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
-		"bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3"
+		"bakeneForm2", "bakeneExtra1Form2", "bakeneExtra2Form2",
+		"bakeneForm2", "bakeneExtra1Form2", "bakeneExtra2Form2",
+
+		"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2",
+		"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2"
 	],
 	ungrabbableEnemies:
 	[
-		"morga", "morga", "morga",
+		"morgaExtra0", "morgaExtra1", "morgaExtra2",
 
-		"bakeneForm3", "bakeneExtra1Form3", "bakeneExtra2Form3",
+		"bakeneForm2", "bakeneExtra1Form2", "bakeneExtra2Form2",
 
-		"kunzite", "kunziteExtra1", "kunziteExtra2",
+		"kunziteExtra0", "kunziteExtra1", "kunziteExtra2",
 
-		"queenBeryl", "queenBerylExtra1", "queenBerylExtra2"
+		"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2"
 	],
 	foodItems: foodItem.slice(),
 	anyItem: foodItem.slice().concat([

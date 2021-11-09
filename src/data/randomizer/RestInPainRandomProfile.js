@@ -59,14 +59,6 @@ const restInPainRandomProfile =
 			randomMinAmount: 0,
 			randomMaxAmount: 1
 		}
-	},
-	finalBossStrategy:
-	{
-		ungrabbableEnemies:
-		{
-			randomMinAmount: 4,
-			randomMaxAmount: 5
-		}
 	}
 }
 

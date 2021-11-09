@@ -8,9 +8,17 @@ const zoisiteEditorData =
 		pivotX: 19, 
 		pivotY: 102
 	},
-	zoisite:						// 8th Stage Sub-Boss
+	zoisiteSubBoss:			// 8th Stage Sub-Boss
 	{
 		label: "Zoisite Sub Boss",
+		width: 40,
+		height: 102,
+		pivotX: 19, 
+		pivotY: 102
+	},
+	zoisiteExtra0:
+	{
+		label: "Zoisite Extra 0 (Gray)",
 		width: 40,
 		height: 102,
 		pivotX: 19, 

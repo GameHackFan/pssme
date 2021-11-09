@@ -2,7 +2,7 @@
 * Title:				PSSME Sailor Color Select Handler.
 * Written by:		GameHackFan
 * Date:					
-* Description:	Call all routines need to handle the color selection properly.
+* Description:	Call all routines needed to handle the color selection properly.
 *-------------------------------------------------------------------------------------------------
 	JMP				$7E930.L								; Jumps the execution to the instruction in the address (replace 58CE with this code).
 
@@ -32,6 +32,8 @@
 ; D0 is safe to use.
 ; A3 has the address of the player inputs.
 ; A4 has the player memory start.
+
+
 
 
 *~Font name~Courier New~

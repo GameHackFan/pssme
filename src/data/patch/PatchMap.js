@@ -9,10 +9,9 @@ import boss1PositionImprovementPatch from
 
 import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
 import sailorColorExpansionPatch from "./SailorColorExpansionPatch";
+import bakeneImprovementPatch from "./BakeneImprovementPatch"
 import foodImprovementPatch from "./FoodImprovementPatch";
 import thetisImprovementPatch from "./ThetisImprovementPatch";
-import castorAndPolluxImprovementPatch from
-		"./CastorAndPolluxImprovementPatch";
 
 import randomizerTextPatch from "./RandomizerTextPatch";
 import levelEditorTextPatch from"./LevelEditorTextPatch";
@@ -25,13 +24,34 @@ const patchMap =
 	featuresAndFixesPatch:
 	{
 		label:	"New Features And Fixes Patch",
-		text:		"This patch allows you to add Morga " +
-						"and Bakene without softlocking the " +
-						"game. Garoben also will not have a " +
-						"bugged lifebar. It allows players to " +
-						"select the same sailor and also increases " +
-						"the time for all levels. Used by the " +
-						"Level Editor and Seed Randomizer.",
+		text:		"This patch fixes bugs, add features and " + 
+						"change the bosses so they behave properly " + 
+						"when they spawn outside their boss area. " + 
+						"One important feature it brings is allowing " + 
+						"2 equal character to be selected. Castor & " +
+						"Pollux now will load their HP from a " + 
+						"different table, based on their color ID, " +
+						"the new values are 48, 48, 48, 64, 48, 64, " +
+						"80, 80, 90, 90. Castor & Pollux now will " + 
+						"kill their friends after they die only if " + 
+						"they are in the 1st stage. Morga with color " +
+						"ID 4+ will spawn without choking the girl, " + 
+						"will not wait for the rose, will allow you " + 
+						"to kill her without taking the hit from the " + 
+						"rose and will not kill her friends after she " + 
+						"dies. Garoben with posture ID less than 10 " + 
+						"will not wait for the rose and will allow " + 
+						"you to kill her without taking the hit from " +
+						"the rose. Only Bakene's 3rd form will kill " +
+						"his friends when he dies. Kunzite, Zoisite " +
+						"and Queen Beryl with color ID 4+ will spawn " +
+						"moving instead of delaying a lot of time to " +
+						"start moving. A bug that was allowing Queen "+
+						"Beryl to grab her friends and cause bugs, " +
+						"sometimes even crash the game is also fixed. " +
+						"This patch brings a lot of changes and is " +
+						"essential. This patch is used by the Level " + 
+						"Editor and Seed Randomizer.",
 		patch: featuresAndFixesPatch,
 		show: true
 	},
@@ -52,22 +72,6 @@ const patchMap =
 						"Ice Cream Cup = 64. This patch is used " + 
 						"by the Seed Randomizer.",
 		patch: foodImprovementPatch,
-		show: true
-	},
-	castorAndPolluxImprovementPatch:
-	{
-		label:	"Castor And Pollux Improvement Patch",
-		text:		"This patch brings improvements to Castor " + 
-						"and Pollux's health. The original health " + 
-						"table handles properly only health values " +
-						"for color IDs between 0 and 5, this patch " + 
-						"makes the game load their health from a " + 
-						"different table that can handle color IDs " + 
-						"from 0 to 9, easily allowing extra colors " + 
-						"to be added to them. This patch is used by " + 
-						"the Level Editor and the Seed Randomizer." +
-						"Randomizer.",
-		patch: castorAndPolluxImprovementPatch,
 		show: true
 	},
 	jumouImprovementPatch:
@@ -183,6 +187,23 @@ const patchMap =
 						"Randomizer.",
 		patch: thetisImprovementPatch,
 		show: false
+	},
+	bakeneImprovementPatch:
+	{
+		label:	"Bakene Improvement Patch",
+		text:		"This patch brings improvements to Bakene. " + 
+						"His 1st, 2nd and 3rd form can only take " +
+						"33% of damage, which makes him a pretty " +
+						"easy boss to deal with. This patch increases " + 
+						"the starting and minimum health for all " +
+						"Bakene's forms. 1st form minimum HP decreases " + 
+						"from 64 to 4, 2nd form starting HP increases " + 
+						"from 64 to 96, 2nd form minimum HP decreases " + 
+						"from 32 to 4 and 3rd form HP increases from " + 
+						"32 to 96. This patch is used by the Seed " +
+						"Randomizer.",
+		patch: bakeneImprovementPatch,
+		show: true
 	},
 	randomizerTextPatch:
 	{

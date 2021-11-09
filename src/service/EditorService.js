@@ -21,25 +21,13 @@ class EditorService
 	forceComponentToUpdateByKey = (componentKey) =>
 	{
 		let c = this.componentMap[componentKey];
-
-		if(c)
-		{
-			c.setState({forceUpdate: true}, () =>
-			{
-				c.setState({forceUpdate: false});
-			});
-		}
+		this.forceComponentToUpdate(c);
 	}
 
 	forceComponentToUpdate = (component) =>
 	{
 		if(component)
-		{
-			component.setState({forceUpdate: true}, () =>
-			{
-				component.setState({forceUpdate: false});
-			});
-		}
+			component.setState({rerender: component.rerender === true ? false : true});
 	}
 
 	requestFile = (event) =>

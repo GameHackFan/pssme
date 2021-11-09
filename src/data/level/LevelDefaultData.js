@@ -40,7 +40,7 @@ const levelDefaultData =
 		{
 			"0":
 			{
-				enemyKey: "morga",
+				enemyKey: "morga2ndBoss",
 				triggerPosition: 550,
 				positionX: 380,
 				positionY: 200
@@ -218,14 +218,14 @@ const levelDefaultData =
 		{
 			"0":
 			{
-				enemyKey: "kunzite",
+				enemyKey: "kunziteSubBoss",
 				triggerPosition: 1216,
 				positionX: 424,
 				positionY: 184
 			},
 			"1":
 			{
-				enemyKey: "zoisite",
+				enemyKey: "zoisiteSubBoss",
 				triggerPosition: 1216,
 				positionX: 456,
 				positionY: 232
@@ -237,7 +237,7 @@ const levelDefaultData =
 		{
 			"0":
 			{
-				enemyKey: "queenBeryl",
+				enemyKey: "queenBerylFinalBoss",
 				triggerPosition: 608,
 				positionX: 416,
 				positionY: 192

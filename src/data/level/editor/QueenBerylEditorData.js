@@ -1,8 +1,16 @@
 const queenBerylEditorData = 
 {
-	queenBeryl:					// Final Boss
+	queenBerylFinalBoss:					// Final Boss
 	{
 		label: "Queen Beryl 8th / Final Boss",
+		width: 68,
+		height: 134,
+		pivotX: 27, 
+		pivotY: 136
+	},
+	queenBerylExtra0:
+	{
+		label: "Queen Beryl Extra 0 (Purple and Red)",
 		width: 68,
 		height: 134,
 		pivotX: 27, 

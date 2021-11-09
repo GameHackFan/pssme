@@ -52,6 +52,8 @@
 ; 0000 C01B 0000 0000 A01A 0000 0000 201A A01A 001B
 
 
+
+
 *~Font name~Courier New~
 *~Font size~10~
 *~Tab type~1~

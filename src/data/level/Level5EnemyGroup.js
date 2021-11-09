@@ -46,7 +46,8 @@ const level5EnemyGroup =
 		levelEditorLimitEnd: 2704,
 		levelEditorShiftX: 460,
 		defaultAmount: 10,
-		maxAmount: 14
+		maxAmount: 14,
+		forbiddenEnemies: ["bakeneForm1", "bakeneRunningAway"]
 	},
 
 
@@ -82,7 +83,10 @@ const level5EnemyGroup =
 		levelEditorLimitEnd: 672,
 		levelEditorShiftX: 460,
 		defaultAmount: 6,
-		maxAmount: 14
+		maxAmount: 14,
+		forbiddenEnemies: ["bakeneForm2", "bakeneRunningAway",
+			"bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 	group6:
 	{
@@ -98,7 +102,10 @@ const level5EnemyGroup =
 		levelEditorLimitEnd: 1072,
 		levelEditorShiftX: 460,
 		defaultAmount: 4,
-		maxAmount: 14
+		maxAmount: 14,
+		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
+			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 
 

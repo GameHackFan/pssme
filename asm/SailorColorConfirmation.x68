@@ -51,6 +51,8 @@
 ;	The player active flag once set never resets (bug?).
 
 
+
+
 *~Font name~Courier New~
 *~Font size~10~
 *~Tab type~1~

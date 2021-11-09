@@ -90,3 +90,25 @@ should be placed where you place the PC value.
 13 = Circular Star 6, Spark Sprite						(Star Chicken Nugget, Heals 100+%)
 81 = Torus Smoke 2, Spark Sprite							(Meatball, Heals 50+%)
 92 01 = E7 Red Leaf Effect 5, Spark Sprite		(Tuna, Heals 150+%)
+
+
+If the id is 0B, it will be objects used on maps. The 
+alues below should be placed where you place the PC value.
+
+
+00 = Big green trash can
+01 = Green light post.
+02 = Blue light post.
+03 = Yellow light post.
+04 = Green clock post.
+05 = Yellow clock post.
+06 = Sign post.
+08 = Plant vase.
+13 = Dark blue post light post.
+19 = Suitcase.
+1F = Open suitcase with gold.
+20 = 3 gold bars.
+21 = 1 gold bar.
+22 = 2 gold bars.
+23 = 6 gold bars.
+24 = 1 gold bar.

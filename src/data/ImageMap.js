@@ -256,6 +256,9 @@ import garobenGreenBlue from
 		"../images/enemy/garoben_green_blue.png";
 
 import morga from "../images/enemy/morga.png";
+import morgaExtra1 from "../images/enemy/morga_extra_1.png";
+import morgaExtra2 from "../images/enemy/morga_extra_2.png";
+
 
 import zoisite from "../images/enemy/zoisite.png";
 import zoisiteExtra1 from "../images/enemy/zoisite_extra_1.png";
@@ -460,7 +463,10 @@ const imageMap =
 	castorAndPolluxBoss1: castorAndPolluxBoss1,
 	castorAndPolluxBoss2: castorAndPolluxBoss2,
 
-	morga: morga,
+	morga2ndBoss: morga,
+	morgaExtra0: morga,
+	morgaExtra1: morgaExtra1,
+	morgaExtra2: morgaExtra2,
 
 	kyureneRedGreen: kyureneRedGreen,
 	kyurenePinkPurple: kyurenePinkPurple,
@@ -470,30 +476,34 @@ const imageMap =
 	kyureneExtra2: kyureneExtra2,
 	kyureneExtra3: kyureneExtra3,
 
+	garobenGreenOrange4thBoss: garobenGreenOrange,
 	garobenGreenOrange: garobenGreenOrange,
 	garobenGrayBrown: garobenGrayBrown,
 	garobenBrownGray: garobenBrownGray,
 	garobenGreenBlue: garobenGreenBlue,
-	garobenGreenOrange4thBoss: garobenGreenOrange,
 
-	bakene: bakene,
 	bakeneForm1: bakeneForm1,
 	bakeneForm2: bakene,
 	bakeneForm3: bakene,
 	bakeneRunningAway: bakeneRunningAway,
+	bakeneExtra1Form2: bakeneExtra1,
+	bakeneExtra2Form2: bakeneExtra2,
 	bakeneExtra1Form3: bakeneExtra1,
 	bakeneExtra2Form3: bakeneExtra2,
 
 	zoisite5thBoss: zoisite,
-	zoisite: zoisite,
+	zoisiteSubBoss: zoisite,
+	zoisiteExtra0: zoisite,
 	zoisiteExtra1: zoisiteExtra1,
 	zoisiteExtra2: zoisiteExtra2,
 
-	kunzite: kunzite,
+	kunziteSubBoss: kunzite,
+	kunziteExtra0: kunzite,
 	kunziteExtra1: kunziteExtra1,
 	kunziteExtra2: kunziteExtra2,
 
-	queenBeryl: queenBeryl,
+	queenBerylFinalBoss: queenBeryl,
+	queenBerylExtra0: queenBeryl,
 	queenBerylExtra1: queenBerylExtra1,
 	queenBerylExtra2: queenBerylExtra2,
 

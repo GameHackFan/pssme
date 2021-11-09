@@ -2,7 +2,7 @@ const garobenEditorData =
 {
 	garobenGreenOrange:
 	{
-		label: "Garoben Green Orange Unused Sub Boss",
+		label: "Garoben Green Orange",
 		width: 92,
 		height: 120,
 		pivotX: 52, 
@@ -10,7 +10,7 @@ const garobenEditorData =
 	},
 	garobenGrayBrown:
 	{
-		label: "Garoben Gray Brown Unused Sub Boss",
+		label: "Garoben Gray Brown",
 		width: 92,
 		height: 120,
 		pivotX: 52, 
@@ -18,7 +18,7 @@ const garobenEditorData =
 	},
 	garobenBrownGray:
 	{
-		label: "Garoben Brown Gray Unused Sub Boss",
+		label: "Garoben Brown Gray",
 		width: 92,
 		height: 120,
 		pivotX: 52, 
@@ -26,7 +26,7 @@ const garobenEditorData =
 	},
 	garobenGreenBlue:
 	{
-		label: "Garoben Green Blue Unused Sub Boss",
+		label: "Garoben Green Blue",
 		width: 92,
 		height: 120,
 		pivotX: 52, 
