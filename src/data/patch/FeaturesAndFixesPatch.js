@@ -8,18 +8,6 @@ const featuresAndFixesPatch =
 		// Allows 2 of the same character to be selected.
 		"24071":	["60"],
 
-		// 
-		"151525":	["99"],
-
-		// Start Time
-		"197931":	["99"],
-
-		// Some things including time increase 
-		// after beating an enemy group
-		"197062":	["7C", "3D", "99", "99", "16", "24", "04", "60"],
-
-
-
 		// Instruction that redirects the execution to a code 
 		// that handles enemy spawning.
 		"197192":	["B9", "4E", "07", "00", "00", "DA"],
@@ -56,13 +44,13 @@ const featuresAndFixesPatch =
 		// Castor & Pollux Fixes
 		// Instruction that redirects the execution to where 
 		// C&P new health table is handled.
-		"85322": ["F9", "4E", "07", "00", "70", "EA", "00", "80"],
+		"85322": ["F9", "4E", "07", "00", "D0", "DC", "71", "4E"],
 
 		// Code that loads the health from the new health table
 		// and stores it in the memory position it must be.
-		"518768":
+		"515280":
 		[
-			"F9", "43", "07", "00", "86", "EA", "31", "10",
+			"F9", "43", "07", "00", "E6", "DC", "31", "10",
 			"00", "10", "40", "31", "30", "00", "F9", "4E",
 			"01", "00", "52", "4D", "00", "00", "30", "30",
 			"40", "30", "40", "30", "50", "50", "60", "60"
@@ -71,16 +59,16 @@ const featuresAndFixesPatch =
 		// Instruction that redirects the execution to the code 
 		// that handle if the enemies should or not die after 
 		// C&P dies.
-		"85172": ["F9", "4E", "07", "00", "D0", "DC"],
+		"85172": ["F9", "4E", "07", "00", "F0", "DC"],
 
 		// Code that forbids any C&P outside stage 1 to kill 
 		// their friends after they dies.
-		"515280":
+		"515312":
 		[
-			"6E", "4A", "84", "13", "0C", "67", "B9", "4E",
-			"01", "00", "EE", "21", "F9", "4E", "01", "00",
-			"BA", "4C", "B9", "4E", "01", "00", "E4", "21",
-			"F9", "4E", "01", "00", "BA", "4C", "00", "00"
+			"6E", "0C", "04", "00", "80", "13", "0C", "67",
+			"B9", "4E", "01", "00", "EE", "21", "F9", "4E",
+			"01", "00", "BA", "4C", "B9", "4E", "01", "00",
+			"E4", "21", "F9", "4E", "01", "00", "BA", "4C",
 		],
 
 

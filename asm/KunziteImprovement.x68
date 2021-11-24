@@ -26,6 +26,8 @@
 	JMP				$1E826.L								; Jumps back to the original code at 1E826.
 
 
+; D0 is safe to use.
+
 
 *~Font name~Courier New~
 *~Font size~10~

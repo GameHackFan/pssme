@@ -1,3 +1,18 @@
+Version 1.2 Changes:
+- Improved SailorColorExpansionPatch. Fixed a bug with the color expansion and indicator.
+- Created AreaImprovementPatch. It has assembly code to handle customized areas and player spawning.
+- Created TimeImprovementPatch. Time now runs 60% slower and will always start at 99.
+- Created Level1RemakePatch. It is the Stage 1 with more areas.
+- Created ExtraLevelPatch. It brings an Extra Level made with unused music and areas. It is the bank robbery, it comes before the 5th stage.
+- Created the text improvement patches for the new levels.
+- Added the new patches to the PatchMap.
+- Forced the Level Editor and Seed Randomizer to apply the new patches.
+- Added the new levels to the Level Editor and Seed Randomizer.
+- Updated FeaturesAndFixesPatch. Updated the assembly to better adapt the new version, added things.
+- Minor changes.
+- Minor fixes.
+
+
 Version 1.1 Changes:
 - Updated the FeaturesAndFixesPatch, see changes A to L.
 - Change A: Added / Changed / Removed most of the former assembly code.

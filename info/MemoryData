@@ -39,7 +39,7 @@ Player Input
 0080 (B4, Start)
 
 
-
+10A412:		Stage ID.
 10A416:		Stage time.
 
 
@@ -54,7 +54,6 @@ XXXX0A:		Have no clue how to explain.
 XXXX0C:		Tile amount to be printed horizontally?.
 XXXX0C:		Tile amount to be printed vertically?.
 XXXX0E:		?
-
 
 
 

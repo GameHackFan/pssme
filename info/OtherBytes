@@ -16,23 +16,25 @@ Remove this to ensure the player character will
 not freeze for a short period of time at the
 beginning of a boss fight.
 
+
+00 00 03 00 B6 00 1E 24 FF FF 00 00 03 00 F2 00
+
+Unfreezes the character?.
+
 =======================================================
 Boss Helper Enemies Scope
 =======================================================
 
 Bugs the boss section if players are not frozen
 
-SS =	Scope Start, represented by a pointer.
-			It should contain the address of the
-			instruction that represents the end of the scope.
-			It is the address of the next instruction subtracted by 0x30000 (hex).
+AD =	Addres of the scope range, represented by a pointer.
+			It should contain the address of the instruction that represents the scope range.
 
-SE =	Scope Start, represented by a pointer.
-			It normally is the address after the last byte of the last enemy of the scope subtracted by
-			0x30000 (hex).
+AD =	Scope rage, represented by a pointer.
+			The address of the byte fater the last byte of the last enemy of the scope.
 
-?? ?? 03 00 94 00 80 01 FF FF 03 00 SS SS
-?? ?? 03 00 CE 00 A6 19 03 00 SE SE
+?? ?? 03 00 94 00 80 01 FF FF A1 A1 A1 A1
+?? ?? 03 00 CE 00 A6 19 AD AD AD AD
 
 =======================================================
 Delay Enemy Spawn
@@ -64,13 +66,13 @@ PY =	Position Y.
 00 00 03 00 0E 02 00 00 D2 15 TS 00 PX PX PY PY 30 04 F0 00 FF FF
 
 =======================================================
-Select Level
+Select Area
 =======================================================
 
 00 00 03 00 80 03 ID ID
 
 
-ID ID = Level ID
+ID ID = Area ID
 
 =======================================================
 Players Position Y Spawn
@@ -93,9 +95,37 @@ Area Lock
 PX PX = Position of the lock.
 
 =======================================================
+Entrance Exit Cutscene
+=======================================================
+
+00 00 03 00 0E 01 I1 I1 I2 I2
+
+I1 I1 = Player 1 cutscene id
+
+0X 00 0X 00 = Starting Stage (It add the cursor and heals 100%).
+1X 00 1X 00 = Mid Stage.
+
+X4 00 X5 00 = Leave to the left.
+XC 00 XD 00 = Spawns standing.
+
+18 00 19 00 = Run to the right.
+1A 00 1B 00 = Run to the right.
+
+=======================================================
+Stage Time
+=======================================================
+
+00 00 03 00 96 01 ST ST
+
+ST = Start Time.
 
 =======================================================
 
+=======================================================
+
+
+
+ 
 
 7E400: Related to the spawn of our character
 

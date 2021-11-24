@@ -7,12 +7,21 @@ import level6EnemyGroup from "./Level6EnemyGroup";
 import level7EnemyGroup from "./Level7EnemyGroup";
 import level8EnemyGroup from "./Level8EnemyGroup";
 
+import level1REnemyGroup from "./Level1REnemyGroup";
+import extraLevelEnemyGroup from "./ExtraLevelEnemyGroup";
+
+
 const levelEditorLevels = 
 {
 	level1:
 	{
 		label: "Level / Stage 1",
 		groups: level1EnemyGroup
+	},
+	level1R:
+	{
+		label: "Level / Stage 1 (Remake)",
+		groups: level1REnemyGroup
 	},
 	level2:
 	{
@@ -29,6 +38,13 @@ const levelEditorLevels =
 		label: "Level / Stage 4",
 		groups: level4EnemyGroup
 	},
+
+	extraLevel:
+	{
+		label: "Extra Level / Stage",
+		groups: extraLevelEnemyGroup
+	},
+
 	level5:
 	{
 		label: "Level / Stage 5",

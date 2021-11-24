@@ -11,6 +11,8 @@ xxxx40.W:	Position X.
 xxxx44.W:	Position Y.
 xxxx76.W:	Damage given.
 xxxx78.W:	Damage taken.
+xxxx80.W:	Sprite.
+xxxxE0.W: Attack ID (Enemies).
 
 
 Queen Beryl, Garoben, anyone else?
@@ -48,7 +50,6 @@ xxxx0E:		That flag should be 1 everytime she executes her grab attack.
 
 
 
-
 Old Values
 Jumou Straight:		4
 Jumou Stomach:		4
@@ -64,4 +65,21 @@ Jumou Kick:			18
 Jumou Head:			10
 
 
+
+
+Sprite IDs
+
+0F4: Guy from capsule looking down.
+0F5: Guy from capsule looking at the screen.
+
+0FA: Girl from capsule looking down.
+0FB: Girl from capsule looking at the screen.
+
+100: Girl from capsule looking at the screen.
+101: Girl from capsule looking at the screen.
+
+101: Lying chair.
+10E: Girl holding a baby.
+10F: Guy scared.
+113: Cop helping.
 

@@ -243,6 +243,55 @@ const levelDefaultData =
 				positionY: 192
 			}
 		}
+	},
+	level1R:
+	{
+		group1: {},
+		group2: {},
+		group3: {},
+		group4: {},
+		group5: {},
+		bossGroup:
+		{
+			"0":
+			{
+				enemyKey: "castorAndPolluxBoss1",
+				triggerPosition: 0,
+				positionX: 380,
+				positionY: 200
+			},
+			"1":
+			{
+				enemyKey: "castorAndPolluxBoss2",
+				triggerPosition: 0,
+				positionX: 340,
+				positionY: 239
+			}
+		},
+		bossHelperGroup1: {},
+		bossHelperGroup2: {},
+		bossHelperGroup3: {},
+		bossHelperGroup4: {}
+	},
+	extraLevel:
+	{
+		group1: {},
+		group2: {},
+		group3: {},
+		group4: {},
+		group5: {},
+		group6: {},
+		bossGroup:
+		{
+			"0":
+			{
+				enemyKey: "kunziteSubBoss",
+				triggerPosition: 0,
+				positionX: 352,
+				positionY: 216
+			}
+		},
+		bossHelperGroup1: {}
 	}
 }
 

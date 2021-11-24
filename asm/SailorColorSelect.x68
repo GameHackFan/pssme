@@ -4,20 +4,20 @@
 * Date:					
 * Description:	Allows the player to select the colors available to his sailor.
 *-------------------------------------------------------------------------------------------------
-; ORG				$7E900
+; ORG				$7E300
 
 																		; Block of code that handles if it was triggered by a player.
 	MOVE.W		A4, D0									; Stores A4 inside D0.
 	SUB.W			#$2000, D0							; Subtracts 2000 from D0 (P1 will have 2000, P2 2100, etc).
 	CMPI.W		#$0300, D0							; Compares 300 and D0 (Being safe in case of 4 players).
-	BGT				$7E92C									; If D0 is bigger than 300, it is not a player, go to RTS.
+	BGT				$7E32C									; If D0 is bigger than 300, it is not a player, go to RTS.
 
 																		; Block of code that checks if up or down KeyDown is triggered.
 	MOVE.W		#03, D0									; Stores 3 inside D0 (1 is up and 2 is down, bits from up an down).
 	AND.W			($2, A3), D0						; D0 and player KeyDown/KeyUp.
 	AND.W			(A3), D0								; D0 and player KeyPress.
 	TST.W			D0											; Compare 0 to D0.
-	BEQ				$7E92C									; If it is 0, There isn't up or down KeyDown, go to RTS.
+	BEQ				$7E32C									; If it is 0, There isn't up or down KeyDown, go to RTS.
 
 																		; Block of code that handles selecting the colors.
 	MULU.W		#$FFFE, D0							; Multiplies D0 by -2 (up will be -2 and down - 4).
@@ -35,8 +35,6 @@
 ;
 ; A3 + 0 has the player KeyPress
 ; A3 + 2 has the player KeyDown/KeyUp
-
-
 
 
 *~Font name~Courier New~

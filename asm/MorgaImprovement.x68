@@ -7,7 +7,11 @@
 								It forces any color ID 4+ to keep accepting damage to death.
 								It also forces any color ID 4+ to stop killing friends when she dies.
 *-------------------------------------------------------------------------------------------------
-;	Code 1
+
+
+*-------------------------
+* Code 1
+*-------------------------
 
 	JMP				$7DC10.L								; Jumps the execution to the instruction in the address (replace 19B10 with this code).
 
@@ -25,8 +29,12 @@
 	JMP			$19B1A										; Jumps back to the original code at 19B1A.
 
 
+; D0 is safe to use
 
-;	Code 2
+
+*-------------------------
+* Code 2
+*-------------------------
 
 	JMP				$7DC40.L								; Jumps the execution to the instruction in the address (replace 19A2E with this code).
 
@@ -46,8 +54,12 @@
 	JMP				$19A6A.L								; Jumps back to the original code at 19A6A.
 
 
+; D0 is safe to use
 
-;	Code 3
+
+*-------------------------
+* Code 3
+*-------------------------
 
 	JMP				$7DC70.L								; Jumps the execution to the instruction in the address (replace 91D6 with this code).
 
@@ -70,8 +82,12 @@
 	JMP				$9208										; Jumps back to the original code at 9208.
 
 
+; D3 is safe to use
 
-;	Code 4
+
+*-------------------------
+* Code 4
+*-------------------------
 
 	JMP				$7DCA0.L								; Jumps the execution to the instruction in the address (replace 19A92 with this code).
 
@@ -92,6 +108,7 @@
 	JMP				$19A98									; Returns back to the original code.
 
 
+; D2 is safe to use
 
 
 *~Font name~Courier New~

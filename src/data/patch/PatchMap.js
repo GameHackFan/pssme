@@ -1,4 +1,13 @@
 import featuresAndFixesPatch from "./FeaturesAndFixesPatch";
+import areaImprovementPatch from "./AreaImprovementPatch";
+import timeImprovementPatch from "./TimeImprovementPatch";
+import level1RemakePatch from "./Level1RemakePatch";
+import extraLevelPatch from "./ExtraLevelPatch";
+
+import randomizerTextPatch from "./RandomizerTextPatch";
+import levelEditorTextPatch from"./LevelEditorTextPatch";
+import defaultTextPatch from "./DefaultTextPatch";
+
 import textImprovementPatch from "./TextImprovementPatch";
 import textImprovementGenericBossPatch from
 		"./TextImprovementGenericBossPatch";
@@ -7,17 +16,20 @@ import removeCPUDemoPatch from "./RemoveCPUDemoPatch";
 import boss1PositionImprovementPatch from
 		"./Boss1PositionImprovementPatch";    
 
-import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
 import sailorColorExpansionPatch from "./SailorColorExpansionPatch";
-import bakeneImprovementPatch from "./BakeneImprovementPatch"
 import foodImprovementPatch from "./FoodImprovementPatch";
-import thetisImprovementPatch from "./ThetisImprovementPatch";
+import playerHealthImprovementPatch from
+		"./PlayerHealthImprovementPatch";
 
-import randomizerTextPatch from "./RandomizerTextPatch";
-import levelEditorTextPatch from"./LevelEditorTextPatch";
-import defaultTextPatch from "./DefaultTextPatch";
+import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
 import jumouImprovementPatch from "./JumouImprovementPatch";
+import thetisImprovementPatch from "./ThetisImprovementPatch";
+import bakeneImprovementPatch from "./BakeneImprovementPatch"
 
+import newLevelsTextImprovementPatch from
+		"./NewLevelsTextImprovementPatch";
+import newLevelsTextImprovementGenericBossPatch from
+		"./NewLevelsTextImprovementGenericBossPatch";
 
 const patchMap = 
 {
@@ -53,6 +65,57 @@ const patchMap =
 						"essential. This patch is used by the Level " + 
 						"Editor and Seed Randomizer.",
 		patch: featuresAndFixesPatch,
+		show: true
+	},
+	timeImprovementPatch:
+	{
+		label:	"Time Improvement Patch",
+		text:		"This patch will force the game to process " +
+						"the time 60% slower than normal. This patch " + 
+						"is used by the Seed Randomizer.",
+		patch: timeImprovementPatch,
+		show: true
+	},
+	level1RemakePatch:
+	{
+		label:	"Level 1 Remake Patch",
+		text:		"This patch brings a Remake version of the " +
+						"1st stage. This new version increases the " +
+						"the size of the 1st stage, it add an area " +
+						"that is connected to the first stage and " +
+						"another area, increasing its size. It also " +
+						"is spawning the players a little bit behind, " +
+						"which increased even more the size. This " + 
+						"patch is used by the Level Editor and Seed " +
+						"Randomizer.",
+		patch: level1RemakePatch,
+		show: true
+	},
+	extraLevelPatch:
+	{
+		label:	"Extra Level Patch (Bank Robbery)",
+		text:		"This patch brings a new stage made using " +
+						"unused areas + some known areas to create " + 
+						"the bank robbery stage that wasn't finished. " +
+						"Those areas were selected in a way that felt " +
+						"they made sense to be together to build the " + 
+						"bank robbery stage in a way that makes it " + 
+						"look like a complete level, since the areas " +
+						"related to the bank robbery were very short, " +
+						"and also considering that the 5th stage, the " +
+						"stage you rescue the money happens at night, " + 
+						"known areas + the unused areas were placed " +
+						"together building this new map, starting in " + 
+						"the morning and ending at night, going to " +
+						"going to places that you can claim they are " +
+						"connected, instead of making it in a way " +
+						"just adding new areas and claiming to be " +
+						"a new stage. It was made having in mind " +
+						"how it could look if the game had included " +
+						"a complete version of the bank robbery level. " +
+						"This patch is used by the Level Editor and " + 
+						"Seed Randomizer.",
+		patch: extraLevelPatch,
 		show: true
 	},
 	foodImprovementPatch:
@@ -120,6 +183,32 @@ const patchMap =
 		patch: textImprovementGenericBossPatch,
 		show: true
 	},
+	newLevelsTextImprovementPatch:
+	{
+		label:	"Text Improvement Patch",
+		text:		"This patch brings texts improvements " +
+						"for the new levels. It has some text " +
+						"changes and it also places the texts " +
+						"at the bottom of the screen, which " +
+						"feels more appropriate. Used by the " +
+						"Seed Randomizer.",
+		patch: newLevelsTextImprovementPatch,
+		show: true
+	},
+	newLevelsTextImprovementGenericBossPatch:
+	{
+		label:	"New Levels Text Improvement Generic Boss Patch",
+		text:		"This patch brings texts improvements " +
+						"for the new levels. It has some text " +
+						"changes and it also places the texts " +
+						"at the bottom of the screen, which " +
+						"feels more appropriate. The text for " +
+						"bosses all changed to 'Boss Fight', " +
+						"ideal to use in a hack with changed " +
+						"bosses for the new levels.",
+		patch: newLevelsTextImprovementGenericBossPatch,
+		show: true
+	},
 	dontFreezeOnBossPatch:
 	{
 		label:	"Don't Freeze On Boss Patch",
@@ -168,6 +257,20 @@ const patchMap =
 		patch: enemyColorExpansionPatch,
 		show: true
 	},
+	areaImprovementPatch:
+	{
+		label:	"Area Improvement Patch",
+		text:		"This patch brings assembly code that allows " + 
+						"the use of customized areas, and also " + 
+						"some extra code that can be used inside the " + 
+						"scripts of the levels to make things like " +
+						"change the look direction of the players " + 
+						"and change their position in the area. " +
+						"This patch is used by the Level Editor " +
+						"and the Seed Randomizer.",
+		patch: areaImprovementPatch,
+		show: true
+	},
 	removeCPUDemoPatch:
 	{
 		label:	"Remove CPU Gameplay Demo Patch",
@@ -204,6 +307,15 @@ const patchMap =
 						"Randomizer.",
 		patch: bakeneImprovementPatch,
 		show: true
+	},
+	playerHealthImprovementPatch:
+	{
+		label:	"Player Health Improvement Patch",
+		text:		"This patch increases the player HP from 64 " + 
+						"to 96. This patch is used by the Seed " +
+						"Randomizer.",
+		patch: playerHealthImprovementPatch,
+		show: false
 	},
 	randomizerTextPatch:
 	{

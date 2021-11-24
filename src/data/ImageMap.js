@@ -29,6 +29,14 @@ import level7C from "../images/level/level7C.png";
 import level8A from "../images/level/level8A.png";
 import level8B from "../images/level/level8B.png";
 
+import area0 from "../images/level/area0.png"
+import area1 from "../images/level/area1.png"
+import area2 from "../images/level/area2.png"
+import area12 from "../images/level/area12.png"
+import area13 from "../images/level/area13.png"
+import area18 from "../images/level/area18.png"
+import area21 from "../images/level/area21.png"
+
 import furauOrangeGreen from "../images/enemy/furau_orange_green.png";
 import furauPurpleBlue from "../images/enemy/furau_purple_blue.png";
 import furauBrownYellow from "../images/enemy/furau_brown_yellow.png";
@@ -339,6 +347,15 @@ const imageMap =
 	level4A: level4A,
 	level8A: level8A,
 	level8B: level8B,
+
+	area0: area0,
+	area1: area1,
+	area2: area2,
+	area12: area12,
+	area13: area13,
+	area18: area18,
+	area21: area21,
+
 
 	furauOrangeGreen: furauOrangeGreen,
 	furauPurpleBlue: furauPurpleBlue,

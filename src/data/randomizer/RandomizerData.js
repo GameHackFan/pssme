@@ -1,4 +1,4 @@
-import level1EnemyGroup from "../level/Level1EnemyGroup";
+// import level1EnemyGroup from "../level/Level1EnemyGroup";
 import level2EnemyGroup from "../level/Level2EnemyGroup";
 import level3EnemyGroup from "../level/Level3EnemyGroup";
 import level4EnemyGroup from "../level/Level4EnemyGroup";
@@ -7,6 +7,8 @@ import level6EnemyGroup from "../level/Level6EnemyGroup";
 import level7EnemyGroup from "../level/Level7EnemyGroup";
 import level8EnemyGroup from "../level/Level8EnemyGroup";
 
+import level1REnemyGroup from "../level/Level1REnemyGroup";
+import extraLevelEnemyGroup from "../level/ExtraLevelEnemyGroup";
 
 import weakRandomProfile from "./WeakRandomProfile";
 import easyRandomProfile from "./EasyRandomProfile";
@@ -91,20 +93,25 @@ const randomizerData =
 	levels:
 	{
 		keys: ["level1", "level2", "level3", "level4",
-				"level5", "level6", "level7", "level8"],
+				"level5", "level6", "level7", "level8",
+				"level1R", "extraLevel"],
 		labels: ["Level 1", "Level 2", "Level 3", "Level 4",
-				"Level 5", "Level 6", "Level 7", "Level 8"]
+				"Level 5", "Level 6", "Level 7", "Level 8",
+				"Level 1 Remake", "Extra Level"]
 	},
 	enemyGroups:
 	{
-		level1: level1EnemyGroup,
+		// level1: level1EnemyGroup,
 		level2: level2EnemyGroup,
 		level3: level3EnemyGroup,
 		level4: level4EnemyGroup,
 		level5: level5EnemyGroup,
 		level6: level6EnemyGroup,
 		level7: level7EnemyGroup,
-		level8: level8EnemyGroup
+		level8: level8EnemyGroup,
+
+		level1R: level1REnemyGroup,
+		extraLevel: extraLevelEnemyGroup
 	},
 	enemyBytePattern:
 	[

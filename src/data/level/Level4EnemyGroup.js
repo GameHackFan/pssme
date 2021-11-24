@@ -190,7 +190,7 @@ const level4EnemyGroup =
 		levelEditorLimitEnd: 432,
 		levelEditorShiftX: 460,
 		defaultAmount: 4,
-		maxAmount: 14,
+		maxAmount: 8,			// Less enemies to help reduce the lag
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -211,7 +211,7 @@ const level4EnemyGroup =
 		levelEditorLimitEnd: 960,
 		levelEditorShiftX: 460,
 		defaultAmount: 4,
-		maxAmount: 14,
+		maxAmount: 8,			// Less enemies to help reduce the lag
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -255,7 +255,7 @@ const level4EnemyGroup =
 		levelEditorLimitEnd: 1376,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 8,
+		maxAmount: 8,			// Less enemies to help reduce the lag
 		forbiddenPositionStrategies: ["outsideRight"],
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",

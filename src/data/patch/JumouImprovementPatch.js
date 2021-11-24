@@ -5,7 +5,6 @@ const jumouImprovementPatch =
 	byteFormat: "hex",
 	data:
 	{
-		// New damage values for all Jumou's attacks.
 		// Jumou's Straight Punch
 		"98078": ["12"],
 
@@ -17,7 +16,6 @@ const jumouImprovementPatch =
 
 		// Jumou's Head Throw
 		"98454": ["10"],
-		// New damage values for all Jumou's attacks.
 	}
 }
 

@@ -40,8 +40,8 @@ class RandomizerService
 		patch.type = "build";
 		patch.filename = "bpsm945a.u45";
 		patch.byteFormat = "hex";
-		patch.buildStart = 197974;
-		patch.buildEnd = 215935;
+		patch.buildStart = 197714;
+		patch.buildEnd = 229375;
 		patch.data = {};
 		patch.data = randomizedData.patch;
 		return patch;
@@ -237,28 +237,35 @@ class RandomizerService
 
 	applyRandomizer = () =>
 	{
-		this.increasePlayersHealth();
 		let randomizerPatch = this.createRandomizerPatch();
+		let les = levelExpansionService;
+
+		romService.applyPatch(patchMap.areaImprovementPatch.patch);
+		romService.applyPatch(patchMap.level1RemakePatch.patch);
+		romService.applyPatch(patchMap.extraLevelPatch.patch);
+		romService.applyPatch(patchMap.timeImprovementPatch.patch);
+
+		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
+		romService.applyPatch(patchMap.playerHealthImprovementPatch.patch);
+		romService.applyPatch(patchMap.foodImprovementPatch.patch);
+
+		romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.thetisImprovementPatch.patch);
 		romService.applyPatch(patchMap.jumouImprovementPatch.patch);
 		romService.applyPatch(patchMap.bakeneImprovementPatch.patch);
-		romService.applyPatch(patchMap.foodImprovementPatch.patch);
-		romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
-		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
+		
 		romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
 		romService.applyPatch(patchMap.textImprovementPatch.patch);
-		romService.applyPatch(
-				patchMap.boss1PositionImprovementPatch.patch);
+		romService.applyPatch(patchMap.newLevelsTextImprovementPatch.patch);
+		romService.applyPatch(patchMap.boss1PositionImprovementPatch.patch);
 		romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);
 		romService.applyPatch(this.createRandomizerTextPatch());
 		romService.applyPatch(patchMap.removeCPUDemoPatch.patch);
+		
 		romService.applyPatch(randomizerPatch);
-		romService.applyPatch(
-				levelExpansionService.createLevelFixPatch());
-		romService.applyPatch(
-				levelExpansionService.createBossHelpersFixPatch());
-		romService.applyPatch(
-				levelExpansionService.createBossFightsFixPatch());
+		romService.applyPatch(les.createLevelFixPatch());
+		romService.applyPatch(les.createBossHelpersFixPatch());
+		romService.applyPatch(les.createBossFightsFixPatch());
 	}
 
 	createRandomizerTextPatch = () =>
@@ -468,13 +475,6 @@ class RandomizerService
 			enemyGroup[e] = this.getRandomIntValue(
 					randomizer, es.randomMinAmount, es.randomMaxAmount);
 		});
-	}
-
-	increasePlayersHealth = () =>
-	{
-		const filename = "bpsm945a.u45";
-		romService.setByte(filename, 43824, 96);
-		romService.setByte(filename, 38668, 96);
 	}
 
 	applyPresetFile = (presetFile) =>

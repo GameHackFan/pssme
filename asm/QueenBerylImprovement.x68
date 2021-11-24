@@ -7,7 +7,11 @@
 								It also fixes a bug which was allowiong Queen Beryl 
 								to grab her friends.
 *-------------------------------------------------------------------------------------------------
-; Code 1
+
+
+*-------------------------
+* Code 1
+*-------------------------
 
 	JMP				$7DB00.L								; Jumps the execution to the instruction in the address (replace 1EFE4 with this code).
 
@@ -30,8 +34,12 @@
 	JMP				$1F00A.L								; Jumps back to the original code at 1F00A.
 
 
+; D0 is safe to use
 
-;	Code 2
+
+*-------------------------
+* Code 2
+*-------------------------
 
 	JMP				$7DB30.L								; Jumps the execution to the instruction in the address (replace 1F730 with this code).
 
@@ -39,8 +47,6 @@
 	MOVE.W		#$01, ($0C, A0)					; Code from the original game that was replaced with the jump command to extend the code.
 	MOVE.W		#$01, ($0E, A0)					; Stores 1 inside ($E, A0), this memory space must be 1.
 	JMP				$1F736									; Returns back to the original code.
-
-
 
 
 ; The bug was happening when you knock her down, she was setting 

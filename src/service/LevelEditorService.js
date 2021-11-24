@@ -23,19 +23,17 @@ class LevelEditorService
 	{
 		let patch = {};
 		patch.data = {};
-		this.applyDataToPatch(patch);
 		patch.type = "build";
 		patch.byteFormat = "hex";
-		patch.buildStart = 197974;
-		patch.buildEnd = 215935;
+		patch.buildStart = 197714;
+		patch.buildEnd = 229375;
 		patch.filename = "bpsm945a.u45";
+		this.applyDataToPatch(patch);
 		return patch;
 	}
 
 	applyDataToPatch = (patch) =>
 	{
-		let egs = levelEditorLevels;
-
 		Object.keys(this.mainData).forEach((lk) =>
 		{
 			let level = this.mainData[lk];
@@ -46,32 +44,37 @@ class LevelEditorService
 				let enemyGroup = level[egk];
 				let leeg = lel.groups[egk];
 
-				let byteStart = leeg.levelEditorStartPosition;
-				byteStart = isNaN(byteStart) ? leeg.startPosition : byteStart;
-				let byteEnd = leeg.levelEditorEndPosition;
-				byteEnd = isNaN(byteEnd) ? leeg.endPosition : byteEnd;
-				let byteKey = byteStart + "_" + byteEnd;
+				if(!leeg.disabled)
+				{
+					let byteStart = leeg.levelEditorStartPosition;
+					byteStart = isNaN(byteStart) ? leeg.startPosition : byteStart;
+					let byteEnd = leeg.levelEditorEndPosition;
+					byteEnd = isNaN(byteEnd) ? leeg.endPosition : byteEnd;
+					let byteKey = byteStart + "_" + byteEnd;
 
-				this.forceEnemy(lk, egk, Object.keys(enemyGroup).length);
-				let enemies = this.getEnemiesBytesFromGroup(enemyGroup, leeg);
-				
-				patch.data[byteKey] = enemies;
+					this.forceEnemy(lk, egk, Object.keys(enemyGroup).length);
+					let enemies = this.getEnemiesBytesFromGroup(enemyGroup, leeg);
+					
+					patch.data[byteKey] = enemies;
+				}
 			});
 		});
 	}
 
 	applyData = () =>
 	{
+		let les = levelExpansionService;
+		romService.applyPatch(patchMap.areaImprovementPatch.patch);
 		romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
 		romService.applyPatch(patchMap.levelEditorTextPatch.patch);
 		romService.applyPatch(patchMap.removeCPUDemoPatch.patch);
 		romService.applyPatch(this.createLevelEditorPatch());
-		romService.applyPatch(
-				levelExpansionService.createLevelFixPatch());
-		romService.applyPatch(levelExpansionService.createBossHelpersFixPatch());
-		romService.applyPatch(levelExpansionService.createBossFightsFixPatch());
+		romService.applyPatch(les.createLevelFixPatch());
+		romService.applyPatch(les.createBossHelpersFixPatch());
+		romService.applyPatch(les.createBossFightsFixPatch());
+		romService.applyPatch(les.createLevelShiftPatch())
 	}
 
 	addEnemy = (levelKey, enemyGroupKey) =>
@@ -166,9 +169,10 @@ class LevelEditorService
 
 	removeExtraEnemies = (enemyGroup) =>
 	{
+		let maxEnemies = 14;
 		let enemyMap = Object.keys(enemyGroup);
 
-		while(enemyMap.length > 14)
+		while(enemyMap.length > maxEnemies)
 		{
 			let key = enemyMap.pop();
 			delete enemyGroup[key];
@@ -343,7 +347,7 @@ class LevelEditorService
 		let json = JSON.parse(presetFile);
 
 		if(json && json.data && json.type === "levelEditor")
-			this.mainData = json.data;
+			this.mainData = Object.assign(this.mainData, json.data);
 	}
 
 	createPresetFile = () =>

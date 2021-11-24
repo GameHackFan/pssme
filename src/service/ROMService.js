@@ -13,7 +13,7 @@ class ROMService
 
 		if(fileBytes)
 		{
-			let buildBytes = new Array();
+			let buildBytes = [];
 			let copyStart = patch.buildStart;
 			let copyEnd;
 
@@ -34,14 +34,17 @@ class ROMService
 			});
 
 			buildBytes = buildBytes.concat(fileBytes.slice(copyStart, patch.buildEnd));
-			let newFile = fileBytes.slice(0, patch.buildStart);
-			newFile = newFile.concat(buildBytes);
-			
-			while(newFile.length <= patch.buildEnd)
-				newFile.push(0);
+			let desiredLength = patch.buildEnd - patch.buildStart;
 
-			newFile = newFile.concat(fileBytes.slice(newFile.length, fileBytes.length));
-			this.generatedROM[patch.filename] = newFile;
+			while(buildBytes.length < desiredLength)
+				buildBytes.push(0);
+
+			let owPatch = {};
+			owPatch.type = "overwrite";
+			owPatch.filename = "bpsm945a.u45";
+			owPatch.data = {};
+			owPatch.data[patch.buildStart.toString()] = buildBytes;
+			this.applyOverwritePatch(owPatch);
 		}
 	}
 
@@ -56,10 +59,14 @@ class ROMService
 			Object.keys(patch.data).forEach((dataKey) => 
 			{
 				let index = parseInt(dataKey);
-				let nbs = patch.data[dataKey];
 
-				for(let i = 0; i < nbs.length; i++)
-					fileBytes[index + i] = isHex ? parseInt(nbs[i], 16) : nbs[i];
+				if(!isNaN(index))
+				{
+					let nbs = patch.data[dataKey];
+
+					for(let i = 0; i < nbs.length; i++)
+						fileBytes[index + i] = isHex ? parseInt(nbs[i], 16) : nbs[i];
+				}
 			});
 		}
 	}
@@ -176,7 +183,7 @@ class ROMService
 	setHexByte = (filename, byteIndex, value) =>
 	{
 		let fix = parseInt(value, 16);
-		this.setByte(byteIndex, fix);
+		this.setByte(filename, byteIndex, fix);
 	}
 
 	setBytes = (filename, byteIndex, bytes) =>

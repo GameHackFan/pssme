@@ -379,14 +379,14 @@ const enemyColorExpansionPatch =
 
 		// Instruction that redirects the execution to where it
 		// handles enemy color IDs 4+.
-		"36686": ["F9", "4E", "07", "00", "00", "EA"],
+		"36686": ["F9", "4E", "07", "00", "00", "DE"],
 
 
 		// Code that handles the correct address for the
 		// extra colors in case the pallete id is bigger
 		// than 3. If it isn't, it will execute the same
 		// lines of code that it would in the original game.
-		"518656":
+		"515584":
 		[
 			"07", "30", "06", "3E", "46", "02", "FF", "0F",
 			"47", "02", "00", "F0", "4F", "EE", "46", "DC",
@@ -394,7 +394,7 @@ const enemyColorExpansionPatch =
 			"F0", "00", "47", "0C", "80", "00", "18", "65",
 			"00", "04", "10", "00", "40", "0C", "12", "00",
 			"0E", "6E", "FC", "C0", "02", "00", "F9", "41",
-			"07", "00", "40", "EA", "C0", "D0", "50", "DC",
+			"07", "00", "40", "DE", "C0", "D0", "50", "DC",
 			"F9", "4E", "00", "00",	"66", "8F", "00", "00",
 			"40", "20", "E0", "20", "40", "1F", "A0", "21",
 			"00", "00", "00", "FF", "60", "1C", "00", "1D",
