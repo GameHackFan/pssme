@@ -24,8 +24,8 @@ See all changes made [here](https://github.com/GameHackFan/pssme/blob/main/chang
 
 Known Bugs:
 - Game Over on stage 2 and 4 can bug Morga / Garoben on the next gameplay (reset the game to fix it, maybe fixed already with the new boss code?).
-- Final Boss area is bugged and some times it spawns more bosses than it should (maybe gone now?).
-- After a player selects a color, he will hold it forever until he picks another one (can be fixed).
+- Final Boss area is bugged and some times it spawns more bosses than it should (brought by an old code, 2 players only bug, v1.3 will fix it).
+- After a player selects a color, he will hold it forever until he picks another one (v1.3 will bring a fix).
 - If the game is overloaded with sprites, the color indicator might not be drawn.
 - Sometimes shaders bugs on several cases and any character will end up holding weird color values for their palletes temporarily (bug present in the original game).
 - Sometimes Zoisite goes under the screen (bug present in the original game).
