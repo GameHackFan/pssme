@@ -28,7 +28,7 @@
 	BEQ				$7E040									; If it is 0,it is not a custom area, go to the original code.
 
 																		; Block of code that handles data from custom areas.
-	MOVE.W		($1384, A6), D0					; Stores ($1384 + A6) inside D0, TODO: unnecessary line.
+	MOVE.W		($1384, A6), D0					; Stores ($1384 + A6) inside D0, TODO: unnecessary line?.
 	MULU.W		#$2, D0									; Multiply D0 by 2, area data offset is 2 bytes.
 	LEA				$7E052, A0							; Stores 7E052 inside A0, the base area data offset.
 	MOVE.W		(A0, D0.W), D0					; Stores (A0 + D0.W) inside D0, the area data offset.

@@ -10,33 +10,32 @@ const featuresAndFixesPatch =
 
 		// Instruction that redirects the execution to a code 
 		// that handles enemy spawning.
-		"197192":	["B9", "4E", "07", "00", "00", "DA"],
+		"88410":	["F9", "4E", "07", "00", "20", "DA", "71", "4E"],
 
 		// Code that prevents some bugs when some enemies spawn.
-		"514560":
-		[
-			"6E", "0C", "1A", "00", "84", "13", "00", "66",
-			"38", "00", "79", "4A", "10", "00", "00", "20",
-			"00", "67", "2E", "00", "79", "4A", "10", "00",
-			"00", "21", "00", "67", "24", "00", "3C", "30",
-			"22", "00", "3C", "32", "00", "00", "3C", "34",
-			"C0", "01", "6E", "D4", "86", "13", "3C", "36",
-			"C0", "00", "43", "D6", "3C", "38", "00", "00",
-			"08", "2F", "B8", "4E", "F0", "66", "5F", "20",
-			"18", "30", "18", "32", "18", "34", "75", "4E",
-		],
-
-		// Instruction that redirects the execution to a code 
-		// that handles enemy spawning.
-		"88410":	["F9", "4E", "07", "00", "60", "DA", "71", "4E"],
-
-		// Code that prevents some bugs when some enemies spawn.
-		"514656":
+		"514592":
 		[
 			"6E", "4A", "84", "13", "00", "66", "0A", "00",
 			"6E", "B0", "C4", "13", "00", "66", "08", "00",
 			"F9", "4E", "01", "00", "62", "59", "F9", "4E",
 			"01", "00", "7A", "59", "00", "00", "00", "00"
+		],
+
+
+
+		// Tesuni Fixes
+		// Instruction that redirects the execution to where 
+		// Tesuni's attack choice will be handled.
+		"82284": ["F9", "4E", "07", "00", "20", "DD"],
+
+		// Code that decides if tesuni without racket should
+		// punch or kick. 
+		"515360":
+		[
+			"B9", "4E", "00", "00", "3C", "AE", "68", "0C",
+			"0F", "00", "02", "00", "0A", "62", "41", "02",
+			"01", "00", "F9", "4E", "01", "00", "7A", "41",
+			"F9", "4E", "01", "00", "72", "41", "00", "00"
 		],
 
 

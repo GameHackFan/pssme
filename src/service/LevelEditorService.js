@@ -25,8 +25,8 @@ class LevelEditorService
 		patch.data = {};
 		patch.type = "build";
 		patch.byteFormat = "hex";
-		patch.buildStart = 197714;
-		patch.buildEnd = 229375;
+		patch.buildStart = 197974;
+		patch.buildEnd = 229311;			// 229375
 		patch.filename = "bpsm945a.u45";
 		this.applyDataToPatch(patch);
 		return patch;

@@ -34,7 +34,7 @@ const criminalEditorData =
 	},
 	criminalExtra1Idle:
 	{
-		label: "Criminal Extra 1 Idle (Red and White)",
+		label: "Criminal Extra 1 Idle (Green and Orange)",
 		width: 64,
 		height: 105,
 		pivotX: 35, 
@@ -42,7 +42,7 @@ const criminalEditorData =
 	},
 	criminalExtra2Idle:
 	{
-		label: "Criminal Extra 2 Idle (Blue and Gray)",
+		label: "Criminal Extra 2 Idle (Blue and Yellow)",
 		width: 64,
 		height: 105,
 		pivotX: 35, 
@@ -84,7 +84,7 @@ const criminalEditorData =
 	},
 	criminalExtra1:
 	{
-		label: "Criminal Extra 1 (Red and White)",
+		label: "Criminal Extra 1 (Green and Orange)",
 		width: 62,
 		height: 99,
 		pivotX: 29, 
@@ -92,7 +92,7 @@ const criminalEditorData =
 	},
 	criminalExtra2:
 	{
-		label: "Criminal Extra 2 (Blue and Gray)",
+		label: "Criminal Extra 2 (Blue and Yellow)",
 		width: 62,
 		height: 99,
 		pivotX: 29, 
@@ -133,7 +133,7 @@ const criminalEditorData =
 	},
 	criminalExtra1Running:
 	{
-		label: "Criminal Extra 1 Running (Red and White)",
+		label: "Criminal Extra 1 Running (Green and Orange)",
 		width: 66,
 		height: 97,
 		pivotX: 31, 
@@ -141,7 +141,7 @@ const criminalEditorData =
 	},
 	criminalExtra2Running:
 	{
-		label: "Criminal Extra 2 Running (Blue and Gray)",
+		label: "Criminal Extra 2 Running (Blue and Yellow)",
 		width: 66,
 		height: 97,
 		pivotX: 31, 

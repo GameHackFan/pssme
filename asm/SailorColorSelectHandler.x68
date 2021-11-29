@@ -10,12 +10,12 @@
 * Code 1
 *-------------------------
 
-	JMP				$7E330.L								; Jumps the execution to the instruction in the address (replace 58CE with this code).
+	JMP				$7E300.L								; Jumps the execution to the instruction in the address (replace 58CE with this code).
 
-; ORG				$7E330
+; ORG				$7E300
 
 																		; Block of code that handles the color select for select screen.
-	BSR				$7E300									; Go to the beginning of the color select code.
+	BSR				$7E330									; Go to the beginning of the color select code.
 	BSR				$7E250									; Go to the beginning of the print color indicator code.
 	MOVE.W		($4, A3), D6						; Code from the original game that was replaced with the jump command to extend the code.
 	LSR.W			#2, D6									; Code from the original game that was replaced with the jump command to extend the code.
@@ -26,13 +26,13 @@
 * Code 2
 *-------------------------
 
-	JMP				$7E340.L								; Jumps the execution to the instruction in the address (replace 53BA with this code).
+	JMP				$7E310.L								; Jumps the execution to the instruction in the address (replace 53BA with this code).
 	NOP																; Junk code to fill the space that won't be used (place it after the code above).
 
-	; ORG				$7E340
+	; ORG				$7E310
 
 																		; Block of code that handles the color select for in game character select.
-	BSR				$7E300									; Go to the beginning of the color select code.
+	BSR				$7E330									; Go to the beginning of the color select code.
 	BSR				$7E250									; Go to the beginning of the print color indicator code.
 	MOVE.W		($1E, A5), D5						; Code from the original game that was replaced with the jump command to extend the code.
 	CMPI.W		#$100, D5								; Code from the original game that was replaced with the jump command to extend the code.

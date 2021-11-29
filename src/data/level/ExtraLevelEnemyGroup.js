@@ -63,6 +63,7 @@ const extraLevelEnemyGroup =
 		screenPositionEnd: 272,
 		walkablePositionYTop: 200,
 		walkablePositionYBottom: 239,
+		ignoreSpawnDelay: true,
 		levelEditorLimitStart: -158,
 		levelEditorLimitEnd: 430,
 		levelEditorShiftX: 462,

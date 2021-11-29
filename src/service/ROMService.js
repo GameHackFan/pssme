@@ -39,6 +39,9 @@ class ROMService
 			while(buildBytes.length < desiredLength)
 				buildBytes.push(0);
 
+			if(buildBytes.length > desiredLength)
+				buildBytes = buildBytes.slice(0, desiredLength);
+
 			let owPatch = {};
 			owPatch.type = "overwrite";
 			owPatch.filename = "bpsm945a.u45";

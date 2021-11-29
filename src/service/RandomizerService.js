@@ -40,8 +40,8 @@ class RandomizerService
 		patch.type = "build";
 		patch.filename = "bpsm945a.u45";
 		patch.byteFormat = "hex";
-		patch.buildStart = 197714;
-		patch.buildEnd = 229375;
+		patch.buildStart = 197974;
+		patch.buildEnd = 229311;			// 229375
 		patch.data = {};
 		patch.data = randomizedData.patch;
 		return patch;
@@ -100,11 +100,14 @@ class RandomizerService
 				let amount = mdeg[e];
 				amount = isNaN(amount) ? 0 : amount;
 
-				for(let i = 0; i < amount; i++)
+				for(let i = 1; i <= amount; i++)
 				{
 					let enemy = this.randomizeEnemy(enemyGroup, enemyStrategy, randomizer);
+					let bytes = this.convertEnemyDataToBytes(enemy);
+					let hasDelay = !enemyGroup.ignoreSpawnDelay && i % 5 == 0;
+					bytes = hasDelay ? bytes.concat(this.getDelayBytes(20)) : bytes;
 					enemies.preset[id] = enemy;
-					enemies.patch[id++] = this.convertEnemyDataToBytes(enemy);
+					enemies.patch[id++] = bytes;
 				}
 			});
 		}
@@ -235,6 +238,12 @@ class RandomizerService
 		return enemyBytes;
 	}
 
+	getDelayBytes = (frameAmount) =>
+	{
+		let hexBytes = romService.convertNumberToROMBytes(frameAmount, 2);
+		return ["00", "00", "03", "00", "6A", "00", hexBytes[0], hexBytes[1]];
+	}
+
 	applyRandomizer = () =>
 	{
 		let randomizerPatch = this.createRandomizerPatch();
@@ -257,7 +266,6 @@ class RandomizerService
 		romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
 		romService.applyPatch(patchMap.textImprovementPatch.patch);
 		romService.applyPatch(patchMap.newLevelsTextImprovementPatch.patch);
-		romService.applyPatch(patchMap.boss1PositionImprovementPatch.patch);
 		romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);
 		romService.applyPatch(this.createRandomizerTextPatch());
 		romService.applyPatch(patchMap.removeCPUDemoPatch.patch);

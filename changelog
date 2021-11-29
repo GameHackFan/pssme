@@ -1,3 +1,18 @@
+Version 1.3 Changes:
+- Fixed a bug that was causing the Level Editor and Randomizer patch to be generated bigger than it should (v1.2 changes brought this bug).
+- Updated the FeaturesAndFixesPatch, see changes A to B.
+- Change A: Removed 1 of the 2 old remaining code, it was forcing a new Queen Beryl to spawn for each enemy spawning in the final boss area in case 2 players are playing.
+- Change B: Added assembly to allow Tesuni without racket to use her unused kick (50% probability?).
+- Updated SailorColorExpansionPatch. see changes C to D.
+- Change C: Updated the assembly to allow more 2 colors for all sailors, now it is original + 5.
+- Change D: Added assembly to handle the player active flag, colors are not held forever anymore.
+- Updated EnemyColorExpansionPatch. Improved Criminal and Kunzite colors.
+- Added a delay of 20 frames after each 5 enemies spawn on randomizer to make it run smoother.
+- Updated all text improvement patches, texts are now better aligned.
+- Minor changes.
+- Minor fixes.
+
+
 Version 1.2 Changes:
 - Improved SailorColorExpansionPatch. Fixed a bug with the color expansion and indicator.
 - Created AreaImprovementPatch. It has assembly code to handle customized areas and player spawning.

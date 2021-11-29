@@ -145,25 +145,35 @@ const palleteData =
 		"370080": kunzite,
 		"370144": queenBeryl,
 
+		"374528": emptySailorMoon,
+		"374560": emptySailorMoon,
 		"374592": emptySailorMoon,
 		"374624": emptySailorMoon,
 		"374656": emptySailorMoon,
 
+		"374688": emptySailorMercury,
 		"374720": emptySailorMercury,
 		"374752": emptySailorMercury,
 		"374784": emptySailorMercury,
+		"374816": emptySailorMercury,
 
 		"374848": emptySailorMars,
 		"374880": emptySailorMars,
 		"374912": emptySailorMars,
+		"374944": emptySailorMars,
+		"374976": emptySailorMars,
 
-		"374976": emptySailorJupiter,
 		"375008": emptySailorJupiter,
 		"375040": emptySailorJupiter,
+		"375072": emptySailorJupiter,
+		"375104": emptySailorJupiter,
+		"375136": emptySailorJupiter,
 
-		"375104": emptySailorVenus,
-		"375136": emptySailorVenus,
 		"375168": emptySailorVenus,
+		"375200": emptySailorVenus,
+		"375232": emptySailorVenus,
+		"375264": emptySailorVenus,
+		"375296": emptySailorVenus,
 
 		"375392": emptyFurau,
 		"375424": emptyTesuni,

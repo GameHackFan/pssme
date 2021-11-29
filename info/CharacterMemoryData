@@ -13,6 +13,7 @@ xxxx76.W:	Damage given.
 xxxx78.W:	Damage taken.
 xxxx80.W:	Sprite.
 xxxxE0.W: Attack ID (Enemies).
+xxxxF4.B: Lives (For players only).
 
 
 Queen Beryl, Garoben, anyone else?
