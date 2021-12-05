@@ -12,7 +12,7 @@ import textImprovementPatch from "./TextImprovementPatch";
 import textImprovementGenericBossPatch from
 		"./TextImprovementGenericBossPatch";
 import dontFreezeOnBossPatch from "./DontFreezeOnBossPatch";
-import removeCPUDemoPatch from "./RemoveCPUDemoPatch";
+import fixCPUDemoPatch from "./FixCPUDemoPatch";
 import boss1PositionImprovementPatch from
 		"./Boss1PositionImprovementPatch";    
 
@@ -271,15 +271,16 @@ const patchMap =
 		patch: areaImprovementPatch,
 		show: true
 	},
-	removeCPUDemoPatch:
+	fixCPUDemoPatch:
 	{
-		label:	"Remove CPU Gameplay Demo Patch",
-		text:		"This patch removes the CPU Gameplay " +
-						"Demo. It is necessary for ROMs that " +
-						"has more or less bytes than the original " +
-						"in any level. Used by the Level Editor " +
-						"and the Seed Randomizer.",
-		patch: removeCPUDemoPatch,
+		label:	"Fix CPU Gameplay Demo Patch",
+		text:		"This patch fixes the CPU Gameplay Demo. " +
+						"It is necessary if ROMs have levels with " +
+						"more or less bytes than the original game, " +
+						"since it crashes the CPU Gameplay Demo. " +
+						"Used by the Level Editor and the Seed " + 
+						"Randomizer.",
+		patch: fixCPUDemoPatch,
 		show: true
 	},
 	thetisImprovementPatch:

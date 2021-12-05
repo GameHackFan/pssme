@@ -1,3 +1,8 @@
+.randomizer > .windowContentLine > label
+{
+	min-width: 114px;
+}
+
 .randomizer .enemyGroupText
 {
 	margin-bottom: 24px;

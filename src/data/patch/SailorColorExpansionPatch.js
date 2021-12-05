@@ -262,7 +262,7 @@ const sailorColorExpansionPatch =
 		// Code that handles printing the color indicator.
 		"516688":
 		[		
-			"F9", "41", "4F", "00", "00", "CE", "CC", "D0",
+			"F9", "41", "4F", "00", "00", "C0", "CC", "D0",		// 4F 00 00 CE was not so good.
 			"6C", "0C", "03", "00", "B2", "74", "06", "6C",
 			"0A", "61", "08", "61", "75", "4E", "6E", "61",
 			"6C", "61", "75", "4E", "3C", "30", "00", "40",

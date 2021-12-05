@@ -92,12 +92,18 @@ const randomizerData =
 	},
 	levels:
 	{
-		keys: ["level1", "level2", "level3", "level4",
-				"level5", "level6", "level7", "level8",
-				"level1R", "extraLevel"],
-		labels: ["Level 1", "Level 2", "Level 3", "Level 4",
-				"Level 5", "Level 6", "Level 7", "Level 8",
-				"Level 1 Remake", "Extra Level"]
+		keys:
+		[
+			// "level1",
+			"level1R", "level2", "level3", "level4", "level5",
+			"level6", "level7", "level8", "extraLevel"
+		],
+		labels:
+		[
+			// "Level 1",
+			"Level 1 Remake", "Level 2", "Level 3", "Level 4",
+			"Level 5", "Level 6", "Level 7", "Level 8", "Extra Level"
+		]
 	},
 	enemyGroups:
 	{

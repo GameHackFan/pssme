@@ -8,7 +8,7 @@
 ; ORG				$7E250
 
 																		; Block of code that calls the code that prints the color indicator.
-	LEA				$4FCE00, A0							; Stores 4FCE000 inside A0 (later, + player memory address + 4000).
+	LEA				$4FC000, A0							; Stores 4FC000 inside A0 (later, + player memory address + 4000).
 	ADD.W			A4, A0									; Adds 2 bytes of A4 to A0 (2000 or 2100).
 	CMP.W			#$03, ($74B2, A4)				; Compares 3 and (A4 + $74B2), the player active flag.
 	BGE				$7E266									; If it is greater or equal 3, go to the clean print memory code.

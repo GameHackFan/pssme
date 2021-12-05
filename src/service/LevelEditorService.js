@@ -69,7 +69,7 @@ class LevelEditorService
 		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
 		romService.applyPatch(patchMap.levelEditorTextPatch.patch);
-		romService.applyPatch(patchMap.removeCPUDemoPatch.patch);
+		romService.applyPatch(patchMap.fixCPUDemoPatch.patch);
 		romService.applyPatch(this.createLevelEditorPatch());
 		romService.applyPatch(les.createLevelFixPatch());
 		romService.applyPatch(les.createBossHelpersFixPatch());

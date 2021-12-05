@@ -268,7 +268,7 @@ class RandomizerService
 		romService.applyPatch(patchMap.newLevelsTextImprovementPatch.patch);
 		romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);
 		romService.applyPatch(this.createRandomizerTextPatch());
-		romService.applyPatch(patchMap.removeCPUDemoPatch.patch);
+		romService.applyPatch(patchMap.fixCPUDemoPatch.patch);
 		
 		romService.applyPatch(randomizerPatch);
 		romService.applyPatch(les.createLevelFixPatch());

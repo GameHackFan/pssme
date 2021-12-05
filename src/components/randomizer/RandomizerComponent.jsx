@@ -7,10 +7,10 @@ import "./Randomizer.css";
 
 const RandomizerComponent = (props) =>
 {
-	const profileOptions = new Array();
-	const levelOptions = new Array();
-	const groupOptions = new Array();
-	const fields = new Array();
+	const profileOptions = [];
+	const levelOptions = [];
+	const groupOptions = [];
+	const fields = [];
 	let enemyGroups = randomizerData.enemyGroups[props.level];
 	enemyGroups = enemyGroups ? enemyGroups : {};
 	let enemyGroup = enemyGroups[props.enemyGroup];

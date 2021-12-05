@@ -148,7 +148,34 @@ const levelExpansionData =
 			moduleIndex: 196608,
 			levelStartPointerIndex: 28,
 			levelStartDataIndex: 16
-		}
+		},
+
+		cpuDemo2:
+		{
+			levelStartPointer: ["3C", "00", "01", "00", "75", "4E", "03", "00"],
+			levelStartData:
+			[
+				"FF", "FF", "FF", "FF", "00", "00", "03", "00",
+				"CE", "00", "FE", "72"
+			],
+			byteFormat: "hex",
+			moduleIndex: 196608,
+			levelStartPointerIndex: 48,
+			levelStartDataIndex: 4
+		},
+		cpuDemo3:
+		{
+			levelStartPointer: ["3C", "00", "01", "00", "75", "4E", "03", "00"],
+			levelStartData:
+			[
+				"FF", "FF", "FF", "FF", "00", "00", "03", "00",
+				"CE", "00", "FE", "72"
+			],
+			byteFormat: "hex",
+			moduleIndex: 196608,
+			levelStartPointerIndex: 52,
+			levelStartDataIndex: 142
+		},
 	},
 
 
@@ -369,11 +396,11 @@ const levelExpansionData =
 			levelStartPointer: ["3C", "00", "01", "00", "75", "4E", "03", "00"],
 			byteFormat: "hex",
 			moduleIndex: 196608,
-			byteAmount: 24,
+			byteAmount: 16,
 			shiftStart: 31,
 			shiftReplace: 27
 		}
-	},
+	}
 }
 
 
