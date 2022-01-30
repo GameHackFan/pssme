@@ -180,15 +180,22 @@ const randomizerEnemyStrategy =
 		"thetisLightPink", "thetisDarkPink",
 		"thetisExtra1", "thetisExtra2"
 	],
+	dropAnyFoodEnemies:
+	[
+		"thetisLightPink", "thetisDarkPink"
+	],
+	dropBestFoodEnemies:
+	[
+		"thetisExtra1", "thetisExtra2"
+	],
 	dropFoodEnemiesOrBoss:
 	[
-		"thetisDarkBlue", "thetisLightPink",
-		"thetisDarkPink",
+		"thetisLightPink", "thetisDarkPink",
 		"thetisExtra1", "thetisExtra2",
 
 		"bakeneForm1"
 	],
-	crystalEnemies: ["thetisLightBlue"],
+	crystalEnemies: ["thetisLightBlue", "thetisDarkBlue"],
 	enemiesAndBosses: enemiesNoDrop.slice().concat([
 			"castorAndPolluxBossBoth",
 			"castorAndPolluxBossBoth",

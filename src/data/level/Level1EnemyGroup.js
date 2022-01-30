@@ -51,8 +51,8 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 2144,
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 2,
-		maxAmount: 1,
-		specialProfile: "bossHelperType2Strategy",
+		maxAmount: 0,
+		specialProfile: "max2Type1Strategy",
 		forbiddenEnemies: ["castorAndPolluxBossBoth", 
 			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
 		]
@@ -70,8 +70,8 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 2336,
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
-		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy"
+		maxAmount: 4,
+		specialProfile: "max4Type1Strategy"
 	},
 	bossHelperGroup2:
 	{
@@ -87,7 +87,7 @@ const level1EnemyGroup =
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
 		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy"
+		specialProfile: "max2Type2Strategy"
 	},
 	bossHelperGroup3:
 	{
@@ -103,7 +103,7 @@ const level1EnemyGroup =
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
 		maxAmount: 2,
-		specialProfile: "bossHelperType2Strategy"
+		specialProfile: "max2Type1Strategy"
 	},
 	bossHelperGroup4:
 	{
@@ -118,8 +118,8 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 2336,
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
-		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy"
+		maxAmount: 1,
+		specialProfile: "max2Type2Strategy"
 	},
 	bossHelperGroup5:
 	{
@@ -134,8 +134,8 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 2336,
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
-		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy"
+		maxAmount: 1,
+		specialProfile: "max2Type1Strategy"
 	},
 	bossHelperGroup6:
 	{
@@ -150,8 +150,8 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 2336,
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
-		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy"
+		maxAmount: 1,
+		specialProfile: "max2Type2Strategy"
 	},
 	bossHelperGroup7:
 	{
@@ -166,8 +166,8 @@ const level1EnemyGroup =
 		levelEditorLimitStart: 2336,
 		levelEditorLimitEnd: 2656,
 		defaultAmount: 1,
-		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy"
+		maxAmount: 1,
+		specialProfile: "max2Type1Strategy"
 	}
 }
 

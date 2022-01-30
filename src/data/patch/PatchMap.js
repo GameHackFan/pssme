@@ -9,17 +9,15 @@ import levelEditorTextPatch from"./LevelEditorTextPatch";
 import defaultTextPatch from "./DefaultTextPatch";
 
 import textImprovementPatch from "./TextImprovementPatch";
-import textImprovementGenericBossPatch from
-		"./TextImprovementGenericBossPatch";
+import textImprovementGenericBossPatch from "./TextImprovementGenericBossPatch";
 import dontFreezeOnBossPatch from "./DontFreezeOnBossPatch";
 import fixCPUDemoPatch from "./FixCPUDemoPatch";
-import boss1PositionImprovementPatch from
-		"./Boss1PositionImprovementPatch";    
+import boss1PositionImprovementPatch from "./Boss1PositionImprovementPatch";
 
 import sailorColorExpansionPatch from "./SailorColorExpansionPatch";
 import foodImprovementPatch from "./FoodImprovementPatch";
-import playerHealthImprovementPatch from
-		"./PlayerHealthImprovementPatch";
+import playerHealthImprovementPatch from "./PlayerHealthImprovementPatch";
+import sailorImprovementPatch from "./SailorImprovementPatch";
 
 import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
 import jumouImprovementPatch from "./JumouImprovementPatch";
@@ -129,32 +127,12 @@ const patchMap =
 						"Lollipop = 8, Donut = 10, " +
 						"Chocolate Candy = 12, Muffin = 14, " +
 						"Ice Cream Cornet = 16, Pudding = 20, " +
-						"Soup = 22, Piece of Cake = 24, " +
-						"Piece of Pie = 26, Chocolate Bar = 32, " +
-						"Meatball = 40, Round Cake = 48, " + 
+						"Soup = 24, Piece of Cake = 28, " +
+						"Piece of Pie = 32, Chocolate Bar = 40, " +
+						"Meatball = 48, Round Cake = 56, " + 
 						"Ice Cream Cup = 64. This patch is used " + 
 						"by the Seed Randomizer.",
 		patch: foodImprovementPatch,
-		show: true
-	},
-	jumouImprovementPatch:
-	{
-		label:	"Enemy Improvement Patch",
-		text:		"This patch brings improvements to some " + 
-						"enemies. Jumou is too slow, that makes " + 
-						"her rarely able to hit any player. Her " + 
-						"importance as an enemy is questionable, " + 
-						"so this patch turns her into a heavy hitter, " +
-						"a type of enemy that lacks in this game. " + 
-						"With this patch, Jumou's damage output " + 
-						"is changed as described: Straight Punch " + 
-						"from 04 to 18, Stomach Punch from 04 to " + 
-						"20, Kick from 06 to 24, Head Throw from " + 
-						"08 to 16. Thetis also has way too little " +
-						"HP, this patch increases her HP from 10 " + 
-						"to 30. This patch is used by the Seed " +
-						"Randomizer.",
-		patch: jumouImprovementPatch,
 		show: true
 	},
 	textImprovementPatch:
@@ -209,6 +187,20 @@ const patchMap =
 		patch: newLevelsTextImprovementGenericBossPatch,
 		show: true
 	},
+	areaImprovementPatch:
+	{
+		label:	"Area Improvement Patch",
+		text:		"This patch brings assembly code that allows " + 
+						"the use of customized areas, and also " + 
+						"some extra code that can be used inside the " + 
+						"scripts of the levels to make things like " +
+						"change the look direction of the players " + 
+						"and change their position in the area. " +
+						"This patch is used by the Level Editor " +
+						"and the Seed Randomizer.",
+		patch: areaImprovementPatch,
+		show: true
+	},
 	dontFreezeOnBossPatch:
 	{
 		label:	"Don't Freeze On Boss Patch",
@@ -217,6 +209,18 @@ const patchMap =
 						"any boss or sub boss. Used by the " +
 						"Seed Randomizer.",
 		patch: dontFreezeOnBossPatch,
+		show: true
+	},
+	fixCPUDemoPatch:
+	{
+		label:	"Fix CPU Gameplay Demo Patch",
+		text:		"This patch fixes the CPU Gameplay Demo. " +
+						"It is necessary if ROMs have levels with " +
+						"more or less bytes than the original game, " +
+						"since it crashes the CPU Gameplay Demo. " +
+						"Used by the Level Editor and the Seed " + 
+						"Randomizer.",
+		patch: fixCPUDemoPatch,
 		show: true
 	},
 	sailorColorExpansionPatch:
@@ -238,6 +242,17 @@ const patchMap =
 		patch: sailorColorExpansionPatch,
 		show: true,
 	},
+	sailorImprovementPatch:
+	{
+		label:	"Sailor Improvement Patch",
+		text:		"This patch brings improvements to all " + 
+						"Sailors Desperation Attack. The damage " + 
+						"all Sailors Desperation Attack gives and " + 
+						"takes is reduced from 6 to 3. This patch " + 
+						"is used by the Seed Randomizer.",
+		patch: sailorImprovementPatch,
+		show: true
+	},
 	enemyColorExpansionPatch:
 	{
 		label:	"Enemy Color Expansion Patch",
@@ -257,32 +272,6 @@ const patchMap =
 		patch: enemyColorExpansionPatch,
 		show: true
 	},
-	areaImprovementPatch:
-	{
-		label:	"Area Improvement Patch",
-		text:		"This patch brings assembly code that allows " + 
-						"the use of customized areas, and also " + 
-						"some extra code that can be used inside the " + 
-						"scripts of the levels to make things like " +
-						"change the look direction of the players " + 
-						"and change their position in the area. " +
-						"This patch is used by the Level Editor " +
-						"and the Seed Randomizer.",
-		patch: areaImprovementPatch,
-		show: true
-	},
-	fixCPUDemoPatch:
-	{
-		label:	"Fix CPU Gameplay Demo Patch",
-		text:		"This patch fixes the CPU Gameplay Demo. " +
-						"It is necessary if ROMs have levels with " +
-						"more or less bytes than the original game, " +
-						"since it crashes the CPU Gameplay Demo. " +
-						"Used by the Level Editor and the Seed " + 
-						"Randomizer.",
-		patch: fixCPUDemoPatch,
-		show: true
-	},
 	thetisImprovementPatch:
 	{
 		label:	"Thetis Improvement Patch",
@@ -291,6 +280,26 @@ const patchMap =
 						"Randomizer.",
 		patch: thetisImprovementPatch,
 		show: false
+	},
+	jumouImprovementPatch:
+	{
+		label:	"Jumou Improvement Patch",
+		text:		"This patch brings improvements to Jumou's " + 
+						"attacks. Jumou is too slow, that makes " + 
+						"her rarely able to hit any player. Her " + 
+						"importance as an enemy is questionable, " + 
+						"so this patch turns her into a heavy hitter, " +
+						"a type of enemy that lacks in this game. " + 
+						"With this patch, Jumou's damage output " + 
+						"is changed as described: Straight Punch " + 
+						"from 04 to 18, Stomach Punch from 04 to " + 
+						"20, Kick from 06 to 24, Head Throw from " + 
+						"08 to 16. Thetis also has way too little " +
+						"HP, this patch increases her HP from 10 " + 
+						"to 30. This patch is used by the Seed " +
+						"Randomizer.",
+		patch: jumouImprovementPatch,
+		show: true
 	},
 	bakeneImprovementPatch:
 	{

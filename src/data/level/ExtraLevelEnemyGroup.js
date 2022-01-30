@@ -49,7 +49,10 @@ const extraLevelEnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 14,
-		forbiddenPositionStrategies: ["outsideLeft"]
+		forbiddenPositionStrategies: ["outsideLeft"],
+		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
+			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 
 
@@ -88,7 +91,10 @@ const extraLevelEnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 14,
-		forbiddenPositionStrategies: ["outsideRight"]
+		forbiddenPositionStrategies: ["outsideRight"],
+		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
+			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 	group6:
 	{
@@ -105,7 +111,10 @@ const extraLevelEnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 14,
-		forbiddenPositionStrategies: ["outsideRight"]
+		forbiddenPositionStrategies: ["outsideRight"],
+		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
+			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
+		]
 	},
 
 
@@ -125,7 +134,8 @@ const extraLevelEnemyGroup =
 		levelEditorLimitEnd: 352,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 2,
+		maxAmount: 4,
+		specialProfile: "max4Type2Strategy",
 		forbiddenPositionStrategies: ["outsideLeft"]
 	},
 	bossHelperGroup1:
@@ -144,7 +154,8 @@ const extraLevelEnemyGroup =
 		levelEditorLimitEnd: 352,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 12
+		maxAmount: 8,
+		specialProfile: "max8Strategy"
 	}
 }
 

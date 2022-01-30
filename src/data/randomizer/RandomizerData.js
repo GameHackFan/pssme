@@ -48,6 +48,16 @@ const randomizerData =
 			label: "Randomize Any Thetis Only",
 			enemyKeys: randomizerEnemyStrategy.dropEnemies,
 		},
+		dropAnyFoodEnemies:
+		{
+			label: "Randomize Food Thetis Only",
+			enemyKeys: randomizerEnemyStrategy.dropAnyFoodEnemies,
+		},
+		dropBestFoodEnemies:
+		{
+			label: "Randomize Best Food Thetis Only",
+			enemyKeys: randomizerEnemyStrategy.dropBestFoodEnemies,
+		},
 		dropFoodEnemiesOrBoss:
 		{
 			label: "Randomize Food Thetis or Bakene 1st Form",

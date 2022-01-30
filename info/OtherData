@@ -1,0 +1,17 @@
+AE3C:		Randomizes a value and stores it in D1?
+9E20:		Desperation Attack damage given.
+9E42:		Desperation Attack damage taken.
+ABF6:		Checks if the player can execute the Desperation Attack.
+
+
+
+
+Yasha
+00 Idle / Default
+10 Stabbing
+20 Falling
+30 Idle / Default
+40 Idle / Default + Stabbing
+50 Stabbing + Stabbing
+60 Falling + Stabbing
+70 Idle / Default + Stabbing

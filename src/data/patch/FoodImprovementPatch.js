@@ -8,8 +8,8 @@ const foodImprovementPatch =
 		// New healing values for the foods.
 		"42446":
 		[
-			"10", "20", "40", "14", "18", "08", "1A",
-			"30", "28", "06", "0C", "0A", "16", "0E"
+			"10", "28", "40", "14", "1C", "08", "20",
+			"38", "30", "06", "0C", "0A", "18", "0E"
 		],
 	}
 }
@@ -35,12 +35,12 @@ export default foodImprovementPatch;
 		Ice Cream Cornet:		10
 
 		Pudding:						14
-		Soup:								16
-		Piece of Cake:			18
-		Piece of Pie:				1A
+		Soup:								18
+		Piece of Cake:			1C
+		Piece of Pie:				20
 		
-		Chocolate Bar:			20
-		Meatball:						28
-		Round Cake:					30
+		Chocolate Bar:			28
+		Meatball:						30
+		Round Cake:					38
 		Ice Cream Cup:			40
 */

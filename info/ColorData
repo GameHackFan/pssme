@@ -253,10 +253,10 @@ Kunzite (Purple)
 Kunzite (Red)
 87 31 D3 5F 4D 43 89 2E 85 19 74 5B CE 42 84 11 E2 08 F9 6F 8F 3F 29 27 86 1A C3 0D 20 01 60 00
 
-Kunzite (Purple, Former)
+Kunzite (Purple - Former)
 87 31 D3 5F 4D 43 89 2E 85 19 59 5B 90 3A 6B 19 E7 10 FD 73 BA 4E 35 3E 90 29 0C 19 C8 08 01 00
 
-Kunzite (Red, Former)
+Kunzite (Red - Former)
 87 31 D3 5F 4D 43 89 2E 85 19 4D 5F 84 46 C2 15 00 09 D7 73 CB 37 47 23 A4 16 01 0A 40 05 01 00
 
 Queen Beryl (Orange, Black)
@@ -307,12 +307,21 @@ Sailor Mars (Green and Cyan)
 B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F 4B 66 67 4D 04 39 08 1C FC 7F DC 6E 32 3D CC 28 03 08
 
 Sailor Mars (Purple and Blue)
+B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F 3B 4B 55 32 92 19 8A 10 FE 7F 9F 62 34 31 D0 20 24 08
+
+Sailor Mars (Purple and Blue - Former)
 B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F 3B 4B 55 32 92 19 8A 10 BF 7B 9F 62 34 31 D0 20 24 08
 
 Sailor Mars (Orange and Brown)
+B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F EF 4F A8 37 02 1F 62 0D FC 7F 72 53 89 32 C4 19 80 04
+
+Sailor Mars (Orange and Brown - Former)
 B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F EF 4F A8 37 02 1F 42 0D FC 7F 11 4B 48 2E C4 19 80 04
 
 Sailor Mars (Brown and Black)
+B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F CC 42 08 2E 65 1D A3 10 FC 7F B3 52 CC 35 27 21 40 04
+
+Sailor Mars (Brown and Black - Former)
 B4 24 D7 6F F4 63 6E 4B CA 36 E5 1D C6 6F CC 42 08 2E 65 1D A3 10 FC 7F 50 46 AB 31 27 21 40 04
 
 Sailor Jupiter (Purple and Yellow)
@@ -343,4 +352,7 @@ Sailor Venus (Pink and Pink)
 83 28 D7 6F F4 63 6E 4B CA 36 E5 1D FC 7B D7 67 D4 4F 4F 37 CA 1E C3 05 79 63 B2 3E 87 06 81 00
 
 Sailor Venus (Yellow and Blue)
+83 28 D7 6F F4 63 6E 4B CA 36 E5 1D FC 7B F2 6F E8 63 82 4B E0 32 00 0E B9 66 D6 4D 74 34 81 00
+
+Sailor Venus (Yellow and Blue - Former)
 83 28 D7 6F F4 63 6E 4B CA 36 E5 1D FC 7B F2 6F E8 63 82 4B E0 32 00 0E DA 66 D4 4D 50 30 81 00

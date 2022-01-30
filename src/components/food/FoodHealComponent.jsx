@@ -60,7 +60,7 @@ const FoodHealComponent = (props) =>
 				</select>
 			</div>
 			<div
-				className="windowContentLine"
+				className="windowContentLine colLinedFlex"
 				style={fieldStyle}
 			>
 				<label>Heal Value: </label>

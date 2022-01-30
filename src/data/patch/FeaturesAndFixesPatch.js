@@ -8,6 +8,11 @@ const featuresAndFixesPatch =
 		// Allows 2 of the same character to be selected.
 		"24071":	["60"],
 
+		// New code that handles Desperation Attacks Damage Taken.
+		// It has worse performance but it is easier to edit.
+		"40508": ["06", "67", "68", "06", "06", "00", "34", "00"],
+
+
 		// Instruction that redirects the execution to a code 
 		// that handles enemy spawning.
 		"88410":	["F9", "4E", "07", "00", "20", "DA", "71", "4E"],
@@ -19,6 +24,42 @@ const featuresAndFixesPatch =
 			"6E", "B0", "C4", "13", "00", "66", "08", "00",
 			"F9", "4E", "01", "00", "62", "59", "F9", "4E",
 			"01", "00", "7A", "59", "00", "00", "00", "00"
+		],
+
+
+
+		// Thetis
+		// Instruction that redirects the execution to the 
+		// code that handles the item drop.
+		"74282":
+		[
+			"F9", "4E", "07", "00", "50", "DD", "71", "4E",
+			"71", "4E", "71", "4E", "71", "4E"
+		],
+		
+		// Code that drops items based on color ID and a new
+		// item table.
+		"515408":
+		[
+			"6E", "D2", "96", "01", "41", "02", "0F", "00",
+			"3B", "D2", "16", "00", "3C", "30", "0E", "00",
+			"00", "78", "3B", "18", "1C", "10", "F9", "4E",
+			"01", "00", "38", "22", "00", "00", "00", "00", 
+
+			"00", "00", "10", "10", "20", "20", "20", "20",
+			"30", "30", "30", "30", "30", "30", "30", "30",
+
+			"FF", "01", "02", "04", "FF", "05", "08", "0A", 
+			"FF", "0B", "0C", "0D", "FF", "02", "0D", "FF", 
+
+			"09", "00", "01", "02", "03", "04", "05", "06",
+			"07", "08", "09", "0A", "0B", "0C", "0D", "00",
+
+			"06", "09", "00", "03", "05", "06", "07", "09",
+			"00", "03", "05", "06", "07", "09", "00", "03", 
+
+			"06", "09", "00", "03", "05", "06", "07", "09",
+			"00", "03", "05", "06", "07", "09", "00", "03", 
 		],
 
 

@@ -16,7 +16,7 @@ const thetisEditorData =
 		pivotX: 34, 
 		pivotY: 107
 	},
-	thetisLightPink:			// Drops crystal or food.
+	thetisLightPink:			// Drops any food.
 	{
 		label: "Thetis 3 (Light Pink, Any Item)",
 		width: 56,
@@ -24,9 +24,9 @@ const thetisEditorData =
 		pivotX: 34, 
 		pivotY: 107
 	},
-	thetisDarkPink:				// Drops crystal or food.
+	thetisDarkPink:				// Drops any food.
 	{
-		label: "Thetis 4 (Light Pink, Any Item)",
+		label: "Thetis 4 (Dark Pink, Any Item)",
 		width: 56,
 		height: 112,
 		pivotX: 34, 
@@ -34,7 +34,7 @@ const thetisEditorData =
 	},
 	
 
-	thetisExtra1:					// Drops crystal or food.
+	thetisExtra1:					// Drops average or good food.
 	{
 		label: "Thetis Extra 1 (Green)",
 		width: 56,
@@ -42,7 +42,7 @@ const thetisEditorData =
 		pivotX: 34, 
 		pivotY: 107
 	},
-	thetisExtra2:					// Drops crystal or food.
+	thetisExtra2:					// Drops average or good food.
 	{
 		label: "Thetis Extra 2 (Gray)",
 		width: 56,

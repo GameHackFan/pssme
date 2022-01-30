@@ -102,7 +102,7 @@ const level1REnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 2,
 		maxAmount: 0,
-		specialProfile: "bossHelperType2Strategy",
+		specialProfile: "max2Type1Strategy",
 		forbiddenEnemies: ["castorAndPolluxBossBoth", 
 			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
 		]
@@ -121,8 +121,8 @@ const level1REnemyGroup =
 		levelEditorLimitEnd: 240,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 3,
-		specialProfile: "bossHelperType1Strategy",
+		maxAmount: 4,
+		specialProfile: "max4Type1Strategy",
 		forbiddenEnemies: ["castorAndPolluxBossBoth", 
 			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
 		]
@@ -142,7 +142,7 @@ const level1REnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 3,
-		specialProfile: "bossHelperType1Strategy",
+		specialProfile: "max3Type2Strategy",
 		forbiddenEnemies: ["castorAndPolluxBossBoth", 
 			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
 		]
@@ -162,7 +162,7 @@ const level1REnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 3,
-		specialProfile: "bossHelperType2Strategy",
+		specialProfile: "max3Type1Strategy",
 		forbiddenEnemies: ["castorAndPolluxBossBoth", 
 			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
 		]
@@ -182,7 +182,7 @@ const level1REnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 3,
-		specialProfile: "bossHelperType1Strategy",
+		specialProfile: "max3Type2Strategy",
 		forbiddenEnemies: ["castorAndPolluxBossBoth", 
 			"castorAndPolluxBoss1", "castorAndPolluxBoss2"
 		]

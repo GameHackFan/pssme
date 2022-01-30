@@ -51,7 +51,8 @@ const level8EnemyGroup =
 		levelEditorLimitEnd: 1568,
 		levelEditorShiftX: 460,
 		defaultAmount: 2,
-		maxAmount: 8
+		maxAmount: 6,
+		specialProfile: "max6Strategy"
 	},
 	group3:
 	{
@@ -104,7 +105,7 @@ const level8EnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
 		maxAmount: 12,
-		specialProfile: "finalBossStrategy"
+		specialProfile: "max12Strategy"
 	}
 }
 

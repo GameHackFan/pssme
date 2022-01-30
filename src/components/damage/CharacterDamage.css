@@ -1,3 +1,8 @@
+.characterDamage > .windowContentLine > label
+{
+	min-width: 74px;
+}
+
 .characterDamage input[type=text]
 {
 	margin-right: 12px;

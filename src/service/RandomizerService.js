@@ -253,10 +253,10 @@ class RandomizerService
 		romService.applyPatch(patchMap.level1RemakePatch.patch);
 		romService.applyPatch(patchMap.extraLevelPatch.patch);
 		romService.applyPatch(patchMap.timeImprovementPatch.patch);
+		romService.applyPatch(patchMap.foodImprovementPatch.patch);
 
 		romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.playerHealthImprovementPatch.patch);
-		romService.applyPatch(patchMap.foodImprovementPatch.patch);
 
 		romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
 		romService.applyPatch(patchMap.thetisImprovementPatch.patch);
@@ -264,6 +264,7 @@ class RandomizerService
 		romService.applyPatch(patchMap.bakeneImprovementPatch.patch);
 		
 		romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
+		romService.applyPatch(patchMap.sailorImprovementPatch.patch);
 		romService.applyPatch(patchMap.textImprovementPatch.patch);
 		romService.applyPatch(patchMap.newLevelsTextImprovementPatch.patch);
 		romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);

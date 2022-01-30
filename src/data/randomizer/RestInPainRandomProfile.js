@@ -3,61 +3,152 @@ const restInPainRandomProfile =
 	label: "RIP (Rest in Pain)",
 	enemyStrategy:
 	{
-		enemies:
+		enemiesNoDrop:
+		{
+			randomMinAmount: 6,
+			randomMaxAmount: 7
+		},
+		dropAnyFoodEnemies:
 		{
 			randomMinAmount: 1,
 			randomMaxAmount: 1
 		},
-		enemiesNoDrop:
+		dropBestFoodEnemies:
 		{
-			randomMinAmount: 5,
-			randomMaxAmount: 6
+			randomMinAmount: 0,
+			randomMaxAmount: 1
 		},
-		dropEnemies:
+		crystalEnemies:
 		{
-			randomMinAmount: 1,
-			randomMaxAmount: 2
+			randomMinAmount: 0,
+			randomMaxAmount: 1
 		},
 		bossesOnly:
 		{
 			randomMinAmount: 3,
 			randomMaxAmount: 4
-		},
-		foodItems:
-		{
-			randomMinAmount: 0,
-			randomMaxAmount: 1
 		}
 	},
-	bossHelperType1Strategy:
-	{
-		enemiesNoDrop:
-		{
-			randomMinAmount: 4,
-			randomMaxAmount: 4
-		},
-		dropEnemies:
-		{
-			randomMinAmount: 0,
-			randomMaxAmount: 1
-		}
-	},
-	bossHelperType2Strategy:
+	max8Strategy:
 	{
 		enemiesNoDrop:
 		{
 			randomMinAmount: 3,
 			randomMaxAmount: 3
 		},
-		bossesOnly:
+		dropAnyFoodEnemies:
 		{
 			randomMinAmount: 2,
 			randomMaxAmount: 2
 		},
-		dropEnemies:
+		bossesOnly: 
 		{
-			randomMinAmount: 0,
+			randomMinAmount: 3,
+			randomMaxAmount: 3
+		}
+	},
+	max12Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 6,
+			randomMaxAmount: 7
+		},
+		dropBestFoodEnemies:
+		{
+			randomMinAmount: 1,
 			randomMaxAmount: 1
+		},
+		bossesOnly: 
+		{
+			randomMinAmount: 3,
+			randomMaxAmount: 4
+		}
+	},
+	max2Type1Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 2,
+			randomMaxAmount: 2
+		}
+	},
+	max2Type2Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 1,
+			randomMaxAmount: 1
+		},
+		dropAnyFoodEnemies:
+		{
+			randomMinAmount: 1,
+			randomMaxAmount: 1
+		}
+	},
+	max3Type1Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 2,
+			randomMaxAmount: 2
+		},
+		dropAnyFoodEnemies:
+		{
+			randomMinAmount: 1,
+			randomMaxAmount: 1
+		}
+	},
+	max3Type2Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 2,
+			randomMaxAmount: 2
+		},
+		dropAnyFoodEnemies:
+		{
+			randomMinAmount: 1,
+			randomMaxAmount: 1
+		}
+	},
+	max4Type1Strategy:
+	{
+		bossesOnly: 
+		{
+			randomMinAmount: 4,
+			randomMaxAmount: 4
+		}
+	},
+	max4Type2Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 3,
+			randomMaxAmount: 3
+		},
+		dropAnyFoodEnemies:
+		{
+			randomMinAmount: 1,
+			randomMaxAmount: 1
+		}
+	},
+	max6Strategy:
+	{
+		enemiesNoDrop:
+		{
+			randomMinAmount: 2,
+			randomMaxAmount: 2
+		},
+		dropBestFoodEnemies:
+		{
+			randomMinAmount: 1,
+			randomMaxAmount: 1
+		},
+		bossesOnly: 
+		{
+			randomMinAmount: 3,
+			randomMaxAmount: 3
 		}
 	}
 }

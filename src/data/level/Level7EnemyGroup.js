@@ -17,7 +17,8 @@ const level7EnemyGroup =
 		levelEditorLimitEnd: 352,
 		levelEditorShiftX: 460,
 		defaultAmount: 1,
-		maxAmount: 12,
+		maxAmount: 8,
+		specialProfile: "max8Strategy",
 		forbiddenEnemies: ["bakeneForm2", "bakeneRunningAway",
 			"bakeneExtra1Form2", "bakeneExtra2Form2"
 		]
@@ -41,7 +42,8 @@ const level7EnemyGroup =
 		levelEditorLimitEnd: 640,
 		levelEditorShiftX: 76,
 		defaultAmount: 1,
-		maxAmount: 12
+		maxAmount: 12,
+		specialProfile: "max12Strategy"
 	},
 	group1:
 	{
@@ -79,6 +81,7 @@ const level7EnemyGroup =
 		levelEditorShiftX: 460,
 		defaultAmount: 3,
 		maxAmount: 12,
+		specialProfile: "max12Strategy",
 		forbiddenPositionStrategies: ["outsideLeft"],
 		forbiddenEnemies: ["bakeneForm1", "bakeneRunningAway"]
 	},
@@ -101,7 +104,8 @@ const level7EnemyGroup =
 		levelEditorLimitEnd: 2112,
 		levelEditorShiftX: 76,
 		defaultAmount: 1,
-		maxAmount: 12
+		maxAmount: 12,
+		specialProfile: "max12Strategy"
 	},
 	group2:
 	{
@@ -117,7 +121,8 @@ const level7EnemyGroup =
 		levelEditorLimitEnd: 2672,
 		levelEditorShiftX: 76,
 		defaultAmount: 3,
-		maxAmount: 8
+		maxAmount: 8,
+		specialProfile: "max8Strategy"
 	},
 	bossGroup5:
 	{
@@ -135,7 +140,8 @@ const level7EnemyGroup =
 		levelEditorLimitEnd: 2672,
 		levelEditorShiftX: 76,
 		defaultAmount: 1,
-		maxAmount: 4
+		maxAmount: 4,
+		specialProfile: "max4Type1Strategy"
 	},
 	bossHelperGroup1:
 	{
@@ -152,7 +158,7 @@ const level7EnemyGroup =
 		levelEditorShiftX: 76,
 		defaultAmount: 2,
 		maxAmount: 3,
-		specialProfile: "bossHelperType1Strategy"
+		specialProfile: "max3Type2Strategy"
 	},
 	bossHelperGroup2:
 	{
@@ -169,7 +175,7 @@ const level7EnemyGroup =
 		levelEditorShiftX: 76,
 		defaultAmount: 2,
 		maxAmount: 3,
-		specialProfile: "bossHelperType1Strategy"
+		specialProfile: "max3Type1Strategy"
 	},
 	bossHelperGroup3:
 	{
@@ -186,7 +192,7 @@ const level7EnemyGroup =
 		levelEditorShiftX: 76,
 		defaultAmount: 1,
 		maxAmount: 3,
-		specialProfile: "bossHelperType1Strategy"
+		specialProfile: "max3Type2Strategy"
 	},
 }
 

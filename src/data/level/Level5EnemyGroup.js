@@ -123,7 +123,8 @@ const level5EnemyGroup =
 		levelEditorLimitEnd: 1074,
 		levelEditorShiftX: 186,
 		defaultAmount: 2,
-		maxAmount: 14
+		maxAmount: 8,
+		specialProfile: "max8Strategy"
 	},
 	bossGroup:
 	{
@@ -141,7 +142,7 @@ const level5EnemyGroup =
 		levelEditorLimitEnd: 1074,
 		levelEditorShiftX: 186,
 		defaultAmount: 1,
-		maxAmount: 1
+		maxAmount: 0
 	},
 	bossHelperGroup1:
 	{
@@ -157,7 +158,8 @@ const level5EnemyGroup =
 		levelEditorLimitEnd: 1074,
 		levelEditorShiftX: 186,
 		defaultAmount: 6,
-		maxAmount: 6
+		maxAmount: 6,
+		specialProfile: "max6Strategy"
 	}
 }
 

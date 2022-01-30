@@ -100,6 +100,7 @@ const level3EnemyGroup =
 		levelEditorShiftY: 192,
 		defaultAmount: 3,
 		maxAmount: 8,
+		specialProfile: "max8Strategy",
 		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
 			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
 		]
@@ -120,6 +121,7 @@ const level3EnemyGroup =
 		levelEditorShiftY: 112,
 		defaultAmount: 3,
 		maxAmount: 8,
+		specialProfile: "max8Strategy",
 		forbiddenPositionStrategies: ["outsideLeft"],
 		forbiddenEnemies: ["bakeneForm1", "bakeneForm2",
 			"bakeneRunningAway", "bakeneExtra1Form2", "bakeneExtra2Form2"
@@ -178,8 +180,8 @@ const level3EnemyGroup =
 		levelEditorShiftX: 460,
 		levelEditorShiftY: 0,
 		defaultAmount: 1,
-		maxAmount: 2,
-		specialProfile: "bossHelperType2Strategy",
+		maxAmount: 4,
+		specialProfile: "max4Type1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -202,7 +204,7 @@ const level3EnemyGroup =
 		levelEditorShiftY: 0,
 		defaultAmount: 1,
 		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy",
+		specialProfile: "max2Type2Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -224,8 +226,8 @@ const level3EnemyGroup =
 		levelEditorShiftX: 460,
 		levelEditorShiftY: 0,
 		defaultAmount: 2,
-		maxAmount: 4,
-		specialProfile: "bossHelperType1Strategy",
+		maxAmount: 2,
+		specialProfile: "max2Type1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -248,7 +250,7 @@ const level3EnemyGroup =
 		levelEditorShiftY: 0,
 		defaultAmount: 1,
 		maxAmount: 2,
-		specialProfile: "bossHelperType2Strategy",
+		specialProfile: "max2Type2Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -271,7 +273,7 @@ const level3EnemyGroup =
 		levelEditorShiftY: 0,
 		defaultAmount: 1,
 		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy",
+		specialProfile: "max2Type1Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",
@@ -294,7 +296,7 @@ const level3EnemyGroup =
 		levelEditorShiftY: 0,
 		defaultAmount: 1,
 		maxAmount: 2,
-		specialProfile: "bossHelperType1Strategy",
+		specialProfile: "max2Type2Strategy",
 		forbiddenEnemies: [
 			"garobenGreenOrange", "garobenBrownGray",
 			"garobenGrayBrown", "garobenGreenBlue",

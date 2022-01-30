@@ -46,7 +46,8 @@ class CharacterDamageService
 			Object.keys(cam).forEach((ak) =>
 			{
 				let cad = cam[ak];
-				camd[ak] = romService.getByte(cad.filename, cad.byteIndex);
+				camd[ak] = this.isInvalidROMBytes(cad) ? cad.defaultValue :
+						romService.getByte(cad.filename, cad.byteIndex);
 			});
 
 			this.characterDamageData[ck] = camd;
@@ -72,10 +73,37 @@ class CharacterDamageService
 					cad = cad ? cad : null;
 
 					if(cad)
-						romService.setByte(cad.filename, cad.byteIndex, damage);
+					{
+						if(cad.apply)
+						{
+							let index = Object.keys(cad.apply)[0];
+							let pd = cad.apply[index];
+							romService.setBytes(cad.filename, parseInt(index), pd, cad.byteFormat);
+						}
+						
+						[].concat(cad.byteIndex).forEach((byteIndex) =>
+						{
+							romService.setByte(cad.filename, byteIndex, damage);
+						});
+					}
 				}
 			});
 		});
+	}
+
+	isInvalidROMBytes = (characterDamageData) =>
+	{
+		if(romService.isROMReady())
+		{
+			let cad = characterDamageData;
+			let checkKeys = cad.check ? Object.keys(cad.check) : ["-9"];
+			let c = cad.check ? cad.check[checkKeys[0]] : ["-1"];
+			let ci = parseInt(checkKeys[0]);
+			let i = romService.indexOfBytes(cad.filename, c, cad.byteFormat, ci);
+			return i === ci;
+		}
+
+		return true;
 	}
 }
 

@@ -18,21 +18,18 @@ Good Food Heals 1E (30)
 
 
 
-A52C			Handles items pickup.
-A55A			Checks if the item grabbed is a food.
+A52C:						Handles items pickup.
+A55A:						Checks if the item grabbed is a food.
+
+A5AA:						Reads the food id
+A5AE:						Grabs some value related to the food
+
+A5CE to A5DB:		handles the amout of health the food heals
+
+12210:					Item drop routine, it is easy to make other enemies to drop items as well.
 
 
-A5AA			Reads the food id
-A5AE			Grabs some value related to the food
-
-
-
-
-
-A5CE to A5DB	handles the amout of health the food heals
-
-
-Food Importance
+Food Tier List
 
 Popcorn brown holder
 Lollipop brown
@@ -47,7 +44,7 @@ Pie blue dish
 Chocolate brown wrapper
 Meatball blue dish
 Round cake brown dish
-Big ice cream blue cup
+Big ice cream blue cup 
 
 
 00 = Chocolate brown wrapper.					42446

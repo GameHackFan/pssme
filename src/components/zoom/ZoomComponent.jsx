@@ -41,8 +41,8 @@ const ZoomComponent = (props) =>
 				</select>
 			</div>
 			<div
-				className="windowContentLine"
-				style={{display: showField ? "block" : "none"}}
+				className="windowContentLine colLinedFlex"
+				style={showField ? {} : {display: "none"}}
 			>
 				<label>Zoom Value: </label>
 				<input

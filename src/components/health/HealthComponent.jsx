@@ -61,7 +61,7 @@ const HealthComponent = (props) =>
 				</select>
 			</div>
 			<div
-				className="windowContentLine"
+				className="windowContentLine colLinedFlex"
 				style={fieldStyle}
 			>
 				<label>Health: </label>
