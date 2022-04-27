@@ -13,10 +13,9 @@ const CharacterDamageComponent = (props) =>
 	let caMapKeys = attackDamageMap ? Object.keys(attackDamageMap) : [];
 	
 	const hidden = {display: "none"};
-	const subSelectOn = cdMapKeys.includes(props.characterKey) && props.romReady;
-	const fieldOn = caMapKeys.includes(props.attackKey) && props.romReady;
+	const subSelectOn = cdMapKeys.includes(props.characterKey);
+	const fieldOn = caMapKeys.includes(props.attackKey);
 	let subSelectStyle = subSelectOn ? {} : hidden;
-	let lockAllStyle = props.romReady ? {} : hidden;
 	let fieldStyle = fieldOn ? {} : hidden;
 
 
@@ -49,20 +48,12 @@ const CharacterDamageComponent = (props) =>
 				outside that range will be ignored.
 			</label>
 			<label className="windowText">
-				After doing your changes, click Apply Data to set your 
-				values in the ROM. If you want to edit a ROM and then 
-				change it later, save a preset file and load it later.
+				After doing your changes, click Add Changes to put your 
+				changes in the modification queue. If you want to edit a 
+				ROM and then change it later, save a preset file and 
+				load it later.
 			</label>
-			<label
-				className="windowErrorMessage warning"
-				style={props.romReady ? {display: "none"} : {}}
-			>
-				No ROM ready to edit.
-			</label>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Character: </label>
 				<select
 					name="characterKey"
@@ -112,10 +103,7 @@ const CharacterDamageComponent = (props) =>
 					Default Value
 				</button>
 			</div>
-			<div
-				className="windowContentLine"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine">
 				<button
 					className="buttonSolid"
 					onClick={props.onReloadDataClick}
@@ -141,9 +129,9 @@ const CharacterDamageComponent = (props) =>
 				</button>
 				<button
 					className="buttonSolid"
-					onClick={props.onApplyDataClick}
+					onClick={props.onAddChangesClick}
 				>
-					Apply Data
+					Add Changes
 				</button>
 			</div>
 		</div>

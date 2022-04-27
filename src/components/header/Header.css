@@ -1,27 +1,33 @@
 .header
 {
-	background-color: #002654;
+	background-color: transparent;
 
 	margin: 0px;
 	padding: 0px;
-
+	
 	min-height: 128px;
 	max-height: 128px;
 }
 
 .header > div
 {
-	margin-bottom: auto;
-	margin-top: auto;
-
-	margin-left: auto;
-	margin-right: auto;
-
 	color: whitesmoke;
+	background-color: #002654;
 	font-size: 1.5em;
+
+	margin: 4px;
+	width: 100%;
+	
+	border-radius: 6px;
+  box-shadow: 0 0 4px 2px #162336;
 }
 
-.header > div > img:not(.pssmeLogo)
+.header > div > div
+{
+	margin: auto;
+}
+
+.header div > img:not(.pssmeLogo)
 {
 	min-width: 82px;
 	max-width: 82px;
@@ -47,9 +53,9 @@
 	margin-right: 8px;
 }
 
-.header > div > label
+.header div > label
 {
-	color: #cd1226;
+	color: #CD1226;
 	font-size: 2em;
 	font-weight: bold;
 	margin-top: auto;

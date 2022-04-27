@@ -1,5 +1,6 @@
 const newLevelsTextImprovementPatch = 
 {
+	priority: 14,
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",

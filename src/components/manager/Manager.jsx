@@ -3,7 +3,9 @@ import ManagerComponent from './ManagerComponent';
 
 import editorService from '../../service/EditorService';
 import fileService from "../../service/FileService";
-import editorManagerService from '../../service/EditorManagerService';
+import modificationService from '../../service/ModificationService';
+import patchService from '../../service/PatchService';
+import romService from '../../service/ROMService';
 
 
 class Manager extends Component
@@ -12,6 +14,7 @@ class Manager extends Component
 	{
 		super(props);
 		this.state = {};
+		this.onWindowSelectorChanged = this.onWindowSelectorChanged.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.onLoadROMFileChange = this.onLoadROMFileChange.bind(this);
 		this.onCloneROMClick = this.onCloneROMClick.bind(this);
@@ -25,7 +28,7 @@ class Manager extends Component
 
 		if(extras && extras.actionSuccessful)
 		{
-			editorManagerService.setROM(nextProps.actionData);
+			romService.setROM(nextProps.actionData);
 			editorService.forceComponentToUpdateByKey("app");
 			delete nextProps.actionExtras.actionSuccessful;
 		}
@@ -35,7 +38,8 @@ class Manager extends Component
 
 	handleChange(event)
 	{
-		editorService.openWindow(event.target.value);
+		const {name, value} = event.target;
+		this.setState({[name]: value});
 	}
 
 	onLoadROMFileChange(event)
@@ -55,7 +59,7 @@ class Manager extends Component
 
 		try
 		{
-			editorManagerService.cloneROM();
+			romService.cloneROM();
 			extras.successMessage = "ROM cloned!";
 			editorService.forceComponentToUpdateByKey("app");
 		}
@@ -72,13 +76,17 @@ class Manager extends Component
 	onGenerateROMClick(event)
 	{
 		const extras = {};
-		extras.successCallback = this.downloadGeneratedROM;
-		extras.errorCallback = this.props.onActionResult;
-		extras.fileObject = editorManagerService.generateROM();
-		extras.errorMessage = "Problems ziping the generated ROM!";
 
 		try
 		{
+			extras.successCallback = this.downloadGeneratedROM;
+			extras.errorCallback = this.props.onActionResult;
+			extras.errorMessage = "Problems generating the ROM!";
+			patchService.tryToAddDefaultTextPatchToModificationQueue();
+			modificationService.apply();
+			romService.addHackAuthor(this.state.hackAuthor);
+			extras.fileObject = romService.getGeneratedROM();
+
 			if(extras.fileObject)
 			{
 				this.setState({generatingROM: true});
@@ -95,6 +103,12 @@ class Manager extends Component
 		}
 	}
 
+	onWindowSelectorChanged(event)
+	{
+		editorService.openWindow(event.target.value);
+		event.target.value = "";
+	}
+	
 	downloadGeneratedROM(extras)
 	{
 		this.setState({generatingROM: false});
@@ -108,9 +122,11 @@ class Manager extends Component
 	{
 		return (
 			<ManagerComponent
+				hackAuthor={this.state.hackAuthor}
+				generatingROM={this.state.generatingROM}
 				handleChange={this.handleChange}
 				requestFile={editorService.requestFile}
-				generatingROM={this.state.generatingROM}
+				onWindowSelectorChanged={this.onWindowSelectorChanged}
 				onCloneROMClick={this.onCloneROMClick}
 				onLoadROMFileChange={this.onLoadROMFileChange}
 				onGenerateROMClick={this.onGenerateROMClick}

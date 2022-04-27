@@ -1,5 +1,6 @@
 const sailorImprovementPatch = 
 {
+	priority: 12,
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import CharacterDamageComponent from './CharacterDamageComponent';
 
-import romService from '../../service/ROMService';
 import fileService from '../../service/FileService';
 import editorService from '../../service/EditorService';
 import characterDamageService from '../../service/CharacterDamageService';
@@ -21,7 +20,7 @@ class CharacterDamage extends Component
 		this.onLoadPresetFileChange = this.onLoadPresetFileChange.bind(this);
 		this.applyPresetFile = this.applyPresetFile.bind(this);
 		this.onSavePresetClick = this.onSavePresetClick.bind(this);
-		this.onApplyDataClick = this.onApplyDataClick.bind(this);
+		this.onAddChangesClick = this.onAddChangesClick.bind(this);
 		this.getDamage = this.getDamage.bind(this);
 	}
 
@@ -118,24 +117,13 @@ class CharacterDamage extends Component
 		editorService.downloadFile(json, filename, contentType);
 	}
 
-	onApplyDataClick(event)
+	onAddChangesClick(event)
 	{
-		const extras = {};
-
-		try
-		{
-			characterDamageService.applyCharacterDamageData();
-			extras.successMessage = "Character Damage Data applied!";
-			console.log("Character Damage Data applied!");
-		}
-		catch(e)
-		{
-			console.log(e.message);
-			console.log(e);
-			extras.errorMessage = "Problems applying the data!";
-		} 
-		
+		let extras = {};
+		extras.successMessage = "Data is added to the modification queue!";
+		characterDamageService.addToModificationQueue();
 		this.props.onActionResult(extras);
+		editorService.forceComponentToUpdateByKey("modification");
 	}
 
 	onDefaultValueClick(event)
@@ -163,7 +151,6 @@ class CharacterDamage extends Component
 	{
 		return (
 			<CharacterDamageComponent
-				romReady={romService.isROMReady()}
 				characterDamageMap={characterDamageMap}
 				characterDamageData={this.state.characterDamageData}
 				characterKey={this.state.characterKey}
@@ -175,7 +162,7 @@ class CharacterDamage extends Component
 				onReloadDataClick={this.onReloadDataClick}
 				onLoadPresetFileChange={this.onLoadPresetFileChange}
 				onSavePresetClick={this.onSavePresetClick}
-				onApplyDataClick={this.onApplyDataClick}
+				onAddChangesClick={this.onAddChangesClick}
 			/>
 		);
 	} 

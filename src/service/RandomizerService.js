@@ -1,5 +1,6 @@
 import romService from "./ROMService";
 import levelExpansionService from "./LevelExpansionService";
+import modificationService from "./ModificationService";
 
 import objectUtil from '../data/ObjectUtil';
 import patchMap from "../data/patch/PatchMap";
@@ -16,22 +17,22 @@ class RandomizerService
 	constructor()
 	{
 		this.mainData = this.createDefaultMainData();
-		this.mainData.hasRandomModeCustom = false;
 		this.randomizerLevelTexts =
 		{
-			weak: " Weak ",
-			easy: " Easy ",
-			mid: " Mid  ",
-			hard: " Hard ",
-			wild: " Wild ",
-			restInPain: " RIP  ",
-			custom: " Cus. "
+			meek: "** Meek **",
+			kind: "** Kind **",
+			weak: "** Weak **",
+			easy: "** Easy **",
+			mid: "** Mid  **",
+			hard: "** Hard **",
+			wild: "** Wild **",
+			restInPain: "** RIP **",
+			custom: "* Custom *"
 		}
 	}
 
 	createRandomizerPatch = () =>
 	{
-		this.mainData.hasRandomModeCustom = false;
 		this.fixSeed();
 		this.fixRandomProfile();
 		this.fixMainData();
@@ -87,30 +88,26 @@ class RandomizerService
 		let mdeg = this.mainData[levelKey][enemyGroupKey];
 		let id = 10;				// 10, so bosses are not replaced.
 		this.sameTriggerPosition = null;
+		let rdld = randomizerData.enemyGroups[levelKey];
+		let rdes = randomizerData.enemyStrategy;
+		let enemyGroup = rdld[enemyGroupKey];
 
-		if(mdeg.randomMode !== "disabled")
+		Object.keys(rdes).forEach((e) =>
 		{
-			let rdld = randomizerData.enemyGroups[levelKey];
-			let rdes = randomizerData.enemyStrategy;
-			let enemyGroup = rdld[enemyGroupKey];
+			let enemyStrategy = rdes[e];
+			let amount = parseInt(mdeg[e]);
+			amount = isNaN(amount) ? 0 : amount;
 
-			Object.keys(rdes).forEach((e) =>
+			for(let i = 1; i <= amount; i++)
 			{
-				let enemyStrategy = rdes[e];
-				let amount = mdeg[e];
-				amount = isNaN(amount) ? 0 : amount;
-
-				for(let i = 1; i <= amount; i++)
-				{
-					let enemy = this.randomizeEnemy(enemyGroup, enemyStrategy, randomizer);
-					let bytes = this.convertEnemyDataToBytes(enemy);
-					let hasDelay = !enemyGroup.ignoreSpawnDelay && i % 5 == 0;
-					bytes = hasDelay ? bytes.concat(this.getDelayBytes(20)) : bytes;
-					enemies.preset[id] = enemy;
-					enemies.patch[id++] = bytes;
-				}
-			});
-		}
+				let enemy = this.randomizeEnemy(enemyGroup, enemyStrategy, randomizer);
+				let bytes = this.convertEnemyDataToBytes(enemy);
+				let hasDelay = !enemyGroup.ignoreSpawnDelay && i % 5 == 0;
+				bytes = hasDelay ? bytes.concat(this.getDelayBytes(20)) : bytes;
+				enemies.preset[id] = enemy;
+				enemies.patch[id++] = bytes;
+			}
+		});
 
 		return enemies;
 	}
@@ -132,7 +129,6 @@ class RandomizerService
 
 	randomizePositionX = (enemyKey, enemyGroup, randomizer) =>
 	{
-		let bytes = new Array();
 		let rdpss = randomizerData.positionStrategy;
 		let enemyKeyLowerCase = enemyKey.toLowerCase();
 		let res = randomizerEnemyStrategy;
@@ -244,6 +240,11 @@ class RandomizerService
 		return ["00", "00", "03", "00", "6A", "00", hexBytes[0], hexBytes[1]];
 	}
 
+	addToModificationQueue = () =>
+	{
+		modificationService.add(150, "randomizer", this.applyRandomizer);
+	}
+
 	applyRandomizer = () =>
 	{
 		let randomizerPatch = this.createRandomizerPatch();
@@ -270,11 +271,24 @@ class RandomizerService
 		romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);
 		romService.applyPatch(this.createRandomizerTextPatch());
 		romService.applyPatch(patchMap.fixCPUDemoPatch.patch);
+		romService.applyPatch(patchMap.crystalImprovementPatch.patch);
 		
 		romService.applyPatch(randomizerPatch);
 		romService.applyPatch(les.createLevelFixPatch());
 		romService.applyPatch(les.createBossHelpersFixPatch());
 		romService.applyPatch(les.createBossFightsFixPatch());
+	}
+
+	getCustomRandomProfileEnemyGroup = (levelKey, groupKey) =>
+	{
+		if(levelKey && groupKey)
+		{
+			let crp = randomizerData.randomProfile.custom;
+			let l = this.forceGetField(crp, levelKey);
+			return this.forceGetField(l, groupKey);
+		}
+		
+		return {};
 	}
 
 	createRandomizerTextPatch = () =>
@@ -290,29 +304,18 @@ class RandomizerService
 
 	getRandomProfileTextBytes = () =>
 	{
-		let p = this.mainData.hasRandomModeCustom ?
-				"custom" : this.mainData.randomProfile;
-		let lt = this.randomizerLevelTexts[p];
+		let lt = this.randomizerLevelTexts[this.mainData.randomProfile];
 		return romService.convertStringToROMBytes(lt);
 	}
 
 	getSeedTextBytes = (patch) =>
 	{
 		let st = this.mainData.seed.toString();
-		let fixCharCount = patch.seedSize - st.length;
-		st = "*".repeat(fixCharCount / 2) + st + "*".repeat(fixCharCount / 2);
-		st += "*".repeat(patch.seedSize - st.length);
+		st = "*".repeat(patch.seedSize) + " " + st + " " + "*".repeat(patch.seedSize);
+		let remove = (st.length - patch.seedSize) / 2;
+		st = st.substring(remove, st.length - remove);
+		st = st.length > patch.seedSize ? st.substring(0, patch.seedSize) : st;
 		return romService.convertStringToROMBytes(st);
-	}
-
-	updateMainData = (levelKey, enemyGroupKey, enemyStrategyKey, enemyAmount) =>
-	{
-		if(levelKey && enemyGroupKey && enemyStrategyKey)
-		{
-			let level = this.forceGetField(this.mainData, levelKey);
-			let enemyGroup = this.forceGetField(level, enemyGroupKey);
-			enemyGroup[enemyStrategyKey] = enemyAmount;
-		}
 	}
 
 	forceGetField = (object, field) =>
@@ -342,7 +345,7 @@ class RandomizerService
 	fixSeed = () =>
 	{
 		let s = parseInt(this.mainData.seed);
-		s = isNaN(s) ? 0 : s;
+		s = isNaN(s) ? Date.now().valueOf() : s;
 		s = Math.max(s, Number.MIN_SAFE_INTEGER);
 		s = Math.min(s, Number.MAX_SAFE_INTEGER);
 		this.mainData.seed = s;
@@ -375,14 +378,22 @@ class RandomizerService
 		this.mainData.randomProfile = random;
 	}
 
-	setRandomMode = (levelKey, enemyGroupKey, mode) =>
+	setEnemyGroupMaxAmount = (levelKey, groupKey, strategyKey, amount) =>
 	{
-		if(levelKey && enemyGroupKey)
-		{
-			let l = this.forceGetField(this.mainData, levelKey);
-			let eg = this.forceGetField(l, enemyGroupKey);
-			eg.randomMode = mode ? mode : "random";
-		}
+		let rp = randomizerData.randomProfile.custom;
+		let l = this.forceGetField(rp, levelKey);
+		let g = this.forceGetField(l, groupKey);
+		let s = this.forceGetField(g, strategyKey);
+		s.randomMaxAmount = amount;
+	}
+
+	setEnemyGroupMinAmount = (levelKey, groupKey, strategyKey, amount) =>
+	{
+		let rp = randomizerData.randomProfile.custom;
+		let l = this.forceGetField(rp, levelKey);
+		let g = this.forceGetField(l, groupKey);
+		let s = this.forceGetField(g, strategyKey);
+		s.randomMinAmount = amount;
 	}
 
 	getDateNowInMilliseconds = () =>
@@ -393,17 +404,6 @@ class RandomizerService
 	getMainData = () =>
 	{
 		return this.mainData;
-	}
-
-	getMainDataGroup = (levelKey, enemyGroupKey) =>
-	{
-		if(levelKey && enemyGroupKey)
-		{
-			let l = this.getField(this.mainData, levelKey);
-			return this.getField(l, enemyGroupKey);
-		}
-		
-		return {};
 	}
 
 	getRandomIntValue = (randomizer, begin, end) =>
@@ -438,8 +438,20 @@ class RandomizerService
 		Object.keys(lgs).forEach((egk) =>
 		{
 			let rdeg = lgs[egk];
-			let rsts = randomProfile[rdeg.specialProfile];
-			rsts = rsts ? rsts : randomProfile.enemyStrategy;
+			let rsts;
+
+			if(this.mainData.randomProfile === "custom")
+			{
+				rsts = rsts ? rsts : randomProfile[levelKey];
+				rsts = rsts ? rsts[egk] : {};
+				rsts = rsts ? rsts : {};
+			}
+			else
+			{
+				rsts = randomProfile[rdeg.specialProfile];
+				rsts = rsts ? rsts : randomProfile.enemyStrategy;
+			}
+
 			this.fixEnemyGroup(l, egk, rsts, randomizer);
 		});
 	}
@@ -447,43 +459,26 @@ class RandomizerService
 	fixEnemyGroup = (level, enemyGroupKey, randomStrategies, randomizer) =>
 	{
 		let eg = this.forceGetField(level, enemyGroupKey);
-		
-		if(eg.randomMode === "custom")
-		{
-			let enemyAmount = 0;
-			let rdes = randomizerData.enemyStrategy;
-			Object.keys(rdes).forEach((es) =>
-			{
-				let amount = parseInt(eg[es]);
-				amount = isNaN(amount) ? 0 : amount;
-				enemyAmount += amount;
-			});
-			
-			if(enemyAmount === 0)
-			{
-				this.fixEnemyStrategy(eg, randomStrategies, randomizer);
-				eg.randomMode = "random";
-			}
-			else
-				this.mainData.hasRandomModeCustom = true;
-		}
-		else if(eg.randomMode !== "disabled")
-		{
-			this.fixEnemyStrategy(eg, randomStrategies, randomizer);
-			eg.randomMode = "random";
-		}
-	}
-
-	fixEnemyStrategy = (enemyGroup, randomStrategies, randomizer) =>
-	{
-		objectUtil.removeAllProperties(enemyGroup);
+		objectUtil.removeAllProperties(eg);
+		let total = 0;
 		
 		Object.keys(randomStrategies).forEach((e) =>
 		{
 			let es = randomStrategies[e];
-			enemyGroup[e] = this.getRandomIntValue(
-					randomizer, es.randomMinAmount, es.randomMaxAmount);
+			let min = parseInt(es.randomMinAmount);
+			let max = parseInt(es.randomMaxAmount);
+			min = (isNaN(min) || min < 0) ? 0 : min;
+			max = (isNaN(max) || max < 0) ? 0 : max;
+			min = (max - min) < 0 ? 0 : min;
+			max = (max - min) < 0 ? 0 : max;
+			let amount = this.getRandomIntValue(randomizer, min, max);
+			total += amount;
+			eg[e] = amount;
 		});
+
+		// Ensures at least one enemy will be randomized in the group.
+		if(total < 1)
+			eg.enemiesAndBosses = 1;
 	}
 
 	applyPresetFile = (presetFile) =>
@@ -491,14 +486,30 @@ class RandomizerService
 		let json = JSON.parse(presetFile);
 
 		if(json && json.data && json.type === "randomizer")
-			this.mainData = json.data;
+		{
+			this.mainData = this.mainData ? this.mainData : {};
+			Object.assign(this.mainData, json.data);
+			delete this.mainData.customRandomProfile;
+			let custom = json.data.customRandomProfile;
+			custom = custom ? custom : {};
+			Object.assign(randomizerData.randomProfile.custom, custom);
+			randomizerData.randomProfile.custom.label = "Custom";
+		}
 	}
 	
 	createRandomizerPreset = () =>
 	{
+		let csr = randomizerData.randomProfile.custom;
 		let preset = {};
 		preset.type = "randomizer";
 		preset.data = objectUtil.deepCopy(this.mainData);
+
+		if(this.mainData.randomProfile === "custom")
+		{
+			preset.data.customRandomProfile = objectUtil.deepCopy(csr);
+			delete preset.data.customRandomProfile.label;
+		}
+
 		return preset;
 	}
 
@@ -561,6 +572,11 @@ class RandomizerService
 	setMainDataToDefault = () =>
 	{
 		this.mainData = this.createDefaultMainData();
+	}
+
+	setCustomRandomProfileToDefault = () =>
+	{
+		randomizerData.randomProfile.custom = {label: "Custom"};
 	}
 
 	mulberry32Randomizer = (seed) =>

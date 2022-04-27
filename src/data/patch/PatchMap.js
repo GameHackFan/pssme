@@ -18,6 +18,8 @@ import sailorColorExpansionPatch from "./SailorColorExpansionPatch";
 import foodImprovementPatch from "./FoodImprovementPatch";
 import playerHealthImprovementPatch from "./PlayerHealthImprovementPatch";
 import sailorImprovementPatch from "./SailorImprovementPatch";
+import crystalImprovementPatch from "./CrystalImprovementPatch";
+import crystalImprovementPatch2 from "./CrystalImprovementPatch2";
 
 import enemyColorExpansionPatch from "./EnemyColorExpansionPatch";
 import jumouImprovementPatch from "./JumouImprovementPatch";
@@ -63,6 +65,38 @@ const patchMap =
 						"essential. This patch is used by the Level " + 
 						"Editor and Seed Randomizer.",
 		patch: featuresAndFixesPatch,
+		show: true
+	},
+	crystalImprovementPatch:
+	{
+		label:	"Crystal Usage Improvement Patch",
+		text:		"This patch will allow players to change the " + 
+						"amount of crystals they want to use by pressing " +
+						"the Crystal when jumping, punching or doing " +
+						"something that doesn't let the sailor execute " +
+						"her crystal power. The best way to do it, is to " +
+						"piano input Punch and Crystal, it also work if " + 
+						"you press Punch + Crystal together, and the " +
+						"last way to do it is by holding Punch and Pressing " +
+						"Crystal (this way is the most unsafe, if the " + 
+						"sailor is not busy doing another action, she " + 
+						"might use her crystals). This patch is used " + 
+						"by the Seed Randomizer.",
+		patch: crystalImprovementPatch,
+		show: true
+	},
+	crystalImprovementPatch2:
+	{
+		label:	"Crystal Usage Improvement Patch 2",
+		text:		"This patch will allow players to change the " + 
+						"amount of crystals they want to use by pressing " +
+						"the Crystal when jumping, punching or doing " +
+						"something that doesn't let the sailor execute " +
+						"her crystal power. This patch is an alternative " +
+						"to the main one, the only difference is that to " + 
+						"change the amount of crystals to use you have " + 
+						"to press Start instead.",
+		patch: crystalImprovementPatch2,
 		show: true
 	},
 	timeImprovementPatch:

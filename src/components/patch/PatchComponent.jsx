@@ -9,9 +9,9 @@ const PatchComponent = (props) =>
 	let patchMapKeys = Object.keys(props.patchMap);
 	let selectedPatch = props.patchMap[props.patchKey];
 	selectedPatch = selectedPatch ? selectedPatch : {};
-	let lockAllStyle = props.romReady ? {} : {display: "none"};
 
-	patchMapKeys.forEach((e) => {
+	patchMapKeys.forEach((e) =>
+	{
 		let patch = props.patchMap[e];
 
 		if(patch.show)
@@ -28,19 +28,10 @@ const PatchComponent = (props) =>
 		<div className="patch rowLinedFlex">
 			<label className="windowText">
 				Use this window to apply patches to the ROM. Select a patch and 
-				click in apply patch to apply the selected patch. You can also 
-				apply a patch from a JSON file.
+				click Add Patch to add the selected patch to the modification 
+				queue. You can also add a patch from a valid JSON file patch.
 			</label>
-			<label
-				className="windowErrorMessage warning"
-				style={props.romReady ? {display: "none"} : {}}
-			>
-				No ROM ready to edit.
-			</label>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Patch: </label>
 				<select
 					name="patchKey"
@@ -54,33 +45,27 @@ const PatchComponent = (props) =>
 					{options}
 				</select>
 			</div>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<span className="windowText">
 					{selectedPatch.text}
 				</span>
 			</div>
-			<div
-				className="windowContentLine"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine">
 				<button
 					className="buttonSolid"
-					onClick={props.onApplyPatchClick}
+					onClick={props.onAddPatchClick}
 				>
-					Apply Patch
+					Add Patch
 				</button>
 				<button
 					className="buttonSolid"
 					onClick={props.requestFile}
 				>
-					Apply Patch From File
+					Add Patch From File
 					<input
 						type="file"
 						value=""
-						onChange={props.onApplyPatchFileChange}
+						onChange={props.onAddPatchFileChange}
 					/>
 				</button>
 			</div>

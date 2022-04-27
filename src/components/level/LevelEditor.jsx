@@ -3,7 +3,6 @@ import LevelEditorComponent from './LevelEditorComponent';
 
 import editorService from '../../service/EditorService';
 import fileService from "../../service/FileService";
-import romService from "../../service/ROMService";
 import levelEditorService from "../../service/LevelEditorService";
 
 
@@ -22,7 +21,7 @@ class LevelEditor extends Component
 		this.onClearDataClick = this.onClearDataClick.bind(this);
 		this.onLoadPresetFileChange = this.onLoadPresetFileChange.bind(this);
 		this.onSavePresetClick = this.onSavePresetClick.bind(this);
-		this.onApplyDataClick = this.onApplyDataClick.bind(this);
+		this.onAddChangesClick = this.onAddChangesClick.bind(this);
 		this.applyPresetFile = this.applyPresetFile.bind(this);
 	}
 
@@ -128,24 +127,13 @@ class LevelEditor extends Component
 		editorService.downloadFile(json, filename, contentType);
 	}
 
-	onApplyDataClick(event)
+	onAddChangesClick(event)
 	{
-		const extras = {};
-
-		try
-		{
-			levelEditorService.applyData();
-			extras.successMessage = "Customizations applied!";
-			console.log("Customizations applied!");
-		}
-		catch(e)
-		{
-			console.log(e.message);
-			console.log(e);
-			extras.errorMessage = "Problems applying the customizations!";
-		} 
-		
+		let extras = {};
+		extras.successMessage = "Data is added to the modification queue!";
+		levelEditorService.addToModificationQueue();
 		this.props.onActionResult(extras);
+		editorService.forceComponentToUpdateByKey("modification");
 	}
 
 	applyPresetFile(preset)
@@ -178,7 +166,6 @@ class LevelEditor extends Component
 
 		return (
 			<LevelEditorComponent
-				romReady={romService.isROMReady()}
 				filterEnemyString={this.state.filterEnemyString}
 				level={this.state.level}
 				enemyGroup={this.state.enemyGroup}
@@ -196,7 +183,7 @@ class LevelEditor extends Component
 				onClearDataClick={this.onClearDataClick}
 				onLoadPresetFileChange={this.onLoadPresetFileChange}
 				onSavePresetClick={this.onSavePresetClick}
-				onApplyDataClick={this.onApplyDataClick}
+				onAddChangesClick={this.onAddChangesClick}
 			/>
 		);
 	} 

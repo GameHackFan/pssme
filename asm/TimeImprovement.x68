@@ -1,5 +1,5 @@
 *-------------------------------------------------------------------------------------------------
-* Title:				PSSME Time Improvement Patch
+* Title:				PSSME Time Improvement
 * Written by:		GameHackFan
 * Date:					
 * Description:	It forces the time to run 60% slower.

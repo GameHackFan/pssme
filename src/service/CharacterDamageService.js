@@ -1,5 +1,6 @@
 import romService from "./ROMService";
 import characterDamageMap from "../data/overwrite/CharacterDamageMap";
+import modificationService from "./ModificationService";
 
 
 class CharacterDamageService
@@ -90,7 +91,13 @@ class CharacterDamageService
 			});
 		});
 	}
-
+	
+	addToModificationQueue = () =>
+	{
+		modificationService.add(100, "characterDamage",
+				this.applyCharacterDamageData);
+	}
+	
 	isInvalidROMBytes = (characterDamageData) =>
 	{
 		if(romService.isROMReady())

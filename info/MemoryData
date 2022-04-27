@@ -7,6 +7,13 @@
 1081AA:		Player 1 input (Button Down - Holding)?
 10834A:		Player 1 input (Button Pressed)?
 
+1081F8:		Player 1 input (Button Pressed)?
+1081F8:		Player 1 input (Button Pressed)?
+
+
+
+10834C:		Player 2 input (Button Pressed)?
+
 
 1081F8:		Player 1 input (Button Pressed)?
 1081FA:		Player 1 input (Button Down - Holding)?
@@ -14,7 +21,6 @@
 
 1094B0:		Player 1 start data (score, crystals, etc).
 1095B0:		Player 2 start data (score, crystals, etc).
-
 
 xxxxB0:		Player character ID.
 xxxxB2:		Player active flag.
@@ -66,3 +72,18 @@ XXXX0E:		?
 
 
 1264:		Draws things in the screen? (D1 width?, D2 height?, A0 print memory region?, A3 text address?)
+
+
+
+Crystal Usage
+
+00CFE:		Handles player 1 input
+00D58:		Handles player 2 input
+
+0A662:
+0A682:
+0A742:
+0E3F4:
+0E422:
+
+

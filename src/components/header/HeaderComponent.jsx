@@ -15,35 +15,34 @@ const HeaderComponent = (props) =>
 			style={{zoom: props.zoom}}
 		>
 			<div className="colLinedFlex">
-				<img
-					src={imageMap.portraitV}
-					title="Sailor V"
-				/>
-				<img
-					src={imageMap.portraitJupiter}
-					title="Sailor Jupiter"
-				/>
-				<img
-					src={imageMap.portraitMercury}
-					title="Sailor Mercury"
-				/>
-				<img
-					className="pssmeLogo"
-					src={imageMap.pssmeLogo}
-					title={logoTitle}
-				/>
-				<img
-					src={imageMap.portraitMoon}
-					title="Sailor Moon"
-				/>
-				<img
-					src={imageMap.portraitMars}
-					title="Sailor Mars"
-				/>
-				<img
-					src={imageMap.portraitVenus}
-					title="Sailor Venus"
-				/>
+				<div className="colLinedFlex">
+					<img src={imageMap.portraitV} title="Sailor V"/>
+					<img
+						src={imageMap.portraitJupiter}
+						title="Sailor Jupiter"
+					/>
+					<img
+						src={imageMap.portraitMercury}
+						title="Sailor Mercury"
+					/>
+					<img
+						className="pssmeLogo"
+						src={imageMap.pssmeLogo}
+						title={logoTitle}
+					/>
+					<img
+						src={imageMap.portraitMoon}
+						title="Sailor Moon"
+					/>
+					<img
+						src={imageMap.portraitMars}
+						title="Sailor Mars"
+					/>
+					<img
+						src={imageMap.portraitVenus}
+						title="Sailor Venus"
+					/>
+				</div>
 			</div>
 		</header>
 	);

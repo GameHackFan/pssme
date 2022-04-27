@@ -1,5 +1,6 @@
 const bakeneImprovementPatch = 
 {
+	priority: 10,
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",

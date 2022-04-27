@@ -1,3 +1,4 @@
+import modificationService from "./ModificationService";
 import romService from "./ROMService";
 import palleteData from "../data/pallete/PalleteData";
 
@@ -8,21 +9,94 @@ class PalleteEditorService
 	{
 		this.palleteInfoList = this.createPalleteInfoList();
 		this.filename = "bpsm945a.u45";
+		this.palleteMap = {};
+		this.editedPallete = new Set();
+	}
+
+	addToModificationQueue = () =>
+	{
+		modificationService.add(151,
+				"palleteEditor", this.applyPalleteMap);
+	}
+
+	applyPalleteMap = () =>
+	{
+		let edited = this.editedPallete ? this.editedPallete : new Set();
+
+		Object.keys(this.palleteMap).forEach((key) =>
+		{
+			let pid = parseInt(key);
+			pid = isNaN(pid) ? -1 : pid;
+
+			if(edited.has(key.toString()))
+				this.applyPallete(pid, this.palleteMap[key]);
+		});
+	}
+
+	setColor = (palleteId, colorId, color32) =>
+	{
+		if(color32 && color32.length > 2)
+		{
+			let h = this.convertColor32ToDecimal(color32).toString(16);
+			this.setHexColor(palleteId, colorId, h);
+		}
+	}
+
+	setHexColor = (palleteId, colorId, hexColor) =>
+	{
+		let p = this.palleteMap[palleteId.toString()];
+		let h = hexColor ? hexColor.replace('#', '').toUpperCase() : null;
+
+		if(p && h && !isNaN(parseInt(h, 16)))
+		{
+			p[colorId] = "#" + h.padStart(6, '0');
+			this.editedPallete.add(palleteId.toString());
+		}
 	}
 
 	getPallete = (palleteId) =>
 	{
-		if(palleteId > -1 && palleteId < palleteData.amount)
+		if(romService.romReady && (palleteId > -1 && palleteId < palleteData.amount))
 		{
-			let byteIndex = palleteData.startAddress + (palleteId * 32);
-			let bytes = romService.getBytes(this.filename, byteIndex, 32);
-			return this.convertBytesToPallete(bytes);
+			if((this.palleteMap[palleteId.toString()] ? false : true))
+				return this.resetPallete(palleteId);
+			else
+				return this.palleteMap[palleteId.toString()];
 		}
 
 		return null;
 	}
 
-	setPallete = (palleteId, pallete) =>
+	resetPallete = (palleteId) =>
+	{
+		let key = palleteId.toString();
+		let byteIndex = palleteData.startAddress + (palleteId * 32);
+		let bytes = romService.getBytes(this.filename, byteIndex, 32);
+		let pallete = this.convertBytesToPallete(bytes);
+		this.palleteMap[key] = pallete;
+		this.editedPallete.delete(key);
+		return pallete;
+	}
+
+	resetColor = (palleteId, colorId) =>
+	{
+		if(palleteId > -1 && palleteId < palleteData.amount &&
+				colorId > -1 && colorId < 16)
+		{
+			let op = this.palleteMap[palleteId.toString()];
+			let p = this.resetPallete(palleteId, true);
+			op[colorId] = p[colorId].toUpperCase();
+			this.palleteMap[palleteId.toString()] = op;
+		}
+	}
+
+	resetPalleteMap = () =>
+	{
+		this.palleteMap = {};
+		this.editedPallete = new Set();
+	}
+
+	applyPallete = (palleteId, pallete) =>
 	{
 		if(palleteId > -1 && palleteId < palleteData.amount)
 		{
@@ -62,8 +136,8 @@ class PalleteEditorService
 
 			Object.keys(json.data).forEach((key) =>
 			{
-				index = parseInt(key, 10);
-				this.setPallete(index, json.data[key]);
+				this.palleteMap[key.toString()] = json.data[key];
+				this.editedPallete.add(key.toString());
 			});
 		}
 	}
@@ -124,7 +198,8 @@ class PalleteEditorService
 			color = this.convertDecimalToColor16(decimal);
 			color = this.convertColor16ToColor32(color);
 			decimal = this.convertColor32ToDecimal(color);
-			pallete.push("#" + decimal.toString(16).padStart(6, '0'));
+			var hex = decimal.toString(16).padStart(6, '0');
+			pallete.push("#" + hex.toUpperCase());
 		}
 
 		return pallete;
@@ -149,7 +224,8 @@ class PalleteEditorService
 
 	convertHexToColor32 = (hex) =>
 	{
-		let decimal = parseInt(hex.replace("#", ""), 16);
+		let h = hex ? hex : "";
+		let decimal = parseInt(h.replace("#", ""), 16);
 		return this.convertDecimalToColor32(decimal);
 	}
 

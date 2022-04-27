@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PatchComponent from './PatchComponent';
 
 import patchMap from "../../data/patch/PatchMap";
-import romService from "../../service/ROMService";
 import editorService from "../../service/EditorService";
 import fileService from "../../service/FileService";
+import patchService from "../../service/PatchService";
 
 
 class Patch extends Component
@@ -14,8 +14,8 @@ class Patch extends Component
 		super(props);
 		this.state = {};
 		this.handleChange = this.handleChange.bind(this);
-		this.onApplyPatchClick = this.onApplyPatchClick.bind(this);
-		this.onApplyPatchFileChange = this.onApplyPatchFileChange.bind(this);
+		this.onAddPatchClick = this.onAddPatchClick.bind(this);
+		this.onAddPatchFileChange = this.onAddPatchFileChange.bind(this);
 	}
 
 	shouldComponentUpdate(nextProps, nextState)
@@ -24,8 +24,7 @@ class Patch extends Component
 
 		if(extras && extras.actionSuccessful)
 		{
-			let patch = JSON.parse(nextProps.actionData);
-			romService.applyPatch(patch);
+			patchService.addPatchFromFile(nextProps.actionData);
 			delete nextProps.actionExtras.actionSuccessful;
 		}
 
@@ -38,30 +37,28 @@ class Patch extends Component
 		this.setState({[name]: value});
 	}
 
-	onApplyPatchClick(event)
+	onAddPatchClick(event)
 	{
 		const extras = {};
-		let patch = patchMap[this.state.patchKey];
-		console.log("Applying patch: " + patch.label);
-		patch = patch ? patch.patch : null;
 
-		if(patch)
+		if(this.state.patchKey)
 		{
-			romService.applyPatch(patch);
 			extras.successMessage = "Patch applied!";
+			patchService.addToModificationQueue(this.state.patchKey);
+			editorService.forceComponentToUpdateByKey("modification");
 		}
 		else
-			extras.errorMessage = "Problems applying the patch!";
+			extras.errorMessage = "Select a patch!";
 
 		this.props.onActionResult(extras);
 	}
 
-	onApplyPatchFileChange(event)
+	onAddPatchFileChange(event)
 	{
 		const extras = {};
 		extras.successCallback = this.props.onActionResult;
 		extras.errorCallback = this.props.onActionResult;
-		extras.successMessage = "Patch applied!";
+		extras.successMessage = "Patch added to the modification queue!";
 		extras.errorMessage = "Problems applying the patch!";
 		extras.file = event.target.files[0];
 		fileService.readTextFile(extras);
@@ -71,13 +68,12 @@ class Patch extends Component
 	{
 		return (
 			<PatchComponent
-				romReady={romService.isROMReady()}
 				patchMap={patchMap}
 				patchKey={this.state.patchKey}
 				handleChange={this.handleChange}
 				requestFile={editorService.requestFile}
-				onApplyPatchClick={this.onApplyPatchClick}
-				onApplyPatchFileChange={this.onApplyPatchFileChange}
+				onAddPatchClick={this.onAddPatchClick}
+				onAddPatchFileChange={this.onAddPatchFileChange}
 			/>
 		);
 	}

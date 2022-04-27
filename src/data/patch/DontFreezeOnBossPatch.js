@@ -1,5 +1,6 @@
 const dontFreezeOnBossPatch = 
 {
+	priority: 15,
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",

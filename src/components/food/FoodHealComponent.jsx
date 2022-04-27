@@ -6,10 +6,8 @@ import "./FoodHeal.css";
 const FoodHealComponent = (props) =>
 {
 	let options = new Array();
-
 	const hidden = {display: "none"};
-	const fieldOn = (props.foodKey in props.foodHealMap) && props.romReady;
-	let lockAllStyle = props.romReady ? {} : hidden;
+	const fieldOn = (props.foodKey in props.foodHealMap);
 	let fieldStyle = fieldOn ? {} : hidden;
 	let heal = props.foodHealData[props.foodKey];
 
@@ -32,20 +30,12 @@ const FoodHealComponent = (props) =>
 				new heal value, values outside that range will be ignored.
 			</label>
 			<label className="windowText">
-				After doing your changes, click Apply Data to set your 
-				values in the ROM. If you want to edit a ROM and then 
-				change it later, save a preset file and load it later.
+				After doing your changes, click Add Changes to put your 
+				changes in the modification queue. If you want to edit a 
+				ROM and then change it later, save a preset file and 
+				load it later.
 			</label>
-			<label
-				className="windowErrorMessage warning"
-				style={props.romReady ? {display: "none"} : {}}
-			>
-				No ROM ready to edit.
-			</label>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Food: </label>
 				<select
 					name="foodKey"
@@ -78,10 +68,7 @@ const FoodHealComponent = (props) =>
 					Default Value
 				</button>
 			</div>
-			<div
-				className="windowContentLine"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine">
 				<button
 					className="buttonSolid"
 					onClick={props.onReloadDataClick}
@@ -107,9 +94,9 @@ const FoodHealComponent = (props) =>
 				</button>
 				<button
 					className="buttonSolid"
-					onClick={props.onApplyDataClick}
+					onClick={props.onAddChangesClick}
 				>
-					Apply Data
+					Add Changes
 				</button>
 			</div>
 		</div>

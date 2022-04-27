@@ -90,6 +90,26 @@ class ROMService
 		});
 	}
 
+	addHackAuthor = (hackAuthor) =>
+	{
+		let checkBytes = this.getAuthorByteIndex();
+		let filename = "bpsm945a.u45";
+		let checkIndex = this.indexOfBytes(filename, checkBytes, "hex", 520064);
+
+		if(checkIndex > -1)
+		{
+			let byteIndex = checkIndex + checkBytes.length;
+			let ha = hackAuthor ? hackAuthor.trim() : null;
+			ha = ha ? ha : "Unknown author";
+			ha = "************ " + ha + " ************";
+			let remove = (ha.length - 20) / 2;
+			ha = ha.substring(remove, ha.length - remove);
+			ha = ha.length > 20 ? ha.substring(0, 20) : ha;
+			let hexBytes = romService.convertStringToROMBytes(ha);
+			this.setBytes(filename, byteIndex, hexBytes, "hex");
+		}
+	}
+
 	convertHexArrayToByteArray = (hexArray) =>
 	{
 		let byteArray = new Array();
@@ -191,9 +211,12 @@ class ROMService
 
 	setBytes = (filename, byteIndex, bytes, byteFormat) =>
 	{
-		let fbs = this.getBytesAsDecimal(bytes, byteFormat);
-		let fileBytes = this.generatedROM[filename];
-		fbs.forEach((byte, index) => fileBytes[byteIndex + index] = byte);
+		if(byteIndex > -1)
+		{
+			let fbs = this.getBytesAsDecimal(bytes, byteFormat);
+			let fileBytes = this.generatedROM[filename];
+			fbs.forEach((byte, index) => fileBytes[byteIndex + index] = byte);
+		}
 	}
 
 	getByte = (filename, byteIndex) =>
@@ -237,23 +260,13 @@ class ROMService
 		if(mainFile && mainFile.length === 524288)
 		{
 			let bytesToCheck = this.getBytesToCheck();
-			let fileBytes = this.getBytes(filename, 215286, 40);
-			let i;
-
-			for(i = 0; i < fileBytes.length; i++)
-			{
-				if(fileBytes[i] != parseInt(bytesToCheck[i], 16))
-				{
-					this.romReady = false;
-					return;
-				}
-			}
-
-			this.romReady = true;
-			return true;
+			let index = this.indexOfBytes(filename, bytesToCheck, "hex", 215286);
+			this.romReady = index > -1;
+			return this.romReady;
 		}
 
 		this.romReady = false;
+		return this.romReady;
 	}
 
 	getFileBytes = (filename) =>
@@ -276,6 +289,14 @@ class ROMService
 			"4F", "52", "4E", "55", "20", "44", "4C", "43",
 			"41", "45", "00", "52", "18", "00", "70", "00",
 			"30", "04", "B8", "01", "FF", "FF", "00", "00"
+		];
+	}
+
+	getAuthorByteIndex = () =>
+	{
+		return [
+			"48", "20", "63", "61", "20", "6B", "75", "41",
+			"68", "74", "72", "6F", "20", "3A"
 		];
 	}
 }

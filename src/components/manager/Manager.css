@@ -1,3 +1,18 @@
+.manager > .windowContentLine > label
+{
+	min-width: 124px;
+}
+
+.manager b
+{
+	font-weight: bold;
+	font-size: 0.7em;
+
+	margin-left: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
 .manager > div:nth-last-child(2)
 {
 	margin-top: 24px;

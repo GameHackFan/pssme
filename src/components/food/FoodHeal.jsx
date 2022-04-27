@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import FoodHealComponent from './FoodHealComponent';
 
-import romService from '../../service/ROMService';
 import fileService from '../../service/FileService';
 import editorService from '../../service/EditorService';
 import foodHealService from '../../service/FoodHealService';
@@ -21,7 +20,7 @@ class FoodHeal extends Component
 		this.onLoadPresetFileChange = this.onLoadPresetFileChange.bind(this);
 		this.applyPresetFile = this.applyPresetFile.bind(this);
 		this.onSavePresetClick = this.onSavePresetClick.bind(this);
-		this.onApplyDataClick = this.onApplyDataClick.bind(this);
+		this.onAddChangesClick = this.onAddChangesClick.bind(this);
 	}
 
 	componentDidMount()
@@ -112,24 +111,13 @@ class FoodHeal extends Component
 		editorService.downloadFile(json, filename, contentType);
 	}
 
-	onApplyDataClick(event)
+	onAddChangesClick(event)
 	{
-		const extras = {};
-
-		try
-		{
-			foodHealService.applyFoodHealData();
-			extras.successMessage = "Food Heal Data applied!";
-			console.log("Food Heal Data applied!");
-		}
-		catch(e)
-		{
-			console.log(e.message);
-			console.log(e);
-			extras.errorMessage = "Problems applying the data!";
-		} 
-		
+		let extras = {};
+		extras.successMessage = "Data is added to the modification queue!";
+		foodHealService.addToModificationQueue();
 		this.props.onActionResult(extras);
+		editorService.forceComponentToUpdateByKey("modification");
 	}
 
 	onDefaultValueClick(event)
@@ -149,7 +137,6 @@ class FoodHeal extends Component
 	{
 		return (
 			<FoodHealComponent
-				romReady={romService.isROMReady()}
 				foodHealMap={foodHealMap}
 				foodHealData={this.state.foodHealData}
 				foodKey={this.state.foodKey}
@@ -159,7 +146,7 @@ class FoodHeal extends Component
 				onReloadDataClick={this.onReloadDataClick}
 				onLoadPresetFileChange={this.onLoadPresetFileChange}
 				onSavePresetClick={this.onSavePresetClick}
-				onApplyDataClick={this.onApplyDataClick}
+				onAddChangesClick={this.onAddChangesClick}
 			/>
 		);
 	} 

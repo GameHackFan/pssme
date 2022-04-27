@@ -10,12 +10,15 @@ import level8EnemyGroup from "../level/Level8EnemyGroup";
 import level1REnemyGroup from "../level/Level1REnemyGroup";
 import extraLevelEnemyGroup from "../level/ExtraLevelEnemyGroup";
 
+import meekRandomProfile from "./MeekRandomProfile";
+import kindRandomProfile from "./KindRandomProfile";
 import weakRandomProfile from "./WeakRandomProfile";
 import easyRandomProfile from "./EasyRandomProfile";
 import midRandomProfile from "./MidRandomProfile";
 import hardRandomProfile from "./HardRandomProfile";
 import wildRandomProfile from "./WildRandomProfile";
 import restInPainRandomProfile from "./RestInPainRandomProfile";
+import customRandomProfile from "./CustomRandomProfile";
 
 import randomizerEnemyStrategy from "./RandomizerEnemyStrategy";
 
@@ -24,73 +27,95 @@ const randomizerData =
 {
 	randomProfile:
 	{
+		meek: meekRandomProfile,
+		kind: kindRandomProfile,
 		weak: weakRandomProfile,
 		easy: easyRandomProfile,
 		mid: midRandomProfile,
 		hard: hardRandomProfile,
 		wild: wildRandomProfile,
 		restInPain: restInPainRandomProfile,
+		custom: customRandomProfile,
 	},
 	enemyStrategy:
 	{
 		enemies:
 		{
-			label: "Randomize Any Normal Enemies",
-			enemyKeys: randomizerEnemyStrategy.enemies,
+			label: "Normal Enemies",
+			information: "Any enemy that is not a boss.",
+			enemyKeys: randomizerEnemyStrategy.enemies
 		},
 		enemiesNoDrop:
 		{
-			label: "Randomize Any Normal Enemies (No Thetis)",
-			enemyKeys: randomizerEnemyStrategy.enemiesNoDrop,
+			label: "Normal Enemies (No Drop)",
+			information: "Any enemy that is not a boss and doesn't drop items.",
+			enemyKeys: randomizerEnemyStrategy.enemiesNoDrop
 		},
 		dropEnemies:
 		{
-			label: "Randomize Any Thetis Only",
-			enemyKeys: randomizerEnemyStrategy.dropEnemies,
+			label: "Item Drop Normal Enemies",
+			information: "Any Thetis. She is not a boss and can drop items.",
+			enemyKeys: randomizerEnemyStrategy.dropEnemies
 		},
 		dropAnyFoodEnemies:
 		{
-			label: "Randomize Food Thetis Only",
-			enemyKeys: randomizerEnemyStrategy.dropAnyFoodEnemies,
+			label: "Food Drop Normal Enemies",
+			information: "Thetis 3 and 4. They drop any food.",
+			enemyKeys: randomizerEnemyStrategy.dropAnyFoodEnemies
 		},
 		dropBestFoodEnemies:
 		{
-			label: "Randomize Best Food Thetis Only",
-			enemyKeys: randomizerEnemyStrategy.dropBestFoodEnemies,
+			label: "Best Food Drop Normal Enemies",
+			information: "Thetis 5 and 6. They drop the best foods.",
+			enemyKeys: randomizerEnemyStrategy.dropBestFoodEnemies
 		},
 		dropFoodEnemiesOrBoss:
 		{
-			label: "Randomize Food Thetis or Bakene 1st Form",
+			label: "Food Drop Enemies or Bosses",
+			information: "Thetis 3, 4, 5 and 6 or Bakene 1st Form. They drop food.",
 			enemyKeys: randomizerEnemyStrategy.dropFoodEnemiesOrBoss
 		},
 		crystalEnemies:
 		{
-			label: "Force Thetis Crystal Drop",
+			label: "Crystal Drop Enemies",
+			information: "Thetis 1 and 2. They can drop crystal.",
 			enemyKeys: randomizerEnemyStrategy.crystalEnemies
 		},
 		enemiesAndBosses: 
 		{
-			label: "Randomize Any Enemy Or Boss",
+			label: "Enemies Or Bosses (No Drop)",
+			information: "Any enemy or boss that doens't drop items.",
 			enemyKeys: randomizerEnemyStrategy.enemiesAndBosses,
 		},
 		bossesOnly:
 		{
-			label: "Randomize Any Boss Only",
+			label: "Bosses (No Drop)",
+			information: "Only bosses that doesn't drop items.",
 			enemyKeys: randomizerEnemyStrategy.bossesOnly,
 		},
 		ungrabbableEnemies:
 		{
-			label: "Ungrabable Enemies Only",
+			label: "Ungrabable Enemies",
+			information: "Enemies that cannot be grabbed.",
 			enemyKeys: randomizerEnemyStrategy.ungrabbableEnemies,
+		},
+		cheapFoodItems:
+		{
+			label: "Cheap Foods (Not Good)",
+			information: "Ice cream cornet, pudding, lollipop, " +
+					"popcorn, donut, chocolateCandy, muffin, soup",
+			enemyKeys: randomizerEnemyStrategy.cheapFoodItems,
 		},
 		foodItems:
 		{
-			label: "Randomize Any Food Item",
+			label: "Foods",
+			information: "Any food item.",
 			enemyKeys: randomizerEnemyStrategy.foodItems,
 		},
 		anyItem:
 		{
-			label: "Randomize Any Item",
+			label: "Items",
+			information: "Any item, which can be a food or a crystal.",
 			enemyKeys: randomizerEnemyStrategy.anyItem,
 		}
 	},

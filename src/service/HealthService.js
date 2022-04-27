@@ -1,4 +1,5 @@
 import romService from "./ROMService";
+import modificationService from "./ModificationService";
 
 import healthMap from "../data/overwrite/HealthMap";
 
@@ -63,6 +64,11 @@ class HealthService
 				});
 			}		
 		});
+	}
+
+	addToModificationQueue = () =>
+	{
+		modificationService.add(102, "health", this.applyHealthData);
 	}
 }
 

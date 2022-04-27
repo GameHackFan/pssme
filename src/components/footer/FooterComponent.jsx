@@ -5,7 +5,7 @@ import "./Footer.css";
 
 const FooterComponent = (props) =>
 {
-	let appVersion = "Version 1.5, \u00A9 2021-2022";
+	let appVersion = "Version 1.6, \u00A9 2021-2022";
 
 	return (
 		<footer
@@ -14,10 +14,12 @@ const FooterComponent = (props) =>
 			style={{zoom: props.zoom}}
 		>
 			<div className="colLinedFlex">
-				<a href="https://github.com/GameHackFan/pssme" target="_blank">
-					Source Code
-				</a>
-				<label>{appVersion}</label>
+				<div className="colLinedFlex">
+					<a href="https://github.com/GameHackFan/pssme" target="_blank">
+						Source Code
+					</a>
+					<label>{appVersion}</label>
+				</div>
 			</div>
 		</footer>
 	);

@@ -17,7 +17,7 @@
 	AND.W			($2, A3), D0						; D0 and player KeyDown/KeyUp.
 	AND.W			(A3), D0								; D0 and player KeyPress.
 	TST.W			D0											; Compare 0 to D0.
-	BEQ				$7E364									; If it is 0, There isn't up or down KeyDown, go to RTS.
+	BEQ				$7E364									; If it is 0, button isn't down without holding, go to RTS.
 
 																		; Block of code that handles selecting the colors.
 	MULU.W		#$FFFE, D0							; Multiplies D0 by -2 (up will be -2 and down - 4).

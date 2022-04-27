@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import HealthComponent from './HealthComponent';
 
-import romService from '../../service/ROMService';
 import fileService from '../../service/FileService';
 import editorService from '../../service/EditorService';
 import healthService from '../../service/HealthService';
@@ -21,7 +20,7 @@ class Health extends Component
 		this.onLoadPresetFileChange = this.onLoadPresetFileChange.bind(this);
 		this.applyPresetFile = this.applyPresetFile.bind(this);
 		this.onSavePresetClick = this.onSavePresetClick.bind(this);
-		this.onApplyDataClick = this.onApplyDataClick.bind(this);
+		this.onAddChangesClick = this.onAddChangesClick.bind(this);
 	}
 
 	componentDidMount()
@@ -112,24 +111,13 @@ class Health extends Component
 		editorService.downloadFile(json, filename, contentType);
 	}
 
-	onApplyDataClick(event)
+	onAddChangesClick(event)
 	{
-		const extras = {};
-
-		try
-		{
-			healthService.applyHealthData();
-			extras.successMessage = "Character Health Data applied!";
-			console.log("Character Health Data applied!");
-		}
-		catch(e)
-		{
-			console.log(e.message);
-			console.log(e);
-			extras.errorMessage = "Problems applying the data!";
-		} 
-		
+		let extras = {};
+		extras.successMessage = "Data is added to the modification queue!";
+		healthService.addToModificationQueue();
 		this.props.onActionResult(extras);
+		editorService.forceComponentToUpdateByKey("modification");
 	}
 
 	onDefaultValueClick(event)
@@ -149,7 +137,6 @@ class Health extends Component
 	{
 		return (
 			<HealthComponent
-				romReady={romService.isROMReady()}
 				healthMap={healthMap}
 				healthData={this.state.healthData}
 				characterKey={this.state.characterKey}
@@ -159,7 +146,7 @@ class Health extends Component
 				onReloadDataClick={this.onReloadDataClick}
 				onLoadPresetFileChange={this.onLoadPresetFileChange}
 				onSavePresetClick={this.onSavePresetClick}
-				onApplyDataClick={this.onApplyDataClick}
+				onAddChangesClick={this.onAddChangesClick}
 			/>
 		);
 	} 

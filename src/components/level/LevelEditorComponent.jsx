@@ -20,7 +20,7 @@ const LevelEditorComponent = (props) =>
 	let leeg = leegs[enemyGroup]; 
 	leeg = leeg ? leeg : {};
 
-	const groupOn = props.romReady && level ? true : false;
+	const groupOn = level ? true : false;
 	const enemiesOn = groupOn && enemyGroup ? true : false;
 	let editOn = enemiesOn && !isNaN(enemyId);
 	editOn = editOn && enemies[enemyId] ? true : false;
@@ -29,7 +29,6 @@ const LevelEditorComponent = (props) =>
 	const groupStyle = groupOn ? {} : hidden;
 	const enemiesStyle = enemiesOn ? {} : hidden;
 	const editStyle = editOn ? {} : hidden;
-	const lockAllStyle = props.romReady ? {} : hidden;
 
 	Object.keys(levelEditorLevels).forEach((lk) =>
 	{
@@ -90,11 +89,11 @@ const LevelEditorComponent = (props) =>
 				to add, remove or edit an enemy or item.
 			</label>
 			<label className="windowText">
-				Click Apply Data and it will apply all customizations to 
-				a cloned ROM. Click in Save Preset and it will save a file 
-				containing all the customizations. Click in Load Preset to 
-				load a file contaning all the customizations you saved 
-				previously.
+				Click Add Changes and it will add all changes made here in
+				the modification queue. Click in Save Preset and it will 
+				save a file containing all the customizations. Click in 
+				Load Preset to load a file contaning all the customizations 
+				you saved previously.
 			</label>
 			<label className="windowText">
 				The Trigger Position, the Position X and Y always have a 
@@ -109,24 +108,15 @@ const LevelEditorComponent = (props) =>
 			</label>
 			<label className="windowText">
 				Be aware that changes made by the Level Editor will increase 
-				or decrease the amount of bytes for all levels, so any changes 
-				applied here will change the ROM in a way that applying patches 
-				or appling changes made by the Seed Randomizer after will 
-				probably result in a bugged ROM. Make sure to apply patches 
-				before applying the changes by the Level Editor. If you want to 
-				edit a ROM and then change it later, save a preset file and load 
-				it later so you don't lose your customizations.
+				or decrease the amount of bytes for all levels, so after you
+				generate a rom, changes made here will modify the ROM in a way 
+				that editing it again with PSSME will probably result in a 
+				bugged ROM. Make sure you're editing the original ROM so you 
+				don't end up with a bugged ROM. If you want to edit a ROM and 
+				then change it later, save a preset file and load it later so 
+				you don't lose the progress of your customizations.
 			</label>
-			<label
-				className="windowErrorMessage warning"
-				style={props.romReady ? {display: "none"} : {}}
-			>
-				No ROM ready to edit.
-			</label>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Level: </label>
 				<select
 					name="level"
@@ -157,10 +147,7 @@ const LevelEditorComponent = (props) =>
 					{groupOptions}
 				</select>
 			</div>
-			<div
-				className="enemyGroup"
-				style={enemiesStyle}
-			>
+			<div className="enemyGroup" style={enemiesStyle}>
 				<div className="levelDisplay">
 					<img src={props.levelImage} />
 				</div>
@@ -193,9 +180,7 @@ const LevelEditorComponent = (props) =>
 						Represets the camera's field of view.
 					</label>
 				</div>
-				<div
-					className="windowContentLine colLinedFlex"
-				>
+				<div className="windowContentLine colLinedFlex">
 					<button
 						className="buttonSolid"
 						onClick={props.onAddEnemyClick}
@@ -215,9 +200,7 @@ const LevelEditorComponent = (props) =>
 						Refresh Image
 					</button>
 				</div>
-				<div
-					className="windowContentLine colLinedFlex"
-				>
+				<div className="windowContentLine colLinedFlex">
 					<label>ID: </label>
 					<select
 						name="enemyId"
@@ -232,9 +215,7 @@ const LevelEditorComponent = (props) =>
 					</select>
 				</div>
 				<div style={editStyle}>
-					<div
-						className="windowContentLine colLinedFlex"
-					>
+					<div className="windowContentLine colLinedFlex">
 						<label>
 							Enemy / Item Filter: 
 						</label>
@@ -246,9 +227,7 @@ const LevelEditorComponent = (props) =>
 							onChange={props.handleChange}
 						/>
 					</div>
-					<div
-						className="windowContentLine colLinedFlex"
-					>
+					<div className="windowContentLine colLinedFlex">
 						<label>Enemy / Item: </label>
 						<select
 							name="enemyKey"
@@ -259,9 +238,7 @@ const LevelEditorComponent = (props) =>
 							{enemyOptions}
 						</select>
 					</div>
-					<div
-						className="windowContentLine colLinedFlex"
-					>
+					<div className="windowContentLine colLinedFlex">
 						<label>
 							Trigger Position: 
 						</label>
@@ -277,9 +254,7 @@ const LevelEditorComponent = (props) =>
 							{", Maximum = " + leeg.screenPositionEnd + ")"} 
 						</span>
 					</div>
-					<div
-						className="windowContentLine colLinedFlex"
-					>
+					<div className="windowContentLine colLinedFlex">
 						<label>Position X: </label>
 						<input
 							type="text"
@@ -292,9 +267,7 @@ const LevelEditorComponent = (props) =>
 							{"(Recommended Values from -130 to 450)"}
 						</span>
 					</div>
-					<div
-						className="windowContentLine colLinedFlex"
-					>
+					<div className="windowContentLine colLinedFlex">
 						<label>Position Y: </label>
 						<input
 							type="text"
@@ -310,10 +283,7 @@ const LevelEditorComponent = (props) =>
 					</div>
 				</div>
 			</div>
-			<div
-				className="windowContentLine"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine">
 				<button
 					className="buttonSolid"
 					onClick={props.onClearDataClick}
@@ -339,9 +309,9 @@ const LevelEditorComponent = (props) =>
 				</button>
 				<button
 					className="buttonSolid"
-					onClick={props.onApplyDataClick}
+					onClick={props.onAddChangesClick}
 				>
-					Apply Data
+					Add Changes
 				</button>
 			</div>
 		</div>

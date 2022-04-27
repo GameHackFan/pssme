@@ -369,6 +369,12 @@ const randomizerEnemyStrategy =
 
 		"queenBerylExtra0", "queenBerylExtra1", "queenBerylExtra2"
 	],
+	cheapFoodItems:
+	[
+		"iceCreamCornet", "pudding", "lollipop",
+		"popcorn", "donut", "chocolateCandy",
+		"muffin", "soup"
+	],
 	foodItems: foodItem.slice(),
 	anyItem: foodItem.slice().concat([
 			"crystal", "crystal", "crystal", "crystal",

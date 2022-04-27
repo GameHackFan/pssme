@@ -15,16 +15,13 @@ const RandomizerComponent = (props) =>
 	enemyGroups = enemyGroups ? enemyGroups : {};
 	let enemyGroup = enemyGroups[props.enemyGroup];
 	enemyGroup = enemyGroup ? enemyGroup : {};
-	let randomMode = props.groupData.randomMode;
-	randomMode = randomMode ? randomMode : "random";
 
-	const groupOn = props.romReady && props.level ? true : false;
-	const editOn = groupOn && props.enemyGroup &&
-			enemyGroup.maxAmount ? true : false;
+	const groupOn = props.level ? true : false;
+	const editOn = groupOn && props.enemyGroup;
 	const hidden = {display: "none"}
+	const customStyle = props.randomProfile === "custom" ? {} : hidden;
 	const groupStyle = groupOn ? {} : hidden;
 	const editStyle = editOn ? {} : hidden;
-	const lockAllStyle = props.romReady ? {} : hidden;
 
 	let rps = randomizerData.randomProfile;
 	Object.keys(rps).forEach((rp) => 
@@ -59,23 +56,35 @@ const RandomizerComponent = (props) =>
 	Object.keys(ess).forEach((key) =>
 	{
 		let data = props.groupData[key];
-		let style = randomMode !== "custom" ? hidden : {};
+		data = data ? data : {};
+		let gui = ess[key];
 
 		fields.push(
 			<div
 				key={key}
 				className="windowContentLine colLinedFlex"
-				style={style}
 			>
-				<label>
-					{ess[key].label} <br/> 
-					Enemy Amount: 
+				<label title={gui.information}>
+					{gui.label}
 				</label>
+				<span title="Minimum Amount, must be less than the maximum.">
+					Min:
+				</span>
 				<input
 					type="text"
-					name={key}
+					name={key + "-min"}
 					className="textfield"
-					value={data ? data : ""}
+					value={data.randomMinAmount ? data.randomMinAmount : ""}
+					onChange={props.handleGroupDataChange}
+				/>
+				<span title="Maximum Amount, must be more than the minimum.">
+					Max:
+				</span>
+				<input
+					type="text"
+					name={key + "-max"}
+					className="textfield"
+					value={data.randomMaxAmount ? data.randomMaxAmount : ""}
 					onChange={props.handleGroupDataChange}
 				/>
 			</div>
@@ -86,7 +95,7 @@ const RandomizerComponent = (props) =>
 		<div className="randomizer rowLinedFlex">
 			<label className="windowText">
 				Use this window to create a ROM with random enemies at random 
-				positions based on a "Seed" and all the strategies selected. 
+				positions based on a "Seed" and a profile you selected.
 				Remember that if you inform the same "Seed" and the same values 
 				it will always generate the same ROM, but the same "Seed" with 
 				different values will generate a different ROM.
@@ -97,41 +106,36 @@ const RandomizerComponent = (props) =>
 				more enemies next to each other inside the ROM, You can change 
 				the amount of enemies in an enemy group, but you must add at 
 				least 1 enemy to each enemy group. Adding a lot of enemies can 
-				also cause lags or crashes. The randomizer will take care to cap 
-				the amount of enemies to avoid crashes.
+				also cause lags or crashes. The randomizer will take care to 
+				cap the amount of enemies to avoid crashes.
 			</label>
 			<label className="windowText">
-				There are several enemy randomizer strategies, if you like a 
-				specific strategy, add 1 or more enemies for that strategy. 
-				The amount of enemies in a certain group will be the sum of 
-				all enemies passed inside all enemy strategies and the result 
-				must be at least 1. If it exceed the maximum limit accepted 
-				for that group, the randomizer will randomly remove enemies 
-				until it reaches the maximum limit.
+				If you don't want to use the profiles available, you can select 
+				the Custom profile, it will allow you to make your own random 
+				profile base on several enemy randomizer strategies, if you 
+				like a specific strategy, add the minimum and the maximum amount 
+				of enemies for that strategy. The amount of enemies in a specific 
+				group will be the sum of all enemies passed inside all enemy 
+				strategies and the result must be at least 1. If it exceeds the 
+				maximum amount accepted for that group, the randomizer will 
+				randomly remove enemies until it reaches the maximum amount.
 			</label>
 			<label className="windowText">
-				Click Apply Randomizer without any changes and it will randomize everything.
+				Click Add Changes to add the randomizer changes to the modification 
+				queue.
+			</label>
+			<label className="windowText">
+				If you want to edit the stuff made by the randomizer with the level 
+				editor, select the things you want and click Save Level Editor Preset 
+				and then load the saved preset in the Level Editor.
 			</label>
 			<label className="windowText">
 				Be aware that changes made by the Seed Randomizer will increase 
-				or decrease the amount of bytes for all levels, so any changes 
-				applied here will change the ROM in a way that applying patches 
-				or appling changes made by the Level Editor after will probably 
-				result in a bugged ROM. Make sure to apply patches before applying 
-				the randomizer. If you want the randomizer to generate a ROM and 
-				then edit it later, save a preset for the level editor and load 
-				it in the level editor instead of applying the randomizer.
+				or decrease the amount of bytes for all levels, so after you 
+				generate a randomized ROM, using PSSME to edit the ROM again will 
+				probably result in a bugged ROM.
 			</label>
-			<label
-				className="windowErrorMessage warning"
-				style={props.romReady ? {display: "none"} : {}}
-			>
-				No ROM ready to edit.
-			</label>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Seed: </label>
 				<input
 					type="text"
@@ -145,10 +149,7 @@ const RandomizerComponent = (props) =>
 					{", Maximum = " + Number.MAX_SAFE_INTEGER + ")"}
 				</b>
 			</div>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Random Profile: </label>
 				<select
 					name="randomProfile"
@@ -162,86 +163,75 @@ const RandomizerComponent = (props) =>
 					{profileOptions}
 				</select>
 			</div>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
-				<label>Level: </label>
-				<select
-					name="level"
-					className="buttonSolid"
-					value={props.level}
-					onChange={props.handleChange}
-				>
-					<option key="-1" value="">
-						Select a level
-					</option>
-					{levelOptions}
-				</select>
-			</div>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={groupStyle}
-			>
-				<label>Enemy Group: </label>
-				<select
-					name="enemyGroup"
-					className="buttonSolid"
-					value={props.enemyGroup}
-					onChange={props.handleChange}
-				>
-					<option key="-1" value="">
-						Select an enemy group
-					</option>
-					{groupOptions}
-				</select>
-			</div>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={groupStyle}
-			>
-
-			</div>
-			<div
-				className="rowLinedFlex"
-				style={editStyle}
-			>
-				<div className="enemyGroupText">
-					<label>The original rom has</label>
-					<span> {enemyGroup.defaultAmount} </span>
-					<label>enemy(ies) in this group.</label>
-					<br />
-					<label>The maximum amount accepted is</label>
-					<span> {enemyGroup.maxAmount} </span>
-					<label>enemy(ies) in this group.</label>
-				</div>
-				<label className="enemyGroupText">
-
-				</label>
-				<div
-					className="windowContentLine colLinedFlex">
-					<label>
-						Random Mode:
-					</label>
+			<div style={customStyle}>
+				<div className="windowContentLine colLinedFlex">
+					<label>Level: </label>
 					<select
-						name="randomMode"
+						name="level"
 						className="buttonSolid"
-						value={randomMode}
-						onChange={props.handleRandomizerDataChange}
+						value={props.level}
+						onChange={props.handleChange}
 					>
-						<option value="random">Random</option>
-						<option value="custom">Custom</option>
-						<option value="disabled">Disabled</option>
+						<option key="-1" value="">
+							Select a level
+						</option>
+						{levelOptions}
 					</select>
 				</div>
-				<div className="enemyGroup">
-					{fields}
+				<div
+					className="windowContentLine colLinedFlex"
+					style={groupStyle}
+				>
+					<label>Enemy Group: </label>
+					<select
+						name="enemyGroup"
+						className="buttonSolid"
+						value={props.enemyGroup}
+						onChange={props.handleChange}
+					>
+						<option key="-1" value="">
+							Select an enemy group
+						</option>
+						{groupOptions}
+					</select>
+				</div>
+				<div
+					className="rowLinedFlex"
+					style={editStyle}
+				>
+					<div className="enemyGroupText">
+						<label>The original rom has</label>
+						<span> {enemyGroup.defaultAmount} </span>
+						<label>enemy(ies) in this group.</label>
+						<br />
+						<label>The maximum amount accepted is</label>
+						<span> {enemyGroup.maxAmount} </span>
+						<label>enemy(ies) in this group.</label>
+					</div>
+					{/* <label className="enemyGroupText">
+
+					</label> */}
+					{/* <div className="windowContentLine colLinedFlex">
+						<label>
+							Random Mode:
+						</label>
+						<select
+							name="randomMode"
+							className="buttonSolid"
+							value={randomMode}
+							onChange={props.handleRandomizerDataChange}
+						>
+							<option value="random">Random</option>
+							<option value="custom">Custom</option>
+							<option value="disabled">Disabled</option>
+						</select>
+					</div> */}
+					<div className="enemyGroup">
+						{fields}
+					</div>
 				</div>
 			</div>
-			<div
-				className="windowContentLine"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine">
 				<button
 					className="buttonSolid"
 					onClick={props.onClearChangesClick}
@@ -273,9 +263,9 @@ const RandomizerComponent = (props) =>
 				</button>
 				<button
 					className="buttonSolid"
-					onClick={props.onApplyRandomizerClick}
+					onClick={props.onAddChangesClick}
 				>
-					Apply Randomizer
+					Add Changes
 				</button>
 			</div>
 		</div>

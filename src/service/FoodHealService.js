@@ -1,5 +1,6 @@
 import romService from "./ROMService";
 import foodHealMap from "../data/overwrite/FoodHealMap";
+import modificationService from "./ModificationService";
 
 
 class FoodHealService
@@ -65,6 +66,11 @@ class FoodHealService
 				}
 			}
 		});
+	}
+
+	addToModificationQueue = () =>
+	{
+		modificationService.add(101, "foodHeal", this.applyFoodHealData);
 	}
 }
 

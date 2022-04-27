@@ -7,6 +7,7 @@ import FoodHeal from '../components/food/FoodHeal';
 import LevelEditor from '../components/level/LevelEditor';
 import PalleteEditor from '../components/pallete/PalleteEditor';
 import CharacterDamage from '../components/damage/CharacterDamage';
+import Modification from '../components/modification/Modification';
 
 
 const components = 
@@ -20,6 +21,7 @@ const components =
 	palleteEditor: PalleteEditor,
 	foodHeal: FoodHeal,
 	characterDamage: CharacterDamage,
+	modification: Modification,
 }
 
 

@@ -1,5 +1,6 @@
 const jumouImprovementPatch =
 {
+	priority: 9,
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",

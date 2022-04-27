@@ -12,11 +12,13 @@ const PalleteEditorComponent = (props) =>
 	const colorButtons = [];
 	let palleteInfo = palleteInfoList[palleteId];
 	palleteInfo = palleteInfo ? palleteInfo : {};
+	let pid = parseInt(palleteId);
+	pid = isNaN(pid) ? - 1 : pid;
 
-	const editOn = props.romReady && props.pallete;
+	const pallete = props.pallete ? props.pallete : [];
 	const hidden = {display: "none"};
-	const lockAllStyle = props.romReady ? {} : hidden;
-	const editStyle = editOn ? {} : hidden;
+	const warningStyle = props.romReady ? hidden : {};
+	const editStyle = props.pallete ? {} : hidden;
 
 	Object.keys(palleteInfoList).forEach((key) =>
 	{
@@ -30,25 +32,19 @@ const PalleteEditorComponent = (props) =>
 		);
 	});
 
-	if(editOn)
+	pallete.forEach((color, index) =>
 	{
-		props.pallete.forEach((color, index) =>
-		{
-			if(color)
-			{
-				colorButtons.push(
-					<input
-						key={index}
-						className="buttonSolid palleteColor"
-						name={"colorId_" + index}
-						type="color"
-						value={color}
-						onChange={props.handleChange}
-					/>
-				);
-			}
-		});
-	}
+		colorButtons.push(
+			<label
+				key={index}
+				name={"colorId_" + index}
+				className={props.colorId === index ? "colorSelected" : ""}
+				style={{backgroundColor: color}}
+				onClick={props.onColorClick}
+			></label>
+		);
+	});
+
 
 	return (
 		<div className="pallete rowLinedFlex">
@@ -57,27 +53,21 @@ const PalleteEditorComponent = (props) =>
 			</label>
 			<label className="windowText">
 				To edit a pallete, you need to select the pallete, edit its 
-				colors and click in apply to set the new values in the ROM. 
-				After clicking apply, the old colors are lost. If you want 
-				to edit a ROM and then change it later, save a preset file 
-				and load it later.
+				colors and click on Add Changes to add the modifications you 
+				made to the modification queue. If you want to edit a ROM and 
+				then change it later, save a preset file and load it later.
 			</label>
 			<label className="windowText">
 				Be aware that changes made by the Level Editor or the Seed 
-				Randomizer will make some changes to some palletes, so make 
-				sure to do the pallete customization step after those above 
-				to make sure your changes won't be overwritten.
+				Randomizer will make changes to some palletes.
 			</label>
-			<label
-				className="windowErrorMessage warning"
-				style={props.romReady ? hidden : {}}
-			>
-				No ROM ready to edit.
+			<label className="windowErrorMessage warning" style={warningStyle}>
+				Make sure you have a ROM cloned first to properly use this editor.
 			</label>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<label className="windowErrorMessage warning" style={warningStyle}>
+				After, click Reload Data to ensure all palletes are the default palletes.
+			</label>
+			<div className="windowContentLine colLinedFlex">
 				<label>
 					Pallete Filter: 
 				</label>
@@ -89,15 +79,12 @@ const PalleteEditorComponent = (props) =>
 					onChange={props.handleChange}
 				/>
 			</div>
-			<div
-				className="windowContentLine colLinedFlex"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine colLinedFlex">
 				<label>Select Pallete: </label>
 				<select
 					name="palleteId"
 					className="buttonSolid"
-					value={palleteId ? palleteId : ""}
+					value={pid}
 					onChange={props.handleChange}
 				>
 					<option key="-1" value="-1">
@@ -107,10 +94,89 @@ const PalleteEditorComponent = (props) =>
 				</select>
 			</div>
 			<div
-				className="windowContentLine colLinedFlex"
+				className="colorContainer colLinedFlex"
 				style={editStyle}
 			>
 				{colorButtons}
+			</div>
+			<div style={editStyle}>
+				<div className="windowContentLine colLinedFlex">
+					<label>Hex Mode: </label>
+					<label htmlFor="hexMode" className="checkbox">
+						<input
+							id="hexMode"
+							name="hexMode"
+							className="checkbox"	
+							type="checkbox"
+							checked={props.hexMode}
+							onChange={props.handleChange}
+						/>
+					</label>
+					<div
+						className="customColor"
+						style={props.getCustomColorCSSStyle()}
+					></div>
+				</div>
+				<div
+					className="windowContentLine colLinedFlex"
+					style={props.hexMode ? {} : hidden}
+				>
+					<label>
+						Hex Color: 
+					</label>
+					<input
+						type="text"
+						name="hexColor"
+						className="textfield"
+						value={props.hexColor ? props.hexColor : "000000"}
+						onChange={props.handleChange}
+					/>
+				</div>
+				<div
+					className="windowContentLine colLinedFlex"
+					style={props.hexMode ? hidden : {}}
+				>
+					<label>
+						Red: 
+					</label>
+					<input
+						type="text"
+						name="red"
+						className="textfield"
+						value={props.red ? props.red : "0"}
+						onChange={props.handleChange}
+					/>
+				</div>
+				<div
+					className="windowContentLine colLinedFlex"
+					style={props.hexMode ? hidden : {}}
+				>
+					<label>
+						Green: 
+					</label>
+					<input
+						type="text"
+						name="green"
+						className="textfield"
+						value={props.green ? props.green : "0"}
+						onChange={props.handleChange}
+					/>
+				</div>
+				<div
+					className="windowContentLine colLinedFlex"
+					style={props.hexMode ? hidden : {}}
+				>
+					<label>
+						Blue: 
+					</label>
+					<input
+						type="text"
+						name="blue"
+						className="textfield"
+						value={props.blue ? props.blue : "0"}
+						onChange={props.handleChange}
+					/>
+				</div>
 			</div>
 			<div
 				className="windowContentLine colLinedFlex"
@@ -124,9 +190,15 @@ const PalleteEditorComponent = (props) =>
 				</button>
 				<button
 					className="buttonSolid"
-					onClick={props.onApplyPallete}
+					onClick={props.onReloadColorClick}
 				>
-					Apply Pallete
+					Reload Color
+				</button>
+				<button
+					className="buttonSolid"
+					onClick={props.onSetColorClick}
+				>
+					Set Color
 				</button>
 			</div>
 			<div className="palleteHint" style={editStyle}>
@@ -140,10 +212,13 @@ const PalleteEditorComponent = (props) =>
 					uses this pallet in PSSME Level Editor and Seed Randomizer.
 				</label>
 			</div>
-			<div
-				className="windowContentLine"
-				style={lockAllStyle}
-			>
+			<div className="windowContentLine">
+				<button
+					className="buttonSolid"
+					onClick={props.onReloadDataClick}
+				>
+					Reload Data
+				</button>
 				<button
 					className="buttonSolid"
 					onClick={props.requestFile}
@@ -166,6 +241,12 @@ const PalleteEditorComponent = (props) =>
 					onClick={props.onSaveAllPresetClick}
 				>
 					Save All Preset
+				</button>
+				<button
+					className="buttonSolid"
+					onClick={props.onAddChangesClick}
+				>
+					Add Changes
 				</button>
 			</div>
 		</div>

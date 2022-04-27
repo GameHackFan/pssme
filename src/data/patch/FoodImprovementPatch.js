@@ -1,5 +1,6 @@
 const foodImprovementPatch =
 {
+	priority: 4,
 	type: "overwrite",
 	filename: "bpsm945a.u45",
 	byteFormat: "hex",

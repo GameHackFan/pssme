@@ -80,6 +80,47 @@
 	box-shadow: none;
 }
 
+.checkbox
+{
+  display: flex;
+  flex-direction: column;
+  
+  background-color: #002654B0;
+  cursor: pointer;
+
+  width: 36px;
+  height: 17px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 18px;
+
+  padding: 1px;
+}
+
+.checkbox input
+{
+  appearance: none;
+  cursor: pointer;
+  background-color: white;
+  
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+  outline: 0;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.checkbox input:checked
+{
+  margin-left: auto;
+  background-color: white;
+}
+
 .hidden
 {
 	display: none !important;
@@ -125,4 +166,24 @@ code
 {
 	font-family: source-code-pro, Menlo, Monaco,
 		Consolas, "Courier New", monospace;
+}
+
+*::-webkit-scrollbar
+{
+  background-color: transparent;
+  width: 0.7em;
+  height: 0.7em;
+}
+
+*::-webkit-scrollbar-thumb
+{
+  background-color: #CD1226;
+  outline: 0;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track
+{
+  background-color: #002654;
+  border-radius: 10px;
 }

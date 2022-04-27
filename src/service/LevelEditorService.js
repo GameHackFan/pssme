@@ -1,5 +1,6 @@
 import romService from "./ROMService";
 import levelExpansionService from "./LevelExpansionService";
+import modificationService from "./ModificationService";
 
 import objectUtil from '../data/ObjectUtil';
 
@@ -74,7 +75,12 @@ class LevelEditorService
 		romService.applyPatch(les.createLevelFixPatch());
 		romService.applyPatch(les.createBossHelpersFixPatch());
 		romService.applyPatch(les.createBossFightsFixPatch());
-		romService.applyPatch(les.createLevelShiftPatch())
+		romService.applyPatch(les.createLevelShiftPatch());
+	}
+
+	addToModificationQueue = () =>
+	{
+		modificationService.add(150, "levelEditor", this.applyData);
 	}
 
 	addEnemy = (levelKey, enemyGroupKey) =>

@@ -45,6 +45,8 @@ class ComponentService
 				"windowContent", "Color Pallete Editor", false, true);
 		im.characterDamage = this.createComponentInfo(
 				"windowContent", "Character Damage Editor", false, true);
+		im.modification = this.createComponentInfo(
+					"windowContent", "Modification Manager", false, true);
 		return im;
 	}
 
