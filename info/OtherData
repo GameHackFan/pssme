@@ -1,7 +1,8 @@
-AE3C:		Randomizes a value and stores it in D1?
-9E20:		Desperation Attack damage given.
-9E42:		Desperation Attack damage taken.
-ABF6:		Checks if the player can execute the Desperation Attack.
+AE3C:   Randomizes a value and stores it in D1?
+9E20:   Desperation Attack damage given.
+9E42:   Desperation Attack damage taken.
+ABF6:   Checks if the player can execute the Desperation Attack.
+21D8:   Updates the Background?
 
 
 

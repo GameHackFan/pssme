@@ -1,63 +1,79 @@
-import patchMap from "../data/patch/PatchMap";
-
-import componentService from "./ComponentService";
+import { componentService } from "./ComponentService";
+import { patchMap } from "../data/patch/PatchMap";
 
 
 class ModificationService
 {
-	constructor()
-	{
-		this.modificationData = {};
-	}
+  apply = () =>
+  {
+    this.getKeys().forEach((key) =>
+    {
+      const d = dataMap[key];
 
-	apply = () =>
-	{
-		var s = function(a, b) {return a-b;};
-		Object.keys(this.modificationData).sort(s).forEach((key) =>
-		{
-			let d = this.modificationData[key];
+      if(d && d.applyCallback)
+        d.applyCallback(d.complement);
+    });
+  }
 
-			if(d && d.applyCallback)
-				d.applyCallback(d.complement);
-		});
-	}
+  add = (priority, componentKey, applyCallback, complement) =>
+  {
+    const key = parseInt(priority);
 
-	add = (priority, componentKey, applyCallback, complement) =>
-	{
-		let key = parseInt(priority);
+    if(!isNaN(key))
+    {
+      const pd = patchMap[complement];
+      const cd = componentService.getComponentData(componentKey);
+      const d = {};
+      d.priority = key;
+      d.componentKey = componentKey;
+      d.complement = complement;
+      d.componentLabel = cd ? cd.title : "Unknown";
+      d.complementLabel = pd ? pd.label : "Custom";
+      d.applyCallback = applyCallback;
+      dataMap[key] = d;
+    }
+  }
 
-		if(!isNaN(key))
-		{
-			let pd = patchMap[complement];
-			let cd = componentService.getInfoMap()[componentKey];
-			let d = {};
-			d.componentKey = componentKey;
-			d.complement = complement;
-			d.componentLabel = cd ? cd.title : "Unknown";
-			d.complementLabel = pd ? pd.label : "Custom";
-			d.applyCallback = applyCallback;
-			this.modificationData[key] = d;
-		}
-	}
+  remove = (priority) =>
+  {
+    const key = parseInt(priority);
+    delete dataMap[key];
+  }
 
-	remove = (priority) =>
-	{
-		let key = parseInt(priority);
-		delete this.modificationData[key];
-	}
+  clearAll = () =>
+  {
+    dataMap = {};
+  }
 
-	contains = (priority) =>
-	{
-		let key = parseInt(priority);
-		return this.modificationData[key] ? true : false;
-	}
+  contains = (priority) =>
+  {
+    const key = parseInt(priority);
+    return dataMap[key] ? true : false;
+  }
 
-	getModificationData = () =>
-	{
-		return this.modificationData;
-	}
+  getKeys = () =>
+  {
+    var sortAsc = (a, b) => {return a-b;};
+    return Object.keys(dataMap).sort(sortAsc);
+  }
+
+  get = (key) =>
+  {
+    return dataMap[key];
+  }
+
+  getModificationList = () =>
+  {
+    return this.getKeys().map((key) => {return dataMap[key];});
+  }
+
+  constructor()
+  {
+    dataMap = {};
+  }
 }
 
 
-let modificationService = new ModificationService();
-export default modificationService;
+let dataMap;
+
+export const modificationService = new ModificationService();

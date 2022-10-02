@@ -1,0 +1,43 @@
+.manager > .window-content-line > span
+{
+  min-width: 7.75rem;
+}
+
+.manager b
+{
+  font-weight: bold;
+  font-size: 0.7em;
+
+  margin-left: 1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.manager > div:nth-last-child(2)
+{
+  margin-top: 1.5rem;
+}
+
+.manager > div > button
+{
+  padding-left: 0.5rem; 
+  padding-right: 0.5rem;
+  padding-top: 0.1875rem; 
+  padding-bottom: 0.1875rem;
+}
+
+.manager > div > :not(:last-child)
+{
+  margin-right: 0.75rem;
+}
+
+.manager .rom-message
+{
+  color: #30E030;
+  font-weight: bold;
+  text-align: center;
+  max-width: 100%;
+  
+  margin-left: auto;
+  margin-right: auto;
+}

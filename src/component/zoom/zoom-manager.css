@@ -1,0 +1,29 @@
+.zoom > .window-content-line > span
+{
+  min-width: 6rem;
+}
+
+.zoom > .window-content-line > input
+{
+  margin-right: 1rem;
+}
+
+.zoom > div:last-child
+{
+  margin-top: 1.5rem;
+}
+
+.zoom > div:last-child > button:not(:last-child)
+{
+  margin-right: 0.75rem;
+}
+
+.zoom .button-solid
+{
+  cursor: pointer;
+}
+
+.zoom .button-solid > input
+{
+  display: none;
+}

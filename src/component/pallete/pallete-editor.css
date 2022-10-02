@@ -1,0 +1,119 @@
+
+.pallete .color-container
+{
+  background-color: #002858B0;
+  display: flex;
+  flex-direction: row;
+  height: 3.75rem;
+
+  padding: 0.5rem;
+  margin-top: 1rem;
+
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+.pallete .color-container button
+{
+  height: 1.875rem;
+  width: 1.875rem;
+
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+
+  margin-top: auto;
+  margin-bottom: auto;
+
+  cursor: pointer;
+}
+
+.pallete .color-container span:not(:last-child)
+{
+  margin-right: auto;
+}
+
+.pallete .color-container .color-selected
+{
+  height: 2.5rem;
+  width: 2.5rem;
+
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: #D01028;
+}
+
+.pallete .custom-color
+{
+  width: 1.3125rem;
+  height: 1.3125rem;
+
+  margin-left: 2rem;
+
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+.pallete .pallete-hint
+{
+  margin-top: 1rem;
+}
+
+.pallete .pallete-hint b
+{
+  color: #30E030;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.pallete .window-content-line > span:not(.checkbox)
+{
+  min-width: 8.875rem;
+}
+
+.pallete > div:last-child
+{
+  margin-top: 1rem;
+}
+
+.pallete > div:last-child > *
+{
+  margin-top: 0.5rem;
+}
+
+.pallete > div:last-child > :not(:last-child),
+.pallete button:not(:last-child)
+{
+  margin-right: 0.75rem;
+}
+
+.pallete .button-solid
+{
+  cursor: pointer;
+}
+
+.pallete .button-solid > input
+{
+  display: none;
+}
+
+.pallete .warning
+{
+  color: #F8A828;
+  font-weight: bold;
+  text-align: center;
+
+  display: block;
+}
+
+.pallete .warning:last-child
+{
+  margin-bottom: 0.75rem;
+}

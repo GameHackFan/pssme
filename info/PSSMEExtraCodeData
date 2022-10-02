@@ -1,0 +1,127 @@
+Queen Beryl Improvement
+
+07DB00:   Forbids color ID 4+ to freeze for some time after she spawns.
+07DB30:   Forbids Queen Beryl to grab her friends.
+
+
+Kunzite Improvement
+
+07DB60:   Forbids color ID 4+ to freeze for some time after he spawns.
+
+
+Zoisite Improvement
+
+07DBA0:   Forbids color ID 4+ to freeze for some time after he spawns.
+
+
+Bakene Improvement
+
+07DBE0:   Handles if Bakene should kill his friends after he dies.
+
+
+Morga Improvement
+
+07DC10:   Forces color ID 4+ to spawn without chocking the girl.
+07DC40:   Forces color ID 4+ to ignore the rose.
+07DC70:   Forces color ID 4+ to keep losing HP instead of locking it at 50%.
+07DCA0:   Forces color ID 4+ to ignore killing her friends after she dies.
+
+
+Castor & Pollux Improvement
+
+07DCD0:   Reads Castor & Pollux HP from a custom HP Table.
+07DCF0:   Handles if Castor & Pollux should kill his friends after he dies.
+
+
+Tesuni Improvement
+
+07DD20:   Allows posture ID 0 to execute the unused kick (Tesuni without racket).
+
+
+Drop Improvement
+
+07DD50:   Reads the item to drop from a custom table based on color ID.
+
+
+Enemy Color Expansion
+
+07DE00:   Reads the enemy pallete from a custom region if color ID is 4+.
+
+
+Area Improvement
+
+07E000:   Handles Custom Area Data.
+07E0A0:   Changes Position X of all Players.
+07E0B0:   Changes Position Y of all Players.
+07E0C0:   Changes Looking Direction of all Players.
+
+
+Time Improvement
+
+07E0D0:   Forces the time to run 60% slower.
+
+
+Sailor Color Expansion
+
+07E200:   Forces the sailor pallete to be read from a custom address if color ID is 1+.
+
+
+Sailor Color Indicator
+
+07E250:   Prints or cleans the color indicator.
+
+
+Sailor Color Select Handler
+
+07E300:   Handles the color select in the Select Screen.
+07E310:   Handles the color select in the middle of the game.
+
+
+Sailor Color Select
+
+07E330:   Allows the player to select the color of their sailor.
+
+
+Sailor Color Confirmation
+
+07E370:   Fixes color conflict and remove the color indicator.
+
+
+Player Active Improvement
+
+07E3E0:   Sets the player active flag to 1 when the player dies all lives.
+
+
+Sailor Randomizer
+
+07E400:   Execute Sailors Randomizer (Area Start)
+07E430:   Set a Random Value Inside D0.
+07E450:   Randomize Sailor (Current Player)
+07E4C0:   Update Sailor ID If Player Is Active.
+
+
+Crystal Control
+
+07EE00:   Change the amount of crystals to use.
+
+
+Crystal Use
+
+07EE80:   Forces the game to read the crystals to use from memory.
+
+
+Crystal Control Indicator
+
+07EEB0:   Draws the crystals to use in Red and the rest in Blue.
+
+
+Title Screen Text Improvement
+
+07EF00:   Allows more characters to be drawn in the Title Screen.
+
+
+Lifebar Limit
+
+07EFA0:   Forces the lifebar size to be 60-.
+
+

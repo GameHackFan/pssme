@@ -1,32 +1,39 @@
-108196:		The amount of frames passed? (4 bytes).
-10835E:		Credit Coins Inserted.
-109384:		Area ID.
+108192:   The amount of frames passed? (4 bytes).
+108196:   The amount of frames passed? (4 bytes).
+10835E:   Credit Coins Inserted.
+
+109380:   Area Memory Region.
+109384:   Area ID.
+
+10A412:   Stage ID.
+10A416:   Stage time.
+
+10F210:   List of Randomized Values?
+
+1081A8:   Player 1 input (Button Pressed)?
+1081AA:   Player 1 input (Button Down - Holding)?
+10834A:   Player 1 input (Button Pressed)?
+
+1081F8:   Player 1 input (Button Pressed)?
+1081F8:   Player 1 input (Button Pressed)?
 
 
-1081A8:		Player 1 input (Button Pressed)?
-1081AA:		Player 1 input (Button Down - Holding)?
-10834A:		Player 1 input (Button Pressed)?
 
-1081F8:		Player 1 input (Button Pressed)?
-1081F8:		Player 1 input (Button Pressed)?
+10834C:   Player 2 input (Button Pressed)?
 
 
-
-10834C:		Player 2 input (Button Pressed)?
-
-
-1081F8:		Player 1 input (Button Pressed)?
-1081FA:		Player 1 input (Button Down - Holding)?
+1081F8:   Player 2 input (Button Pressed)?
+1081FA:   Player 2 input (Button Down - Holding)?
 
 
-1094B0:		Player 1 start data (score, crystals, etc).
-1095B0:		Player 2 start data (score, crystals, etc).
+1094B0:   Player 1 start data (score, crystals, etc).
+1095B0:   Player 2 start data (score, crystals, etc).
 
-xxxxB0:		Player character ID.
-xxxxB2:		Player active flag.
-xxxxC0:		Player score.
-xxxxC4:		Player crystals.
-xxxx8E:		Player character color ID (custom, not in original game)
+xxxxB0:   Player character ID.
+xxxxB2:   Player active flag.
+xxxxC0:   Player score.
+xxxxC4:   Player crystals.
+xxxx8E:   Player character color ID (custom, not in original game)
 
 
 
@@ -45,40 +52,36 @@ Player Input
 0080 (B4, Start)
 
 
-10A412:		Stage ID.
-10A416:		Stage time.
-
-
-500000:		Region used to print things in the screen.
-XXXX00:		Position X of the sprite.
-XXXX02:		Position Y of the sprite.
-XXXX04:		Pallete.
-XXXX05:		Srpite rotation.
-XXXX06:		Sprite offset. (30 for uppercase letter, 50 for uppercase).
-XXXX08:		Have no clue how to explain.
-XXXX0A:		Have no clue how to explain.
-XXXX0C:		Tile amount to be printed horizontally?.
-XXXX0C:		Tile amount to be printed vertically?.
-XXXX0E:		?
+500000:   Region used to print things in the screen.
+XXXX00:   Position X of the sprite.
+XXXX02:   Position Y of the sprite.
+XXXX04:   Pallete.
+XXXX05:   Sprite rotation.
+XXXX06:   Sprite offset. (30 for uppercase letter, 50 for lowercase).
+XXXX08:   Have no clue how to explain.
+XXXX0A:   Have no clue how to explain.
+XXXX0C:   Tile amount to be printed horizontally?.
+XXXX0C:   Tile amount to be printed vertically?.
+XXXX0E:   ?
 
 
 
-58C6:		Handling inputs Select Screen?
-5CCE:		Credit Label Related?
-539A:		Credit Label Related?
-6028:		Credit Label Related?
-6044:		Credit Label Related?	
-64D0:		Credit label related?
+58C6:   Handling inputs Select Screen?
+5CCE:   Credit Label Related?
+539A:   Credit Label Related?
+6028:   Credit Label Related?
+6044:   Credit Label Related?
+64D0:   Credit label related?
 
 
-1264:		Draws things in the screen? (D1 width?, D2 height?, A0 print memory region?, A3 text address?)
+1264:   Draws things in the screen? (D1 width?, D2 height?, A0 print memory region?, A3 text address?)
 
 
 
 Crystal Usage
 
-00CFE:		Handles player 1 input
-00D58:		Handles player 2 input
+00CFE:    Handles player 1 input
+00D58:    Handles player 2 input
 
 0A662:
 0A682:

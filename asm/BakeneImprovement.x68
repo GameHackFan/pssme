@@ -1,24 +1,26 @@
-*-------------------------------------------------------------------------------------------------
-* Title:				PSSME Bakene Improvement
-* Written by:		GameHackFan
-* Date:					
-* Description:	It forbids any posture ID that is not 40 to kill all enemies when he dies.
-*-------------------------------------------------------------------------------------------------
-	JMP				$7DBE0.L								; Jumps the execution to the instruction in the address (replace 1D13E with this code).
+*-----------------------------------------------------------------------------------------------
+* Title:        PSSME Bakene Improvement
+* Written by:   GameHackFan
+* Date:
+* Description:  It forbids any posture ID that is not 40 to kill all
+*               enemies when he dies.
+*-----------------------------------------------------------------------------------------------
 
-;	ORG				$7DBE0
+  JMP       $7DBE0.L                ; Jumps the execution to the instruction in the address (replace 1D13E with this code).
 
-																		; Block of code that handles if he should kill his friends or not.
-	CMPI.W		#$40, ($02, A0)					; Compares 40 and ($02 + A0), his initial posture (40 is 3rd form).
-	BEQ				$7DBF4									; If it is equal 40, go to the block of code from the original game.
+; ORG       $7DBE0
 
-																		; Block of code that ignores requesting enemies to die.
-	JSR				$121D6									; Jumps to a part of the original code after requesting enemies to die.
-	JMP				$1D144									; Returns back to the original code.
+                                    ; Block of code that handles if he should kill his friends or not.
+  CMPI.W    #$40, ($02, A0)         ; Compares 40 and ($02 + A0), his initial posture (40 is 3rd form).
+  BEQ       $7DBF4                  ; If it is equal 40, go to the block of code from the original game.
 
-																		; Block that executes the same code the game would execute.
-	JSR				$121CC									; Code from the original game that was replaced with the jump command to extend the code.
-	JMP				$1D144									; Returns back to the original code.
+                                    ; Block of code that ignores requesting enemies to die.
+  JSR       $121D6                  ; Jumps to a part of the original code after requesting enemies to die.
+  JMP       $1D144                  ; Returns back to the original code.
+
+                                    ; Block that executes the same code the game would execute.
+  JSR       $121CC                  ; Code from the original game that was replaced with the jump command to extend the code.
+  JMP       $1D144                  ; Returns back to the original code.
 
 
 

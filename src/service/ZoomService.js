@@ -1,67 +1,88 @@
-import zoomData from "../data/zoom/ZoomData";
+import { componentService } from "./ComponentService";
 
 
 class ZoomService
 {
-	constructor()
-	{
-		this.zoomMap = zoomData;
-	}
+  createPreset = () =>
+  {
+    const p = {type: "zoom", data: {}};
+    Object.keys(dataMap).forEach((k) =>
+    {
+      const zoom = dataMap[k];
 
-	createPresetObject = () =>
-	{
-		let p = {};
-		p.type = "zoom";
-		p.data = {};
-		Object.keys(this.zoomMap).forEach((e) =>
-		{
-			let z = this.zoomMap[e];
-			p.data[e] = z.zoom;
-		});
-		return p;
-	}
+      if(!isNaN(parseFloat(zoom)))
+        p.data[k] = zoom.toString();
+    });
+    return p;
+  }
 
-	applyPresetFile = (presetFile) =>
-	{
-		let json = JSON.parse(presetFile);
+  applyPreset = (preset) =>
+  {
+    const json = JSON.parse(preset);
 
-		if(json && json.data && json.type === "zoom")
-		{
-			Object.keys(json.data).forEach((e) =>
-			{
-				let value = json.data[e];
+    if(json && json.data && json.type === "zoom")
+      Object.keys(json.data).forEach((k) => this.setZoom(k, json.data[k]));
+  }
 
-				if(!isNaN(value))
-					this.zoomMap[e].zoom = value;
-			});
-		}
-	}
+  setZoom = (key, value) =>
+  {
+    if(key in dataMap)
+    {
+      dataMap[key] = value;
+      componentService.callMethod(key, "updateZoom");
+    }
+  }
 
-	getZoomMap = () =>
-	{
-		return this.zoomMap;
-	}
+  getValidZoom = (key) =>
+  {
+    const z = dataMap[key];
+    const v = z ? parseFloat(z) : 1;
+    return v >= 1 ? v : 1;
+  }
 
-	setComponentZoom = (componentKey, zoom) =>
-	{
-		this.zoomMap[componentKey].zoom = zoom;
-	}
+  getZoom = (key) =>
+  {
+    return dataMap[key];
+  }
 
-	getComponentZoom = (componentKey) =>
-	{
-		let z = this.zoomMap[componentKey];
-		let v = z ? parseFloat(z.zoom) : 1;
-		return v >= 1 ? v : 1;
-	}
+  setDataMapToDefault = () =>
+  {
+    const d = createDefaultDataMap();
+    Object.keys(d).forEach((k) => this.setZoom(k, d[k]));
+  }
 
-	getComponentRawZoom = (componentKey) =>
-	{
-		let z = this.zoomMap[componentKey];
-		let v = z ? z.zoom : "";
-		return v ? v : "";
-	}
+  hasComponentKey = (key) =>
+  {
+    return (key in dataMap);
+  }
+
+  constructor()
+  {
+    dataMap = createDefaultDataMap();
+  }
 }
 
 
-let zoomService = new ZoomService();
-export default zoomService;
+const createDefaultDataMap = () =>
+{
+  const map = {};
+  map.footer = "1";
+  map.header = "1";
+  map.windowList = "1";
+  map.manager = "1";
+  map.zoom = "1";
+  map.randomizer = "1";
+  map.patch = "1";
+  map.health = "1";
+  map.food = "1";
+  map.level = "1";
+  map.pallete = "1";
+  map.damage = "1";
+  map.modification = "1";
+  return map;
+}
+
+let dataMap;
+
+
+export const zoomService = new ZoomService();

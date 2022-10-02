@@ -1,0 +1,68 @@
+.randomizer .window-content-line > span
+{
+  min-width: 7.125rem;
+}
+
+.randomizer .enemy-group-text
+{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.randomizer .enemy-group-text > b
+{
+  color: #30E030;
+  font-size: 1em;
+  margin: 0;
+}
+
+.randomizer b
+{
+  font-weight: bold;
+  font-size: 0.7em;
+
+  margin-left: 1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.randomizer .enemy-group > .window-content-line > span:first-child
+{
+  min-width: 15rem;
+}
+
+.randomizer .enemy-group .window-content-line span:not(:first-child)
+{
+  min-width: 3.125rem;
+  margin-left: 1.25rem;
+}
+
+.randomizer .enemy-group .window-content-line input
+{
+  max-width: 2.5rem;
+}
+
+.randomizer > div:last-child
+{
+  margin-top: 1rem;
+}
+
+.randomizer > div:last-child > *
+{
+  margin-top: 0.5rem;
+}
+
+.randomizer > div:last-child > :not(:last-child)
+{
+  margin-right: 0.75rem;
+}
+
+.randomizer .button-solid
+{
+  cursor: pointer;
+}
+
+.randomizer .button-solid > input
+{
+  display: none;
+}

@@ -1,33 +1,30 @@
 The enemies are represented by a 16 bytes data
 
 
-CP =	Camera Position to trigger  the enemy spawn.
-ID =	ID of the enemy.
-PX =	Spawn Position X (CP + PX).
-PY =	Spawn Position Y.
-PC =	Posture and Color.
-			P should be replaced by the value of the posture.
-			C should be replaced by the value of the color.
-?1 =	03 is the default value.
-			If different than 03, it crashes the game. Unknown.
-?2 =	00 is the default value. Unknown.
-?3 =	48 is the default value. 48 makes the enemy spawn based on the camera positon. 68 is level position based.
-			Some different values crash the game, others bugs the enemy and the following enemies spawn, they end up not spawning.
-?4 =	02 is the default value.
-			If different than 02, it crashes the game. Unknown.
-?5 =	00 is the default value.
-			If different than 00, it crashes the game.
-			Unknown, Maybe it is related to the ID?.
-?6 =	00 is the default value.
-			If different than 00, the character will have a weird pallet and players can't hit the enemy, he also has no HP, you can only kill it with crystals. Unknown.
-?7 =	00 is the default value. 
-			If different than 00, it crashes the game.
-			Maybe it is related to 6?. Unknown.
-?8 =	00 is the default value.
-			Probably related to the animation the character will start.
+CP =  Camera Position to trigger  the enemy spawn.
+ID =  ID of the enemy.
+PX =  Spawn Position X (CP + PX).
+PY =  Spawn Position Y.
+PC =  Posture and Color.
+      P should be replaced by the value of the posture.
+      C should be replaced by the value of the color.
+RA =  Routine Address, the game will call this address to be executed.
+      This can be used to call routines to spawn characters, change music, area, etc.
+      It is so powerfull that you can write your own routine that does whataver you want
+      and put it in here, and the game will execute it as part of the level scripting.
+?5 =  00 is the default value.
+      If different than 00, it crashes the game.
+      Unknown, Maybe it is related to the ID?.
+?6 =  00 is the default value.
+      If different than 00, the character will have a weird pallet and players can't hit the enemy, he also has no HP, you can only kill it with crystals. Unknown.
+?7 =  00 is the default value. 
+      If different than 00, it crashes the game.
+      Maybe it is related to 6?. Unknown.
+?8 =  00 is the default value.
+      Probably related to the animation the character will start.
 
 
-CP CP ?1 ?2 ?3 ?4 ID ?5 ?6 ?7 PX PX PY PY PC ?8
+CP CP RA RA RA RA ID ?5 ?6 ?7 PX PX PY PY PC ?8
 01 00 03 00 48 02 11 00 00 00 0C FE B4 00 04 00
 
 
@@ -87,9 +84,9 @@ should be placed where you place the PC value.
 0C = Muffin brown wrapper
 0D = Soup blue bowl
 
-13 = Circular Star 6, Spark Sprite						(Star Chicken Nugget, Heals 100+%)
-81 = Torus Smoke 2, Spark Sprite							(Meatball, Heals 50+%)
-92 01 = E7 Red Leaf Effect 5, Spark Sprite		(Tuna, Heals 150+%)
+13 = Circular Star 6, Spark Sprite            (Star Chicken Nugget, Heals 100+%)
+81 = Torus Smoke 2, Spark Sprite              (Meatball, Heals 50+%)
+92 01 = E7 Red Leaf Effect 5, Spark Sprite    (Tuna, Heals 150+%)
 
 
 If the id is 0B, it will be objects used on maps. The 

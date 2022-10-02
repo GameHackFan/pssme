@@ -1,0 +1,29 @@
+.character-damage > .window-content-line > span
+{
+  min-width: 4.625rem;
+}
+
+.character-damage input[type=text]
+{
+  margin-right: 0.75rem;
+}
+
+.character-damage button
+{
+  cursor: pointer;
+}
+a
+.character-damage button > input
+{
+  display: none;
+}
+
+.character-damage > div:last-child
+{
+  margin-top: 1.5rem;
+}
+
+.character-damage > div:last-child > :not(:last-child)
+{
+  margin-right: 0.75rem;
+}

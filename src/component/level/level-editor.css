@@ -1,0 +1,111 @@
+.level .level-display
+{
+  max-width: 96%;
+  max-height: 30rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.level .level-display > img
+{
+  min-height: 15rem;
+}
+
+.level .level-display .vertical-scroll
+{
+  overflow-y: "scroll";
+}
+
+.level .enemy-group .window-content-line b
+{
+  font-weight: bold;
+  font-size: 0.7em;
+
+  margin-left: 1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.level .enemy-group-text
+{
+  margin-bottom: 0.875rem;
+}
+
+.level .enemy-group-text > b
+{
+  font-weight: bold;
+  color: #30E030;
+  font-size: 1em;
+  margin: 0;
+}
+
+.level .hint-text
+{
+  margin-bottom: 1rem;
+}
+
+.level .hint-text > span
+{
+  display: block;
+}
+
+.level .hint-text > span:not(:last-child)
+{
+  margin-bottom: 0.25rem;
+}
+
+.level .hint-text > span:first-child > b
+{
+  color: #0098B0;
+}
+
+.level .hint-text > span:nth-child(2) > b
+{
+  color: #30E030;
+}
+
+.level .hint-text > span:last-child > b
+{
+  color: #F8A828;
+}
+
+.level .window-content-line > span
+{
+  min-width: 9.875rem;
+}
+
+.level > div:last-child
+{
+  margin-top: 1rem;
+}
+
+.level > div:nth-last-child(2)
+{
+  margin-top: 1.5rem;
+}
+
+.level > div:last-child > *
+{
+  margin-top: 0.5rem;
+}
+
+.level > div:last-child > :not(:last-child),
+.level button:not(:last-child)
+{
+  margin-right: 0.75rem;
+}
+
+.level .button-solid
+{
+  cursor: pointer;
+}
+
+.level .button-solid > input
+{
+  display: none;
+}

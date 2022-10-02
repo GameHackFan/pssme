@@ -1,0 +1,24 @@
+.patch > div > div:last-child
+{
+  margin-top: 1.5rem;
+}
+
+.patch .window-text
+{
+  max-width: 100%;
+}
+
+.patch button:first-child
+{
+  margin-right: 0.75rem;
+}
+
+.patch button
+{
+  cursor: pointer;
+}
+
+.patch button > input
+{
+  display: none;
+}

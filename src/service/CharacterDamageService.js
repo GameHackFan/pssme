@@ -1,119 +1,178 @@
-import romService from "./ROMService";
-import characterDamageMap from "../data/overwrite/CharacterDamageMap";
-import modificationService from "./ModificationService";
+import { modificationService } from "./ModificationService";
+import { romService } from "./ROMService";
+import { characterDamageMap } from "../data/damage/CharacterDamageMap";
 
 
 class CharacterDamageService
 {
-	constructor()
-	{
-		this.characterDamageData = {};
-	}
+  createPreset = () =>
+  {
+    const keys = Object.keys(dataMap);
+    const p = {type: "characterDamage", data: {}};
+    keys.forEach((k) => p.data[k] = dataMap[k]);
+    return p;
+  }
 
-	createCharacterDamagePreset = () =>
-	{
-		let p = {};
-		p.type = "characterDamage";
-		p.data = {};
-		Object.keys(this.characterDamageData).forEach((k) =>
-		{
-			p.data[k] = this.characterDamageData[k];
-		});
+  applyPreset = (preset) =>
+  {
+    const json = JSON.parse(preset);
 
-		return p;
-	}
+    if(json && json.data && json.type === "characterDamage")
+    {
+      Object.keys(json.data).forEach((ck) =>
+      {
+        const cdm = json.data[ck];
+        Object.keys(cdm ? cdm : {}).forEach((ak) =>
+        {
+          const d = parseInt(cdm[ak]);
 
-	applyPresetFile = (presetFile) =>
-	{
-		let json = JSON.parse(presetFile);
+          if(!isNaN(d) && d > -1)
+            this.setDamage(ck, ak, d);
+        });
+      });
+    }
+  }
 
-		if(json && json.data && json.type === "characterDamage")
-		{
-			Object.keys(json.data).forEach((k) =>
-			{
-				this.characterDamageData[k] = Object.assign(
-						this.characterDamageData[k], json.data[k]);
-			});
-		}
-	}
+  setDamageToDefault = (characterKey, attackKey) =>
+  {
+    const cdm = characterDamageMap[characterKey]?.damageMap;
+    const adi = cdm ? cdm[attackKey] : null;
 
-	getCharacterDamageData = () =>
-	{
-		this.characterDamageData = {};
-		Object.keys(characterDamageMap).forEach((ck) =>
-		{
-			let camd = {}
-			let cam = characterDamageMap[ck].damageMap;
-			Object.keys(cam).forEach((ak) =>
-			{
-				let cad = cam[ak];
-				camd[ak] = this.isInvalidROMBytes(cad) ? cad.defaultValue :
-						romService.getByte(cad.filename, cad.byteIndex);
-			});
+    if(adi)
+    {
+      if(!(characterKey in dataMap))
+        dataMap[characterKey] = {};
 
-			this.characterDamageData[ck] = camd;
-		});
-		
-		return this.characterDamageData;
-	}
+      dataMap[characterKey][attackKey] = cdm[attackKey].defaultValue;
+    }
+  }
 
-	applyCharacterDamageData = () =>
-	{
-		Object.keys(characterDamageMap).forEach((ck) =>
-		{
-			let camd = this.characterDamageData[ck];
-			let cam = characterDamageMap[ck].damageMap;
+  setDamage = (characterKey, attackKey, damage) =>
+  {
+    const cdm = characterDamageMap[characterKey]?.damageMap;
+    const adi = cdm ? cdm[attackKey] : null;
 
-			Object.keys(camd).forEach((ak) =>
-			{
-				let damage = parseInt(camd[ak]);
+    if(adi)
+    {
+      if(!(characterKey in dataMap))
+        dataMap[characterKey] = {};
 
-				if(!isNaN(damage) && damage > -1 && damage < 256)
-				{
-					let cad = cam[ak];
-					cad = cad ? cad : null;
+      dataMap[characterKey][attackKey] = damage;
+    }
+  }
 
-					if(cad)
-					{
-						if(cad.apply)
-						{
-							let index = Object.keys(cad.apply)[0];
-							let pd = cad.apply[index];
-							romService.setBytes(cad.filename, parseInt(index), pd, cad.byteFormat);
-						}
-						
-						[].concat(cad.byteIndex).forEach((byteIndex) =>
-						{
-							romService.setByte(cad.filename, byteIndex, damage);
-						});
-					}
-				}
-			});
-		});
-	}
-	
-	addToModificationQueue = () =>
-	{
-		modificationService.add(100, "characterDamage",
-				this.applyCharacterDamageData);
-	}
-	
-	isInvalidROMBytes = (characterDamageData) =>
-	{
-		if(romService.isROMReady())
-		{
-			let cad = characterDamageData;
-			let checkKeys = cad.check ? Object.keys(cad.check) : ["-9"];
-			let c = cad.check ? cad.check[checkKeys[0]] : ["-1"];
-			let ci = parseInt(checkKeys[0]);
-			let i = romService.indexOfBytes(cad.filename, c, cad.byteFormat, ci);
-			return i === ci;
-		}
+  getDamage = (characterKey, attackKey) =>
+  {
+    const ecdm = dataMap[characterKey];
 
-		return true;
-	}
+    if(!ecdm || !(attackKey in ecdm))
+    {
+      const cdm = characterDamageMap[characterKey]?.damageMap;
+      const adi = cdm ? cdm[attackKey] : {};
+      const invalidBytes = this.isInvalidROMBytes(adi);
+      const byteIndexes = adi.byteIndexes ?? [];
+      const v = parseInt(romService.getByte(adi.filename, byteIndexes[0]));
+      return (!isNaN(v) && !invalidBytes) ? v : adi.defaultValue;
+    }
+
+    return ecdm ? ecdm[attackKey] : null;
+  }
+
+  clearData = () =>
+  {
+    dataMap = {};
+  }
+
+  hasCharacterKey = (characterKey) =>
+  {
+    return (characterKey in characterDamageMap);
+  }
+
+  hasAttackKey = (characterKey, attackKey) =>
+  {
+    const v1 = this.hasCharacterKey(characterKey);
+    const am = v1 ? characterDamageMap[characterKey].damageMap : {};
+    return (attackKey in am);
+  }
+
+  applyData = () =>
+  {
+    Object.keys(characterDamageMap).forEach((ck) =>
+    {
+      const ecdm = dataMap[ck];
+      const cdm = characterDamageMap[ck].damageMap;
+
+      Object.keys(ecdm).forEach((ak) =>
+      {
+        const damage = parseInt(ecdm[ak]);
+
+        if(!isNaN(damage) && damage > -1 && damage < 256)
+        {
+          const cad = cdm[ak];
+
+          if(cad)
+          {
+            if(cad.apply)
+            {
+              const index = Object.keys(cad.apply)[0];
+              const pd = cad.apply[index];
+              romService.setBytes(cad.filename, parseInt(index), pd, cad.byteFormat);
+            }
+            
+            cad.byteIndexes.forEach((byteIndex) =>
+            {
+              romService.setByte(cad.filename, byteIndex, damage);
+            });
+          }
+        }
+      });
+    });
+  }
+  
+  isInvalidROMBytes = (attackDamageData) =>
+  {
+    if(romService.isROMReady())
+    {
+      const adi = attackDamageData;
+      const checkKeys = adi.check ? Object.keys(adi.check) : ["-9"];
+      const c = adi.check ? adi.check[checkKeys[0]] : ["-1"];
+      const ci = parseInt(checkKeys[0]);
+      const i = romService.indexOfBytes(adi.filename, c, adi.byteFormat, ci);
+      return i === ci;
+    }
+
+    return true;
+  }
+
+  getUICharacterDataList = () =>
+  {
+    const keys = Object.keys(characterDamageMap);
+    return keys.map((key) => {return characterDamageMap[key];});
+  }
+
+  getUIAttackDataList = (characterKey) =>
+  {
+    if(characterDamageService.hasCharacterKey(characterKey))
+    {
+      const am = characterDamageMap[characterKey].damageMap;
+      return Object.keys(am).map((key) =>  {return am[key];});
+    }
+  
+    return [];
+  }
+
+  addToModificationQueue = () =>
+  {
+    modificationService.add(100, "damage", this.applyData);
+  }
+
+  constructor()
+  {
+    dataMap = {};
+  }
 }
 
 
-let characterDamageService = new CharacterDamageService();
-export default characterDamageService;
+let dataMap;
+
+export const characterDamageService = new CharacterDamageService();

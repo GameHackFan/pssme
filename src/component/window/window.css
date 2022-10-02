@@ -1,0 +1,143 @@
+.window-box
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  
+  max-width: 60%;
+  min-width: 60%;
+
+  margin-top: 2rem;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+
+  color: whitesmoke;
+  background-color:#D01028B0;
+  box-shadow: 0 0 4px 2px #18283880;
+}
+
+.window-box > .titlebar
+{
+  min-width: 100%;
+}
+
+.window-box > .titlebar > span
+{
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  text-align: center;
+
+  margin-top: 0.4rem;
+  margin-bottom: auto;
+}
+
+.window-box > .titlebar > div
+{
+  position: relative;
+  left: -8.5rem;
+  top: -1.75rem;
+
+  height: 0;
+  width: 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.window-box > .titlebar > div > button
+{
+  font-size: 1.5rem;
+
+  border-radius: 50%;
+
+  min-width: 2.5rem;
+  max-width: 2.5rem;
+  min-height: 2.5rem;
+  max-height: 2.5rem;
+}
+
+.window-box > .titlebar > div > button:not(:last-child)
+{
+  margin-right: 0.4rem;
+}
+
+.window-box .window-text
+{
+  text-align: justify;
+}
+
+.window-box .window-text:not(:last-child)
+{
+  margin-bottom: 0.375rem;
+}
+
+.window-box > .window-content
+{
+  margin-top: 1.5rem;
+
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.window-content-line
+{
+  margin-top: 0.75rem;
+  max-width: 100%;
+}
+
+.window-content-line > span
+{
+  margin-right: 0.75rem;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  max-width: 48%;
+}
+
+.window-content-line > input,
+.window-content-line > select
+{
+  margin-top: auto;
+  margin-bottom: auto;
+
+  max-width: 48%;
+
+  padding-left: 0.25rem; 
+  padding-right: 0.25rem; 
+  padding-top: 0.125rem; 
+  padding-bottom: 0.125rem; 
+}
+
+
+.window-content-line > a
+{
+  font: 400 0.85em Arial;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.window-content-line > button,
+.window-content-line > a
+{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
+}
+
+.window-success-message
+{
+  color: #30E030;
+  font-weight: bold;
+}
+
+.window-error-message
+{
+  color: #F8A828;
+  font-weight: bold;
+}

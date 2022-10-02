@@ -1,0 +1,29 @@
+.food > .window-content-line > span
+{
+  min-width: 5.25rem;
+}
+
+.food input[type=text]
+{
+  margin-right: 0.75rem;
+}
+
+.food button
+{
+  cursor: pointer;
+}
+
+.food button input
+{
+  display: none;
+}
+
+.food > div:last-child
+{
+  margin-top: 1.5rem;
+}
+
+.food button:not(:last-child)
+{
+  margin-right: 0.75rem;
+}

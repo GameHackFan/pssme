@@ -1,0 +1,57 @@
+.footer
+{
+  background-color: #002858;
+
+  margin-top: auto;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 0;
+  
+  width: 100%;
+  min-height: 4rem;
+
+  border: 0;
+  border-top: 1px;
+  border-style: solid;
+  border-top-color: #486898;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.footer div
+{
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.footer span, .footer a
+{
+  color: #D01028;
+  font-weight: bold;
+  font-size: 1.4em;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.footer a
+{
+  margin-left: 0.75rem;
+  margin-right: auto;
+  outline: none;
+}
+
+.footer a:hover
+{
+  color: #C86818;
+}
+
+.footer span
+{
+  margin-left: auto;
+  margin-right: 0.75rem;
+}

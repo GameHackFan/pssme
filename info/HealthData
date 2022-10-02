@@ -1,4 +1,4 @@
-102033			Player 1 HP
+102033      Player 1 HP
 
 
 
@@ -18,15 +18,15 @@ Good Food Heals 1E (30)
 
 
 
-A52C:						Handles items pickup.
-A55A:						Checks if the item grabbed is a food.
+A52C:           Handles items pickup.
+A55A:           Checks if the item grabbed is a food.
 
-A5AA:						Reads the food id
-A5AE:						Grabs some value related to the food
+A5AA:           Reads the food id
+A5AE:           Grabs some value related to the food
 
-A5CE to A5DB:		handles the amout of health the food heals
+A5CE to A5DB:   handles the amout of health the food heals
 
-12210:					Item drop routine, it is easy to make other enemies to drop items as well.
+12210:          Item drop routine, it is easy to make other enemies to drop items as well.
 
 
 Food Tier List
@@ -47,8 +47,8 @@ Round cake brown dish
 Big ice cream blue cup 
 
 
-00 = Chocolate brown wrapper.					42446
-01 = Small ice cream blue.						
+00 = Chocolate brown wrapper.         42446
+01 = Small ice cream blue.
 02 = Pudding blue dish.
 03 = Big ice cream blue cup.
 04 = Lollipop brown.

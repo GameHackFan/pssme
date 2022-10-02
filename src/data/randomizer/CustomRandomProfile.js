@@ -1,7 +1,5 @@
-const customRandomProfile =
+export const customRandomProfile =
 {
-	label: "Custom"
+  key: "custom",
+  label: "Custom"
 }
-
-
-export default customRandomProfile;

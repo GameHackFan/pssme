@@ -1,69 +1,69 @@
-102000:		Player 1 first byte.
-102100:		Player 2 first byte.
-102500:		First object bytes.
-104F00:		Last object bytes? (Can be even more ahead).
+102000:   Player 1 first byte.
+102100:   Player 2 first byte.
+102500:   First object bytes.
+104F00:   Last object bytes? (Can be even more ahead).
 
-xxxx01.W:	Character ID.
-xxxx30.W:	Character maximum health.
-xxxx32.W:	Character current health.
-xxxx34.W:	Amount of HP the character took as damage.
-xxxx40.W:	Position X.
-xxxx44.W:	Position Y.
-xxxx76.W:	Damage given.
-xxxx78.W:	Damage taken.
-xxxx80.W:	Sprite.
+xxxx01.W: Character ID.
+xxxx30.W: Character maximum health.
+xxxx32.W: Character current health.
+xxxx34.W: Amount of HP the character took as damage.
+xxxx40.W: Position X.
+xxxx44.W: Position Y.
+xxxx76.W: Damage given.
+xxxx78.W: Damage taken.
+xxxx80.W: Sprite.
 xxxxE0.W: Attack ID (Enemies).
 xxxxF4.B: Lives (For players only).
 
 
 Queen Beryl, Garoben, anyone else?
 
-xxxx20:		Flag that means she grabbed the player
-xxxx0E:		That flag should be 1 everytime she executes her grab attack.
-					When she takes a hit, she falls to the ground and sets it to 
-					3 and never set it back to 1. Gariben sets it to 1 for 2 of
-					of her 3 attacks (grab and ax).
+xxxx20:   Flag that means she grabbed the player
+xxxx0E:   That flag should be 1 everytime she executes her grab attack.
+          When she takes a hit, she falls to the ground and sets it to 
+          3 and never set it back to 1. Gariben sets it to 1 for 2 of
+          of her 3 attacks (grab and ax).
 
 
-121CC:		Routine called to force enemies to die.
-17123:		Thetis Health (17120).
-1D230:		Bakene 1st Form Max Health (1D22E).
-1D236:		Bakene 1st Form Min Health (1D234).
-1C798:		Bakene 2nd Form Max Health (1C796).
-1C79E:		Bakene 2nd Form Min Health (1C79C).
-1C7A8:		Bakene 3nd Form Max Health (1C7A6).
-1D13E:		Bakene code that forces everyone to die.
-1F730:		After this code, Queen Beryl should set xxxx0E to 1,
-					but she doesn't, because of that she can grab friends.
+121CC:    Routine called to force enemies to die.
+17123:    Thetis Health (17120).
+1D230:    Bakene 1st Form Max Health (1D22E).
+1D236:    Bakene 1st Form Min Health (1D234).
+1C798:    Bakene 2nd Form Max Health (1C796).
+1C79E:    Bakene 2nd Form Min Health (1C79C).
+1C7A8:    Bakene 3nd Form Max Health (1C7A6).
+1D13E:    Bakene code that forces everyone to die.
+1F730:    After this code, Queen Beryl should set xxxx0E to 1,
+          but she doesn't, because of that she can grab friends.
 
 
-17F1E:		Jumou's Straight punch damage.
+17F1E:    Jumou's Straight punch damage.
 
 
 
-709A:			Start to compute damage?
-9208:			Computing damage?
-17E44:		Writes down the amount of damage given. Is it Jumou only? 
-					(Use this for each enemy to find how much they do as damage).
-18094:		Writes down the amount of damage given
-					(For hardcoded attacks like Jumou's Head).
+709A:     Start to compute damage?
+9208:     Computing damage?
+17E44:    Writes down the amount of damage given. Is it Jumou only? 
+          (Use this for each enemy to find how much they do as damage).
+18094:    Writes down the amount of damage given
+          (For hardcoded attacks like Jumou's Head).
 
 
 
 
 Old Values
-Jumou Straight:		4
-Jumou Stomach:		4
-Jumou Kick:			6
-Jumou Head:			8
+Jumou Straight:  4
+Jumou Stomach:   4
+Jumou Kick:      6
+Jumou Head:      8
 
 
 
 New Values
-Jumou Straight:		12
-Jumou Stomach:		14
-Jumou Kick:			18
-Jumou Head:			10
+Jumou Straight:  12
+Jumou Stomach:   14
+Jumou Kick:      18
+Jumou Head:      10
 
 
 
@@ -83,4 +83,3 @@ Sprite IDs
 10E: Girl holding a baby.
 10F: Guy scared.
 113: Cop helping.
-

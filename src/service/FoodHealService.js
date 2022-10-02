@@ -1,79 +1,95 @@
-import romService from "./ROMService";
-import foodHealMap from "../data/overwrite/FoodHealMap";
-import modificationService from "./ModificationService";
+import { modificationService } from "./ModificationService";
+import { romService } from "./ROMService";
+import { foodHealMap } from "../data/default/FoodHealMap";
 
 
 class FoodHealService
 {
-	constructor()
-	{
-		this.foodHealData = {};
-	}
+  createPreset = () =>
+  {
+    const keys = Object.keys(dataMap);
+    const p = {type: "foodHeal", data: {}};
+    keys.forEach((k) => p.data[k] = dataMap[k]);
+    return p;
+  }
 
-	createFoodHealPreset = () =>
-	{
-		let p = {};
-		p.type = "foodHeal";
-		p.data = {};
-		Object.keys(this.foodHealData).forEach((k) =>
-		{
-			p.data[k] = this.foodHealData[k];
-		});
+  applyPreset = (preset) =>
+  {
+    const json = JSON.parse(preset);
 
-		return p;
-	}
+    if(json && json.data && json.type === "foodHeal")
+    {
+      const keys = Object.keys(json.data);
+      keys.forEach((ck) => dataMap[ck] = json.data[ck]);
+    }
+  }
 
-	applyPresetFile = (presetFile) =>
-	{
-		let json = JSON.parse(presetFile);
+  setFoodHealToDefault = (foodKey) =>
+  {
+    const hd = foodHealMap[foodKey];
 
-		if(json && json.data && json.type === "foodHeal")
-		{
-			Object.keys(json.data).forEach((k) =>
-			{
-				this.foodHealData[k] = json.data[k];
-			});
-		}
-	}
+    if(hd)
+      dataMap[foodKey] = hd.defaultValue;
+  }
 
-	getFoodHealData = () =>
-	{
-		this.foodHealData = {};
-		Object.keys(foodHealMap).forEach((k) =>
-		{
-			let {filename, byteIndex} = foodHealMap[k];
-			this.foodHealData[k] = romService.getByte(filename, byteIndex);
-		});
+  setFoodHeal = (foodKey, heal) =>
+  {
+    if(this.hasCharacterKey(foodKey))
+      dataMap[foodKey] = heal;
+  }
 
-		return this.foodHealData;
-	}
+  getFoodHeal = (foodKey) =>
+  {
+    if(!(foodKey in dataMap))
+    {
+      const hd = foodHealMap[foodKey];
+      const v = parseInt(romService.getByte(hd?.filename, hd?.byteIndex));
+      return !isNaN(v) ? v : hd?.defaultValue;
+    }
+    
+    return dataMap[foodKey];
+  }
 
-	applyFoodHealData = () =>
-	{
-		Object.keys(foodHealMap).forEach((k) =>
-		{
-			let heal = parseInt(this.foodHealData[k]);
+  applyData = () =>
+  {
+    Object.keys(dataMap).forEach((k) =>
+    {
+      const fh = parseInt(dataMap[k]);
+      const fhd = foodHealMap[k];
 
-			if(!isNaN(heal) && heal > -1 && heal < 256)
-			{
-				let fh = foodHealMap[k];
-				fh = fh ? fh : null;
+      if(fhd && !isNaN(fh) && fh > -1 && fh < 256)
+        romService.setByte(fhd?.filename, fhd?.byteIndex, fh);
+    });
+  }
 
-				if(fh)
-				{
-					let {filename, byteIndex} = fh;
-					romService.setByte(filename, byteIndex, heal);
-				}
-			}
-		});
-	}
+  clearData = () =>
+  {
+    dataMap = {};
+  }
 
-	addToModificationQueue = () =>
-	{
-		modificationService.add(101, "foodHeal", this.applyFoodHealData);
-	}
+  hasCharacterKey = (characterKey) =>
+  {
+    return (characterKey in foodHealMap);
+  }
+
+  getFoodHealList = () =>
+  {
+    const keys = Object.keys(foodHealMap);
+    return keys.map((key) => foodHealMap[key]);
+  }
+
+  addToModificationQueue = () =>
+  {
+    modificationService.add(101, "food", this.applyData);
+  }
+
+  constructor()
+  {
+    dataMap = {};
+  }
 }
 
 
-let foodHealService = new FoodHealService();
-export default foodHealService;
+let dataMap;
+
+export const foodHealService = new FoodHealService();

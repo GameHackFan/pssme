@@ -1,0 +1,29 @@
+.health > .window-content-line > span
+{
+  min-width: 4.625rem;
+}
+
+.health input[type=text]
+{
+  margin-right: 0.75rem;
+}
+
+.health button
+{
+  cursor: pointer;
+}
+
+.health button input
+{
+  display: none;
+}
+
+.health > div:last-child
+{
+  margin-top: 1.5rem;
+}
+
+.health button:not(:last-child)
+{
+  margin-right: 0.75rem;
+}

@@ -1,3 +1,24 @@
+Version 1.7 Changes:
+- Changed from React.js to Svelte.
+- Improved Sailor Moon D, E, F (4, 5, 6) color.
+- Added Sailor Moon G and H (7, 8) color.
+- Improved Sailor Mercury B, D (2, 4) color.
+- Added Sailor Mercury G, H (7, 8) color.
+- Added Sailor Mars G, H (7, 8) color.
+- Improved Sailor Jupiter B (2) color.
+- Added Sailor Jupiter G, H (7, 8) color.
+- Improved Sailor Venus B, C, D, E, F (2, 3, 4, 5, 6) color.
+- Added Sailor Venus G, H (7, 8) color.
+- Updated EnemyColorExpansionPatch, SailorColorExpansionPatch to better support the new colors.
+- Updated the PalleteEditor to better support the color changes.
+- Updated SailorColorExpansionPatch, added support to random select a sailor (select pressing start).
+- The new random select feature randomly change the sailor every time a new area starts.
+- Created FairRandomProfile, it is like easy, but a little harder because of the change in food drops.
+- Some bug fixes to the code in general.
+- Small changes to the UI.
+- Minor changes and fixes.
+
+
 Version 1.6 Changes:
 - Created CrystalImprovementPatch: See changes A to C.
 - Change A: Coded a feature that alows players to change the amount of crystals they want to use by holding Punch and pressing Crystal, do it carefully because if the sailor is idle or walking she is going to spend the crystal, you can execute this on any attack, jump or run and it will not spend the crystals (Better way is to piano input this commando, so the sailor will punch).
@@ -10,8 +31,7 @@ Version 1.6 Changes:
 - Improved the Seed Randomizer, see changes G to I:
 - Change G: Added 2 Random Profiles, Meek and Kind, they are easier than Week.
 - Change H: Added a Custom Random Profile specific for customizations. It was possible to customize before, but now it is better, but you can't customize the default profiles anymore.
-- Change I: For customized profile, you can now inform the minimum and maximum amount, it works
-just like the default profiles, based on minimum and maximum amount.
+- Change I: For customized profile, you can now inform the minimum and maximum amount, it works just like the default profiles, based on minimum and maximum amount.
 - Created a Modification Manager. All modifications made by all editors will now be put in a queue that will be executed when the ROM is generated. It avoids bugging the ROM if you apply the Seed Randomizer or Level Editor multiple times.
 - Created CrystalImprovementPatch2, it is the same as the 1st one, but to change the amount of crystals to use you have to press the Start button.
 - Forced the randomizer to apply the CrystalImprovementPatch.

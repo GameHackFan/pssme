@@ -1,269 +1,292 @@
-import modificationService from "./ModificationService";
-import romService from "./ROMService";
-import palleteData from "../data/pallete/PalleteData";
+import { modificationService } from "./ModificationService";
+import { romService } from "./ROMService";
+import { palleteData } from "../data/pallete/PalleteData";
 
 
 class PalleteEditorService
 {
-	constructor()
-	{
-		this.palleteInfoList = this.createPalleteInfoList();
-		this.filename = "bpsm945a.u45";
-		this.palleteMap = {};
-		this.editedPallete = new Set();
-	}
+  applyData = () =>
+  {
+    const edited = modifiedPalletes ? modifiedPalletes : new Set();
 
-	addToModificationQueue = () =>
-	{
-		modificationService.add(151,
-				"palleteEditor", this.applyPalleteMap);
-	}
+    Object.keys(dataMap).forEach((key) =>
+    {
+      let pid = parseInt(key);
+      pid = isNaN(pid) ? -1 : pid;
 
-	applyPalleteMap = () =>
-	{
-		let edited = this.editedPallete ? this.editedPallete : new Set();
+      if(edited.has(key.toString()))
+        this.applyPallete(pid, dataMap[key]);
+    });
+  }
 
-		Object.keys(this.palleteMap).forEach((key) =>
-		{
-			let pid = parseInt(key);
-			pid = isNaN(pid) ? -1 : pid;
+  setColor = (palleteId, colorId, color32) =>
+  {
+    if(color32 && color32.length > 2)
+    {
+      const h = this.convertColor32ToDecimal(color32).toString(16);
+      this.setHexColor(palleteId, colorId, h);
+    }
+  }
 
-			if(edited.has(key.toString()))
-				this.applyPallete(pid, this.palleteMap[key]);
-		});
-	}
+  setHexColor = (palleteId, colorId, hexColor) =>
+  {
+    const p = dataMap[palleteId.toString()];
+    const h = hexColor ? hexColor.replace('#', '').toUpperCase() : null;
 
-	setColor = (palleteId, colorId, color32) =>
-	{
-		if(color32 && color32.length > 2)
-		{
-			let h = this.convertColor32ToDecimal(color32).toString(16);
-			this.setHexColor(palleteId, colorId, h);
-		}
-	}
+    if(p && h && !isNaN(parseInt(h, 16)))
+    {
+      p[colorId] = "#" + h.padStart(6, '0').substring(0, 6);
+      modifiedPalletes.add(palleteId.toString());
+    }
+  }
 
-	setHexColor = (palleteId, colorId, hexColor) =>
-	{
-		let p = this.palleteMap[palleteId.toString()];
-		let h = hexColor ? hexColor.replace('#', '').toUpperCase() : null;
+  getPallete = (palleteId) =>
+  {
+    const pId = parseInt(palleteId);
+    const ready = romService.isROMReady();
 
-		if(p && h && !isNaN(parseInt(h, 16)))
-		{
-			p[colorId] = "#" + h.padStart(6, '0');
-			this.editedPallete.add(palleteId.toString());
-		}
-	}
+    if(ready && (!isNaN(pId) && pId > -1 && pId < palleteData.amount))
+    {
+      if((dataMap[palleteId.toString()] ? false : true))
+        return this.resetPallete(palleteId);
+      else
+        return dataMap[palleteId.toString()];
+    }
 
-	getPallete = (palleteId) =>
-	{
-		if(romService.romReady && (palleteId > -1 && palleteId < palleteData.amount))
-		{
-			if((this.palleteMap[palleteId.toString()] ? false : true))
-				return this.resetPallete(palleteId);
-			else
-				return this.palleteMap[palleteId.toString()];
-		}
+    return [];
+  }
 
-		return null;
-	}
+  resetPallete = (palleteId) =>
+  {
+    const key = palleteId.toString();
+    const byteIndex = palleteData.startAddress + (palleteId * 32);
+    const bytes = romService.getBytes(filename, byteIndex, 32);
+    const pallete = this.convertBytesToPallete(bytes);
+    dataMap[key] = pallete;
+    modifiedPalletes.delete(key);
+    return pallete;
+  }
 
-	resetPallete = (palleteId) =>
-	{
-		let key = palleteId.toString();
-		let byteIndex = palleteData.startAddress + (palleteId * 32);
-		let bytes = romService.getBytes(this.filename, byteIndex, 32);
-		let pallete = this.convertBytesToPallete(bytes);
-		this.palleteMap[key] = pallete;
-		this.editedPallete.delete(key);
-		return pallete;
-	}
+  resetColor = (palleteId, colorId) =>
+  {
+    if(palleteId > -1 && palleteId < palleteData.amount &&
+        colorId > -1 && colorId < 16)
+    {
+      const op = dataMap[palleteId.toString()];
+      const p = this.resetPallete(palleteId);
+      op[colorId] = p[colorId].toUpperCase();
+      dataMap[palleteId.toString()] = op;
+    }
+  }
 
-	resetColor = (palleteId, colorId) =>
-	{
-		if(palleteId > -1 && palleteId < palleteData.amount &&
-				colorId > -1 && colorId < 16)
-		{
-			let op = this.palleteMap[palleteId.toString()];
-			let p = this.resetPallete(palleteId, true);
-			op[colorId] = p[colorId].toUpperCase();
-			this.palleteMap[palleteId.toString()] = op;
-		}
-	}
+  resetPalleteMap = () =>
+  {
+    dataMap = {};
+    modifiedPalletes = new Set();
+  }
 
-	resetPalleteMap = () =>
-	{
-		this.palleteMap = {};
-		this.editedPallete = new Set();
-	}
+  applyPallete = (palleteId, pallete) =>
+  {
+    if(palleteId > -1 && palleteId < palleteData.amount)
+    {
+      const byteIndex = palleteData.startAddress + (palleteId * 32);
+      const bytes = this.convertPalleteToBytes(pallete);
+      romService.setBytes(filename, byteIndex, bytes);
+    }
+  }
 
-	applyPallete = (palleteId, pallete) =>
-	{
-		if(palleteId > -1 && palleteId < palleteData.amount)
-		{
-			let byteIndex = palleteData.startAddress + (palleteId * 32);
-			let bytes = this.convertPalleteToBytes(pallete);
-			romService.setBytes(this.filename, byteIndex, bytes);
-		}
-	}
+  createPalletePreset = (palleteId, pallete) =>
+  {
+    const preset = {};
+    preset.type = "palleteEditor";
+    preset.data = {[palleteId]: pallete.slice()};
+    return preset;
+  }
 
-	createPalletePresetFile = (palleteId, pallete) =>
-	{
-		let preset = {};
-		preset.type = "palleteEditor";
-		preset.data = {[palleteId]: pallete.slice()};
-		return preset;
-	}
+  createAllPreset = () =>
+  {
+    const preset = {};
+    preset.type = "palleteEditor";
+    preset.data = {};
 
-	createAllPresetFile = () =>
-	{
-		let preset = {};
-		preset.type = "palleteEditor";
-		preset.data = {};
+    for(let i = 0; i < palleteData.amount; i++)
+      preset.data[i] = this.getPallete(i);
 
-		for(let i = 0; i < palleteData.amount; i++)
-			preset.data[i] = this.getPallete(i);
+    return preset;
+  }
 
-		return preset;
-	}
+  applyPreset = (preset) =>
+  {
+    const json = JSON.parse(preset);
 
-	applyPresetFile = (presetFile) =>
-	{
-		let json = JSON.parse(presetFile);
+    if(json && json.data && json.type === "palleteEditor")
+    {
+      Object.keys(json.data).forEach((key) =>
+      {
+        dataMap[key.toString()] = json.data[key];
+        modifiedPalletes.add(key.toString());
+      });
+    }
+  }
 
-		if(json && json.data && json.type === "palleteEditor")
-		{
-			let index;
+  convertBytesToPallete = (bytes) =>
+  {
+    const pallete = [];
+    let decimal, color;
 
-			Object.keys(json.data).forEach((key) =>
-			{
-				this.palleteMap[key.toString()] = json.data[key];
-				this.editedPallete.add(key.toString());
-			});
-		}
-	}
+    for(let i = 0; i < bytes.length; i += 2)
+    {
+      decimal = (bytes[i + 1] << 8) | bytes[i];
+      color = this.convertDecimalToColor16(decimal);
+      color = this.convertColor16ToColor32(color);
+      decimal = this.convertColor32ToDecimal(color);
+      var hex = decimal.toString(16).padStart(6, '0');
+      pallete.push("#" + hex.toUpperCase());
+    }
 
-	getPalleteInfoList = (filter) =>
-	{
-		if(filter)
-		{
-			const filterLower = filter.toLowerCase();
-			const pil = this.palleteInfoList;
-			const filtered = {};
-			const indexOrDecimal = parseInt(filter, 10);
-			const fromHex = parseInt(filter, 16);
-			let address;
+    return pallete;
+  }
 
-			for(let i = 0; i < pil.length; i++)
-			{
-				address = palleteData.startAddress + (i * 32);
+  convertPalleteToBytes = (pallete) =>
+  {
+    const bytes = [];
+    let decimal, color;
 
-				if(pil[i].originalUsage.toLowerCase().includes(filterLower) ||
-						pil[i].pssmeUsage.toLowerCase().includes(filterLower) ||
-						i == indexOrDecimal || address == fromHex || address == indexOrDecimal)
-				{
-					filtered[i] = pil[i];
-				}
-			}
+    for(let i = 0; i < pallete.length; i++)
+    {
+      color = this.convertHexToColor32(pallete[i]);
+      color = this.convertColor32ToColor16(color);
+      decimal = this.convertColor16ToDecimal(color);
+      bytes.push(decimal & 255);
+      bytes.push((decimal >> 8) & 255);
+    }
 
-			return filtered;
-		}
+    return bytes;
+  }
 
-		return this.palleteInfoList;
-	}
+  getColor32 = (red, green, blue) =>
+  {
+    let r = parseInt(red);
+    let g = parseInt(green);
+    let b = parseInt(blue);
+    r = isNaN(r) ? 0 : Math.abs(r) & 255;
+    g = isNaN(g) ? 0 : Math.abs(g) & 255;
+    b = isNaN(b) ? 0 : Math.abs(b) & 255;
+    return [r, g, b];
+  }
 
-	createPalleteInfoList = () =>
-	{
-		const info = [];
-		let address;
-		let current;
+  convertHexToColor32 = (hex) =>
+  {
+    const h = hex ? hex : "";
+    const decimal = parseInt(h.replace("#", ""), 16);
+    return this.convertDecimalToColor32(decimal);
+  }
 
-		for(let i = 0; i < palleteData.amount; i++)
-		{
-			address = palleteData.startAddress + (32 * i);
-			current = palleteData.data[address];
-			info.push(current ? current : palleteData.data["unknown"]);
-		}
+  convertDecimalToColor32 = (d) =>
+  {
+    return [(d >> 16) & 255, (d >> 8) & 255, d & 255];
+  }
 
-		return info;
-	}
+  convertColor16ToDecimal = (color) =>
+  {
+    return (parseInt(color[1]) << 10) |
+        (parseInt(color[0]) << 5) |
+        parseInt(color[2]);
+  }
 
-	convertBytesToPallete = (bytes) =>
-	{
-		let pallete = [];
-		let decimal, color;
+  convertColor32ToDecimal = (color) =>
+  {
+    return parseInt((color[0] << 16).toString(), 10) |
+        parseInt((color[1] << 8).toString(), 10) |
+        parseInt((color[2]).toString(), 10);
+  }
 
-		for(let i = 0; i < bytes.length; i += 2)
-		{
-			decimal = (bytes[i + 1] << 8) | bytes[i];
-			color = this.convertDecimalToColor16(decimal);
-			color = this.convertColor16ToColor32(color);
-			decimal = this.convertColor32ToDecimal(color);
-			var hex = decimal.toString(16).padStart(6, '0');
-			pallete.push("#" + hex.toUpperCase());
-		}
+  convertDecimalToColor16 = (d) =>
+  {
+    return [(d >> 5) & 31, (d >> 10) & 31, d & 31];
+  }
 
-		return pallete;
-	}
+  convertColor16ToColor32 = (color) =>
+  {
+    return color.map((v) => Math.round(v * 8.225806));
+  }
 
-	convertPalleteToBytes = (pallete) =>
-	{
-		let bytes = [];
-		let decimal, color;
+  convertColor32ToColor16 = (color) =>
+  {
+    return color.map((v) => Math.round(v / 8.225806));
+  }
 
-		for(let i = 0; i < pallete.length; i++)
-		{
-			color = this.convertHexToColor32(pallete[i]);
-			color = this.convertColor32ToColor16(color);
-			decimal = this.convertColor16ToDecimal(color);
-			bytes.push(decimal & 255);
-			bytes.push((decimal >> 8) & 255);
-		}
+  addToModificationQueue = () =>
+  {
+    modificationService.add(151, "pallete", this.applyData);
+  }
 
-		return bytes;
-	}
+  getUIFilteredPalleteInfoList = (filter, currentPalleteId) =>
+  {
+    if(filter)
+    {
+      const filterLower = filter.toLowerCase();
+      const indexOrDecimal = parseInt(filter, 10);
+      const fromHex = parseInt(filter, 16);
+      const filtered = [];
+      let address, palleteInfo;
 
-	convertHexToColor32 = (hex) =>
-	{
-		let h = hex ? hex : "";
-		let decimal = parseInt(h.replace("#", ""), 16);
-		return this.convertDecimalToColor32(decimal);
-	}
+      for(let i = 0; i < palleteInfoList.length; i++)
+      {
+        palleteInfo = palleteInfoList[i];
+        address = palleteData.startAddress + (i * 32);
+        const v1 = palleteInfoList[i].originalUsage.toLowerCase().includes(filterLower);
+        const v2 = palleteInfoList[i].pssmeUsage.toLowerCase().includes(filterLower);
+        const v3 = i == indexOrDecimal || address == fromHex || address == indexOrDecimal;
+        const v4 = palleteInfo.id.toString() === currentPalleteId;
 
-	convertDecimalToColor32 = (d) =>
-	{
-		return [(d >> 16) & 255, (d >> 8) & 255, d & 255];
-	}
+        if(v1 || v2 || v3 || v4)
+          filtered.push(palleteInfoList[i]);
+      }
 
-	convertColor16ToDecimal = (color) =>
-	{
-		return (parseInt(color[1]) << 10) |
-				(parseInt(color[0]) << 5) |
-				parseInt(color[2]);
-	}
+      return filtered;
+    }
 
-	convertColor32ToDecimal = (color) =>
-	{
-		return parseInt(color[0] << 16, 10) |
-				parseInt(color[1] << 8, 10) |
-				parseInt(color[2], 10);
-	}
+    return palleteInfoList;
+  }
 
-	convertDecimalToColor16 = (d) =>
-	{
-		return [(d >> 5) & 31, (d >> 10) & 31, d & 31];
-	}
+  getUIPalleteInfo = (palleteInfoId) =>
+  {
+    return palleteInfoList[palleteInfoId];
+  }
 
-	convertColor16ToColor32 = (color) =>
-	{
-		return color.map((v) => Math.round(v * 8.225806));
-	}
-
-	convertColor32ToColor16 = (color) =>
-	{
-		return color.map((v) => Math.round(v / 8.225806));
-	}
+  constructor()
+  {
+    dataMap = {};
+    modifiedPalletes = new Set();
+  }
 }
 
 
-const palleteEditorService = new PalleteEditorService();
-export default palleteEditorService;
+const createUIPalleteInfoList = () =>
+{
+  const info = [];
+  const unknown = palleteData.data["unknown"];
+  let address, hexAddress, aux;
+
+  for(let id = 0; id < palleteData.amount; id++)
+  {
+    address = palleteData.startAddress + (32 * id);
+    hexAddress = address.toString(16).toUpperCase();
+    aux = palleteData.data[address];
+
+    if(aux)
+      info.push({...aux, id, address, hexAddress});
+    else
+      info.push({...unknown, id, address, hexAddress});
+  }
+
+  return info;
+}
+
+
+const filename = "bpsm945a.u45";
+const palleteInfoList = createUIPalleteInfoList();
+let dataMap, modifiedPalletes;
+
+export const palleteEditorService = new PalleteEditorService();

@@ -1,77 +1,100 @@
-import romService from "./ROMService";
-import modificationService from "./ModificationService";
-
-import healthMap from "../data/overwrite/HealthMap";
+import { modificationService } from "./ModificationService";
+import { romService } from "./ROMService";
+import { healthMap } from "../data/default/HealthMap";
 
 
 class HealthService
 {
-	constructor()
-	{
-		this.healthData = {};
-	}
+  createPreset = () =>
+  {
+    const keys = Object.keys(dataMap);
+    const p = {type: "health", data: {}};
+    keys.forEach((ck) => p.data[ck] = dataMap[ck]);
+    return p;
+  }
 
-	createHealthPreset = (playerHealth) =>
-	{
-		let p = {};
-		p.type = "health";
-		p.data = {};
-		Object.keys(this.healthData).forEach((ck) =>
-		{
-			p.data[ck] = this.healthData[ck];
-		});
+  applyPreset = (preset) =>
+  {
+    const json = JSON.parse(preset);
 
-		return p;
-	}
+    if(json && json.data && json.type === "health")
+    {
+      const keys = Object.keys(json.data);
+      keys.forEach((ck) => dataMap[ck] = json.data[ck]);
+    }
+  }
 
-	applyPresetFile = (presetFile) =>
-	{
-		let json = JSON.parse(presetFile);
+  setHealthToDefault = (characterKey) =>
+  {
+    const hd = healthMap[characterKey];
 
-		if(json && json.data && json.type === "health")
-		{
-			Object.keys(json.data).forEach((ck) => 
-			{
-				this.healthData[ck] = json.data[ck];
-			});
-		}
-	}
+    if(hd)
+      dataMap[characterKey] = hd.defaultValue;
+  }
 
-	getHealthData = () =>
-	{
-		this.healthData = {};
-		Object.keys(healthMap).forEach((ck) =>
-		{
-			let {filename, byteIndexes} = healthMap[ck];
-			this.healthData[ck] = romService.getByte(filename, byteIndexes[0]);
-		});
+  setHealth = (characterKey, health) =>
+  {
+    if(this.hasCharacterKey(characterKey))
+      dataMap[characterKey] = health;
+  }
 
-		return this.healthData;
-	}
+  getHealth = (characterKey) =>
+  {
+    if(!(characterKey in dataMap))
+    {
+      const hd = healthMap[characterKey];
+      const v = parseInt(romService.getByte(hd?.filename, hd?.byteIndexes[0]));
+      return !isNaN(v) ? v : hd?.defaultValue;
+    }
 
-	applyHealthData = () =>
-	{
-		Object.keys(this.healthData).forEach((ck) =>
-		{
-			let h = parseInt(this.healthData[ck]);
-			let hd = healthMap[ck];
+    return dataMap[characterKey];
+  }
 
-			if(hd && !isNaN(h) && h > -1 && h < 256)
-			{
-				hd.byteIndexes.forEach((byteIndex) =>
-				{
-					romService.setByte(hd.filename, byteIndex, h);
-				});
-			}		
-		});
-	}
+  applyData = () =>
+  {
+    Object.keys(dataMap).forEach((ck) =>
+    {
+      const h = parseInt(dataMap[ck]);
+      const hd = healthMap[ck];
 
-	addToModificationQueue = () =>
-	{
-		modificationService.add(102, "health", this.applyHealthData);
-	}
+      if(hd && !isNaN(h) && h > -1 && h < 256)
+      {
+        hd.byteIndexes.forEach((byteIndex) =>
+        {
+          romService.setByte(hd.filename, byteIndex, h);
+        });
+      }
+    });
+  }
+
+  clearData = () =>
+  {
+    dataMap = {};
+  }
+
+  hasCharacterKey = (characterKey) =>
+  {
+    return (characterKey in healthMap);
+  }
+
+  addToModificationQueue = () =>
+  {
+    modificationService.add(102, "health", this.applyData);
+  }
+
+  getCharacterHealthList = () =>
+  {
+    const keys = Object.keys(healthMap);
+    return keys.map((key) => healthMap[key]);
+  }
+
+  constructor()
+  {
+    dataMap = {};
+  }
 }
 
 
-let healthService = new HealthService();
-export default healthService;
+let dataMap;
+
+export const healthService = new HealthService();
