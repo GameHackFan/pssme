@@ -99,7 +99,7 @@ class CharacterDamageService
   {
     Object.keys(characterDamageMap).forEach((ck) =>
     {
-      const ecdm = dataMap[ck];
+      const ecdm = dataMap[ck] ?? {};
       const cdm = characterDamageMap[ck].damageMap;
 
       Object.keys(ecdm).forEach((ak) =>
@@ -163,7 +163,7 @@ class CharacterDamageService
 
   addToModificationQueue = () =>
   {
-    modificationService.add(100, "damage", this.applyData);
+    modificationService.add(160, "damage", this.applyData);
   }
 
   constructor()

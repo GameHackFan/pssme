@@ -117,11 +117,11 @@ Crystal Control Indicator
 
 Title Screen Text Improvement
 
-07EF00:   Allows more characters to be drawn in the Title Screen.
+07EF00:   Allows more text to be drawn in the Title Screen.
 
 
 Lifebar Limit
 
-07EFA0:   Forces the lifebar size to be 60-.
+07EFA0:   Forces the lifebar size to be at max 60 (96).
 
 

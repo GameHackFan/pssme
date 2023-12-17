@@ -75,7 +75,7 @@
 
 .pallete .window-content-line > span:not(.checkbox)
 {
-  min-width: 8.875rem;
+  min-width: 9rem;
 }
 
 .pallete > div:last-child

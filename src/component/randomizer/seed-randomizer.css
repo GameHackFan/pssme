@@ -1,6 +1,6 @@
 .randomizer .window-content-line > span
 {
-  min-width: 7.125rem;
+  min-width: 7.8rem;
 }
 
 .randomizer .enemy-group-text
@@ -28,7 +28,7 @@
 
 .randomizer .enemy-group > .window-content-line > span:first-child
 {
-  min-width: 15rem;
+  width: 15rem;
 }
 
 .randomizer .enemy-group .window-content-line span:not(:first-child)

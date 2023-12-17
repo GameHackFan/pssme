@@ -90,7 +90,7 @@ class LevelEditorService
     Object.keys(enemyGroup).forEach((ek) =>
     {
       const enemy = enemyGroup[ek];
-      this.fixEnemyData(enemy, enemyGroup, levelEditorEnemyGroup);
+      this.fixEnemyData(enemy, levelEditorEnemyGroup);
       const enemyBytes = enemyBytesMap[enemy.enemyKey].slice();
 
       let hex = romService.convertNumberToROMBytes(enemy.triggerPosition, 2);
@@ -135,6 +135,12 @@ class LevelEditorService
     enemy.positionY = positionY;
   }
 
+  toggleEnemyNoLevelLimits = (levelKey, enemyGroupKey, enemyId) =>
+  {
+    const enemy = this.getEnemy(levelKey, enemyGroupKey, enemyId);
+    enemy.noLevelLimits = enemy.noLevelLimits ? false : true;
+  }
+
   getEnemy = (levelKey, enemyGroupKey, enemyId) =>
   {
     const l = this.getField(dataMap, levelKey);
@@ -176,15 +182,14 @@ class LevelEditorService
     }
   }
 
-  fixEnemyData = (enemy, enemyGroup, levelEditorEnemyGroup) =>
+  fixEnemyData = (enemy, levelEditorEnemyGroup) =>
   {
+    const leeg = levelEditorEnemyGroup;
+    const rangeY = this.getPositionYRange(enemy, levelEditorEnemyGroup);
     enemy.triggerPosition = this.getValidValue(enemy.triggerPosition,
-        levelEditorEnemyGroup.screenPositionStart,
-        levelEditorEnemyGroup.screenPositionEnd);
-    enemy.positionY = this.getValidValue(enemy.positionY,
-        levelEditorEnemyGroup.walkablePositionYTop,
-        levelEditorEnemyGroup.walkablePositionYBottom);
+        leeg.screenPositionStart, leeg.screenPositionEnd);
     enemy.positionX = this.getValidValue(enemy.positionX, -130, 450);
+    enemy.positionY = this.getValidValue(enemy.positionY, rangeY.min, rangeY.max);
   }
 
   forceEnemy = (levelKey, enemyGroupKey, enemyAmount) =>
@@ -198,6 +203,14 @@ class LevelEditorService
       thetis.id = 0;
       level[enemyGroupKey][0] = thetis;
     }
+  }
+
+  getPositionYRange = (enemy, levelEditorEnemyGroup) =>
+  {
+    const nll = enemy.noLevelLimits === true ? true : false;
+    let min = nll ? 0 : levelEditorEnemyGroup.walkablePositionYTop;
+    let max = nll ? 65355 : levelEditorEnemyGroup.walkablePositionYBottom;
+    return {min: min, max: max};
   }
 
   createLevelImage = (levelKey, enemyGroupKey, enemyId, callback) =>
@@ -235,14 +248,10 @@ class LevelEditorService
     const mergeData = [];
     ids.sort((a, b) =>
     {
-      const va = this.getValidValue(
-          enemyGroup[a].positionY,
-          leeg.walkablePositionYTop,
-          leeg.walkablePositionYBottom);
-      const vb = this.getValidValue(
-          enemyGroup[b].positionY,
-          leeg.walkablePositionYTop,
-          leeg.walkablePositionYBottom);
+      const aRY = this.getPositionYRange(enemyGroup[a], levelEditorEnemyGroup);
+      const bRY = this.getPositionYRange(enemyGroup[b], levelEditorEnemyGroup);
+      const va = this.getValidValue(enemyGroup[b].positionY, aRY.min, aRY.max);
+      const vb = this.getValidValue(enemyGroup[b].positionY, bRY.min, bRY.max);
       return va - vb;
     });
     ids.forEach((id) =>
@@ -292,9 +301,8 @@ class LevelEditorService
       shift = shift ? shift : 0;
       px = (px + shift) - leEnemy.pivotX;
       shift = this.tryGetField(leeg, "levelEditorShiftY", 0);
-      let py = this.getValidValue(enemy.positionY,
-          leeg.walkablePositionYTop,
-          leeg.walkablePositionYBottom);
+      const rangeY = this.getPositionYRange(enemy, leeg);
+      let py = this.getValidValue(enemy.positionY, rangeY.min, rangeY.max);
       py = (py + shift) - leEnemy.pivotY;
       return {src: enemyImg, x: px, y: py};
     }
@@ -380,6 +388,7 @@ class LevelEditorService
       enemy.triggerPosition = triggerPosition;
       enemy.positionX = 450;
       enemy.positionY = 210;
+      enemy.noLevelLimits = false;
       return enemy;
     }
 

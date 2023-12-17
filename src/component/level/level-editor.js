@@ -170,6 +170,14 @@ class LevelEditor
     this.setViewData(this.getViewData());
   }
 
+  toggleEnemyNoLevelLimits = () =>
+  {
+    const {levelKey, enemyGroupKey, enemyId} = this;
+    levelEditorService.toggleEnemyNoLevelLimits(
+        levelKey, enemyGroupKey, enemyId);
+    this.setViewData(this.getViewData());
+  }
+
   createLevelList = () =>
   {
     return levelEditorService.getUILevelList();

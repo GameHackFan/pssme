@@ -79,7 +79,7 @@ class HealthService
 
   addToModificationQueue = () =>
   {
-    modificationService.add(102, "health", this.applyData);
+    modificationService.add(162, "health", this.applyData);
   }
 
   getCharacterHealthList = () =>

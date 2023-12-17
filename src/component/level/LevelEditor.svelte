@@ -204,6 +204,22 @@
           {` and ${data.enemyGroup.walkablePositionYBottom})`}
         </b>
       </div>
+      <div class="window-content-line flex-i-col">
+        <span>No Level Limits: </span>
+        <label
+          for="noLevelLimits"
+          class="checkbox"
+          title="If active, it will ignore the Position Y limits imposed by the editor"
+        >
+          <input
+            id="noLevelLimits"
+            type="checkbox"
+            class="checkbox"
+            checked={data.enemy.noLevelLimits}
+            on:input={(e) => levelEditor.toggleEnemyNoLevelLimits()}
+          />
+        </label>
+      </div>
     </div>
   </div>
   <div class="window-content-line">

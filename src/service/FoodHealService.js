@@ -80,7 +80,7 @@ class FoodHealService
 
   addToModificationQueue = () =>
   {
-    modificationService.add(101, "food", this.applyData);
+    modificationService.add(161, "food", this.applyData);
   }
 
   constructor()

@@ -1,6 +1,6 @@
 .health > .window-content-line > span
 {
-  min-width: 4.625rem;
+  min-width: 5rem;
 }
 
 .health input[type=text]

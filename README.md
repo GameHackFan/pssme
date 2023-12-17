@@ -9,23 +9,10 @@ Extra Features:
 - Select your sailor pressing Start to random select her.
 - Press Punch + Jump (Piano Input) / Start to change the amount of crystals to use in case the ROM is a randomizer or it has a crystal patch applied.
 
-Version 1.7 Changes:
-- Changed from React.js to Svelte.
-- Improved Sailor Moon D, E, F (4, 5, 6) color.
-- Added Sailor Moon G and H (7, 8) color.
-- Improved Sailor Mercury B, D (2, 4) color.
-- Added Sailor Mercury G, H (7, 8) color.
-- Added Sailor Mars G, H (7, 8) color.
-- Improved Sailor Jupiter B (2) color.
-- Added Sailor Jupiter G, H (7, 8) color.
-- Improved Sailor Venus B, C, D, E, F (2, 3, 4, 5, 6) color.
-- Added Sailor Venus G, H (7, 8) color.
-- Updated EnemyColorExpansionPatch, SailorColorExpansionPatch to better support the new colors.
-- Updated the PalleteEditor to better support the color changes.
-- Updated SailorColorExpansionPatch, added support to random select a sailor (select pressing start).
-- The new random select feature randomly change the sailor every time a new area starts.
-- Created FairRandomProfile, it is like easy, but a little harder because of the change in food drops.
-- Some bug fixes to the code in general.
+Version 1.8 Changes:
+- Created NoLevelLimits in the level editor, it allows enemies to not respect bounds.
+- Fixed a CharacterDamageEditor bug, it wasn't properly handling undefined data, making it crash.
+- Fixed a bug with several editors priorities, which was forcing them to not work properly.
 - Small changes to the UI.
 - Minor changes and fixes.
 

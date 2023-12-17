@@ -1,3 +1,11 @@
+Version 1.8 Changes:
+- Created NoLevelLimits in the level editor, it allows enemies to not respect bounds.
+- Fixed a CharacterDamageEditor bug, it wasn't properly handling undefined data, making it crash.
+- Fixed a bug with several editors priorities, which was forcing them to not work properly.
+- Small changes to the UI.
+- Minor changes and fixes.
+
+
 Version 1.7 Changes:
 - Changed from React.js to Svelte.
 - Improved Sailor Moon D, E, F (4, 5, 6) color.
