@@ -1,6 +1,6 @@
 export const playerHealthImprovementPatch = 
 {
-  priority: 16,
+  priority: 20,
   type: "overwrite",
   filename: "bpsm945a.u45",
   byteFormat: "hex",

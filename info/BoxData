@@ -1,0 +1,16 @@
+060000: Base address for the boxes
+
+
+
+Format
+
+1st 8 bytes is the hurtbox
+last 8 bytes is the strikebox
+
+
+PXPX PYPY BWBW BHBH     PXPX PYPY BWBW BHBH
+
+PX: Position X
+PY: Position Y
+BW: Box Width
+BH: Box Height

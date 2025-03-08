@@ -104,6 +104,34 @@ export const levelEditorEnemies =
   yashaWitchBrownYellowUnusedFalling: yashaEditorData.yashaWitchBrownYellowUnusedFalling,
 
 
+  yashaWitchNDBrownBlue: yashaEditorData.yashaWitchNDBrownBlue,
+  yashaWitchNDPurpleGreen: yashaEditorData.yashaWitchNDPurpleGreen,
+  yashaWitchNDPinkPurple: yashaEditorData.yashaWitchNDPinkPurple,
+  yashaWitchNDBrownPink: yashaEditorData.yashaWitchNDBrownPink,
+  yashaWitchNDBrownGreenUnused: yashaEditorData.yashaWitchNDBrownGreenUnused,
+  yashaWitchNDGreenBlueUnused: yashaEditorData.yashaWitchNDGreenBlueUnused,
+  yashaWitchNDBrownPurpleUnused: yashaEditorData.yashaWitchNDBrownPurpleUnused,
+  yashaWitchNDBrownYellowUnused: yashaEditorData.yashaWitchNDBrownYellowUnused,
+
+  yashaWitchNDBrownBlueStabbing: yashaEditorData.yashaWitchNDBrownBlueStabbing,
+  yashaWitchNDPurpleGreenStabbing: yashaEditorData.yashaWitchNDPurpleGreenStabbing,
+  yashaWitchNDPinkPurpleStabbing: yashaEditorData.yashaWitchNDPinkPurpleStabbing,
+  yashaWitchNDBrownPinkStabbing: yashaEditorData.yashaWitchNDBrownPinkStabbing,
+  yashaWitchNDBrownGreenUnusedStabbing: yashaEditorData.yashaWitchNDBrownGreenUnusedStabbing,
+  yashaWitchNDGreenBlueUnusedStabbing: yashaEditorData.yashaWitchNDGreenBlueUnusedStabbing,
+  yashaWitchNDBrownPurpleUnusedStabbing: yashaEditorData.yashaWitchNDBrownPurpleUnusedStabbing,
+  yashaWitchNDBrownYellowUnusedStabbing: yashaEditorData.yashaWitchNDBrownYellowUnusedStabbing,
+
+  yashaWitchNDBrownBlueFalling: yashaEditorData.yashaWitchNDBrownBlueFalling,
+  yashaWitchNDPurpleGreenFalling: yashaEditorData.yashaWitchNDPurpleGreenFalling,
+  yashaWitchNDPinkPurpleFalling: yashaEditorData.yashaWitchNDPinkPurpleFalling,
+  yashaWitchNDBrownPinkFalling: yashaEditorData.yashaWitchNDBrownPinkFalling,
+  yashaWitchNDBrownGreenUnusedFalling: yashaEditorData.yashaWitchNDBrownGreenUnusedFalling,
+  yashaWitchNDGreenBlueUnusedFalling: yashaEditorData.yashaWitchNDGreenBlueUnusedFalling,
+  yashaWitchNDBrownPurpleUnusedFalling: yashaEditorData.yashaWitchNDBrownPurpleUnusedFalling,
+  yashaWitchNDBrownYellowUnusedFalling: yashaEditorData.yashaWitchNDBrownYellowUnusedFalling,
+
+
   yashaHumanBrownGreen: yashaEditorData.yashaHumanBrownGreen,
   yashaHumanGreenBlue: yashaEditorData.yashaHumanGreenBlue,
   yashaHumanBrownPurple: yashaEditorData.yashaHumanBrownPurple,

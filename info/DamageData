@@ -1,0 +1,43 @@
+Attack / Difficulty         EE      VE      E_      ME      N_      MH      H_      VH      EH
+
+1st to 4th Combo Attack     06      04      03      03      03      02      02      01      01
+5th Combo Attack            0A      07      06      05      05      04      03      02      01
+Reverse / Jump Attack       08      06      05      04      04      03      03      02      01
+Jump Down + Punch Attack    04      03      02      02      02      01      01      01      01
+Dash Attack                 06      04      03      03      03      02      02      02      01
+Dash Jump Attack            0C      09      07      06      06      05      04      03      01
+Clinch 1/2/3 Attack         06      04      03      03      03      02      02      02      01
+Clinch Throw Attack         0A      07      06      05      05      04      03      02      01
+A + B Attack                0C      09      07      06      06      05      04      03      01
+
+Resistance Value            80      C0      E0      F0      00      10      20      40      60
+
+
+
+Attack / Difficulty         NU      NU      NU      NU      NU
+
+1st to 4th Combo Attack     05      05      04      04      01
+5th Combo Attack            09      08      08      06      01
+Reverse / Jump Attack       07      07      06      05      01
+Jump Down + Punch Attack    03      03      03      02      01
+Dash Attack                 05      05      04      04      01
+Dash Jump Attack            0B      0A      09      08      01
+Clinch 1/2/3 Attack         05      05      04      04      01
+Clinch Throw Attack         09      08      08      06      01
+A + B Attack                0B      0A      09      08      01
+
+Resistance Value            90      A0      B0      D0      70
+
+                            
+
+
+                                                      Old / New
+9A20            Dash Attack                             3 / 4
+9C86            Flying Kick and Reverse Flying Kick     4 / 5
+9CC0            Down + Punch Attack (Jumping)           2 / 2
+9DD6            Dash Flying Kick                        6 / 8
+9E1E            A+B Damage                              6 / 3
+A41E            Clinch 1st/2nd/3rd Attack               3 / 4
+A462            Clinch Throw                            5 / 6
+FC26 + 7        Venus Punch Damage                      
+C4D4 + 7        Mercury Punch Damage                    

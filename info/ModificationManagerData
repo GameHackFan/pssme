@@ -1,0 +1,58 @@
+Priority List
+
+000: Area Improvement Patch
+001: Stage 1 Remake Patch
+002: Extra Stage Patch
+003: Stage Time Patch
+004: Food Improvement Patch
+005: Sailor Color Expansion Patch
+006: Survival Level Patch
+007: Enemy Color Expansion Patch
+008: Thetis Improvement Patch
+009: Jumou Improvement Patch
+010: Bakene Improvement Patch
+011: Features And Fixes Patch
+012: Sailor Improvement Patch
+013: Stages Text Improvement Patch
+014: New Stages Text Improvement Patch
+015: Dont Freeze On Boss Patch
+016: Title Screen Text Patch
+017: Fix CPU Demo Patch
+018: Boss 1 Position Improvement Patch
+019: Crystal Improvement Patch
+020: Sailor Health Improvement Patch
+021: Sailor Dash Improvement Patch
+022: Item Drop Fixes Patch
+023: Faster Enemies Patch
+
+
+150: Level Editor / Seed Randomizer
+151: Palette Editor
+152: Stage Order Editor
+
+160: Character Damage Editor
+161: Food Heal Editor
+162: Character Health Editor
+
+
+
+000, areaImprovementPatch
+001, level1RemakePatch
+002, extraLevelPatch
+003, Time Patch
+004, foodImprovementPatch
+005, sailorColorExpansionPatch
+006, survivalLevelPatch
+007, enemyColorExpansionPatch
+008, thetisImprovementPatch
+009, jumouImprovementPatch
+010, bakeneImprovementPatch
+011, featuresAndFixesPatch
+012, sailorImprovementPatch
+013, Stages Text Improvement Patch
+014, New Stages Text Improvement Patch
+015, dontFreezeOnBossPatch
+016, Title Screen Text Patch
+017, fixCPUDemoPatch
+018, boss1PositionImprovementPatch
+019, crystalImprovementPatch

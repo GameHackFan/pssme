@@ -1,0 +1,109 @@
+Changing the value in the character E8 memory region makes them faster.
+For some characters, the speed is in a different address.
+
+
+Furau
+
+12676
+1268C
+12848
+
+
+Oniwabandana
+
+12F58
+132B6
+133F4
+13674
+
+
+Tesuni
+
+13E54
+13FF8
+1408E
+
+
+Castor
+
+150C6
+150DC
+
+
+Yasha Witch
+
+1625A
+16662
+
+
+Yasha Human
+
+16C70
+
+
+Thetis
+
+1741C
+1756E
+
+
+Jumou
+
+17C58
+
+
+Criminal
+
+18D4A
+18E22
+18FAA
+
+
+Morga
+
+1A002
+
+
+Kyurene
+
+1A92E
+1AAF6
+1AE56
+
+
+Garoben
+
+1BE36
+1BFEC
+
+
+Bakene
+
+1CB7A
+1CD50
+
+
+Zoisite
+
+1DC64
+
+
+Kunzite
+
+1E7A8
+
+
+Queen Beryl
+
+1EF92
+1F674
+
+
+
+
+Ninja, Criminal, Morga doesn't use E8 to set their speed.
+Ninja uses EA
+Criminal uses 66
+Morga uses FE
+Rest uses E8
+

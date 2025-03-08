@@ -4,13 +4,17 @@
 104F00:   Last object bytes? (Can be even more ahead).
 
 xxxx01.W: Character ID.
+xxxx28.W: Timer that freezes the character.
+xxxx2A.W: Timer that makes the character blink.
 xxxx30.W: Character maximum health.
 xxxx32.W: Character current health.
 xxxx34.W: Amount of HP the character took as damage.
 xxxx40.W: Position X.
 xxxx44.W: Position Y.
-xxxx76.W: Damage given.
-xxxx78.W: Damage taken.
+xxxx74.B: Game Difficulty.
+xxxx76.B: Damage Factor (Game Difficulty Based - 60, 40, 20, 10, 0, F0, E0, C0, 80).
+xxxx75.B: Damage given.
+xxxx77.B: Damage taken.
 xxxx80.W: Sprite.
 xxxxE0.W: Attack ID (Enemies).
 xxxxF4.B: Lives (For players only).
@@ -21,7 +25,7 @@ Queen Beryl, Garoben, anyone else?
 xxxx20:   Flag that means she grabbed the player
 xxxx0E:   That flag should be 1 everytime she executes her grab attack.
           When she takes a hit, she falls to the ground and sets it to 
-          3 and never set it back to 1. Gariben sets it to 1 for 2 of
+          3 and never set it back to 1. Garoben sets it to 1 for 2 of
           of her 3 attacks (grab and ax).
 
 
@@ -83,3 +87,18 @@ Sprite IDs
 10E: Girl holding a baby.
 10F: Guy scared.
 113: Cop helping.
+
+
+
+
+Damage Factor
+
+Extra Hard  = 60
+Very Hard   = 40
+Hard        = 20 
+Medium Hard = 10
+Normal      = 0
+Medium Easy = F0
+Easy        = E0
+Very Easy   = C0
+Extra Easy  = A0

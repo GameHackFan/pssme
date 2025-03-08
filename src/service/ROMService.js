@@ -155,6 +155,23 @@ class ROMService
     return bytes;
   }
 
+  convertDecimalBytesToNumber = (bytes) =>
+  {
+    const b = Array.from(bytes);
+    let hex = "";
+    
+    if(bytes.length % 2 != 0)
+      b.push(0);
+
+    for(let i = 0; i < b.length; i += 2)
+    {
+      hex += this.convertNumberToROMBytes(b[i + 1], 1);
+      hex += this.convertNumberToROMBytes(b[i], 1);
+    }
+
+    return parseInt(hex, 16);
+  }
+
   cloneROM = () =>
   {
     generatedROM = {};

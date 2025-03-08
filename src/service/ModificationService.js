@@ -1,4 +1,5 @@
 import { componentService } from "./ComponentService";
+import { romService } from "./ROMService";
 import { patchMap } from "../data/patch/PatchMap";
 
 
@@ -6,6 +7,12 @@ class ModificationService
 {
   apply = () =>
   {
+    if(!romService.isROMReady())
+    {
+      console.log("Can't apply any data, there isn't a ROM ready!");
+      return;
+    }
+
     this.getKeys().forEach((key) =>
     {
       const d = dataMap[key];

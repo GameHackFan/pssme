@@ -170,6 +170,7 @@ const createDefaultDataMap = () =>
   map.level = ccd("level", wc, "Level Editor", true, false);
   map.pallete = ccd("pallete", wc, "Pallete Editor", true, false);
   map.damage = ccd("damage", wc, "Character Damage Editor", true, false);
+  map.order = ccd("order", wc, "Stage Order Editor", true, false);
   map.modification = ccd("modification", wc, "Modification Manager", true, false);
   return map;
 }

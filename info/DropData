@@ -1,0 +1,26 @@
+11D02:  Routine that executes when the character move ID is 8.
+        It executes an item drop code at the end of it.
+11E5A:  Routine that executes when the character move ID is 9.
+        It might execute an item drops code near the end of it if the character was thrown.
+
+
+
+Set 11E92 to 0800 (0008) to allow the fallen move to drop items.
+
+Set all values from 11D90 to 11DA0 to 714E (4E71), the NOP instruction,
+to disable the item drop from the falling move.
+
+Modify 1225A to change the item drop movement impulse.
+
+
+
+ 01225A  bcs     $1228a                                      6500 002E
+ 01225E  move.w  ($26,A0), ($6a,A1)                          3368 0026 006A
+ 012264  bchg    #$3, ($6b,A1)                               0869 0003 006B
+ 01226A  move.l  ($4c,A0), D0                                2028 004C
+ 01226E  asr.l   #2, D0                                      E480
+ 012270  neg.l   D0                                          4480
+ 012272  move.l  D0, ($4c,A1)                                2340 004C
+ 012276  move.w  D7, ($48,A1)                                3347 0048
+ 01227A  move.l  #$ffffc400, ($60,A1)                        237C FFFF C400 0060
+ 012282  move.l  #$4c000, ($54,A1)                           237C 0004 C000 0054

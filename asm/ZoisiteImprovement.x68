@@ -6,6 +6,10 @@
 *               to freeze for some time when he spawns.
 *-----------------------------------------------------------------------------------------------
 
+************************************************************************************************
+* Code 1
+************************************************************************************************
+
   JMP       $7DBA0.L                ; Jumps the execution to the instruction in the address (replace 1DCE4 with this code).
 
 ; ORG       $7DBA0
@@ -29,6 +33,21 @@
 
 
 ; D0 is safe to use.
+
+
+************************************************************************************************
+* Code 2
+************************************************************************************************
+
+  JMP       $7DE80.L                ; Jumps the execution to the instruction in the address (replace 1DB24 with this code).
+
+; ORG       $7DE80
+
+                                    ; Block of code that fixes Zoisite going under the screen.
+  BCLR      #$2, ($27, A0)          ; Clears the 3rd bit of ($27 + A0), disables the reverse sprite.
+  JSR       $11E5A.L                ; Code from the original game that was replaced to jump to this code.
+  RTS                               ; Go back to the routine that called this code.
+
 
 
 *~Font name~Courier New~

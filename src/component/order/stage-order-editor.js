@@ -1,9 +1,9 @@
 import { componentService } from "../../service/ComponentService";
-import { healthService } from "../../service/HealthService";
 import { fileService } from "../../service/FileService";
+import { stageOrderService } from "../../service/StageOrderService";
 
 
-class HealthEditor
+class StageOrderEditor
 {
   onLoadPresetFileChange = (event) =>
   {
@@ -15,7 +15,7 @@ class HealthEditor
       extras.successCallback = this.onActionResult;
       extras.errorCallback = this.onActionResult;
       extras.contentCallback = this.applyPresetFile;
-      extras.successMessage = "Health preset loaded!";
+      extras.successMessage = "Stage Order preset loaded!";
       extras.errorMessage = "Problems loading the preset!";
       extras.file = file;
       fileService.readTextFile(extras);
@@ -30,7 +30,7 @@ class HealthEditor
     {
       if(extras && extras.actionSuccessful)
       {
-        healthService.applyPreset(extras.actionData);
+        stageOrderService.applyPreset(extras.actionData);
         this.setViewData(this.getViewData());
       }
     }
@@ -46,34 +46,34 @@ class HealthEditor
 
   savePresetFile = () =>
   {
-    const preset = healthService.createPreset();
+    const preset = stageOrderService.createPreset();
     const json = JSON.stringify(preset, null, "\t");
     const contentType = "text/json;charset=utf-8";
-    const filename = "pssme_health_editor_preset.json";
+    const filename = "pssme_stage_order_preset.json";
     componentService.downloadFile(json, filename, contentType);
   }
 
-  getHealth()
+  getStageOrder()
   {
-    const health = healthService.getHealth(this.characterKey);
-    return health ? health : "";
+    const order = stageOrderService.getStageOrder(this.stageKey);
+    return order ? order : "";
   }
 
-  setCharacterKey = (characterKey) =>
+  setStageKey = (stageKey) =>
   {
-    this.characterKey = characterKey;
+    this.stageKey = stageKey;
     this.setViewData(this.getViewData());
   }
 
-  setHealth = (health) =>
+  setStageOrder = (order) =>
   {
-    healthService.setHealth(this.characterKey, health);
+    stageOrderService.setStageOrder(this.stageKey, order);
     this.setViewData(this.getViewData());
   }
 
-  setHealthToDefault = () =>
+  setStageOrderToDefault = () =>
   {
-    healthService.setHealthToDefault(this.characterKey);
+    stageOrderService.setStageOrderToDefault(this.stageKey);
     this.setViewData(this.getViewData());
   }
 
@@ -81,7 +81,7 @@ class HealthEditor
   {
     const extras = {};
     extras.successMessage = "Data is added to the modification queue!";
-    healthService.addToModificationQueue();
+    stageOrderService.addToModificationQueue();
     this.onActionResult(extras);
     componentService.callMethod("windowList", "updateActiveWindowList");
   }
@@ -90,33 +90,33 @@ class HealthEditor
   {
     const extras = {};
     extras.successMessage = "All data is cleared!";
-    healthService.clearData();
+    stageOrderService.clearData();
     this.onActionResult(extras);
     this.setViewData(this.getViewData());
   }
 
-  createCharacterHealthList = () =>
+  createStageOrderDataList = () =>
   {
-    return healthService.getCharacterHealthList();
+    return stageOrderService.getStageOrderDataList();
+  }
+
+  createStageOrderValueList = () =>
+  {
+    return stageOrderService.getStageOrderValueList();
   }
 
   getViewData = () =>
   {
-    const showHealthField = healthService.hasCharacterKey(this.characterKey);
-    const {componentData, characterKey} = this;
-    const health = this.getHealth();
-    return {componentData, showHealthField, characterKey, health};
+    const showOrderField = stageOrderService.hasStageKey(this.stageKey);
+    const {componentData, stageKey} = this;
+    const order = this.getStageOrder();
+    return {componentData, showOrderField, stageKey, order};
   }
 
   updateViewData = () =>
   {
     this.window.updateViewData();
     this.setViewData(this.getViewData());
-  }
-
-  onInputDecimal = (event, methodName) =>
-  {
-    componentService.onElementDecimalValueChange(event, this, methodName);
   }
 
   onValueChange = (event, methodName) =>
@@ -134,9 +134,9 @@ class HealthEditor
     this.componentData = componentService.getComponentData(this.key);
     this.requestFile = componentService.requestFile;
     this.updateZoom = props.window.updateZoom;
-    this.characterKey = "";
+    this.stageKey = "";
     this.updateViewData();
   }
 }
 
-export { HealthEditor };
+export { StageOrderEditor };

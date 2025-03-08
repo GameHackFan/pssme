@@ -93,8 +93,10 @@ export const featuresAndFixesPatch =
     [
       "F9", "43", "07", "00", "E6", "DC", "31", "10",
       "00", "10", "40", "31", "30", "00", "F9", "4E",
-      "01", "00", "52", "4D", "00", "00", "30", "30",
-      "40", "30", "40", "30", "50", "50", "60", "60"
+      "01", "00", "52", "4D",
+      
+      "00", "00", "30", "30", "40", "30", "40", "30",
+      "50", "50", "60", "60"
     ],
 
     // Instruction that redirects the execution to the code 
@@ -216,6 +218,17 @@ export const featuresAndFixesPatch =
       "86", "13", "AE", "B0", "C4", "13", "06", "66",
       "F9", "4E", "01", "00", "F0", "DC", "F9", "4E",
       "01", "00", "16", "DD", "00", "00", "00", "00",
+    ],
+
+    // Instruction that redirects the execution to the 
+    // code that fixes Zoisite going under the screen
+    "121636": ["B9", "4E", "07", "00", "80", "DE"],
+
+    // Code that fixes Zoisite going under the screen
+    "515712":
+    [
+      "A8", "08", "02", "00", "27", "00", "B9", "4E",
+      "01", "00", "5A", "1E", "75", "4E"
     ],
 
 

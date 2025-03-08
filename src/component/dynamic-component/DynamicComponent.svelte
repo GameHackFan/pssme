@@ -9,6 +9,7 @@
   import PatchManager from "../patch/PatchManager.svelte";
   import LevelEditor from "../level/LevelEditor.svelte";
   import PalleteEditor from "../pallete/PalleteEditor.svelte";
+  import StageOrderEditor from "../order/StageOrderEditor.svelte";
 
 
   export let componentProps;
@@ -24,6 +25,7 @@
     "randomizer": SeedRandomizer,
     "level": LevelEditor,
     "pallete": PalleteEditor,
+    "order": StageOrderEditor
   }
   const component = componentMap[componentProps.key];
 </script>

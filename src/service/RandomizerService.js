@@ -235,6 +235,7 @@ class RandomizerService
     romService.applyPatch(patchMap.sailorColorExpansionPatch.patch);
     romService.applyPatch(patchMap.playerHealthImprovementPatch.patch);
 
+    romService.applyPatch(patchMap.itemDropFixesPatch.patch);
     romService.applyPatch(patchMap.enemyColorExpansionPatch.patch);
     romService.applyPatch(patchMap.thetisImprovementPatch.patch);
     romService.applyPatch(patchMap.jumouImprovementPatch.patch);
@@ -242,6 +243,7 @@ class RandomizerService
     
     romService.applyPatch(patchMap.featuresAndFixesPatch.patch);
     romService.applyPatch(patchMap.sailorImprovementPatch.patch);
+    romService.applyPatch(patchMap.sailorDashImprovementPatch.patch);
     romService.applyPatch(patchMap.textImprovementPatch.patch);
     romService.applyPatch(patchMap.newLevelsTextImprovementPatch.patch);
     romService.applyPatch(patchMap.dontFreezeOnBossPatch.patch);

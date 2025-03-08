@@ -22,3 +22,16 @@ level7B     200, 239                          > 195
 level7C     130, 239                          > 129
 level8A     176, 239                          > 175
 level8B     176, 239    Final Boss            > 175
+
+
+
+Pointers
+
+Stage 1: 30452 (00 00)
+Stage 2: 3087A (02 00)
+Stage 3: 31024 (04 00)
+Stage 4: 31922 (07 00)
+Stage 5: 32740 (0E 00)
+Stage 6: 33154 (12 00)
+Stage 7: 33884 (01 00)
+Stage 8: 3419E (18 00)

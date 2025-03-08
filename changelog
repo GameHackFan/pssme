@@ -1,3 +1,23 @@
+Version 1.9 Changes:
+- Created the Stage Order Editor, it allows you to edit the order of the stages.
+- Created the InfiniteTimePatch, as the name says, it makes the time infinite.
+- Created the MaximumTimePatch, it sets the starting and increasing time to 99.
+- Created the SailorDashImprovementPatch, it changes the dash frame amount from 60 to 1200 frames.
+- Created the ItemDropFixesPatch, it fixes the item not being droped when killing with crystals.
+- Added a code to the ItemDropFixesPatch that increases the movement impulse of the item drop.
+- Added a code to the SailorDashImprovementPatch that disables the clinch if you're doing the dash move.
+- Added a code to the FeaturesAndFixesPatch that fixes the bug where Zoisite goes under the floor.
+- Added the SailordDashImprovementPatch to the Seed Randomizer.
+- Added the ItemDropFixesPatch to the Seed Randomizer.
+- Added Yasha Witch No Dash Attack to the Level Editor.
+- Added Castor & Pollux to the Character Health Editor.
+- Improved Yasha Witch Falling images in the Level Editor.
+- Fixed PlayerHealthImprovementPatch priority.
+- Improved Sailor Mercury D (4) color.
+- Improved Sailor Mercury E (5) color.
+- Minor changes and fixes.
+
+
 Version 1.8 Changes:
 - Created NoLevelLimits in the level editor, it allows enemies to not respect bounds.
 - Fixed a CharacterDamageEditor bug, it wasn't properly handling undefined data, making it crash.

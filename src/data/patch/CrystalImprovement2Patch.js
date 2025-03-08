@@ -1,4 +1,4 @@
-export const crystalImprovementPatch2 = 
+export const crystalImprovement2Patch = 
 {
   priority: 19,
   type: "overwrite",

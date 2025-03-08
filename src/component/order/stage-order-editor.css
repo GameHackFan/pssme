@@ -1,0 +1,35 @@
+.order > .window-content-line > span
+{
+  min-width: 5rem;
+}
+
+.order select
+{
+  width: 7.5rem;
+  margin-right: 0.75rem;
+}
+
+.order select
+{
+  margin-right: 0.75rem;
+}
+
+.order button
+{
+  cursor: pointer;
+}
+
+.order button input
+{
+  display: none;
+}
+
+.order > div:last-child
+{
+  margin-top: 1.5rem;
+}
+
+.order button:not(:last-child)
+{
+  margin-right: 0.75rem;
+}

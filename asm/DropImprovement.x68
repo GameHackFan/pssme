@@ -3,8 +3,17 @@
 * Written by:   GameHackFan
 * Date:
 * Description:  Changes the way item drops are handled.
-*               Drops are now based on the color ID and a custom table.
+*               It has a code that makes drops be based on the
+*               color ID and a custom table.
+*               It has codes that changes the item drop from
+*               the falling move ID to the fallen move ID.
+*               It has code that changes the impulse of the 
+*               item drop.
 *-----------------------------------------------------------------------------------------------
+
+************************************************************************************************
+* Code 1
+************************************************************************************************
 
   JMP       $7DD50.L                ; Jumps the execution to the instruction in the address (replace 1222A with this code).
   NOP
@@ -46,6 +55,54 @@
 ; 09 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 00
 ; 06 09 00 03 05 06 07 09 00 03 05 06 07 09 00 03
 ; 06 09 00 03 05 06 07 09 00 03 05 06 07 09 00 03
+
+
+************************************************************************************************
+* Code 2
+************************************************************************************************
+
+; ORG       $11D90                  ; Replace 11D90 (There is enough space for the new code).
+
+                                    ; Block of code that disables the item drop for the falling action.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+  NOP                               ; No operation, does nothing.
+
+
+************************************************************************************************
+* Code 3
+************************************************************************************************
+
+; ORG       $11E90                  ; Replace 11E90 (There is enough space for the new code).
+
+                                    ; Block of code that removes the restriction for the fallen action to drop items.
+  BEQ       $11E9A                  ; Removes the possibility of the item drop code to be ignored.
+
+
+************************************************************************************************
+* Code 4
+************************************************************************************************
+
+; ORG       $1225A                  ; Replace 1225A (There is enough space for the new code).
+
+                                    ; Block of code that changes the item drop movement.
+  BCS       $1228A                  ; Code from the original game readjusted.
+  MOVE.W    ($26, A0), ($6A, A1)    ; Code from the original game.
+  BCHG      #$3, ($6B, A1)          ; Code from the original game.
+  MOVE.L    ($4C, A0), D0           ; Code from the original game.
+  ASR.L     #$1, D0                 ; Shifts Right D0 bits by 1, reduces the X movement speed.
+  NEG.L     D0                      ; Inverts all bits of D0, the enemy moving direction inverted.
+  CLR.W     D0                      ; Clears D0, clear the first 2 bytes to ensure a good impulse.
+  MOVE.L    D0, ($4C, A1)           ; Code from the original game.
+  MOVE.W    D7, ($48, A1)           ; Code from the original game.
+  MOVE.L    #$FFFFC400, ($60, A1)   ; Code from the original game.
+  MOVE.L    #$6C000, ($54, A1)      ; Stores 6C000 inside ($54 + A1), the upwards movement speed to 6.
 
 
 

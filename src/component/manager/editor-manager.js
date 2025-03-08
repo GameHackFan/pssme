@@ -78,7 +78,9 @@ class EditorManager
       patchService.tryToAddDefaultTextPatchToModificationQueue();
       modificationService.apply();
       romService.addHackAuthor(this.hackAuthor);
-      extras.fileObject = romService.getGeneratedROM();
+      const rom = romService.getGeneratedROM();
+      rom["s04.u45"] = import.meta.env.DEV ? rom["bpsm945a.u45"] : undefined;
+      extras.fileObject = rom;
       componentService.callMethod("windowList", "updateActiveWindowList");
 
       if(extras.fileObject)
@@ -104,7 +106,7 @@ class EditorManager
     this.generatingROM = false;
     const rom = extras.actionData;
     const contentType = "application/octet-stream";
-    const name = "sailormn.zip";
+    const name = import.meta.env.DEV ? "sailormnts04.zip" : "sailormn.zip";
     componentService.downloadFile(rom, name, contentType);
     this.setViewData(this.getViewData());
   }

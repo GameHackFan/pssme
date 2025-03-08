@@ -1,6 +1,8 @@
 import { featuresAndFixesPatch } from "./FeaturesAndFixesPatch";
 import { areaImprovementPatch } from "./AreaImprovementPatch";
 import { timeImprovementPatch } from "./TimeImprovementPatch";
+import { infiniteTimePatch } from "./InfiniteTimePatch";
+import { maximumTimePatch } from "./MaximumTimePatch";
 import { level1RemakePatch } from "./Level1RemakePatch";
 import { extraLevelPatch } from "./ExtraLevelPatch";
 
@@ -18,13 +20,16 @@ import { sailorColorExpansionPatch } from "./SailorColorExpansionPatch";
 import { foodImprovementPatch } from "./FoodImprovementPatch";
 import { playerHealthImprovementPatch } from "./PlayerHealthImprovementPatch";
 import { sailorImprovementPatch } from "./SailorImprovementPatch";
+import { sailorDashImprovementPatch } from "./SailorDashImprovementPatch";
 import { crystalImprovementPatch } from "./CrystalImprovementPatch";
-import { crystalImprovementPatch2 } from "./CrystalImprovementPatch2";
+import { crystalImprovement2Patch } from "./CrystalImprovement2Patch";
 
 import { enemyColorExpansionPatch } from "./EnemyColorExpansionPatch";
+import { itemDropFixesPatch } from "./ItemDropFixesPatch"
 import { jumouImprovementPatch } from "./JumouImprovementPatch";
 import { thetisImprovementPatch } from "./ThetisImprovementPatch";
 import { bakeneImprovementPatch } from "./BakeneImprovementPatch"
+
 
 import { newLevelsTextImprovementPatch } from
     "./NewLevelsTextImprovementPatch";
@@ -87,10 +92,10 @@ export const patchMap =
     patch: crystalImprovementPatch,
     show: true
   },
-  crystalImprovementPatch2:
+  crystalImprovement2Patch:
   {
-    key:    "crystalImprovementPatch2",
-    label:  "Crystal Usage Improvement Patch 2",
+    key:    "crystalImprovement2Patch",
+    label:  "Crystal Usage Improvement 2 Patch",
     text:   "This patch will allow players to change the " + 
             "amount of crystals they want to use by pressing " +
             "the Crystal when jumping, punching or doing " +
@@ -99,7 +104,7 @@ export const patchMap =
             "to the main one, the only difference is that to " + 
             "change the amount of crystals to use you have " + 
             "to press Start instead.",
-    patch: crystalImprovementPatch2,
+    patch: crystalImprovement2Patch,
     show: true
   },
   timeImprovementPatch:
@@ -107,9 +112,31 @@ export const patchMap =
     key:    "timeImprovementPatch",
     label:  "Time Improvement Patch",
     text:   "This patch will force the game to process " +
-            "the time 60% slower than normal. This patch " + 
+            "the time 60% slower than normal, it sets " + 
+            "the starting time to 99, and it also makes " + 
+            "all time increments to be 99. This patch " + 
             "is used by the Seed Randomizer.",
     patch: timeImprovementPatch,
+    show: true
+  },
+  infiniteTimePatch:
+  {
+    key:    "infiniteTimePatch",
+    label:  "Infinite Time Patch",
+    text:   "This patch will force the game to ignore " +
+            "updating the time time, which will lead to " + 
+            "infinite time. it also sets the starting " + 
+            "time to 99.",
+    patch: infiniteTimePatch,
+    show: true
+  },
+  maximumTimePatch:
+  {
+    key:    "maximumTimePatch",
+    label:  "Maximum Time Patch",
+    text:   "This patch will set the starting time to 99, " + 
+            "it also makes all time increments to be 99.",
+    patch: maximumTimePatch,
     show: true
   },
   level1RemakePatch:
@@ -300,6 +327,52 @@ export const patchMap =
             "takes is reduced from 6 to 3. This patch " + 
             "is used by the Seed Randomizer.",
     patch: sailorImprovementPatch,
+    show: true
+  },
+  sailorDashImprovementPatch:
+  {
+    key:    "sailorDashImprovementPatch",
+    label:  "Sailor Dash Improvement Patch",
+    text:   "This patch brings improvements to the dash " + 
+            "of all Sailors. This patch changes the " + 
+            "duration of the dash from 60 to 1200 frames. " + 
+            "This patch is used by the Seed Randomizer.",
+    patch: sailorDashImprovementPatch,
+    show: true
+  },
+  itemDropFixesPatch:
+  {
+    key:    "itemDropFixesPatch",
+    label:  "Item Drop Fixes Patch",
+    text:   "This patch will brings a lot of changes " + 
+            "to the item drop feature. The first change " + 
+            "is that it disables the item drop from the " + 
+            "enemy action ID 8 (falling action) and it " + 
+            "removes the item drop restriction from the " + 
+            "enemy action ID 9 (fallen / bouncing action), " + 
+            "which means now action ID 9 will 100% of the " + 
+            "times drop the item, that change was made " + 
+            "because when you kill enemies that drop items " + 
+            "with crystals, the effects of the crystals " + 
+            "might use all the objects memory space, which " + 
+            "will lead to the game skipping the item drop " + 
+            "since there is no memory space to put it, so " + 
+            "this change will ensure that the item drop " + 
+            "happens after the game process all effects " + 
+            "and all the memory slots they were using " + 
+            "become empty, the result is the item drop " + 
+            "will happen almost 100% of the cases. The " + 
+            "second change is in the item drop movement, " + 
+            "in the original game if you throw an enemy " + 
+            "out of the screen, you will lose the drop, " +
+            "so this change will ensure the item drop has " + 
+            "enough impulse to fall inside the screen, of " + 
+            "course there will still have a few cases " + 
+            "where the item will still be dropped outside " + 
+            "the screen, but again, this will be insanely " +
+            "rare now. This patch is used by the Seed " + 
+            "Seed Randomizer.",
+    patch: itemDropFixesPatch,
     show: true
   },
   enemyColorExpansionPatch:

@@ -78,6 +78,7 @@ const createDefaultDataMap = () =>
   map.level = "1";
   map.pallete = "1";
   map.damage = "1";
+  map.order = "1";
   map.modification = "1";
   return map;
 }

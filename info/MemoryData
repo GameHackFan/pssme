@@ -1,12 +1,15 @@
 108192:   The amount of frames passed? (4 bytes).
 108196:   The amount of frames passed? (4 bytes).
 10835E:   Credit Coins Inserted.
+10819A:   0001 0001 to activate the debug menu
 
 109380:   Area Memory Region.
 109384:   Area ID.
 
+10A408:   Game Difficulty.
 10A412:   Stage ID.
 10A416:   Stage time.
+10A475.B: 20 to display hitboxes.
 
 10F210:   List of Randomized Values?
 
